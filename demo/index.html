@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Widget demo</title>
+</head>
+
+<body class="someclass">
+    <div>
+        <script>
+            (function (w, d, s, o, f, js, fjs) {
+                w['JS-Widget'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'mw', '/OmoWidget.js'));
+
+            mw('init', { someConfiguration: 42, url: "api-nesto" });
+            mw('message', 'Hello world!');
+        </script>
+        <div class="omo-widget-container"></div>
+    </div>
+
+    <h1>Widget demo</h1>
+    <div style="border-style: solid; border-block-color: black; width: 20%; display: inline-block;">
+        <h1> ovo je test za h1</h1>
+        <h2>ovo je test za h2</h2>
+        <h3>ovo je test za h3</h3>
+        <div>ovo je test za neki tekst u bodyiue</div>
+
+    </div>
+    <div style="border-style: solid; border-block-color: black;width: 20%; display: inline-block;">
+        <h1> ovo je test za h1</h1>
+        <h2>ovo je test za h2</h2>
+        <h3>ovo je test za h3</h3>
+        <div>ovo je test za neki tekst u bodyiue</div>
+
+    </div>
+    <div style="border-style: solid; border-block-color: black;width: 20%; display: inline-block;">
+        <p>ovo je paragraf da vidimo jel fercera</p>
+
+    </div>
+    <p>ovo je test </p>
+<div>ovo je drugi test</div>
+<a href="#">LINK</a>
+
+
+</body>
+
+</html>
