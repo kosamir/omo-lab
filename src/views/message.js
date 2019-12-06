@@ -116,15 +116,22 @@ var forceRedraw = function(element){
     setTimeout(function(){
         element.style.display = disp;
         n.parentNode.removeChild(n);
-    },20); // you can play with this timeout to make it as short as possible
+    },0); // you can play with this timeout to make it as short as possible
+}
+
+function getAppliedStyleSheet(){
+    var children = document.getElementsByTagName("head")[0];
+    var children_len = children.getElementsByTagName('style').length
+    var style = children.getElementsByTagName('style')[children_len-1];
+    return style;
 }
 
 
 function applyOverides() {
 
     if (document.getElementById('omolab_style_w')) {
-        var children = document.getElementsByTagName("head")[0];
-        var style = children.getElementsByTagName('style')[1];
+        // var children = document.getElementsByTagName("head")[0];
+        var style = getAppliedStyleSheet();//children.getElementsByTagName('style')[1];
         style.innerHTML = getGenerateStyle();
         forceRedraw(style);
     } else {
@@ -152,16 +159,18 @@ function removeOverides() {
     var omo_style = document.getElementById('omolab_style');
     var omo_style_w = document.getElementById('omolab_style_w');
     var children = document.getElementsByTagName("head")[0];
-    var style = children.getElementsByTagName('style')[1];
+    // var children_len = children.getElementsByTagName('style').length
+    var style = getAppliedStyleSheet()
     children.removeChild(style);
 
 
 }
 
 export function click_me(event) {
+   
     var check = document.getElementById('applyOverides').checked;
     check ? applyOverides() : removeOverides()
-
+    console.log(check + ' ' + event.target);
 
 }
 
