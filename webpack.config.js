@@ -13,8 +13,8 @@ module.exports = (env) => {
             path: path.resolve(bundleOutputDir),
         },
         devServer: {
-            contentBase: bundleOutputDir, 
-            host: "https://omo-lab.herokuapp.com", // Your Computer Name
+            contentBase: bundleOutputDir,
+            host: "https://omo-lab.herokuapp.com/", // Your Computer Name
             port: 8080
 
         },
