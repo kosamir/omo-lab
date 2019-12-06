@@ -14,8 +14,8 @@ module.exports = (env) => {
         },
         devServer: {
             contentBase: bundleOutputDir,
-            // host: "https://omo-lab.herokuapp.com/", // Your Computer Name
-            // port: 8080
+            host: "optimus", // Your Computer Name
+            port: 8080
 
         },
         plugins: isDevBuild
