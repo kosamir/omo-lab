@@ -28,46 +28,39 @@
     padding: 10px 20px;
     border: solid 1px #333
 }
+
+.omo-widget-container > *{
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    z-index: 1002;
+    overflow: auto;
+    height: auto;
+    font-family: "Arial";
+    font-size:16px;
+    background-color:#7abf43;
+    border: solid 1px #333
+}
 .omoClose{
+    z-index: 1003;
     font-family: "Arial";
     font-size:17px;
     cursor: pointer;
     background-color: red;
+    float: right;
     
 }
-.omoContainer{
- 
-  background: rgb(150, 26, 26);
-  z-index: 10002; 
-  border: solid 1px #333 ;
-  width: 100%;
-  height: auto;
-  top: 0;
-  left: 0;
- 
 
-}
-.omoBox {
-    position: inherit;
-    z-index: 10002; 
-    background: #fff;
-    left: 10%;
-    top: 10%;
-    /* overflow-y: scroll; */
-    height: auto;
-    margin: 0 0 5 5px;
-    width: auto;
-    padding: 10px 20px;
-    border: solid 1px #333 ;
-    font-family: "Arial";
-    font-size:17px;
+
+
+@media only screen and (max-width: 640px) {
     
-    
-    
-}
-.omoBox .button {
-    font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-weight: 400;
-	font-display: auto;
-}
+    .omo-widget-container{
+        width: 640px;
+    }
+    .omoClose {
+        background-color: lightblue;
+        cursor: pointer;
+        float: inherit;
+      }
+  }
