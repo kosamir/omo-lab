@@ -7,13 +7,13 @@ const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(Math.random()
 const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
 const transformHeaderStyles = () => HEADER_STYLE_ELEMENTS.map(element => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} *`)
-const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? headerFontSize : 10}px !important; letter-spacing:${headerFontSpacing ? headerFontSpacing: 'normal'} !important; line-height:${headerLineHeight ? headerLineHeight : '1.6'} !important }\n`
+const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? headerFontSize : 10}px !important; letter-spacing:${headerFontSpacing ? headerFontSpacing : 'normal'} !important; line-height:${headerLineHeight ? headerLineHeight : '1.6'} !important }\n`
 
 /** WIDGET STYLE */
 const OMO_WIDGET_ELEMENTS = [
     `body.${OMOLAB_BODY_CLASS} div.omo-widget-container *`
     // ,
-    // `body.${OMOLAB_BODY_CLASS} div.omoContainer *`
+    // `body.${OMOLAB_BODY_CLASS} div.omoContainer > *`
     // ,
     // `body.${OMOLAB_BODY_CLASS} div.omoBox *`,
     // `body.${OMOLAB_BODY_CLASS} div.omoClose *`,
@@ -26,13 +26,17 @@ const setOmoWidgetStyle = (omoWidgetElements, omoWidgetStyle) => { return omoWid
 /** SET BODY STYLE */
 const BODY_STYLE = [
     `body.${OMOLAB_BODY_CLASS}`,
-    `body.${OMOLAB_BODY_CLASS} div > *`
+    // `body.${OMOLAB_BODY_CLASS} > not(.omo-widget-container > *)`,
+    `body.${OMOLAB_BODY_CLASS} div > *`,
+    
+
 ]
-const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight) => bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; font-size:${bodyFontSize ? bodyFontSize : 10}px !important; letter-spacing:${bodyFontSpacing ? bodyFontSpacing+'px'  : 'normal'} !important; line-height:${bodyLineHeight ? bodyLineHeight : '1.6'} !important }\n` : '';
+const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight) => bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; font-size:${bodyFontSize ? bodyFontSize : 10}px !important; letter-spacing:${bodyFontSpacing ? bodyFontSpacing + 'px' : 'normal'} !important; line-height:${bodyLineHeight ? bodyLineHeight : '1.6'} !important }\n` : '';
 
 /** SET BACGROUND COLOR */
 const BACKGROUND_COLOR_ELEMENTS = [
     `body.${OMOLAB_BODY_CLASS}`,
+    // `body.${OMOLAB_BODY_CLASS} > not(.omo-widget-container > *)`,
     `body.${OMOLAB_BODY_CLASS} div > *`
 ]
 const setBackGroundColor = (applyToElements, bgColor) => bgColor ? applyToElements.join(',') + `{ background-color: ${bgColor} }\n` : ''
@@ -68,22 +72,46 @@ export function show(text) {
 
     }
     toggler = toogleWidget();
-    var closeButton = body.getElementsByClassName('omoClose')[0]
-    closeButton.addEventListener("click", toggler.toogle);
 
-    var omoElements = Array.from(body.getElementsByClassName('omoElements')[0].children)
-    omoElements.forEach(element => {
-        console.log(element.nodeName);
-        if (element.nodeName === 'INPUT') element.addEventListener("change", applyOmoStyles);
-        if (element.nodeName === 'SELECT') element.addEventListener("change", applyOmoStyles);
-
-    });
-    var check = body.getElementsByClassName('omoControl')[0].childNodes[1]
-    var c = document.getElementById('applyOverides')
-    console.log(check === c);
-    c.addEventListener('change', applyOmoStyles);
+    addEventHandler('headerOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
+    addEventHandler('bodyOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
+    addEventHandler('omoControl', 'click', ['INPUT'], applyOmoStyles);
+    addEventHandler('omoClose', 'click', ['DIV'], toggler.toogle)
+    addEventHandler('bgColor', 'click', ['DIV'], clickCollor);
 
 }
+
+/** applys event handler to given element */
+const addEventHandler = (element, event, selector, handler) => {
+    var omoElements = Array.from(body.getElementsByClassName(element)[0].children)
+    omoElements.forEach(element => {
+        if (selector.includes(element.nodeName)) element.addEventListener(event, handler);
+
+    });
+}
+
+
+/** COLLOR PICKER REFACTOR */
+const collorStack = [];
+
+const clickCollor = (event) => {
+    if (collorStack.length > 0) {
+        var obj = collorStack.pop();
+        obj.element.style.cssText = obj.style
+    }
+    let color = event.target.style.cssText;
+    event.target.style = color + '; ' + ' outline: 2px solid blue;'
+    collorStack.push({
+        element: event.target,                          // element
+        color: color.substring(color.indexOf(':')+1),   // samo boja
+        style: color                                    // kompletan stil
+    })
+
+    console.log('click Collor' + event.target.style.cssText)
+    applyOmoStyles();
+}
+
+
 
 const toogleWidget = () => {
     let open = true
@@ -105,7 +133,8 @@ const toogleWidget = () => {
 }
 
 function generateOmoStyle() {
-    var bgColor = document.getElementById('bgColor').value
+    var bgCol = collorStack.length > 0 ? collorStack[collorStack.length-1].color : 'transparent'
+    // alert(bgCol);
     var headerFontSize = document.getElementById('hsize').value;
     var headerFontFamily = document.getElementById('header_ff').value
     var headerFontSpacing = document.getElementById('hspacing').value
@@ -114,13 +143,14 @@ function generateOmoStyle() {
     var bodyFontSize = document.getElementById('bsize').value;
     var bodyFontFamily = document.getElementById('body_ff').value
     var bodyFontSpacing = document.getElementById('bspacing').value
-    console.log(bodyFontSpacing);
+    // console.log(bodyFontSpacing);
     var bodyLineHeight = document.getElementById('bheight').value
 
-    var style = '';//setBackGroundColor(BACKGROUND_COLOR_ELEMENTS, bgColor)
-    var headerStyle = setHeaderStyle(transformHeaderStyles().join(','), headerFontFamily, headerFontSize,headerFontSpacing,headerLineHeight);
+
+    var style = setBackGroundColor(BACKGROUND_COLOR_ELEMENTS, bgCol)
+    var headerStyle = setHeaderStyle(transformHeaderStyles().join(','), headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight);
     style += headerStyle;
-    var bodyStyle = setBodyTextStyle(BODY_STYLE, bodyFontFamily, bodyFontSize,bodyFontSpacing,bodyLineHeight);
+    var bodyStyle = setBodyTextStyle(BODY_STYLE, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight);
     style += bodyStyle;
     var widgetStyle = setOmoWidgetStyle(OMO_WIDGET_ELEMENTS, omoWidgetStyle);
     style += widgetStyle
@@ -182,16 +212,19 @@ const removeOverides = () => {
     var children = document.getElementsByTagName("head")[0];
     var style = getLastAppliedStyleSheet()
     console.log(omo_style_w === style);
-    // if stylesheet is applied remove it, otherwise ignore
+    /**  if omolab_style_w stylesheet is applied remove it, otherwise ignore */
     if (omo_style_w === style)
         children.removeChild(style);
 }
 
 
-export function applyOmoStyles(event) {
+function applyOmoStyles(event) {
 
+    // alert('click');
+    // console.log(check + ' ' + event.target);
     var check = document.getElementById('applyOverides').checked;
     check ? applyOverides() : removeOverides()
-    console.log(check + ' ' + event.target);
+    // console.log(check + ' ' + event.target);
+
 
 }
