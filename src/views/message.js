@@ -4,10 +4,10 @@ import './message.css';
 const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(Math.random() * 1000)}`;
 
 /**HEADER STYLES */
-const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div.title', 'section#block-superfish-4', 'section#block-superfish-6']
 
-const transformHeaderStyles = () => HEADER_STYLE_ELEMENTS.map(element => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} *`)
-const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? headerFontSize : 10}px !important; letter-spacing:${headerFontSpacing ? headerFontSpacing : 'normal'} !important; line-height:${headerLineHeight ? headerLineHeight : '1.6'} !important }\n`
+const transformHeaderStyles = () => HEADER_STYLE_ELEMENTS.map(element => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `)
+const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? headerFontSize : 10}px !important; letter-spacing:${headerFontSpacing ? headerFontSpacing + 'px' : 'normal'} !important; line-height:${headerLineHeight ? headerLineHeight : '1.6'} !important }\n`
 
 /** WIDGET STYLE */
 const OMO_WIDGET_ELEMENTS = [
@@ -27,8 +27,7 @@ const setOmoWidgetStyle = (omoWidgetElements, omoWidgetStyle) => { return omoWid
 const BODY_STYLE = [
     `body.${OMOLAB_BODY_CLASS}`,
     // `body.${OMOLAB_BODY_CLASS} > not(.omo-widget-container > *)`,
-    `body.${OMOLAB_BODY_CLASS} div > *`,
-    
+    `body.${OMOLAB_BODY_CLASS} div > *`
 
 ]
 const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight) => bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; font-size:${bodyFontSize ? bodyFontSize : 10}px !important; letter-spacing:${bodyFontSpacing ? bodyFontSpacing + 'px' : 'normal'} !important; line-height:${bodyLineHeight ? bodyLineHeight : '1.6'} !important }\n` : '';
@@ -36,15 +35,42 @@ const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing,
 /** SET BACGROUND COLOR */
 const BACKGROUND_COLOR_ELEMENTS = [
     `body.${OMOLAB_BODY_CLASS}`,
-    // `body.${OMOLAB_BODY_CLASS} > not(.omo-widget-container > *)`,
-    `body.${OMOLAB_BODY_CLASS} div > *`
+    `body.${OMOLAB_BODY_CLASS} div.header-top`,
+    `body.${OMOLAB_BODY_CLASS} div.header-main`,
+    `body.${OMOLAB_BODY_CLASS} div.footer-wrap`
+    ,
+    `body.${OMOLAB_BODY_CLASS} section#block-block-45`
+
 ]
 const setBackGroundColor = (applyToElements, bgColor) => bgColor ? applyToElements.join(',') + `{ background-color: ${bgColor} }\n` : ''
-
+/** 
+const BACKGROUND_COLOR_ELEMENTS_IMPORTANT = [
+    `body.${OMOLAB_BODY_CLASS} section#block-block-44.block.block-block.poslovnice-bankomati.block-grey-bg.pb-block-grey-bg *`,
+    `body.${OMOLAB_BODY_CLASS} section#block-block-44.block.block-block.poslovnice-bankomati.block-grey-bg.pb-block-grey-bg > *`,
+]
+const setBackGroundColorImportant = (applyToElements, bgColor) => bgColor ? applyToElements.join(',') + `{ background-color: ${bgColor} !important }\n` : ''
+*/
 let elements = [];
 let body;
 var toggler;
 
+
+const setCookie = () => {
+    var obj = {
+
+        hFontsize: 11,
+        hFontFamily: 'Arial',
+        hFontSpacing: '1.5',
+        hFontLineHieght: '2',
+        bFontSize: 12,
+        bFontFamily: 'Courier',
+        bFontSpacing: '2',
+        bFontLineHeight: '2'
+    }
+
+    document.cookie = 'testCookie' + "=" + JSON.stringify(obj);
+
+}
 
 function addOmolabClassScopeToBody(doc) {
     const body = doc.querySelector('body');
@@ -78,6 +104,7 @@ export function show(text) {
     addEventHandler('omoControl', 'click', ['INPUT'], applyOmoStyles);
     addEventHandler('omoClose', 'click', ['DIV'], toggler.toogle)
     addEventHandler('bgColor', 'click', ['DIV'], clickCollor);
+    setCookie();
 
 }
 
@@ -103,7 +130,7 @@ const clickCollor = (event) => {
     event.target.style = color + '; ' + ' outline: 2px solid blue;'
     collorStack.push({
         element: event.target,                          // element
-        color: color.substring(color.indexOf(':')+1),   // samo boja
+        color: color.substring(color.indexOf(':') + 1),   // samo boja
         style: color                                    // kompletan stil
     })
 
@@ -133,7 +160,7 @@ const toogleWidget = () => {
 }
 
 function generateOmoStyle() {
-    var bgCol = collorStack.length > 0 ? collorStack[collorStack.length-1].color : 'transparent'
+    var bgCol = collorStack.length > 0 ? collorStack[collorStack.length - 1].color : 'transparent'
     // alert(bgCol);
     var headerFontSize = document.getElementById('hsize').value;
     var headerFontFamily = document.getElementById('header_ff').value
@@ -148,6 +175,7 @@ function generateOmoStyle() {
 
 
     var style = setBackGroundColor(BACKGROUND_COLOR_ELEMENTS, bgCol)
+    // style += setBackGroundColorImportant(BACKGROUND_COLOR_ELEMENTS_IMPORTANT,bgCol)
     var headerStyle = setHeaderStyle(transformHeaderStyles().join(','), headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight);
     style += headerStyle;
     var bodyStyle = setBodyTextStyle(BODY_STYLE, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight);
@@ -155,6 +183,7 @@ function generateOmoStyle() {
     var widgetStyle = setOmoWidgetStyle(OMO_WIDGET_ELEMENTS, omoWidgetStyle);
     style += widgetStyle
 
+    console.log(style);
     return style;
 }
 
@@ -202,7 +231,7 @@ const applyOverides = () => {
 
     /* Append style to the tag name */
     document.getElementsByTagName("head")[0].appendChild(css);
-    console.log("apply overides\n" + style);
+    
 }
 
 
@@ -219,7 +248,6 @@ const removeOverides = () => {
 
 
 function applyOmoStyles(event) {
-
     // alert('click');
     // console.log(check + ' ' + event.target);
     var check = document.getElementById('applyOverides').checked;
