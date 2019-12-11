@@ -1,7 +1,7 @@
 import html from './message.html';
 import './message.css';
 
-const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(Math.random() * 1000)}`;
+const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(Math.random() * 1000)}`; 
 
 /**HEADER STYLES */
 const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div.title', 'section#block-superfish-4', 'section#block-superfish-6']
