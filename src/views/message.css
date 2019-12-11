@@ -1,4 +1,39 @@
 
+@font-face {
+    font-family: dLightOne;
+    src: url("../../fonts/woff/OmoTypeD-LightOne.woff");
+}
+
+
+@font-face {
+    font-family: dMediumOne;
+    src: url("../../fonts/woff/OmoTypeD-MediumOne.woff");
+}
+@font-face {
+    font-family: dRegularOne;
+    src: url("../../fonts/woff/OmoTypeD-RegularOne.woff");
+}
+@font-face {
+    font-family: dRegularTwo;
+    src: url("../../fonts/woff/OmoTypeD-RegularTwo.woff");
+}
+@font-face {
+    font-family: dBookOne;
+    src: url("../../fonts/woff/OmoTypeD-BookOne.woff");
+}
+@font-face {
+    font-family: dBoldOne;
+    src: url("../../fonts/woff/OmoTypeD-BoldOne.woff");
+}
+@font-face {
+    font-family: dBlackOne;
+    src: url("../../fonts/woff/OmoTypeD-BlackOne.woff");
+}
+@font-face {
+    font-family: dBlackTwo;
+    src: url("../../fonts/woff/OmoTypeD-BlackTwo.woff");
+}
+
 
 .someclass{
     font-family: "Arial";
@@ -41,7 +76,7 @@
     font-family: "Arial";
     font-size:16px;
     background-color:#7abf43;
-    border: solid 1px #333
+    /* border: solid 1px #333 */
 }
 .globalOptions{
     border: dotted 1px rgb(51, 51, 51);
