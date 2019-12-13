@@ -164,8 +164,8 @@
 
 .headerOptions  input[type="number"] {
     vertical-align: middle;
-    font-size: 12px;
-    width:35px;
+    font-size: 10px;
+    width:40px;
     height: 20px;
    
 }
@@ -184,8 +184,8 @@
 }
 
 .bodyOptions input[type="number"] {
-    font-size: 12px;
-    width:35px;
+    font-size: 10px;
+    width:40px;
    
     height: 20px;
 }

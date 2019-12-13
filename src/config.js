@@ -6,6 +6,14 @@ exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS
 const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
+const HEADER_LINE_HEIGHT='22.8571'
+const HEADER_FONT_SPACING='normal'
+const HEADER_FONT_SIZE='16'
+
+const BODY_LINE_HEIGHT='22.8571'
+const BODY_FONT_SPACING='normal'
+const BODY_FONT_SIZE='16'
+
 /**HEADER STYLES */
 const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 exports.HEADER_STYLE_ELEMENTS =  HEADER_STYLE_ELEMENTS;
@@ -13,14 +21,14 @@ exports.HEADER_STYLE_ELEMENTS =  HEADER_STYLE_ELEMENTS;
 /**CUSTOM_HEADER_STYLES */
 const CUSTOM_HEADER_STYLE_ELEMENTS = [
     'div.title', 
-    'section#block-superfish-4', 
-    'section#block-superfish-6',
-    'section h2']  
+    'section h2',
+    'h1.page-header']  
 
 exports.CUSTOM_HEADER_STYLE_ELEMENTS= CUSTOM_HEADER_STYLE_ELEMENTS;
+const addPixels = (value) => value +'px' 
 
 const transformHeaderStyles = (elements) => elements.map(element => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `)
-const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? headerFontSize : 16}px !important; letter-spacing:${headerFontSpacing ? headerFontSpacing + 'px' : 'normal'} !important; line-height:${headerLineHeight ? headerLineHeight : '1.6'} !important }\n`
+const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight) => style + `{ font-family:${headerFontFamily} !important ; font-size:${headerFontSize ? addPixels(headerFontSize) : addPixels(HEADER_FONT_SIZE)} !important; letter-spacing:${headerFontSpacing ? addPixels(headerFontSpacing) : addPixels(HEADER_FONT_SPACING)} !important; line-height:${headerLineHeight ? addPixels(headerLineHeight) : addPixels(HEADER_LINE_HEIGHT) } !important }\n`
 
 exports.transformHeaderStyles= transformHeaderStyles;
 exports.setHeaderStyle = setHeaderStyle
@@ -64,7 +72,7 @@ const BODY_STYLE = [
 exports.BODY_STYLE= BODY_STYLE;
 
 const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight) => {
-    return bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; font-size:${bodyFontSize ? bodyFontSize : 16}px !important; letter-spacing:${bodyFontSpacing ? bodyFontSpacing + 'px' : 'normal'} !important; line-height:${bodyLineHeight ? bodyLineHeight : 'normal'} !important }\n` : '';
+    return bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; font-size:${bodyFontSize ? addPixels(bodyFontSize) : addPixels(BODY_FONT_SIZE)} !important; letter-spacing:${bodyFontSpacing ? addPixels(bodyFontSpacing)  : addPixels(BODY_FONT_SPACING)} !important; line-height:${bodyLineHeight ? addPixels(bodyLineHeight) : addPixels(BODY_LINE_HEIGHT)} !important }\n` : '';
 }
 exports.setBodyTextStyle=setBodyTextStyle
 
