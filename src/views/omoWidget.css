@@ -1,0 +1,241 @@
+
+@font-face {
+    font-family: dLightOne;
+    src: url("../../fonts/woff/OmoTypeD-LightOne.woff");
+}
+
+
+@font-face {
+    font-family: dMediumOne;
+    src: url("../../fonts/woff/OmoTypeD-MediumOne.woff");
+}
+@font-face {
+    font-family: dRegularOne;
+    src: url("../../fonts/woff/OmoTypeD-RegularOne.woff");
+}
+@font-face {
+    font-family: dRegularTwo;
+    src: url("../../fonts/woff/OmoTypeD-RegularTwo.woff");
+}
+@font-face {
+    font-family: dBookOne;
+    src: url("../../fonts/woff/OmoTypeD-BookOne.woff");
+}
+@font-face {
+    font-family: dBoldOne;
+    src: url("../../fonts/woff/OmoTypeD-BoldOne.woff");
+}
+@font-face {
+    font-family: dBlackOne;
+    src: url("../../fonts/woff/OmoTypeD-BlackOne.woff");
+}
+@font-face {
+    font-family: dBlackTwo;
+    src: url("../../fonts/woff/OmoTypeD-BlackTwo.woff");
+}
+
+
+/* .js-widget-overlay{
+    z-index: 10001; 
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.8;
+    width: 100%;
+    height: 40;
+    background-color:transparent;
+    border: #333;
+}
+.js-widget-dialog{
+    position: fixed;
+    z-index: 10002;
+    background: #fff;
+    left: 50%;
+    top: 0%;
+    margin: 0 0 0 -120px;
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border: solid 1px #333
+} */
+.omo-widget-container{
+    padding-right: 0px;
+    width: 90%;
+}
+
+.omoBox select{
+    font-size: 10px;
+    width:90px;
+    height: 20px;
+}
+
+.omo-widget-container > *{
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    z-index: 1002;
+    overflow: auto;
+    height: auto;
+    font-family: "Arial";
+    font-size:12px;
+    background-color:#7abf43;
+    border: solid 1px #333
+}
+
+.omoClose{
+    z-index: 1003;
+    font-family: "Arial";
+    font-size:17px;
+    cursor: pointer;
+    background-color: #7abf43;
+    border: solid 1px #333;
+    float: right;
+}
+
+.globalOptions{
+    border: dotted 1px rgb(51, 51, 51);
+   
+     
+}
+.icon{
+   width: 30px; height: 30px;
+   /* align-content: inherit; */
+   
+}
+.saveImage{
+    width: 30px; height: 30px;
+    /* background: url('/img/SAVE-ICON.png'); */
+    background: color url('/img/SAVE-ICON.png') others;
+}
+.fsize{
+    width: 100px; height: 130px;
+    background: url('/img/SAVE-ICON.png') no-repeat 5px 2px;
+    /* background: color url('/img/SAVE-ICON.png') others; */
+}
+.caption{
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+.data{
+    display: inline-flex;
+}
+
+.col {
+    display: inline-flex;
+    box-shadow: 0px 0px 0px 1px #D1D5D3 inset;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    border: solid 1px rgb(51, 51, 51);
+}
+.col-empty{
+    vertical-align: top;
+    
+    display: inline-flex;
+    box-shadow: 0px 0px 0px 1px #D1D5D3;
+    font-size: 12px;
+    /* height: 29px; */
+    width: 82px;
+    height: 30px;
+    cursor: pointer;
+    border: solid 1px rgb(51, 51, 51);
+}
+
+
+.bgColor{
+    /* border: solid 2px rgb(51, 51, 51); */
+    padding-left: 10px;
+    justify-content: center;
+    
+}
+.headerOptions{
+    /* border: solid 1px rgb(206, 209, 21); */
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 5px;
+   
+   
+    
+}
+
+.headerOptions  input[type="number"] {
+    vertical-align: middle;
+    font-size: 12px;
+    width:35px;
+    height: 20px;
+   
+}
+
+.headerOptions input[type="image"] {
+    vertical-align: middle;
+    width:30px;
+    height: 30px;
+}
+
+
+.bodyOptions{
+    /* border: solid 1px rgb(192, 14, 14); */
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.bodyOptions input[type="number"] {
+    font-size: 12px;
+    width:35px;
+   
+    height: 20px;
+}
+.bodyOptions input[type="image"] {
+    vertical-align: middle;
+    width:30px;
+    height: 30px;
+}
+
+
+.omoControl{
+    display: inline-flex;
+    padding-left: 10px;
+    /* border: solid 1px rgb(51, 51, 51); */
+    align-items: center;
+    float: left;
+}
+
+.omoSave{
+    display: inline-flex;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    float: left;
+    
+    
+}
+.omoSave input[type="text"] {
+    font-size: 10px;
+    width:100px;
+    height: 20px;
+}
+
+.omoSave input[type="image"]{
+    vertical-align: top;
+    width:20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+    
+    .omo-widget-container{
+        width: 640px;
+    }
+    .omoClose {
+        /* padding-top: 15px; */
+        background-color: lightblue;
+        cursor: pointer;
+        float: left;
+      }
+  }

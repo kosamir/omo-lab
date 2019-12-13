@@ -1,13 +1,18 @@
 import { ping } from './services'
-import { show } from './views/message'
+import { show } from './views/omoWidget'
+import {config} from './config'
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
+
+
+
+
 
 /**
     The main entry of the application
     */
 function app(window) {
-    console.log('JS-Widget starting');
+    console.log('Omo-Widget starting');
 
     // set default configurations
     let configurations = {
@@ -36,6 +41,7 @@ function app(window) {
     var root = window.document.children;
     console.log(root);
 }
+
 
 /**
     Method that handles all API calls

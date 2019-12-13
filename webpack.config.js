@@ -19,7 +19,7 @@ module.exports = (env) => {
 
         },
         plugins: isDevBuild
-            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' }])]
+            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' },{from: 'pictures/', to:'img/'},{from: 'icons/', to:'img/'}])]
             : [new webpack.optimize.UglifyJsPlugin()],
         module: {
             rules: [

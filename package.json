@@ -6,7 +6,7 @@
     "start": "./node_modules/.bin/webpack-dev-server --open",
     "prod": "NODE_ENV=production node server.js",
     "postinstall": "webpack -p",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server --open"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
