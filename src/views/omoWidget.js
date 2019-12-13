@@ -75,7 +75,7 @@ export function show(text) {
 
     }
     toggler = toogleWidget();
-
+    toggler.toogle();
     addEventHandler('headerOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
     addEventHandler('bodyOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
     addEventHandler('omoControl', 'click', ['INPUT'], applyOmoStyles);
