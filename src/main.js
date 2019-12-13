@@ -21,13 +21,13 @@ function app(window) {
 
     // all methods that were called till now and stored in queue
     // needs to be called now 
-    let globalObject = window[window['JS-Widget']];
+    let globalObject = window[window['Omo-Widget']];
     let queue = globalObject.q;
     if (queue) {
         for (var i = 0; i < queue.length; i++) {
             if (queue[i][0].toLowerCase() == 'init') {
                 configurations = extendObject(configurations, queue[i][1]);
-                console.log('JS-Widget started', configurations);
+                console.log('Omo-Widget started', configurations);
             }
             else
                 apiHandler(queue[i][0], queue[i][1]);
