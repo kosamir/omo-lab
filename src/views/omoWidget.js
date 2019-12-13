@@ -26,9 +26,9 @@ const saveConf = (event) => {
     if ((event.target.type === 'button' || event.target.type === 'image')) {
         // alert('spremaj u kolacic')
         let name = config.OMO_WIDGET_COOKIE + '_' + text;
-        alert("'" + name + "'");
+        // alert("'" + name + "'");
         let value = JSON.stringify(getUserAppliedValues());
-        console.log(value);
+        // console.log(value);
         document.cookie = name + '=' + JSON.stringify(getUserAppliedValues()) + ';'
         toogleSaveConf()
         // appendOptionValue(text);
@@ -39,7 +39,6 @@ const saveConf = (event) => {
 const toogleSaveConf = () => { 
     let image = document.getElementById('saveConf');
     image.src = "/img/SAVE-ACTIVE-ICON.png"
-
 }
 
 const appendOptionValue = (text) => {
