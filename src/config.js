@@ -25,7 +25,8 @@ const CUSTOM_HEADER_STYLE_ELEMENTS = [
     'div.title', 
     'section h2',
     'h1.page-header',
-    'section#block-block-53'
+    'section#block-block-53',
+    'section#block-block-140'
    ]  
 
 exports.CUSTOM_HEADER_STYLE_ELEMENTS= CUSTOM_HEADER_STYLE_ELEMENTS;
@@ -95,9 +96,9 @@ const BACKGROUND_COLOR_ELEMENTS = [
     `body.${OMOLAB_BODY_CLASS} section#block-block-45`,
     `body.${OMOLAB_BODY_CLASS} section#block-block-98`,
     `body.${OMOLAB_BODY_CLASS} section#block-block-44`,
+    `body.${OMOLAB_BODY_CLASS} section#block-block-141`,
+    `body.${OMOLAB_BODY_CLASS} section#block-block-142`,
     `body.${OMOLAB_BODY_CLASS} div.block-grey-bg`
-    // block block-grey-bg tecajna-lista collapsiblock-processed
-    
 ]
 exports.BACKGROUND_COLOR_ELEMENTS=BACKGROUND_COLOR_ELEMENTS;
 
