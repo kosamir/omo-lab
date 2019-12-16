@@ -26,7 +26,8 @@ const CUSTOM_HEADER_STYLE_ELEMENTS = [
     'section h2',
     'h1.page-header',
     'section#block-block-53',
-    'section#block-block-140'
+    'section#block-block-140',
+    'header#navbar'
    ]  
 
 exports.CUSTOM_HEADER_STYLE_ELEMENTS= CUSTOM_HEADER_STYLE_ELEMENTS;
@@ -110,12 +111,12 @@ const inverseFontFaceColor = (bgColor) =>{
     let is_black=false;
     let style_black = '';
     if(bgColor.trim() =='rgb(0, 0, 0)'){
-        console.log('color is black');
+        console.log('Bgcolor is black');
         is_black = true
         style_black = 'color:white !important;'
     }
     if(bgColor.trim() =='rgb(255, 255, 255)'){
-        console.log('color is black');
+        console.log('Bgcolor is white');
         is_black = true
         style_black = 'color:black !important;'
     }
