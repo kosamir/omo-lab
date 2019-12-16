@@ -39,7 +39,7 @@ const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpaci
     font-size:${headerFontSize ? addPixels(headerFontSize) : addPixels(HEADER_FONT_SIZE)} !important; 
     letter-spacing:${headerFontSpacing ? addPixels(headerFontSpacing) : addPixels(HEADER_FONT_SPACING)} !important; 
     line-height:${headerLineHeight ? addPixels(headerLineHeight) : addPixels(HEADER_LINE_HEIGHT) } !important;
-    ${setWhiteFontFaceIfBlackBackground(bgColor)}}\n
+    ${inverseFontFaceColor(bgColor)}}\n
     `}
 
 exports.transformHeaderStyles= transformHeaderStyles;
@@ -49,17 +49,21 @@ exports.setHeaderStyle = setHeaderStyle
 /** WIDGET STYLE */
 const OMO_WIDGET_ELEMENTS = [
     // `body.${OMOLAB_BODY_CLASS} div.omo-widget-container > .omoContainer > .omoBox > .omoElements > .globalOptions > .bgColor > :not(#noBackground)`,
-    `body.${OMOLAB_BODY_CLASS} div.omo-widget-container *`,
+    `div.omo-widget-container *`,
 
 ]
 exports.OMO_WIDGET_ELEMENTS = OMO_WIDGET_ELEMENTS
+
+const appendBodyToCssSelector = (elements) => elements.map(element => `body.${OMOLAB_BODY_CLASS} ${element}`)
 
 const omoWidgetStyle ='{ color:black }\n' 
 //'{ font-family: Arial !important; font-size:12px !important;  letter-spacing:normal !important; line-height: 1.6 !important; background-color: #7abf43;}\n'
 exports.omoWidgetStyle = omoWidgetStyle
 
 /** SET WIDGET STYLE */
-const setOmoWidgetStyle = (omoWidgetElements, omoWidgetStyle) => { return omoWidgetElements.join(',') + ' ' + omoWidgetStyle }
+const setOmoWidgetStyle = (omoWidgetElements, omoWidgetStyle) => { 
+    return appendBodyToCssSelector(omoWidgetElements).join(',') + ' ' + omoWidgetStyle 
+}
 
 exports.setOmoWidgetStyle=setOmoWidgetStyle
 
@@ -67,21 +71,21 @@ exports.setOmoWidgetStyle=setOmoWidgetStyle
 const BODY_STYLE = [
    
     // `body.${OMOLAB_BODY_CLASS} *` ,
-    `body.${OMOLAB_BODY_CLASS} div.body `,
-    `body.${OMOLAB_BODY_CLASS} div.field-content `,
-    `body.${OMOLAB_BODY_CLASS} section.content-fullwidth-second *`,
-    `body.${OMOLAB_BODY_CLASS} div.region-footer-first *`
+    `div.body `,
+    `div.field-content `,
+    `section.content-fullwidth-second *`,
+    `div.region-footer-first *`
     // `not:(#omo)`
 ]
 exports.BODY_STYLE= BODY_STYLE;
 
 /** set OMO STYLE ON SELECTED  BODY ELEMENTS */
 const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight, bgColor) => {
-    return bodyFontFamily ? _Style.join(',') + `{ font-family:${bodyFontFamily} !important; 
+    return bodyFontFamily ? appendBodyToCssSelector(_Style).join(',') + `{ font-family:${bodyFontFamily} !important; 
     font-size:${bodyFontSize ? addPixels(bodyFontSize) : addPixels(BODY_FONT_SIZE)} !important; 
     letter-spacing:${bodyFontSpacing ? addPixels(bodyFontSpacing)  : addPixels(BODY_FONT_SPACING)} !important; 
     line-height:${bodyLineHeight ? addPixels(bodyLineHeight) : addPixels(BODY_LINE_HEIGHT)} !important; 
-    ${setWhiteFontFaceIfBlackBackground(bgColor)}}\n` : ''
+    ${inverseFontFaceColor(bgColor)}}\n` : ''
 
    
 }
@@ -89,20 +93,20 @@ exports.setBodyTextStyle=setBodyTextStyle
 
 /** SET BACKGROUND COLOR */
 const BACKGROUND_COLOR_ELEMENTS = [
-    `body.${OMOLAB_BODY_CLASS}`,
-    `body.${OMOLAB_BODY_CLASS} div.header-top`,
-    `body.${OMOLAB_BODY_CLASS} div.header-main`,
-    `body.${OMOLAB_BODY_CLASS} div.footer-wrap`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-45`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-98`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-44`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-141`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-142`,
-    `body.${OMOLAB_BODY_CLASS} div.block-grey-bg`
+    ' ',
+    `div.header-top`,
+    `div.header-main`,
+    `div.footer-wrap`,
+    `section#block-block-45`,
+    `section#block-block-98`,
+    `section#block-block-44`,
+    `section#block-block-141`,
+    `section#block-block-142`,
+    `div.block-grey-bg`
 ]
 exports.BACKGROUND_COLOR_ELEMENTS=BACKGROUND_COLOR_ELEMENTS;
 
-const setWhiteFontFaceIfBlackBackground = (bgColor) =>{
+const inverseFontFaceColor = (bgColor) =>{
     let is_black=false;
     let style_black = '';
     if(bgColor.trim() =='rgb(0, 0, 0)'){
@@ -110,22 +114,21 @@ const setWhiteFontFaceIfBlackBackground = (bgColor) =>{
         is_black = true
         style_black = 'color:white !important;'
     }
+    if(bgColor.trim() =='rgb(255, 255, 255)'){
+        console.log('color is black');
+        is_black = true
+        style_black = 'color:black !important;'
+    }
     return style_black;
 
 }
 
 const setBackGroundColor = (applyToElements, bgColor) => {
 
-    return bgColor ? applyToElements.join(',') + `{ background-color: ${bgColor} !important; ${setWhiteFontFaceIfBlackBackground(bgColor)}}\n`:'';
+    return bgColor ? appendBodyToCssSelector(applyToElements).join(',') + `{ background-color: ${bgColor} !important; ${inverseFontFaceColor(bgColor)}}\n`:'';
 }
 exports.setBackGroundColor=setBackGroundColor
-/** 
-const BACKGROUND_COLOR_ELEMENTS_IMPORTANT = [
-    `body.${OMOLAB_BODY_CLASS} section#block-block-44.block.block-block.poslovnice-bankomati.block-grey-bg.pb-block-grey-bg *`,
-    `body.${OMOLAB_BODY_CLASS} section#block-block-44.block.block-block.poslovnice-bankomati.block-grey-bg.pb-block-grey-bg > *`,
-]
-const setBackGroundColorImportant = (applyToElements, bgColor) => bgColor ? applyToElements.join(',') + `{ background-color: ${bgColor} !important }\n` : ''
-*/
+
 
 
 
