@@ -32,13 +32,13 @@
               <strong>Naslov</strong> 
               <!-- <label>SIZE</label><input type="number" id="hsize" min="10" max="35"> -->
               <!-- <div style="align-content: center"> -->
-              <input type="image" src="/img/FONT-SIZE-ICON.png"><input type="number" id="hsize" min="10" max="35">
+              <input type="image" src="/img/FONT-SIZE-ICON.png"><input type="number" id="hsize" min="10" max="35" value="16">
             
               <!-- <label>SPACING</label><input type="number" id="hspacing" min="-1" max="5" step="0.5"> -->
 
-              <input type="image" src="/img/LETTER-SPACING-ICON.png" ><input type="number" id="hspacing" min="-1" max="5" step="0.5">
+              <input type="image" src="/img/LETTER-SPACING-ICON.png" ><input type="number" id="hspacing" min="-1" max="5" step="0.5"  value="0">
               <!-- <label>L_HEIGHT</label><input type="number" id="hheight" min="1.6" max="2" step="0.1"> -->
-              <input type="image" src="/img/LINE-HEIGHT-ICON.png" ><input type="number" id="hheight" min="20" max="25" step="0.3">
+              <input type="image" src="/img/LINE-HEIGHT-ICON.png" ><input type="number" id="hheight" min="20" max="25" step="0.3" value="20">
               <select id="header_ff">
                 <option value="Roboto,sans-serif">Postojeći</option>
                 <option value="dLightOne">dLightOne</option>
@@ -58,9 +58,9 @@
               <!-- <label>SIZE</label><input type="number" id="bsize" min="10" max="35">
               <label>SPACING</label><input type="number" id="bspacing" min="-1" max="5" step="0.5">
               <label>L_HEIGHT</label><input type="number" id="bheight" min="1.6" max="2" step="0.1"> -->
-              <input type="image" src="/img/FONT-SIZE-ICON.png"><input type="number" id="bsize" min="10" max="35">
-              <input type="image" src="/img/LETTER-SPACING-ICON.png" ><input type="number" id="bspacing" min="-1" max="5" step="0.5">
-              <input type="image" src="/img/LINE-HEIGHT-ICON.png" ><input type="number" id="bheight" min="20" max="25" step="0.3">
+              <input type="image" src="/img/FONT-SIZE-ICON.png"><input type="number" id="bsize" min="10" max="35" value="13">
+              <input type="image" src="/img/LETTER-SPACING-ICON.png" ><input type="number" id="bspacing" min="-1" max="5" step="0.5" value="0">
+              <input type="image" src="/img/LINE-HEIGHT-ICON.png" ><input type="number" id="bheight" min="20" max="25" step="0.3" value="20">
               <select id="body_ff">
                 <option value="Roboto,sans-serif">Postojeći</option>
                 <option value="dLightOne">dLightOne</option>
@@ -76,12 +76,17 @@
             </div>
           </div>
           <div class="omoControl">
-            <strong>Ignite</strong><input type="checkbox" id="applyOverides">
+            <!-- <strong>Ignite</strong><input type="checkbox" id="applyOverides"> -->
+            <label class="switch">
+              <input type="checkbox" id="applyOverides">
+              <span class="slider round"></span>
+            </label>
+            
             <!-- <div><input type="text" id="omoConf"> <input type="image" src="/img/SAVE-ICON.png" style="width: 30px; height: 30px;" ></input><select id="savedConf"><option></option></select></div> -->
           </div>
           <div class="omoSave">
             <!-- <input type="text" id="omoConf"> <input type="image" src="/img/SAVE-ICON.png"  ></input><select id="savedConf"><option></option></select> -->
-            <input type="image" src="/img/SAVE-ICON.png" style="width: 30px; height: 30px;" id="saveConf" >
+            <input type="image" src="/img/SAVE-ICON.png" style="width: 35px; height: 35px;" id="saveConf" >
           </div>
         </div>
       

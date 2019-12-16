@@ -1,6 +1,12 @@
 import html from './omoWidget.html';
 import './omoWidget.css';
 import config from '../config'
+import { ResizeSensor } from 'css-element-queries';
+var ElementQueries = require('css-element-queries/src/ElementQueries');
+
+ElementQueries.listen();
+
+
 
 let elements = [];
 let body;
@@ -13,7 +19,7 @@ const readCookie = () => {
         return el.startsWith(' ' + config.OMO_WIDGET_COOKIE)
     })
     console.log(cookie);
-    if (cookie) {
+    if (cookie.length > 0) {
         let data = cookie[0].split("=")[1];
         console.log(data);
         setUserAppliedValues(JSON.parse(data))
@@ -36,6 +42,8 @@ const saveConf = (event) => {
 
 }
 
+
+
 const toogleSaveConf = () => { 
     let image = document.getElementById('saveConf');
     image.src = "/img/SAVE-ACTIVE-ICON.png"
@@ -55,6 +63,7 @@ function addOmolabClassScopeToBody(doc) {
         body.classList.add(config.OMOLAB_BODY_CLASS);
     }
 }
+
 
 export function show(text) {
     // convert plain HTML string into DOM elementss
@@ -78,18 +87,17 @@ export function show(text) {
     toggler.toogle();
     addEventHandler('headerOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
     addEventHandler('bodyOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
-    addEventHandler('omoControl', 'click', ['INPUT'], applyOmoStyles);
+    addEventHandler('switch', 'click', ['INPUT'], applyOmoStyles);
     addEventHandler('omoClose', 'click', ['IMG'], toggler.toogle)
     addEventHandler('bgColor', 'click', ['DIV'], clickCollor);
     addEventHandler('omoSave', 'click', ['INPUT'], saveConf);
 
+    var senzor = new ResizeSensor(document.getElementsByClassName('title')[0], function(){
+        var that = this;
+        console.log('resize happend' + that);
+    });
     readCookie();
-
-
 }
-
-
-
 
 
 /** applys event handler to given element */
@@ -100,12 +108,8 @@ const addEventHandler = (element, event, selector, handler) => {
             element.addEventListener(event, handler);
             console.log(element + ' ' + element.nodeName + ' ' + event + ' ' + selector);
         }
-
-
     });
 }
-
-
 
 /** COLLOR PICKER REFACTOR */
 const collorStack = [];
@@ -125,7 +129,7 @@ const clickCollor = (event) => {
         id: event.target.id                              // id iz matrice boja
     })
 
-    console.log('click Collor' + event.target.style.cssText)
+    console.log('click Collor' + event.target.style.cssText + getAppliedCollor())
     applyOmoStyles();
 }
 
@@ -219,23 +223,28 @@ const getUserAppliedValues = () => {
 
 
 function generateOmoStyle() {
+    const startTime = performance.now();
     let values = getUserAppliedValues()
     // ako je odabrao bez boje ili boja nije odabrana napravi bez boje
     let style = values.bgColor == 'transparent' ? '' : config.setBackGroundColor(config.BACKGROUND_COLOR_ELEMENTS, values.bgColor)
 
     style+=config.IMPORTANT_ELEMENTS_SELECTOR;
     // style += setBackGroundColorImportant(BACKGROUND_COLOR_ELEMENTS_IMPORTANT,bgCol)
-    let headerStyle = config.setHeaderStyle(config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight);
+    let headerStyle = config.setHeaderStyle(config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight,values.bgColor);
     style += headerStyle;
 
-    let customHeaderStyle = config.setHeaderStyle(config.transformHeaderStyles(config.CUSTOM_HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight)
+    let customHeaderStyle = config.setHeaderStyle(config.transformHeaderStyles(config.CUSTOM_HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight,values.bgColor)
     style += customHeaderStyle;
-    let bodyStyle = config.setBodyTextStyle(config.BODY_STYLE, values.bodyFontFamily, values.bodyFontSize, values.bodyFontSpacing, values.bodyLineHeight);
+    
+    let bodyStyle = config.setBodyTextStyle(config.BODY_STYLE, values.bodyFontFamily, values.bodyFontSize, values.bodyFontSpacing, values.bodyLineHeight,values.bgColor);
     style += bodyStyle;
+    
     let widgetStyle = config.setOmoWidgetStyle(config.OMO_WIDGET_ELEMENTS, config.omoWidgetStyle);
     style += widgetStyle
 
     console.log(style);
+    const duration = performance.now() - startTime;
+    console.log(`generateOmoStyle took ${duration}ms`);
     return style;
 }
 
@@ -257,17 +266,27 @@ var forceRedraw = function (element) {
 }
 
 function getLastAppliedStyleSheet() {
+    const startTime = performance.now();
     var children = document.getElementsByTagName("head")[0];
     var children_len = children.getElementsByTagName('style').length
     var style = children.getElementsByTagName('style')[children_len - 1];
+    const duration = performance.now() - startTime;
+    console.log(`getLastAppliedStyleSheet took ${duration}ms`);
     return style;
 }
 
 
 const applyOverides = () => {
-    if (document.getElementById('omolab_style_w')) {
+  
+    var omo_style = document.getElementById('omolab_style_w')
+    
+    if (omo_style) {
         var style = getLastAppliedStyleSheet();
-        style.innerHTML = generateOmoStyle();
+        const startTime = performance.now();
+        var html = generateOmoStyle();
+        style.innerHTML = html; //Promise.resolve().then(generateOmoStyle());//
+        const duration = performance.now() - startTime;
+        console.log(`style.innerHTM took ${duration}ms`);
         forceRedraw(style);
         return;
     }
@@ -275,7 +294,7 @@ const applyOverides = () => {
     css.type = 'text/css';
     css.id = 'omolab_style_w'
 
-    var style = generateOmoStyle();
+    var style = generateOmoStyle(); //Promise.resolve().then(generateOmoStyle());
     if (css.styleSheet)
         css.styleSheet.cssText = style
     else
@@ -283,6 +302,7 @@ const applyOverides = () => {
 
     /* Append style to the tag name */
     document.getElementsByTagName("head")[0].appendChild(css);
+   
 
 }
 
