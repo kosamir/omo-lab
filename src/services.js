@@ -1,4 +1,3 @@
 
-export function ping() {
-    return 'pong';
-}
+const ping = () => 'pong';// export function ping() {
+exports.ping = ping;

@@ -14,12 +14,12 @@ module.exports = (env) => {
         },
         devServer: {
             contentBase: bundleOutputDir,
-            host: "optimus", // Your Computer Name
+            host: "0.0.0.0", // Your Computer Name
             port: 8080
 
         },
         plugins: isDevBuild
-            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' },{from: 'pictures/', to:'img/'},{from: 'icons/', to:'img/'}])]
+            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' },{from: 'pictures/', to:'img/'},{from: 'icons/', to:'img/'},{from: 'config/', to:'config/'}])]
             : [new webpack.optimize.UglifyJsPlugin()],
         module: {
             rules: [

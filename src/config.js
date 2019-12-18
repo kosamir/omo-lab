@@ -1,135 +1,165 @@
+/* eslint-disable max-len */
+/* eslint-disable prefer-promise-reject-errors */
+/* eslint-disable vars-on-top */
+/* eslint-disable no-var */
 const IMPORTANT_ELEMENTS_SELECTOR = '*:not(img):not(:empty):not([aria-hidden="true"]):not([class*="icon"])';
-exports.IMPORTANT_ELEMENTS_SELECTOR=IMPORTANT_ELEMENTS_SELECTOR;
+exports.IMPORTANT_ELEMENTS_SELECTOR = IMPORTANT_ELEMENTS_SELECTOR;
 
+/** GENERATED OMO CLASS BODY */
 const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(Math.random() * 1000)}`;
-exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS
+exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS;
+
+/** COOKIE NAME */
 const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
-/**DEFAULT HEADER VALUES */
-const HEADER_LINE_HEIGHT='22.8571'
-const HEADER_FONT_SPACING='normal'
-const HEADER_FONT_SIZE='16'
+/**
+ * DEFAULT HEADER VALUES */
+// var HEADER_LINE_HEIGHT;
+// var HEADER_FONT_SPACING;
+// var HEADER_FONT_SIZE;
 
-/**DEFAULT BODY VALUES */
-const BODY_LINE_HEIGHT='22.8571'
-const BODY_FONT_SPACING='normal'
-const BODY_FONT_SIZE='16'
+/** DEFAULT BODY VALUES */
+// var BODY_LINE_HEIGHT;
+// var BODY_FONT_SPACING;
+// var BODY_FONT_SIZE;
 
-/**HEADER STYLES */
-const HEADER_STYLE_ELEMENTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-exports.HEADER_STYLE_ELEMENTS =  HEADER_STYLE_ELEMENTS;
+const COLOR_BLACK = 'rgb(0, 0, 0)';
+const COLOR_WHITE = 'rgb(255, 255, 255)';
 
-/**CUSTOM_HEADER_STYLES */
-const CUSTOM_HEADER_STYLE_ELEMENTS = [
-    'div.title', 
-    'section h2',
-    'h1.page-header',
-    'section#block-block-53',
-    'section#block-block-140',
-    'header#navbar'
-   ]  
+/** HEADER STYLES */
 
-exports.CUSTOM_HEADER_STYLE_ELEMENTS= CUSTOM_HEADER_STYLE_ELEMENTS;
-const addPixels = (value) => value +'px' 
+var HEADER_STYLE_ELEMENTS;
+exports.HEADER_STYLE_ELEMENTS = HEADER_STYLE_ELEMENTS;
 
-const transformHeaderStyles = (elements) => elements.map(element => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `)
+/** CUSTOM_HEADER_STYLES */
+var CUSTOM_HEADER_STYLE_ELEMENTS;
+exports.CUSTOM_HEADER_STYLE_ELEMENTS = CUSTOM_HEADER_STYLE_ELEMENTS;
 
-const setHeaderStyle = (style, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight, bgColor) => {
-    return style + `{ font-family:${headerFontFamily} !important; 
-    font-size:${headerFontSize ? addPixels(headerFontSize) : addPixels(HEADER_FONT_SIZE)} !important; 
-    letter-spacing:${headerFontSpacing ? addPixels(headerFontSpacing) : addPixels(HEADER_FONT_SPACING)} !important; 
-    line-height:${headerLineHeight ? addPixels(headerLineHeight) : addPixels(HEADER_LINE_HEIGHT) } !important;
-    ${inverseFontFaceColor(bgColor)}}\n
-    `}
+const addPixelsToNumber = (value) => `${value}px`;
 
-exports.transformHeaderStyles= transformHeaderStyles;
-exports.setHeaderStyle = setHeaderStyle
+const transformHeaderStyles = (elements) => elements.map((element) => `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `);
+
+/**
+ * INVERT FONT FACE COLLOR
+ * @param {} bgColor
+ */
+const inverseFontFaceColor = (bgColor) => {
+  let styleBlack = '';
+  if (bgColor.trim() === COLOR_BLACK) {
+    // console.log('Bgcolor is black');
+    styleBlack = 'color:white !important;';
+  }
+  if (bgColor.trim() === COLOR_WHITE) {
+    // console.log('Bgcolor is white');
+    styleBlack = 'color:black !important;';
+  }
+  return styleBlack;
+};
+
+const setHeaderStyle = (headerStyleElements, headerFontFamily, headerFontSize, headerFontSpacing, headerLineHeight, bgColor) => {
+  const headerStyle = `${headerStyleElements}{ 
+    font-family:${headerFontFamily} !important; 
+    font-size:${headerFontSize ? addPixelsToNumber(headerFontSize) : addPixelsToNumber(this.HEADER_FONT_SIZE)} !important; 
+    letter-spacing:${headerFontSpacing ? addPixelsToNumber(headerFontSpacing) : addPixelsToNumber(this.HEADER_FONT_SPACING)} !important; 
+    line-height:${headerLineHeight ? addPixelsToNumber(headerLineHeight) : addPixelsToNumber(this.HEADER_LINE_HEIGHT)} !important;
+    ${inverseFontFaceColor(bgColor)}}\n`;
+  return headerStyle;
+};
+
+exports.transformHeaderStyles = transformHeaderStyles;
+exports.setHeaderStyle = setHeaderStyle;
 
 
 /** WIDGET STYLE */
-const OMO_WIDGET_ELEMENTS = [
-    // `body.${OMOLAB_BODY_CLASS} div.omo-widget-container > .omoContainer > .omoBox > .omoElements > .globalOptions > .bgColor > :not(#noBackground)`,
-    `div.omo-widget-container *`,
+var OMO_WIDGET_ELEMENTS;
+exports.OMO_WIDGET_ELEMENTS = OMO_WIDGET_ELEMENTS;
 
-]
-exports.OMO_WIDGET_ELEMENTS = OMO_WIDGET_ELEMENTS
+const appendBodyToCssSelector = (elements) => elements.map((element) => `body.${OMOLAB_BODY_CLASS} ${element}`);
 
-const appendBodyToCssSelector = (elements) => elements.map(element => `body.${OMOLAB_BODY_CLASS} ${element}`)
-
-const omoWidgetStyle ='{ color:black }\n' 
-//'{ font-family: Arial !important; font-size:12px !important;  letter-spacing:normal !important; line-height: 1.6 !important; background-color: #7abf43;}\n'
-exports.omoWidgetStyle = omoWidgetStyle
+const omoWidgetStyle = '{ color:black }\n';
+exports.omoWidgetStyle = omoWidgetStyle;
 
 /** SET WIDGET STYLE */
-const setOmoWidgetStyle = (omoWidgetElements, omoWidgetStyle) => { 
-    return appendBodyToCssSelector(omoWidgetElements).join(',') + ' ' + omoWidgetStyle 
-}
+const setOmoWidgetStyle = (omoWidgetElements, style) => `${appendBodyToCssSelector(omoWidgetElements).join(',')} ${style}`;
+exports.setOmoWidgetStyle = setOmoWidgetStyle;
 
-exports.setOmoWidgetStyle=setOmoWidgetStyle
+
+/** CUSTOM ELEMENTS TO TWEAK CSS DEFINED HERE
+ * ( OVERFLOW ETC) */
+// var ELEMENTS_TO_TWEAK_STYLE;
+
+const BODY_STYLE_TWEAKS = (body, elementsToTweak) => {
+  var arr = [];
+  elementsToTweak.forEach((element) => {
+    arr.push(`body.${body} ${element.element} {${element.style}}`);
+  });
+  return arr;
+};
+
+const TWEAK = () => BODY_STYLE_TWEAKS(OMOLAB_BODY_CLASS, this.ELEMENTS_TO_TWEAK_STYLE).join(',').replace(',', '\n');
+exports.TWEAK = TWEAK;
 
 /** SET BODY STYLE */
-const BODY_STYLE = [
-   
-    // `body.${OMOLAB_BODY_CLASS} *` ,
-    `div.body `,
-    `div.field-content `,
-    `section.content-fullwidth-second *`,
-    `div.region-footer-first *`
-    // `not:(#omo)`
-]
-exports.BODY_STYLE= BODY_STYLE;
+var BODY_STYLE;
+exports.BODY_STYLE = BODY_STYLE;
 
-/** set OMO STYLE ON SELECTED  BODY ELEMENTS */
-const setBodyTextStyle = (_Style, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight, bgColor) => {
-    return bodyFontFamily ? appendBodyToCssSelector(_Style).join(',') + `{ font-family:${bodyFontFamily} !important; 
-    font-size:${bodyFontSize ? addPixels(bodyFontSize) : addPixels(BODY_FONT_SIZE)} !important; 
-    letter-spacing:${bodyFontSpacing ? addPixels(bodyFontSpacing)  : addPixels(BODY_FONT_SPACING)} !important; 
-    line-height:${bodyLineHeight ? addPixels(bodyLineHeight) : addPixels(BODY_LINE_HEIGHT)} !important; 
-    ${inverseFontFaceColor(bgColor)}}\n` : ''
+/** SET OMO STYLE ON SELECTED  BODY ELEMENTS */
+const setBodyTextStyle = (bodyElements, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight, bgColor) => {
+  const bodyTextStyle = bodyFontFamily ? `${appendBodyToCssSelector(bodyElements).join(',')}{ 
+    font-family:${bodyFontFamily} !important; 
+    font-size:${bodyFontSize ? addPixelsToNumber(bodyFontSize) : addPixelsToNumber(this.BODY_FONT_SIZE)} !important; 
+    letter-spacing:${bodyFontSpacing ? addPixelsToNumber(bodyFontSpacing) : addPixelsToNumber(this.BODY_FONT_SPACING)} !important; 
+    line-height:${bodyLineHeight ? addPixelsToNumber(bodyLineHeight) : addPixelsToNumber(this.BODY_LINE_HEIGHT)} !important; 
+    ${inverseFontFaceColor(bgColor)}}\n` : '';
+  return bodyTextStyle;
+};
+exports.setBodyTextStyle = setBodyTextStyle;
 
-   
-}
-exports.setBodyTextStyle=setBodyTextStyle
-
-/** SET BACKGROUND COLOR */
-const BACKGROUND_COLOR_ELEMENTS = [
-    ' ',
-    `div.header-top`,
-    `div.header-main`,
-    `div.footer-wrap`,
-    `section#block-block-45`,
-    `section#block-block-98`,
-    `section#block-block-44`,
-    `section#block-block-141`,
-    `section#block-block-142`,
-    `div.block-grey-bg`
-]
-exports.BACKGROUND_COLOR_ELEMENTS=BACKGROUND_COLOR_ELEMENTS;
-
-const inverseFontFaceColor = (bgColor) =>{
-    let is_black=false;
-    let style_black = '';
-    if(bgColor.trim() =='rgb(0, 0, 0)'){
-        console.log('Bgcolor is black');
-        is_black = true
-        style_black = 'color:white !important;'
-    }
-    if(bgColor.trim() =='rgb(255, 255, 255)'){
-        console.log('Bgcolor is white');
-        is_black = true
-        style_black = 'color:black !important;'
-    }
-    return style_black;
-
-}
+/** SET BACKGROUND COLOR
+ *
+ * DEFINE ELEMENTS FOR BACKGROUND CHANGE COLLOR HERE
+ */
+var BACKGROUND_COLOR_ELEMENTS;
+exports.BACKGROUND_COLOR_ELEMENTS = BACKGROUND_COLOR_ELEMENTS;
 
 const setBackGroundColor = (applyToElements, bgColor) => {
-
-    return bgColor ? appendBodyToCssSelector(applyToElements).join(',') + `{ background-color: ${bgColor} !important; ${inverseFontFaceColor(bgColor)}}\n`:'';
-}
-exports.setBackGroundColor=setBackGroundColor
-
+  return bgColor ? `${appendBodyToCssSelector(applyToElements).join(',')} { background-color: ${bgColor} !important; ${inverseFontFaceColor(bgColor)}}\n` : '';
+};
+exports.setBackGroundColor = setBackGroundColor;
 
 
+// eslint-disable-next-line vars-on-top
+var fetch = require('node-fetch');
 
+const readConfigurationFromFile = (conf) => {
+  return new Promise((resolve, reject) => {
+    fetch(conf)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then((text) => {
+        // console.log(text.BACKGROUND_COLOR_ELEMENTS);
+        this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS;
+        this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS;
+        this.OMO_WIDGET_ELEMENTS = text.OMO_WIDGET_ELEMENTS;
+        this.ELEMENTS_TO_TWEAK_STYLE = text.ELEMENTS_TO_TWEAK_STYLE;
+        this.BODY_STYLE = text.BODY_STYLE;
+        this.BACKGROUND_COLOR_ELEMENTS = text.BACKGROUND_COLOR_ELEMENTS;
+        this.HEADER_LINE_HEIGHT = text.HEADER_LINE_HEIGHT;
+        this.HEADER_FONT_SPACING = text.HEADER_FONT_SPACING;
+        this.HEADER_FONT_SIZE = text.HEADER_FONT_SIZE;
+        this.BODY_LINE_HEIGHT = text.BODY_LINE_HEIGHT;
+        this.BODY_FONT_SPACING = text.BODY_FONT_SPACING;
+        this.BODY_FONT_SIZE = text.BODY_FONT_SIZE;
+        resolve('FINISHED LOADING STYLESHEET');
+      })
+      .catch((err) => {
+        reject(`${err} in file ${conf}`);
+      });
+  });
+};
+exports.readConfigurationFromFile = readConfigurationFromFile;

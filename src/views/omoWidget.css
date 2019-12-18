@@ -4,7 +4,6 @@
     src: url("../../fonts/woff/OmoTypeD-LightOne.woff");
 }
 
-
 @font-face {
     font-family: dMediumOne;
     src: url("../../fonts/woff/OmoTypeD-MediumOne.woff");
@@ -97,31 +96,6 @@
     border-radius: 50%;
   }
 
-/* .js-widget-overlay{
-    z-index: 10001; 
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    opacity: 0.8;
-    width: 100%;
-    height: 40;
-    background-color:transparent;
-    border: #333;
-}
-.js-widget-dialog{
-    position: fixed;
-    z-index: 10002;
-    background: #fff;
-    left: 50%;
-    top: 0%;
-    margin: 0 0 0 -120px;
-    width: auto;
-    height: auto;
-    padding: 10px 20px;
-    border: solid 1px #333
-} */
 .omo-widget-container{
     padding-right: 0px;
     width: 90%;
@@ -133,7 +107,7 @@
     height: 20px;
 }
 
-.omo-widget-container > *{
+.omo-widget-container > * {
     position: fixed;
     display: inline-block;
     width: 100%;
@@ -155,11 +129,23 @@
     /* border: solid 1px #333; */
     float: right;
 }
+.omoContainer  input[type="number"] {
+    vertical-align: middle;
+    padding: 0px 0px;
+    font-size: 10px;
+    width:40px;
+    height: 20px;
+   
+}
+
+.omoContainer input[type="image"] {
+    vertical-align: middle;
+    width:30px;
+    height: 30px;
+}
 
 .globalOptions{
-    border: dotted 1px rgb(51, 51, 51);
-   
-     
+    border: dotted 1px rgb(51, 51, 51);     
 }
 .icon{
    width: 30px; height: 30px;
@@ -196,7 +182,6 @@
 }
 .col-empty{
     vertical-align: top;
-    
     display: inline-flex;
     box-shadow: 0px 0px 0px 1px #D1D5D3;
     font-size: 12px;
@@ -220,24 +205,7 @@
     padding-left: 10px;
     padding-top: 5px;
    
-   
-    
 }
-
-.headerOptions  input[type="number"] {
-    vertical-align: middle;
-    font-size: 10px;
-    width:40px;
-    height: 20px;
-   
-}
-
-.headerOptions input[type="image"] {
-    vertical-align: middle;
-    width:30px;
-    height: 30px;
-}
-
 
 .bodyOptions{
     /* border: solid 1px rgb(192, 14, 14); */
@@ -245,17 +213,7 @@
     padding-top: 5px;
 }
 
-.bodyOptions input[type="number"] {
-    font-size: 10px;
-    width:40px;
-   
-    height: 20px;
-}
-.bodyOptions input[type="image"] {
-    vertical-align: middle;
-    width:30px;
-    height: 30px;
-}
+
 
 
 .omoControl{
@@ -272,10 +230,7 @@
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-
     float: left;
-    
-    
 }
 .omoSave input[type="text"] {
     font-size: 10px;
