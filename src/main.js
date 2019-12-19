@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { show } from './views/omoWidget';
+import showWidget from './views/omoWidget';
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 
@@ -20,7 +20,7 @@ function apiHandler(api, params) {
   switch (api) {
     // TODO: add API implementation
     case 'message':
-      show(params, configurations);
+      showWidget(params, configurations);
       break;
     default:
       console.warn(`No handler defined for ${api}`);
@@ -28,9 +28,8 @@ function apiHandler(api, params) {
 }
 
 function extendObject(a, b) {
-  for (let key in b) {
-    if (b.hasOwnProperty(key))
-      a[key] = b[key];
+  for (const key in b) {
+    if (b.hasOwnProperty(key)) { a[key] = b[key]; }
   }
   return a;
 }
@@ -48,7 +47,7 @@ function app(window) {
   const queue = globalObject.q;
   if (queue) {
     for (let i = 0; i < queue.length; i++) {
-      if (queue[i][0].toLowerCase() == 'init') {
+      if (queue[i][0].toLowerCase() === 'init') {
         configurations = extendObject(configurations, queue[i][1]);
         // console.log('Omo-Widget started', configurations);
       } else { apiHandler(queue[i][0], queue[i][1]); }
@@ -60,8 +59,6 @@ function app(window) {
   globalObject = apiHandler;
   globalObject.configurations = configurations;
 }
-
-
 
 
 app(window);

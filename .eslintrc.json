@@ -15,5 +15,13 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-unused-expressions": [
+           
+            {
+              "allowShortCircuit": "true",
+              "allowTernary": "true",
+              "allowTaggedTemplates": "true"
+            }
+        ]
     }
 }
