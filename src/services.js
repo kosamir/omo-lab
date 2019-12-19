@@ -1,3 +1,3 @@
 
-const ping = () => 'pong';// export function ping() {
+const ping = () => 'pong';
 exports.ping = ping;

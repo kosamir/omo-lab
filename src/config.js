@@ -13,22 +13,10 @@ exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS;
 const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
-/**
- * DEFAULT HEADER VALUES */
-// var HEADER_LINE_HEIGHT;
-// var HEADER_FONT_SPACING;
-// var HEADER_FONT_SIZE;
-
-/** DEFAULT BODY VALUES */
-// var BODY_LINE_HEIGHT;
-// var BODY_FONT_SPACING;
-// var BODY_FONT_SIZE;
-
 const COLOR_BLACK = 'rgb(0, 0, 0)';
 const COLOR_WHITE = 'rgb(255, 255, 255)';
 
 /** HEADER STYLES */
-
 var HEADER_STYLE_ELEMENTS;
 exports.HEADER_STYLE_ELEMENTS = HEADER_STYLE_ELEMENTS;
 
@@ -47,11 +35,9 @@ const transformHeaderStyles = (elements) => elements.map((element) => `body.${OM
 const inverseFontFaceColor = (bgColor) => {
   let styleBlack = '';
   if (bgColor.trim() === COLOR_BLACK) {
-    // console.log('Bgcolor is black');
     styleBlack = 'color:white !important;';
   }
   if (bgColor.trim() === COLOR_WHITE) {
-    // console.log('Bgcolor is white');
     styleBlack = 'color:black !important;';
   }
   return styleBlack;
@@ -142,7 +128,6 @@ const readConfigurationFromFile = (conf) => {
         return response.json();
       })
       .then((text) => {
-        // console.log(text.BACKGROUND_COLOR_ELEMENTS);
         this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS;
         this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS;
         this.OMO_WIDGET_ELEMENTS = text.OMO_WIDGET_ELEMENTS;
