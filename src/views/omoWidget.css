@@ -145,7 +145,8 @@
 }
 
 .globalOptions{
-    border: dotted 1px rgb(51, 51, 51);     
+    /* border: dotted 1px rgb(51, 51, 51);      */
+    padding-top: 5px;
 }
 .icon{
    width: 30px; height: 30px;
@@ -183,10 +184,12 @@
 .col-empty{
     vertical-align: top;
     display: inline-flex;
+    padding-left: 30px;
+    padding-top: 5px;
     box-shadow: 0px 0px 0px 1px #D1D5D3;
     font-size: 12px;
     /* height: 29px; */
-    width: 82px;
+    width: 168px;
     height: 30px;
     cursor: pointer;
     border: solid 1px rgb(51, 51, 51);
@@ -251,9 +254,22 @@
         width: 640px;
     }
     .omoClose {
-        /* padding-top: 15px; */
-        background-color: lightblue;
+        padding-top: 5px;
+        /* background-color: lightblue; */
         cursor: pointer;
-        float: left;
+        float: right;
       }
+      .col-empty{
+        vertical-align: top;
+        padding-left: 30px;
+        padding-top: 5px;
+        display: inline-flex;
+        box-shadow: 0px 0px 0px 1px #D1D5D3;
+        font-size: 12px;
+        /* height: 29px; */
+        width: 168px;
+        height: 30px;
+        cursor: pointer;
+        border: solid 1px rgb(51, 51, 51);
+    }
   }

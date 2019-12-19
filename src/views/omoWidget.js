@@ -114,17 +114,17 @@ const saveCookie = (text) => {
   document.cookie = `${name}=${value};`;
   console.log(`saved:${value}`);
 };
-
+/** 
 const toogleSaveConf = () => {
   const image = document.getElementById('saveConf');
   image.src = IMAGE_SAVE_ACTIVE;
-};
+};*/
 /** SAVES CURRENT CONFIGURATION REFACTOR */
 const saveConf = (event) => {
   const text = '';// document.getElementById('omoConf').value;
   if ((event.target.type === 'button' || event.target.type === 'image' || event.target.type === 'checkbox')) {
     saveCookie(text);
-    toogleSaveConf();
+    // toogleSaveConf();
   }
 };
 
