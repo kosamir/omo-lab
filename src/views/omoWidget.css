@@ -104,12 +104,12 @@
     box-shadow: 5px 5px 8px #888888
 }
 .omoBox{
-    /* border: dotted 1px rgb(51, 51, 51); */
+    border: dotted 1px rgb(51, 51, 51);
     background: url('/img/omo-banner.png');
     /* background-size: 100%; */
     background-repeat: no-repeat;
     background-position: 1000px;
-    width:90%; height: 150px;
+    width:90%; height: 155px;
     float: left;
 }
 

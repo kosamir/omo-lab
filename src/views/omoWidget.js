@@ -114,17 +114,12 @@ const saveCookie = (text) => {
   document.cookie = `${name}=${value};`;
   console.log(`saved:${value}`);
 };
-/** 
-const toogleSaveConf = () => {
-  const image = document.getElementById('saveConf');
-  image.src = IMAGE_SAVE_ACTIVE;
-};*/
+
 /** SAVES CURRENT CONFIGURATION REFACTOR */
 const saveConf = (event) => {
   const text = '';// document.getElementById('omoConf').value;
   if ((event.target.type === 'button' || event.target.type === 'image' || event.target.type === 'checkbox')) {
     saveCookie(text);
-    // toogleSaveConf();
   }
 };
 
@@ -162,11 +157,8 @@ function generateOmoStyle() {
   const tweaks = config.TWEAK();
   console.log(tweaks);
   style += tweaks;
-
   console.log(style);
-
   return style;
-
 }
 
 /** READ VALUE FROM SAVED COOKIE */
@@ -176,7 +168,10 @@ const readCookie = () => {
     const data = cookie[0].split('=')[1];
 
     setUserAppliedValues(JSON.parse(data));
-    applyOmoStyles();
+    if (getUserAppliedValues().checked) {
+      applyOverides()
+    }
+
   }
 };
 
@@ -199,7 +194,7 @@ const colorToogler = (event) => {
   });
 
   console.log(`click Collor${event.target.style.cssText}${getAppliedCollor()}`);
-  applyOmoStyles();
+  applyOmoStyles(event);
 };
 
 
@@ -306,6 +301,7 @@ const show = (text, configurations) => {
       readCookie();
     }).catch((err) => {
       console.log(err);
+      alert(err);
     });
 };
 export default show;
