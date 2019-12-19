@@ -15,10 +15,10 @@ const elements = [];
 let body;
 let toggler;
 /** COLLOR PICKER REFACTOR */
-const collorStack = [];
+const COLOR_STACK = [];
 
-const getAppliedCollor = () => (collorStack.length > 0 ? collorStack[collorStack.length - 1].color : 'transparent');
-const getAppliedCollorId = () => (collorStack.length > 0 ? collorStack[collorStack.length - 1].id : 'null');
+const getAppliedCollor = () => (COLOR_STACK.length > 0 ? COLOR_STACK[COLOR_STACK.length - 1].color : 'transparent');
+const getAppliedCollorId = () => (COLOR_STACK.length > 0 ? COLOR_STACK[COLOR_STACK.length - 1].id : 'null');
 
 const toogleWidget = () => {
   let open = true;
@@ -60,7 +60,7 @@ const setUserAppliedValues = (data) => {
     const color = selected.style.cssText;
     selected.style = `${color}; outline: 2px solid blue;`; // + 'outline: 2px solid blue;';
 
-    collorStack.push({
+    COLOR_STACK.push({
       element: selected, // element
       color: color.substring(color.indexOf(':') + 1, color.lastIndexOf(';')), // samo boja
       style: color, // kompletan stil
@@ -166,6 +166,7 @@ function generateOmoStyle() {
   console.log(style);
 
   return style;
+
 }
 
 /** READ VALUE FROM SAVED COOKIE */
@@ -181,17 +182,16 @@ const readCookie = () => {
 
 
 /** COLLOR PICKER REFACTOR */
-// const collorStack = [];
 
-const clickCollor = (event) => {
-  if (collorStack.length > 0) {
-    const obj = collorStack.pop();
+const colorToogler = (event) => {
+  if (COLOR_STACK.length > 0) {
+    const obj = COLOR_STACK.pop();
     obj.element.style.cssText = obj.style;
   }
   const color = event.target.style.cssText;
   event.target.style = `${color}; outline: 2px solid blue;`;
 
-  collorStack.push({
+  COLOR_STACK.push({
     element: event.target, // element
     color: color.substring(color.indexOf(':') + 1, color.lastIndexOf(';')), // samo boja
     style: color, // kompletan stil
@@ -237,7 +237,6 @@ const applyOverides = () => {
   const css = document.createElement('style');
   css.type = 'text/css';
   css.id = 'omolab_style_w';
-
   style = generateOmoStyle();
   if (css.styleSheet) {
     css.styleSheet.cssText = style;
@@ -247,6 +246,7 @@ const applyOverides = () => {
 
   /* Append style to the tag name */
   document.getElementsByTagName('head')[0].appendChild(css);
+
 };
 
 
@@ -266,8 +266,6 @@ function applyOmoStyles(event) {
   check ? applyOverides() : removeOverides();
   saveConf(event);
 }
-
-
 
 
 const show = (text, configurations) => {
@@ -292,7 +290,7 @@ const show = (text, configurations) => {
   addEventHandler('bodyOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
   addEventHandler('switch', 'click', ['INPUT'], applyOmoStyles);
   addEventHandler('omoClose', 'click', ['IMG'], toggler.toogle);
-  addEventHandler('bgColor', 'click', ['DIV'], clickCollor);
+  addEventHandler('bgColor', 'click', ['DIV'], colorToogler);
   addEventHandler('omoSave', 'click', ['INPUT'], saveConf);
 
   config.readConfigurationFromFile(configurations.config)

@@ -57,7 +57,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
                 js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
                 js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
             }(window, document, 'script', 'mw', '/OmoWidget.js'));
-            mw('init', { someConfiguration: 42, url: "api-nesto" });
+            mw('init', { config: "config/config_otp.json" });
             mw('message', 'Hello from OmoWidget');
         </script>
         <div class="omo-widget-container"></div>
