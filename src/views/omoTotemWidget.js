@@ -84,7 +84,7 @@ function generateOmoStyle() {
     console.log(style);
     return style;
 }
-
+// ???
 const higlightSelections = (userData) => {
     if (userData.bodyFontSize !== config.BODY_FONT_SIZE) {
         let fontSize = document.getElementById('font');
@@ -134,15 +134,10 @@ const readCookie = () => {
         var userData = getUserAppliedValues();
         // higlightSelections(userData);
         if (userData.checked) {
-            alert('from cookie')
-            // todo power all buttons that were selected!
             var main = document.getElementById('ignite')
             main.click.apply(main);
 
             applyOverides()
-        } else {
-            // removeOverides()
-            alert('remove overides')
         }
 
     }
@@ -228,7 +223,7 @@ const show = (text, configurations) => {
         powerToggler
     );
     document.getElementById("parent").addEventListener('click', mainToogler.toogle);
-
+    /** FONT SIZE TOOGLER */
     var fontSizeToogler = tooglerMain(document.getElementById("font"),
         'omo-totem-font-size-choose',
         'omo-totem-font-size-on',
@@ -239,7 +234,7 @@ const show = (text, configurations) => {
         document.getElementById('totem_bsize'));
 
     document.getElementById("font").addEventListener('click', fontSizeToogler.toogle);
-
+    /** MAIN FONT TYPE TOOGLER */
     var fontTypeToogler = tooglerMain(document.getElementById("font-type"),
         'omo-totem-font-type-choose',
         'omo-totem-font-type-on',
@@ -360,14 +355,15 @@ const show = (text, configurations) => {
             document.getElementById('totem_font_weight').value = config.BODY_FONT_WEIGHT;
             document.getElementById('totem_bspacing').value = config.BODY_FONT_SPACING;
             document.getElementById('totem_bheight').value = config.BODY_LINE_HEIGHT;
-
+            /** FONT SIZE UP/DOWN TOOGLER */
             var toogleSize = sizeToogler(parseInt(config.BODY_FONT_SIZE), parseInt(config.BODY_FONT_SIZE_MAX), 1, document.getElementById('totem_bsize'));
             document.getElementById('font-size-up').addEventListener('click', toogleSize.up) //applyOmoStylesTotem
             document.getElementById('font-size-down').addEventListener('click', toogleSize.down) //applyOmoStylesTotem
-
+            /** LINE SPACING UP/DOWN TOOGLER */
             var lineSpacingToogler = sizeToogler(parseInt(config.BODY_LINE_HEIGHT), parseInt(config.BODY_LINE_HEIGHT_MAX), 0.05, document.getElementById('totem_bheight'));
             document.getElementById('line-spacing-up').addEventListener('click', lineSpacingToogler.up)//applyOmoStylesTotem
             document.getElementById('line-spacing-down').addEventListener('click', lineSpacingToogler.down)//applyOmoStylesTotem
+            /** SOME DEFAULT VALUES */
             DEFAULT_TOTEM_VALUES.push(
                 { 'id': 'totem_body_ff', 'value': config.BODY_FONT_FAMILY })
             DEFAULT_TOTEM_VALUES.push(
@@ -380,10 +376,7 @@ const show = (text, configurations) => {
                 { 'id': 'totem_bheight', 'value': config.BODY_LINE_HEIGHT })
             DEFAULT_TOTEM_VALUES.push(
                 { 'id': 'selectedBackground', 'value': config.DEFAULT_BACKGROUND })
-            // config.BACKGROUND_COLOR_ELEMENTS.forEach(el => {
-            //     let element = el.substring(el.indexOf('.') !== -1 ? el.indexOf('.') + 1 : el.indexOf('#') + 1)
-            //     alert(document.getElementsByClassName(element)[0].style.backgroundColor);
-            // })
+
             readCookie();
         }).catch((err) => {
             console.log(err);
@@ -426,7 +419,7 @@ const FONT_WEIGHT_CHOOSER = [
     // { id: "Black", style: "Black", value: "Black" }
 
 ]
-
+/** tu ce se zapravo ucitavati slova s razlicitm proredima, za sad brojevi */
 const FONT_SPACING = [
     { id: "fontSpacingEmpty", style: "fontSpacingEmpty", value: '0' },
     { id: 'fontSpacingOne', style: 'fontSpacingOne', value: '1.25' },
@@ -435,8 +428,7 @@ const FONT_SPACING = [
     { id: 'fontSpacingFour', style: 'fontSpacingFour', value: '2' }
 
 ]
-// ovo uopce neam smisla .. nema sajza SLAZE SE IME FONTA!!!! od djelova
-//!!!!!!!!???????
+/** SIZE UP DOWN TOOGLER */
 const sizeToogler = (_start, _end, _step, _el) => {
     let start = _start;
     let end = _end;
@@ -458,10 +450,11 @@ const sizeToogler = (_start, _end, _step, _el) => {
     }
 
 }
+/** ARRAY FOR DEFAULT CONFIG VALUES FILLED ON WIDGET LOAD */
 const DEFAULT_TOTEM_VALUES = [
 
 ]
-
+/** PICTURE TOOGLER FOR 3 ICONS HAND i.e font type, line spacing */
 const pictureToogler = (el, choose, _hidden) => {
     let num_of_fonts = 0;
     let element = el;
@@ -487,7 +480,7 @@ const pictureToogler = (el, choose, _hidden) => {
         get: () => hidden.value //chooser[Math.abs(num_of_fonts)]
     }
 }
-
+/** MAIN WIDGET ON/OFF TOOGLER */
 const widgetOnOffToggler = (el, css_close, css_open, _hidden) => {
     let is_open = false;
     let element = el;
@@ -513,7 +506,7 @@ const widgetOnOffToggler = (el, css_close, css_open, _hidden) => {
         isOpen: () => is_open
     }
 }
-
+/** COLLOR SCHEME TOOGLER */
 const collorToogler = (element, css_open, css_close) => {
     let is_selected = false;
     return {
@@ -537,7 +530,7 @@ const collorToogler = (element, css_open, css_close) => {
 }
 
 /**
- * tu pocinje totem
+ * MAIN TOTEM TOOGLER
  */
 const tooglerMain = (element, parent_open_style, parent_close_style, child_elements, el_hidden, powerToogler) => {
     let is_open = false;
@@ -556,12 +549,6 @@ const tooglerMain = (element, parent_open_style, parent_close_style, child_eleme
                         console.log(main.getAttribute('class'));
                         if (main.getAttribute('class') === el.choose) {
                             main.click.apply(main);
-                            // if (el.children && el.children.length > 0) {
-                            //     el.children.forEach(e => {
-                            //         let ee = document.getElementById(e.id);
-                            //         ee.setAttribute('style', 'display:none')
-                            //     })
-                            // }
                             main.setAttribute('class', el.off)
                         }
                     }
@@ -577,15 +564,8 @@ const tooglerMain = (element, parent_open_style, parent_close_style, child_eleme
                         console.log(main.getAttribute('class'));
                         if (main.getAttribute('class') === el.choose) {
                             main.click.apply(main);
-                            // if (el.children && el.children.length > 0) {
-                            //     el.children.forEach(e => {
-                            //         var ee = document.getElementById(e.id);
-                            //         ee.setAttribute('style', 'display:none')
-                            //     })
-                            // }
-
                             main.setAttribute('class', el.off)
-                            // alert('should reset value' + el.hidden);
+                            /** IF NOT SELECTED RESTORE DEFAULT VALUE FROM CONFIGURATION */
                             let def = DEFAULT_TOTEM_VALUES.filter(e => el.hidden === e.id)[0].value
                             document.getElementById(el.hidden).value = def
                             applyOverides()

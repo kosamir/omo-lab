@@ -1,4 +1,5 @@
 {
+    "DEFAULT_BACKGROUND": "transparent",
     "HEADER_LINE_HEIGHT": "23",
     "HEADER_FONT_SPACING": "0",
     "HEADER_FONT_SIZE": "16",
