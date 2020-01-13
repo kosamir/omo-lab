@@ -4,7 +4,7 @@
     "HEADER_FONT_SIZE": "16",
     "BODY_LINE_HEIGHT": "23",
     "BODY_FONT_SPACING": "0",
-    "BODY_FONT_SIZE": "16",
+    "BODY_FONT_SIZE": "19",
     "HEADER_STYLE_ELEMENTS": [
         "h1",
         "h2",
@@ -19,10 +19,7 @@
     ],
     "ELEMENTS_TO_TWEAK_STYLE": [],
     "BODY_STYLE": [
-        "div.title *",
-        "div.post-text *",
-        "pre.default",
-        "div.show-votes *"
+        "div.title *"
     ],
     "BACKGROUND_COLOR_ELEMENTS": [
         " "

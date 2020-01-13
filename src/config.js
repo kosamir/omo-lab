@@ -13,9 +13,11 @@ exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS;
 const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
-const COLOR_BLACK = 'rgb(0, 0, 0)';
-const COLOR_WHITE = 'rgb(255, 255, 255)';
+const COLOR_BLACK = '#231F20';
+const COLOR_WHITE = '#EFF3EE';
 
+var BODY_FONT_FAMILY;
+exports.BODY_FONT_FAMILY;
 /** HEADER STYLES */
 var HEADER_STYLE_ELEMENTS;
 exports.HEADER_STYLE_ELEMENTS = HEADER_STYLE_ELEMENTS;
@@ -91,12 +93,13 @@ var BODY_STYLE;
 exports.BODY_STYLE = BODY_STYLE;
 
 /** SET OMO STYLE ON SELECTED  BODY ELEMENTS */
-const setBodyTextStyle = (bodyElements, bodyFontFamily, bodyFontSize, bodyFontSpacing, bodyLineHeight, bgColor) => {
+const setBodyTextStyle = (bodyElements, bodyFontFamily, bodyFontWeight, bodyFontSize, bodyFontSpacing, bodyLineHeight, bgColor) => {
   const bodyTextStyle = bodyFontFamily ? `${appendBodyToCssSelector(bodyElements).join(',')}{ 
     font-family:${bodyFontFamily} !important; 
     font-size:${bodyFontSize ? addPixelsToNumber(bodyFontSize) : addPixelsToNumber(this.BODY_FONT_SIZE)} !important; 
+    font-weight:${bodyFontWeight} !important;
     letter-spacing:${bodyFontSpacing ? addPixelsToNumber(bodyFontSpacing) : addPixelsToNumber(this.BODY_FONT_SPACING)} !important; 
-    line-height:${bodyLineHeight ? addPixelsToNumber(bodyLineHeight) : addPixelsToNumber(this.BODY_LINE_HEIGHT)} !important; 
+    line-height:${bodyLineHeight ? bodyLineHeight : this.BODY_LINE_HEIGHT} !important; 
     ${inverseFontFaceColor(bgColor)}}\n` : '';
   return bodyTextStyle;
 };
@@ -128,22 +131,32 @@ const readConfigurationFromFile = (conf) => {
         return response.json();
       })
       .then((text) => {
+        this.BODY_FONT_FAMILY = text.BODY_FONT_FAMILY || 'Roboto,sans-serif'
+
         this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS
         this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS
         this.OMO_WIDGET_ELEMENTS = text.OMO_WIDGET_ELEMENTS
         this.ELEMENTS_TO_TWEAK_STYLE = text.ELEMENTS_TO_TWEAK_STYLE
         this.BODY_STYLE = text.BODY_STYLE
         this.BACKGROUND_COLOR_ELEMENTS = text.BACKGROUND_COLOR_ELEMENTS
+
         this.HEADER_LINE_HEIGHT = text.HEADER_LINE_HEIGHT || 0;
         this.HEADER_FONT_SPACING = text.HEADER_FONT_SPACING || 20;
         this.HEADER_FONT_SIZE = text.HEADER_FONT_SIZE || 20;
         this.BODY_LINE_HEIGHT = text.BODY_LINE_HEIGHT || 0;
+        this.BODY_LINE_HEIGHT_MAX = text.BODY_LINE_HEIGHT_MAX || 40;
         this.BODY_FONT_SPACING = text.BODY_FONT_SPACING || 0;
         this.BODY_FONT_SIZE = text.BODY_FONT_SIZE || 13;
-        if ([this.HEADER_STYLE_ELEMENTS, this.BODY_STYLE, this.BACKGROUND_COLOR_ELEMENTS, this.OMO_WIDGET_ELEMENTS, this.CUSTOM_HEADER_STYLE_ELEMENTS].includes(undefined)) {
+        this.BODY_FONT_SIZE_MAX = text.BODY_FONT_SIZE_MAX || 30;
+        this.BODY_FONT_WEIGHT = text.BODY_FONT_WEIGHT || 'normal';
+        this.DEFAULT_BACKGROUND = text.DEFAULT_BACKGROUND || '#FFF'
+        if ([this.HEADER_STYLE_ELEMENTS,
+        this.BODY_STYLE,
+        this.BACKGROUND_COLOR_ELEMENTS,
+        this.OMO_WIDGET_ELEMENTS,
+        this.CUSTOM_HEADER_STYLE_ELEMENTS].includes(undefined)) {
           throw Error(`HEADER_STYLE_ELEMENTS,CUSTOM_HEADER_STYLE_ELEMENTS, OMO_WIDGET_ELEMENTS,BODY_STYLE, BACKGROUND_COLOR_ELEMENTS are mandatory!!!`);
         }
-
         resolve('FINISHED LOADING STYLESHEET');
       })
       .catch((err) => {

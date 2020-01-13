@@ -15,23 +15,22 @@
     ],
     "CUSTOM_HEADER_STYLE_ELEMENTS": [
         "div#question-header *"
-        
     ],
     "OMO_WIDGET_ELEMENTS": [
         "div.omo-widget-container *"
     ],
-    "ELEMENTS_TO_TWEAK_STYLE": [
-       
-    ],
+    "ELEMENTS_TO_TWEAK_STYLE": [],
     "BODY_STYLE": [
         "div.question *",
         "div.post-text *",
         "pre.default",
         "div.show-votes *"
-        
     ],
     "BACKGROUND_COLOR_ELEMENTS": [
-        " ","div.post-layout *","div#content *","div.grid *","div.s-sidebarwidget"
-       
+        " ",
+        "div.post-layout *",
+        "div#content *",
+        "div.grid *",
+        "div.s-sidebarwidget"
     ]
 }

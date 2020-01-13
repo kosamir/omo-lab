@@ -19,25 +19,25 @@ module.exports = (env) => {
 
         },
         plugins: isDevBuild
-            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' },{from: 'pictures/', to:'img/'},{from: 'icons/', to:'img/'},{from: 'config/', to:'config/'}])]
+            ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' }, { from: 'pictures/', to: 'img/' }, { from: 'icons/', to: 'img/' }, { from: 'config/', to: 'config/' }, { from: 'fonts/woff', to: 'fonts/woff' }])]
             : [new webpack.optimize.UglifyJsPlugin()],
         module: {
             rules: [
                 { test: /\.html$/i, use: 'html-loader' },
                 { test: /\.css$/i, use: ['style-loader', 'css-loader' + (isDevBuild ? '' : '?minimize')] }
-                 ,
-                { test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'},
+                ,
+                { test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
                 {
                     test: /\.js$/i, exclude: /node_modules/, use: {
                         loader: 'babel-loader',
                         options: {
                             presets: [
                                 ['@babel/env', {
-                                // 'targets': {
-                                //     'browsers': ['ie 6', 'safari 7','chrome 51', 'opera 39', 'firefox 48','Edge']
-                                // }
-                                'targets':">0.25%"
-                            }]]
+                                    // 'targets': {
+                                    //     'browsers': ['ie 6', 'safari 7','chrome 51', 'opera 39', 'firefox 48','Edge']
+                                    // }
+                                    'targets': ">0.25%"
+                                }]]
                         }
                     }
                 }

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import showWidget from './views/omoWidget';
+import showWidget from './views/omoTotemWidget';
+//'./views/omoWidget';
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 
@@ -39,10 +40,9 @@ function extendObject(a, b) {
     */
 function app(window) {
   console.log('Omo-Widget starting');
-
-
   // all methods that were called till now and stored in queue
   // needs to be called now
+
   let globalObject = window[window['Omo-Widget']];
   const queue = globalObject.q;
   if (queue) {

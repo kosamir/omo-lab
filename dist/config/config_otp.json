@@ -2,9 +2,12 @@
     "HEADER_LINE_HEIGHT": "23",
     "HEADER_FONT_SPACING": "0",
     "HEADER_FONT_SIZE": "16",
-    "BODY_LINE_HEIGHT": "23",
+    "BODY_LINE_HEIGHT": "1.6",
+    "BODY_LINE_HEIGHT_MAX": "2.2",
+    "BODY_FONT_WEIGHT": "normal",
     "BODY_FONT_SPACING": "0",
     "BODY_FONT_SIZE": "16",
+    "BODY_FONT_SIZE_MAX": "30",
     "HEADER_STYLE_ELEMENTS": [
         "h1",
         "h2",
@@ -28,10 +31,6 @@
         {
             "element": "div.body",
             "style": "max-height: 100px; overflow:auto;"
-        },
-        {
-            "element": "div.title",
-            "style": "max-height: 40px; overflow:auto;"
         }
     ],
     "BODY_STYLE": [
@@ -39,8 +38,7 @@
         "div.field-content",
         "section.content-fullwidth-second",
         "div.region-footer-first *",
-        "section#block-block-140",
-        "header#navbar"
+        "section#block-block-140"
     ],
     "BACKGROUND_COLOR_ELEMENTS": [
         " ",
