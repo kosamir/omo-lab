@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Omo</title>
+    <link rel="stylesheet" href="/totemWidget.css" />
+  </head>
+
+  <body>
+    <div id="omo-widget" class="omo-widget">
+      <input
+        type="checkbox"
+        name="main-toggle"
+        class="omo-widget__main-toggle"
+        title="Open options"
+      />
+      <fieldset data-setting-name="font-size">
+        <legend>Font size</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="1"
+          title="Font Size"
+        />
+        <svg viewBox="0 0 32 27">
+          <use xlink:href="/assets/icon-font-size.svg#font-size"></use>
+        </svg>
+        <form action="#">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <button type="button" tabindex="-1" class="omo-widget__add">+</button>
+          <button type="button" tabindex="-1" class="omo-widget__substract">
+            -
+          </button>
+          <input
+            id="totem_bsize"
+            type="number"
+            class="omo-widget__option-value"
+            value="0"
+            min="1"
+            max="30"
+            name="totem_bsize"
+            required
+          />
+        </form>
+      </fieldset>
+      <fieldset data-setting-name="font-type">
+        <legend>Font type</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="2"
+          title="Font Type"
+        />
+        <svg viewBox="0 0 27 32">
+          <use xlink:href="/assets/letters/O.svg#O"></use>
+        </svg>
+        <form action="#">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <button type="button" tabindex="-1" class="omo-widget__add">+</button>
+          <div class="omo-widget__type-preview">
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/O.svg#O"></use>
+            </svg>
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/A.svg#A"></use>
+            </svg>
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/B.svg#B"></use>
+            </svg>
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/C.svg#C"></use>
+            </svg>
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/D.svg#D"></use>
+            </svg>
+            <svg viewBox="0 0 27 32">
+              <use xlink:href="/assets/letters/E.svg#E"></use>
+            </svg>
+          </div>
+          <button type="button" tabindex="-1" class="omo-widget__substract">
+            -
+          </button>
+          <input
+            id="totem_body_ff"
+            type="number"
+            class="omo-widget__option-value"
+            value="0"
+            min="1"
+            max="5"
+            name="totem_body_ff"
+          />
+        </form>
+      </fieldset>
+      <fieldset data-setting-name="font-weight">
+        <legend>Font weight</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="2"
+          title="Font Weight"
+        />
+        <svg viewBox="0 0 35 24">
+          <use xlink:href="/assets/icon-font-weight.svg#font-weight"></use>
+        </svg>
+        <form action="#">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <button type="button" tabindex="-1" class="omo-widget__add">+</button>
+          <button type="button" tabindex="-1" class="omo-widget__substract">
+            -
+          </button>
+          <input
+            id="totem_font_weight"
+            type="number"
+            class="omo-widget__option-value"
+            value="0"
+            min="1"
+            max="4"
+            name="totem_font_weight"
+          />
+        </form>
+      </fieldset>
+      <fieldset data-setting-name="letter-spacing">
+        <legend>Letter spacing</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="2"
+          title="Letter spacing"
+        />
+        <svg viewBox="0 0 32 27">
+          <use
+            xlink:href="/assets/icon-letter-spacing.svg#letter-spacing"
+          ></use>
+        </svg>
+
+        <form action="#">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <button type="button" tabindex="-1" class="omo-widget__add">+</button>
+          <button type="button" tabindex="-1" class="omo-widget__substract">
+            -
+          </button>
+          <input
+            id="totem_bspacing"
+            type="number"
+            class="omo-widget__option-value"
+            value="0"
+            min="1"
+            max="4"
+            name="totem_bspacing"
+          />
+        </form>
+      </fieldset>
+      <fieldset data-setting-name="line-height">
+        <legend>Line height</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="3"
+          title="Line height"
+        />
+        <svg viewBox="0 0 32 28">
+          <use xlink:href="/assets/icon-line-height.svg#line-height"></use>
+        </svg>
+        <form action="#" data-setting-name="line-height">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <button type="button" tabindex="-1" class="omo-widget__add">+</button>
+          <button type="button" tabindex="-1" class="omo-widget__substract">
+            -
+          </button>
+          <input
+            id="totem_bheight"
+            type="number"
+            class="omo-widget__option-value"
+            value="0"
+            min="1"
+            max="4"
+            name="totem_bheight"
+          />
+        </form>
+      </fieldset>
+      <fieldset id="selectedBackround" data-setting-name="background">
+        <legend>Background</legend>
+        <input
+          type="radio"
+          class="omo-widget__toggle-options"
+          aria-selected="false"
+          name="option-opened"
+          value="4"
+          title="Background"
+        />
+        <form action="#">
+          <button type="reset" class="omo-widget__reset">
+            <svg viewBox="0 0 25 25">
+              <use xlink:href="/assets/icon-reset.svg#reset"></use>
+            </svg>
+          </button>
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="0"
+          />
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="1"
+          />
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="2"
+          />
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="3"
+          />
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="4"
+          />
+          <input
+            class="omo-widget__background-choice"
+            type="radio"
+            name="background"
+            required
+            value="5"
+          />
+        </form>
+      </fieldset>
+      <fieldset
+        class="omo-widget__power-toggle-wrap"
+        data-setting-name="widget-active"
+      >
+        <input
+          id="applyOverides"
+          class="omo-widget__power-toggle"
+          type="checkbox"
+          title="Toggle options"
+        />
+        <svg viewBox="0 0 24 29">
+          <use xlink:href="/assets/icon-power.svg#power"></use>
+        </svg>
+      </fieldset>
+      <div class="omo-widget__link-wrap">
+        <a
+          href="https://omolab.com/"
+          target="_blank"
+          data-setting-name="widget-info"
+          title="Find out more"
+        >
+          <svg viewBox="0 0 10 31">
+            <use xlink:href="/assets/icon-info.svg#info"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- <script src="./totemWidget.js"></script>
+    <script>
+      initOmoWidgetControls();
+    </script> -->
+  </body>
+</html>

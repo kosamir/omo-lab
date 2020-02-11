@@ -120,6 +120,18 @@
     z-index: 10007;
     
 }
+/* float:right; width:100%; height: 8%; background-color: aliceblue; border: 1px solid; */
+.omo-eye-t{
+    float: right;
+    /* background-image: url('/img/widget-slice/windget-icon-off.svg'); */
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 25%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10009;
+    
+}
 .omo-eye-on{
     position: fixed;
     border: #000000 1px;
@@ -130,6 +142,20 @@
     top:20%;
     width: 50px;
     height: 50px;
+    cursor: pointer;
+    
+}
+.omo-eye-on-t{
+    float: right;
+    border: #000000 1px;
+    background-image: url('/img/widget-slice/windget-icon-on.svg');
+    background-repeat: no-repeat;
+    background-size:100%,100%;
+    vertical-align: middle;
+    
+  
+    width: 25%;
+    height: 100%;
     cursor: pointer;
     
 }
@@ -144,6 +170,18 @@
     width: 50px;
     height: 350px;
     display: none;
+}
+.omo-totem-t{
+    float: right;
+    border: #000000 1px;
+    background-image: url('/img/widget-slice/totem-bez-ikona.svg');
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+   
+    width: 25%;
+    height: 100%;
+    z-index: 10009;
+    /* display: none; */
 }
 
 
@@ -160,6 +198,55 @@
     height: 40px;
     cursor: pointer;
     display: none;
+    
+}
+.omo-totem-font-size-t{
+    float: right;
+    border: white 1px;
+    background-image: url('/img/widget-slice/botuni/botun-velicina-slova-off.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    width:100%; 
+    height: 10%;
+    cursor: pointer;
+    /* display: none; */
+    
+}
+.omo-totem-font-size-on-t{
+    float: right;
+    background-image: url('/img/widget-slice/botuni/botun-velicina-slova-on.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    width:100%; 
+    height: 10%;
+    cursor: pointer;
+    /* display: none; */
+    
+}
+.omo-totem-font-size-choose-t{
+    float: right;
+    background-image: url('/img/widget-slice/botuni/botun-potvrda-odabira.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    width:100%; 
+    height: 10%;
+    cursor: pointer;
+    /* display: none; */
+    
+}
+.omo-totem-font-size-left-t{
+    float: inline-end;  
+    background-image: url('/img/widget-slice/ruka-dvije-ikone-prazna.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+ object-fit: cover;
+    width: 110%; 
+    height: 9%; 
+    /* z-index: 10009;   */
+    border: 1px solid;
     
 }
 .omo-totem-font-size-on{
@@ -966,6 +1053,21 @@
         z-index: 10007;
     }
 
+    .omo-totem-font-size{
+        position: fixed;
+        border: #000000 1px;
+        background-image: url('/img/widget-slice/botuni/botun-velicina-slova-off.svg');
+        background-repeat: no-repeat;
+        background-size: 35px 35px;
+        left: 91%;
+        top: 33.4%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 10007;
+        /* display: none; */
+        
+    }
     .omo-totem-font-size{
         position: fixed;
         border: #000000 1px;

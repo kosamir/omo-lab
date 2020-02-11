@@ -1,0 +1,663 @@
+.omo-widget {
+  --primary: #eb8b2d;
+  --secondary: #2093aa;
+  --svgFill: white;
+  --size: 46px;
+  --margin-size: 2px;
+  --sizeAdjusted: calc(var(--size) + 2 * var(--margin-size));
+  --animationSpeed: 0.15s;
+  position: fixed;
+  z-index: 9999999999999 !important;
+  bottom: calc(var(--size) * 0.5);
+  right: calc(var(--size) * 0.5);
+  background-color: black;
+  font-size: 0;
+  border-radius: calc(var(--size) / 2 + var(--margin-size));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .omo-widget {
+    --size: 62px;
+    --margin-size: 3px;
+    top: calc(var(--size) * 0.5);
+    bottom: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.omo-widget * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.omo-widget *:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0px var(--margin-size) var(--secondary);
+  box-shadow: 0 0 0px var(--margin-size) var(--secondary);
+}
+
+.omo-widget__main-toggle {
+  border: calc(5 * var(--margin-size)) solid black !important;
+  background: white !important;
+}
+
+.omo-widget__main-toggle ~ * {
+  -webkit-transition: height var(--animationSpeed) ease var(--animationSpeed),
+    opacity var(--animationSpeed) ease,
+    -webkit-transform var(--animationSpeed) ease;
+  transition: height var(--animationSpeed) ease var(--animationSpeed),
+    opacity var(--animationSpeed) ease,
+    -webkit-transform var(--animationSpeed) ease;
+  transition: height var(--animationSpeed) ease var(--animationSpeed),
+    transform var(--animationSpeed) ease, opacity var(--animationSpeed) ease;
+  transition: height var(--animationSpeed) ease var(--animationSpeed),
+    transform var(--animationSpeed) ease, opacity var(--animationSpeed) ease,
+    -webkit-transform var(--animationSpeed) ease;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.omo-widget__main-toggle:checked ~ * {
+  -webkit-transition: height var(--animationSpeed) ease,
+    opacity var(--animationSpeed) ease var(--animationSpeed),
+    -webkit-transform var(--animationSpeed) ease var(--animationSpeed);
+  transition: height var(--animationSpeed) ease,
+    opacity var(--animationSpeed) ease var(--animationSpeed),
+    -webkit-transform var(--animationSpeed) ease var(--animationSpeed);
+  transition: height var(--animationSpeed) ease,
+    transform var(--animationSpeed) ease var(--animationSpeed),
+    opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: height var(--animationSpeed) ease,
+    transform var(--animationSpeed) ease var(--animationSpeed),
+    opacity var(--animationSpeed) ease var(--animationSpeed),
+    -webkit-transform var(--animationSpeed) ease var(--animationSpeed);
+  height: var(--sizeAdjusted);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.omo-widget__main-toggle:checked ~ * .omo-widget__link-wrap {
+  height: calc(var(--size) + var(--margin-size));
+}
+
+.omo-widget__main-toggle:checked ~ * .omo-widget__link-wrap a {
+  margin-bottom: 0;
+}
+
+.omo-widget__power-toggle-wrap {
+  pointer-events: none !important;
+}
+
+.omo-widget__power-toggle-wrap > * {
+  opacity: 0.5;
+}
+
+.omo-widget.has-changes
+  .omo-widget__main-toggle:checked
+  ~ .omo-widget__power-toggle-wrap {
+  pointer-events: all !important;
+}
+
+.omo-widget.has-changes
+  .omo-widget__main-toggle:checked
+  ~ .omo-widget__power-toggle-wrap
+  > * {
+  opacity: 1;
+}
+
+.omo-widget.has-changes
+  .omo-widget__main-toggle:checked
+  ~ .omo-widget__power-toggle-wrap
+  .omo-widget__power-toggle {
+  background: var(--primary);
+}
+
+.omo-widget.has-changes .omo-widget__main-toggle {
+  background: var(--primary) !important;
+}
+
+.omo-widget.power-off > .omo-widget__main-toggle {
+  background: white !important;
+}
+
+.omo-widget.power-off
+  > .omo-widget__main-toggle:checked
+  ~ *:not(:nth-last-child(-n + 2)) {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.omo-widget.power-off .omo-widget__power {
+  background: black !important;
+}
+
+.omo-widget__add,
+.omo-widget__substract,
+.omo-widget__reset,
+.omo-widget__power-toggle,
+.omo-widget__main-toggle,
+.omo-widget__toggle-options,
+.omo-widget__background-choice,
+.omo-widget__link-wrap a,
+.omo-widget__type-preview {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  margin: var(--margin-size);
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.omo-widget__add:active,
+.omo-widget__add.active,
+.omo-widget__substract:active,
+.omo-widget__substract.active,
+.omo-widget__reset:active,
+.omo-widget__reset.active,
+.omo-widget__power-toggle:active,
+.omo-widget__power-toggle.active,
+.omo-widget__main-toggle:active,
+.omo-widget__main-toggle.active,
+.omo-widget__toggle-options:active,
+.omo-widget__toggle-options.active,
+.omo-widget__background-choice:active,
+.omo-widget__background-choice.active,
+.omo-widget__link-wrap a:active,
+.omo-widget__link-wrap a.active,
+.omo-widget__type-preview:active,
+.omo-widget__type-preview.active {
+  background-color: white;
+}
+
+.omo-widget__add:active + svg,
+.omo-widget__add:active > svg,
+.omo-widget__add.active + svg,
+.omo-widget__add.active > svg,
+.omo-widget__substract:active + svg,
+.omo-widget__substract:active > svg,
+.omo-widget__substract.active + svg,
+.omo-widget__substract.active > svg,
+.omo-widget__reset:active + svg,
+.omo-widget__reset:active > svg,
+.omo-widget__reset.active + svg,
+.omo-widget__reset.active > svg,
+.omo-widget__power-toggle:active + svg,
+.omo-widget__power-toggle:active > svg,
+.omo-widget__power-toggle.active + svg,
+.omo-widget__power-toggle.active > svg,
+.omo-widget__main-toggle:active + svg,
+.omo-widget__main-toggle:active > svg,
+.omo-widget__main-toggle.active + svg,
+.omo-widget__main-toggle.active > svg,
+.omo-widget__toggle-options:active + svg,
+.omo-widget__toggle-options:active > svg,
+.omo-widget__toggle-options.active + svg,
+.omo-widget__toggle-options.active > svg,
+.omo-widget__background-choice:active + svg,
+.omo-widget__background-choice:active > svg,
+.omo-widget__background-choice.active + svg,
+.omo-widget__background-choice.active > svg,
+.omo-widget__link-wrap a:active + svg,
+.omo-widget__link-wrap a:active > svg,
+.omo-widget__link-wrap a.active + svg,
+.omo-widget__link-wrap a.active > svg,
+.omo-widget__type-preview:active + svg,
+.omo-widget__type-preview:active > svg,
+.omo-widget__type-preview.active + svg,
+.omo-widget__type-preview.active > svg {
+  --svgFill: black;
+}
+
+.omo-widget__add:active::after,
+.omo-widget__add.active::after,
+.omo-widget__substract:active::after,
+.omo-widget__substract.active::after,
+.omo-widget__reset:active::after,
+.omo-widget__reset.active::after,
+.omo-widget__power-toggle:active::after,
+.omo-widget__power-toggle.active::after,
+.omo-widget__main-toggle:active::after,
+.omo-widget__main-toggle.active::after,
+.omo-widget__toggle-options:active::after,
+.omo-widget__toggle-options.active::after,
+.omo-widget__background-choice:active::after,
+.omo-widget__background-choice.active::after,
+.omo-widget__link-wrap a:active::after,
+.omo-widget__link-wrap a.active::after,
+.omo-widget__type-preview:active::after,
+.omo-widget__type-preview.active::after {
+  border-color: transparent transparent black transparent;
+}
+
+.omo-widget__link-wrap {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.omo-widget__link-wrap a {
+  background: var(--secondary);
+}
+
+.omo-widget__option-value {
+  display: none;
+}
+
+.omo-widget legend {
+  display: none;
+}
+
+.omo-widget svg {
+  display: block !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  max-width: 50%;
+  max-height: 50%;
+  height: auto;
+}
+
+.omo-widget form {
+  position: relative;
+}
+
+.omo-widget form:valid::after {
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  background: var(--primary);
+  position: absolute;
+  right: var(--margin-size);
+  top: var(--margin-size);
+  z-index: 323;
+  border-radius: 50%;
+}
+
+.omo-widget form:valid [type="reset"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.omo-widget__toggle-options ~ form {
+  -webkit-transition: width var(--animationSpeed) ease var(--animationSpeed);
+  transition: width var(--animationSpeed) ease var(--animationSpeed);
+  width: var(--sizeAdjusted);
+  height: var(--sizeAdjusted);
+  pointer-events: none;
+}
+
+.omo-widget__toggle-options ~ form > * {
+  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  opacity: 0;
+}
+
+.omo-widget__toggle-options:checked ~ form {
+  -webkit-transition: width var(--animationSpeed) ease;
+  transition: width var(--animationSpeed) ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(3 * var(--sizeAdjusted));
+  pointer-events: all;
+}
+
+.omo-widget__toggle-options:checked ~ form [type="reset"] {
+  -webkit-transition: opacity var(--animationSpeed) ease;
+  transition: opacity var(--animationSpeed) ease;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+.omo-widget__toggle-options:checked ~ form:valid {
+  -webkit-transition: width var(--animationSpeed) ease,
+    padding var(--animationSpeed) ease;
+  transition: width var(--animationSpeed) ease,
+    padding var(--animationSpeed) ease;
+  width: calc(4 * var(--sizeAdjusted));
+  padding-left: var(--sizeAdjusted);
+}
+
+.omo-widget__toggle-options:checked ~ form:valid [type="reset"] {
+  -webkit-transition: opacity var(--animationSpeed) ease;
+  transition: opacity var(--animationSpeed) ease;
+  opacity: 1;
+}
+
+.omo-widget__toggle-options:checked ~ form > * {
+  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  opacity: 1;
+}
+
+.omo-widget__toggle-options > * {
+  -webkit-transition: opacity var(--animationSpeed) ease;
+  transition: opacity var(--animationSpeed) ease;
+  opacity: 1;
+}
+
+.omo-widget fieldset {
+  border: none;
+  position: relative;
+}
+
+.omo-widget form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  border-radius: calc(var(--sizeAdjusted) / 2);
+  padding-right: var(--sizeAdjusted);
+  z-index: -1;
+}
+
+.omo-widget [type="reset"] {
+  position: relative;
+}
+
+.omo-widget [type="reset"] svg {
+  width: 70%;
+  --svgFill: white;
+}
+
+.omo-widget [type="reset"]:active svg {
+  --svgFill: black;
+}
+
+.omo-widget__add,
+.omo-widget__substract {
+  position: relative;
+}
+
+.omo-widget__add::after,
+.omo-widget__substract::after {
+  --triangleSize: calc(var(--sizeAdjusted) / 3);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%) rotate(180deg);
+  transform: translate(-50%, 0%) rotate(180deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 var(--triangleSize) var(--triangleSize) var(--triangleSize);
+  border-color: transparent transparent white transparent;
+}
+
+.omo-widget__add::after {
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+
+.omo-widget {
+  --bgColor0: #eff3ee;
+  --bgColor1: #d9d8d8;
+  --bgColor2: #231f20;
+  --bgColor3: #9fb5de;
+  --bgColor4: #b894c4;
+  --bgColor5: #e2b0af;
+}
+
+.omo-widget [data-setting-name="background"] {
+  position: relative;
+  z-index: 1;
+}
+
+.omo-widget [data-setting-name="background"] form {
+  -webkit-transition: all var(--animationSpeed) ease var(--animationSpeed);
+  transition: all var(--animationSpeed) ease var(--animationSpeed);
+  height: calc(var(--sizeAdjusted) * 2 + 20px);
+  bottom: -10px;
+  top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.omo-widget [data-setting-name="background"] form > * {
+  -webkit-transition: opacity var(--animationSpeed) ease;
+  transition: opacity var(--animationSpeed) ease;
+  opacity: 0 !important;
+}
+
+.omo-widget [data-setting-name="background"] form:valid::after {
+  display: none;
+}
+
+.omo-widget [data-setting-name="background"] .omo-widget__toggle-options {
+  background: white;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__toggle-options:checked
+  ~ form {
+  -webkit-transition: width var(--animationSpeed) ease;
+  transition: width var(--animationSpeed) ease;
+  width: calc(var(--sizeAdjusted) * 3 + 20px);
+  padding: 10px;
+  border-top-right-radius: var(--sizeAdjusted/2);
+  border-bottom-right-radius: 0px;
+  margin-right: var(--sizeAdjusted);
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__toggle-options:checked
+  ~ form
+  > *:not(.omo-widget__reset) {
+  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  opacity: 1 !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__toggle-options:checked
+  ~ form:valid::before {
+  content: "";
+  position: absolute;
+  background: black;
+  width: calc(2 * var(--sizeAdjusted) + 20px);
+  height: calc(var(--sizeAdjusted) + 20px);
+  z-index: -1;
+  top: 0;
+  right: calc(100% - var(--sizeAdjusted) - 20px);
+  border-top-left-radius: calc(var(--sizeAdjusted) + 10px);
+  border-bottom-left-radius: calc(var(--sizeAdjusted) + 10px);
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__toggle-options:checked
+  ~ form:valid
+  .omo-widget__reset {
+  opacity: 1 !important;
+}
+
+.omo-widget [data-setting-name="background"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - calc(2 * (var(--margin-size) + 2px)));
+  height: 0;
+  padding-top: calc(50% - 2 * var(--margin-size));
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-top: calc(var(--size) / 2) solid white;
+  background: black;
+  pointer-events: none;
+}
+
+.omo-widget [data-setting-name="background"][data-value="0"] {
+  background: var(--bgColor0);
+}
+
+.omo-widget [data-setting-name="background"][data-value="1"] {
+  background: var(--bgColor1);
+}
+
+.omo-widget [data-setting-name="background"][data-value="2"] {
+  background: var(--bgColor2);
+}
+
+.omo-widget [data-setting-name="background"][data-value="3"] {
+  background: var(--bgColor3);
+}
+
+.omo-widget [data-setting-name="background"][data-value="4"] {
+  background: var(--bgColor4);
+}
+
+.omo-widget [data-setting-name="background"][data-value="5"] {
+  background: var(--bgColor5);
+}
+
+.omo-widget [data-setting-name="background"] .omo-widget__reset {
+  position: absolute;
+  right: calc(100% - 10px);
+  background: black;
+  left: auto !important;
+}
+
+.omo-widget [data-setting-name="background"] .omo-widget__reset:active {
+  background: white;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="0"] {
+  background: var(--bgColor0) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="1"] {
+  background: var(--bgColor1) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="2"] {
+  background: var(--bgColor2) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="3"] {
+  background: var(--bgColor3) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="4"] {
+  background: var(--bgColor4) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice[value="5"] {
+  background: var(--bgColor5) !important;
+}
+
+.omo-widget
+  [data-setting-name="background"]
+  .omo-widget__background-choice:checked {
+  border-color: var(--primary);
+}
+
+.omo-widget
+  [data-setting-name="font-type"]
+  .omo-widget__toggle-options:checked
+  ~ form {
+  width: calc(4 * var(--sizeAdjusted));
+}
+
+.omo-widget
+  [data-setting-name="font-type"]
+  .omo-widget__toggle-options:checked
+  ~ form:valid {
+  -webkit-transition: width var(--animationSpeed) ease,
+    padding var(--animationSpeed) ease;
+  transition: width var(--animationSpeed) ease,
+    padding var(--animationSpeed) ease;
+  width: calc(5 * var(--sizeAdjusted));
+  padding-left: var(--sizeAdjusted);
+}
+
+.omo-widget
+  [data-setting-name="font-type"]
+  .omo-widget__toggle-options:checked
+  ~ form:valid
+  [type="reset"] {
+  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  opacity: 1;
+}
+
+.omo-widget__type-preview {
+  position: relative;
+  pointer-events: none;
+}
+
+.omo-widget__type-preview svg {
+  display: none !important;
+}
+
+.omo-widget__type-preview:not([data-selected]) svg:nth-child(1),
+.omo-widget__type-preview[data-selected="O"] svg:nth-child(1) {
+  display: block !important;
+}
+
+.omo-widget__type-preview[data-selected="A"] svg:nth-child(2) {
+  display: block !important;
+}
+
+.omo-widget__type-preview[data-selected="B"] svg:nth-child(3) {
+  display: block !important;
+}
+
+.omo-widget__type-preview[data-selected="C"] svg:nth-child(4) {
+  display: block !important;
+}
+
+.omo-widget__type-preview[data-selected="D"] svg:nth-child(5) {
+  display: block !important;
+}
+
+.omo-widget__type-preview[data-selected="E"] svg:nth-child(6) {
+  display: block !important;
+}
+/*# sourceMappingURL=style.css.map */

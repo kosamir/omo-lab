@@ -1,37 +1,20 @@
 {
-    "HEADER_LINE_HEIGHT": "23",
-    "HEADER_FONT_SPACING": "0",
-    "HEADER_FONT_SIZE": "16",
-    "BODY_LINE_HEIGHT": "23",
-    "BODY_FONT_SPACING": "0",
-    "BODY_FONT_SIZE": "16",
-    "HEADER_STYLE_ELEMENTS": [
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6"
-    ],
-    "CUSTOM_HEADER_STYLE_ELEMENTS": [
-        "div#question-header *"
-        
-    ],
-    "OMO_WIDGET_ELEMENTS": [
-        "div.omo-widget-container *"
-    ],
-    "ELEMENTS_TO_TWEAK_STYLE": [
-       
-    ],
-    "BODY_STYLE": [
-        "div.question *",
-        "div.post-text *",
-        "pre.default",
-        "div.show-votes *"
-        
-    ],
-    "BACKGROUND_COLOR_ELEMENTS": [
-        " "
-       
-    ]
+  "HEADER_LINE_HEIGHT": "23",
+  "HEADER_FONT_SPACING": "0",
+  "HEADER_FONT_SIZE": "16",
+  "BODY_LINE_HEIGHT": "23",
+  "BODY_FONT_SPACING": "0",
+  "BODY_FONT_SIZE": "16",
+  "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6"],
+  "CUSTOM_HEADER_STYLE_ELEMENTS": ["div#question-header *"],
+  "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
+  "ELEMENTS_TO_TWEAK_STYLE": [],
+  "BODY_STYLE": [
+    "div.question *",
+    "div.post-text *",
+    "pre.default",
+    "div.show-votes *",
+    "p"
+  ],
+  "BACKGROUND_COLOR_ELEMENTS": [" "]
 }
