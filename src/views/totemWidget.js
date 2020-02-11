@@ -47,6 +47,7 @@ var initOmoWidgetControls = function() {
     } else {
       applyOverides();
     }
+    saveCookie("");
     closeOptions();
   };
 
@@ -209,8 +210,14 @@ function addOmolabClassScopeToBody(doc) {
 }
 
 const setUserAppliedValues = data => {
-  document.getElementById("applyOverides").value =
-    data.checked == true ? "on" : "off";
+  if (data.checked) {
+    const widget = document.querySelector("#omo-widget");
+    widget.classList["add"]("has-changes");
+    const mainToggle = widget.querySelector(".omo-widget__main-toggle");
+    mainToggle.parentElement.classList.toggle("power-off");
+  }
+  document.getElementById("applyOverides").checked = data.checked;
+  // data.checked == true ? "on" : "off";
   document.getElementById("totem_bsize").value = setFontSize(data.bodyFontSize);
   document.getElementById("totem_body_ff").value = setFontFamilyId(
     data.bodyFontFamily
@@ -286,8 +293,7 @@ const getColorValue = val => COLOR_MAP.filter(el => el.background === val);
 
 /** get APPLIED VALUES FROM WIDGET */
 const getUserAppliedValues = () => {
-  const applied =
-    document.getElementById("applyOverides").value == "on" ? true : false;
+  const applied = document.getElementById("applyOverides").checked;
 
   const bFontSize =
     Number(document.getElementById("totem_bsize").value) +
@@ -412,7 +418,7 @@ const readCookie = () => {
     const data = cookie[0].split("=")[1];
 
     setUserAppliedValues(JSON.parse(data));
-    if (getUserAppliedValues().checked) {
+    if (!getUserAppliedValues().checked) {
       const widget = document.querySelector("#omo-widget");
       widget.classList["add"]("has-changes");
       applyOverides();
