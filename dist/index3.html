@@ -1,1471 +1,2512 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>omoguru | Improves reading skills for dyslexics</title>
 
     <!--[if lte IE 9]>
-        <script src="https://www.omoguru.com/wp-content/themes/read/js/html5shiv.js"></script>
-        <script src="https://www.omoguru.com/wp-content/themes/read/js/selectivizr-min.js"></script>
+      <script src="https://www.omoguru.com/wp-content/themes/read/js/html5shiv.js"></script>
+      <script src="https://www.omoguru.com/wp-content/themes/read/js/selectivizr-min.js"></script>
     <![endif]-->
 
-
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel='dns-prefetch' href='//s.w.org' />
-    <link rel="alternate" type="application/rss+xml" title="omoguru &raquo; Feed"
-        href="https://www.omoguru.com/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="omoguru &raquo; Comments Feed"
-        href="https://www.omoguru.com/comments/feed/" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//s.w.org" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="omoguru &raquo; Feed"
+      href="https://www.omoguru.com/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="omoguru &raquo; Comments Feed"
+      href="https://www.omoguru.com/comments/feed/"
+    />
     <script type="text/javascript">
-        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/www.omoguru.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2" } };
-        !function (a, b, c) { function d(a, b) { var c = String.fromCharCode; l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0); var d = k.toDataURL(); l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0); var e = k.toDataURL(); return d === e } function e(a) { var b; if (!l || !l.fillText) return !1; switch (l.textBaseline = "top", l.font = "600 32px Arial", a) { case "flag": return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b); case "emoji": return b = d([55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357, 56424, 55356, 57340], [55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357, 56424, 55356, 57340]), !b }return !1 } function f(a) { var c = b.createElement("script"); c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d"); for (j = Array("flag", "emoji"), c.supports = { everything: !0, everythingExceptFlag: !0 }, i = 0; i < j.length; i++)c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]); c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.everything || (h = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji))) }(window, document, window._wpemojiSettings);
+      window._wpemojiSettings = {
+        baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/",
+        ext: ".png",
+        svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/",
+        svgExt: ".svg",
+        source: {
+          concatemoji:
+            "https:\/\/www.omoguru.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"
+        }
+      };
+      !(function(a, b, c) {
+        function d(a, b) {
+          var c = String.fromCharCode;
+          l.clearRect(0, 0, k.width, k.height),
+            l.fillText(c.apply(this, a), 0, 0);
+          var d = k.toDataURL();
+          l.clearRect(0, 0, k.width, k.height),
+            l.fillText(c.apply(this, b), 0, 0);
+          var e = k.toDataURL();
+          return d === e;
+        }
+        function e(a) {
+          var b;
+          if (!l || !l.fillText) return !1;
+          switch (((l.textBaseline = "top"), (l.font = "600 32px Arial"), a)) {
+            case "flag":
+              return (
+                !(b = d(
+                  [55356, 56826, 55356, 56819],
+                  [55356, 56826, 8203, 55356, 56819]
+                )) &&
+                ((b = d(
+                  [
+                    55356,
+                    57332,
+                    56128,
+                    56423,
+                    56128,
+                    56418,
+                    56128,
+                    56421,
+                    56128,
+                    56430,
+                    56128,
+                    56423,
+                    56128,
+                    56447
+                  ],
+                  [
+                    55356,
+                    57332,
+                    8203,
+                    56128,
+                    56423,
+                    8203,
+                    56128,
+                    56418,
+                    8203,
+                    56128,
+                    56421,
+                    8203,
+                    56128,
+                    56430,
+                    8203,
+                    56128,
+                    56423,
+                    8203,
+                    56128,
+                    56447
+                  ]
+                )),
+                !b)
+              );
+            case "emoji":
+              return (
+                (b = d(
+                  [
+                    55357,
+                    56424,
+                    55356,
+                    57342,
+                    8205,
+                    55358,
+                    56605,
+                    8205,
+                    55357,
+                    56424,
+                    55356,
+                    57340
+                  ],
+                  [
+                    55357,
+                    56424,
+                    55356,
+                    57342,
+                    8203,
+                    55358,
+                    56605,
+                    8203,
+                    55357,
+                    56424,
+                    55356,
+                    57340
+                  ]
+                )),
+                !b
+              );
+          }
+          return !1;
+        }
+        function f(a) {
+          var c = b.createElement("script");
+          (c.src = a),
+            (c.defer = c.type = "text/javascript"),
+            b.getElementsByTagName("head")[0].appendChild(c);
+        }
+        var g,
+          h,
+          i,
+          j,
+          k = b.createElement("canvas"),
+          l = k.getContext && k.getContext("2d");
+        for (
+          j = Array("flag", "emoji"),
+            c.supports = { everything: !0, everythingExceptFlag: !0 },
+            i = 0;
+          i < j.length;
+          i++
+        )
+          (c.supports[j[i]] = e(j[i])),
+            (c.supports.everything = c.supports.everything && c.supports[j[i]]),
+            "flag" !== j[i] &&
+              (c.supports.everythingExceptFlag =
+                c.supports.everythingExceptFlag && c.supports[j[i]]);
+        (c.supports.everythingExceptFlag =
+          c.supports.everythingExceptFlag && !c.supports.flag),
+          (c.DOMReady = !1),
+          (c.readyCallback = function() {
+            c.DOMReady = !0;
+          }),
+          c.supports.everything ||
+            ((h = function() {
+              c.readyCallback();
+            }),
+            b.addEventListener
+              ? (b.addEventListener("DOMContentLoaded", h, !1),
+                a.addEventListener("load", h, !1))
+              : (a.attachEvent("onload", h),
+                b.attachEvent("onreadystatechange", function() {
+                  "complete" === b.readyState && c.readyCallback();
+                })),
+            (g = c.source || {}),
+            g.concatemoji
+              ? f(g.concatemoji)
+              : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji)));
+      })(window, document, window._wpemojiSettings);
     </script>
     <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
+      img.wp-smiley,
+      img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+      }
     </style>
-    <link rel='stylesheet' id='wp-block-library-css'
-        href='https://www.omoguru.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='cookie-law-info-css'
-        href='https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/css/cookie-law-info-public.css?ver=1.8.1'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='cookie-law-info-gdpr-css'
-        href='https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/css/cookie-law-info-gdpr.css?ver=1.8.1'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='spacexchimp_p005-bootstrap-tooltip-css-css'
-        href='https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/lib/bootstrap-tooltip/bootstrap-tooltip.css?ver=4.55'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='spacexchimp_p005-frontend-css-css'
-        href='https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/css/frontend.css?ver=4.55'
-        type='text/css' media='all' />
-    <style id='spacexchimp_p005-frontend-css-inline-css' type='text/css'>
-        .sxc-follow-buttons {
-            text-align: left !important;
-        }
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.omoguru.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="cookie-law-info-css"
+      href="https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/css/cookie-law-info-public.css?ver=1.8.1"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="cookie-law-info-gdpr-css"
+      href="https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/css/cookie-law-info-gdpr.css?ver=1.8.1"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="spacexchimp_p005-bootstrap-tooltip-css-css"
+      href="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/lib/bootstrap-tooltip/bootstrap-tooltip.css?ver=4.55"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="spacexchimp_p005-frontend-css-css"
+      href="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/css/frontend.css?ver=4.55"
+      type="text/css"
+      media="all"
+    />
+    <style id="spacexchimp_p005-frontend-css-inline-css" type="text/css">
+      .sxc-follow-buttons {
+        text-align: left !important;
+      }
 
-        .sxc-follow-buttons .sxc-follow-button,
-        .sxc-follow-buttons .sxc-follow-button a,
-        .sxc-follow-buttons .sxc-follow-button a img {
-            width: 24px !important;
-            height: 24px !important;
-        }
+      .sxc-follow-buttons .sxc-follow-button,
+      .sxc-follow-buttons .sxc-follow-button a,
+      .sxc-follow-buttons .sxc-follow-button a img {
+        width: 24px !important;
+        height: 24px !important;
+      }
 
-        .sxc-follow-buttons .sxc-follow-button {
-            margin: 5px !important;
-        }
+      .sxc-follow-buttons .sxc-follow-button {
+        margin: 5px !important;
+      }
     </style>
-    <link rel='stylesheet' id='unifrakturmaguntia-css'
-        href='//fonts.googleapis.com/css?family=UnifrakturMaguntia&#038;subset=latin' type='text/css' media='all' />
-    <link rel='stylesheet' id='coustard-css' href='//fonts.googleapis.com/css?family=Coustard&#038;subset=latin'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='lora-css'
-        href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&#038;subset=latin' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='print-css' href='https://www.omoguru.com/wp-content/themes/read/css/print.css'
-        type='text/css' media='print' />
-    <link rel='stylesheet' id='grid-css' href='https://www.omoguru.com/wp-content/themes/read/css/grid.css'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='normalize-css' href='https://www.omoguru.com/wp-content/themes/read/css/normalize.css'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css'
-        href='https://www.omoguru.com/wp-content/themes/read/css/font-awesome.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='google-code-prettify-css'
-        href='https://www.omoguru.com/wp-content/themes/read/js/google-code-prettify/prettify.css' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='uniform-css'
-        href='https://www.omoguru.com/wp-content/themes/read/css/uniform.default.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='flexslider-css' href='https://www.omoguru.com/wp-content/themes/read/css/flexslider.css'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='gamma-gallery-css'
-        href='https://www.omoguru.com/wp-content/themes/read/css/gamma-gallery.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='main-css' href='https://www.omoguru.com/wp-content/themes/read/css/main.css'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='fancybox-css'
-        href='https://www.omoguru.com/wp-content/themes/read/css/jquery.fancybox-1.3.4.css' type='text/css'
-        media='all' />
-    <link rel='stylesheet' id='wp-fix-css' href='https://www.omoguru.com/wp-content/themes/read/css/wp-fix.css'
-        type='text/css' media='all' />
-    <script type='text/javascript' src='https://www.omoguru.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var Cli_Data = { "nn_cookie_ids": [], "cookielist": [] };
-        var log_object = { "ajax_url": "https:\/\/www.omoguru.com\/wp-admin\/admin-ajax.php" };
-/* ]]> */
+    <link
+      rel="stylesheet"
+      id="unifrakturmaguntia-css"
+      href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&#038;subset=latin"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="coustard-css"
+      href="//fonts.googleapis.com/css?family=Coustard&#038;subset=latin"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="lora-css"
+      href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&#038;subset=latin"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="print-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/print.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      rel="stylesheet"
+      id="grid-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/grid.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="normalize-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/normalize.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="font-awesome-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/font-awesome.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="google-code-prettify-css"
+      href="https://www.omoguru.com/wp-content/themes/read/js/google-code-prettify/prettify.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="uniform-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/uniform.default.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="flexslider-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/flexslider.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="gamma-gallery-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/gamma-gallery.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="main-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/main.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="fancybox-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/jquery.fancybox-1.3.4.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="wp-fix-css"
+      href="https://www.omoguru.com/wp-content/themes/read/css/wp-fix.css"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"
+    ></script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var Cli_Data = { nn_cookie_ids: [], cookielist: [] };
+      var log_object = {
+        ajax_url: "https:\/\/www.omoguru.com\/wp-admin\/admin-ajax.php"
+      };
+      /* ]]> */
     </script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/js/cookie-law-info-public.js?ver=1.8.1'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/lib/bootstrap-tooltip/bootstrap-tooltip.js?ver=4.55'></script>
-    <link rel='https://api.w.org/' href='https://www.omoguru.com/wp-json/' />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.omoguru.com/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-        href="https://www.omoguru.com/wp-includes/wlwmanifest.xml" />
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/plugins/cookie-law-info/public/js/cookie-law-info-public.js?ver=1.8.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/lib/bootstrap-tooltip/bootstrap-tooltip.js?ver=4.55"
+    ></script>
+    <link rel="https://api.w.org/" href="https://www.omoguru.com/wp-json/" />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://www.omoguru.com/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://www.omoguru.com/wp-includes/wlwmanifest.xml"
+    />
     <meta name="generator" content="WordPress 5.2.2" />
 
-    <link rel="stylesheet" type="text/css" href="https://www.omoguru.com/wp-content/themes/read/style.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.omoguru.com/wp-content/themes/read/style.css"
+    />
 
+    <link rel="shortcut icon" href="https://omolab.com/favicon.ico" />
 
-    <link rel="shortcut icon" href="https://omolab.com/favicon.ico">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Ubuntu&subset=latin"
+    />
 
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu&subset=latin">
-
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Modern Antiqua&subset=latin">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Modern Antiqua&subset=latin"
+    />
     <style type="text/css">
-        a:hover {
-            color: #00bcd5;
-        }
+      a:hover {
+        color: #00bcd5;
+      }
 
-        .main-navigation ul .current_page_item>a,
-        .main-navigation ul .current-menu-item>a {
-            color: #009cbb;
-        }
+      .main-navigation ul .current_page_item > a,
+      .main-navigation ul .current-menu-item > a {
+        color: #009cbb;
+      }
 
-        h1.site-title,
-        h1.site-title a {
-            font-family: "Ubuntu", Georgia, serif;
-        }
+      h1.site-title,
+      h1.site-title a {
+        font-family: "Ubuntu", Georgia, serif;
+      }
 
-
-
-        html {
-            font-family: "Modern Antiqua", Georgia, serif;
-        }
+      html {
+        font-family: "Modern Antiqua", Georgia, serif;
+      }
     </style>
     <style type="text/css">
-        /*TYPOGRAPHY*/
+      /*TYPOGRAPHY*/
 
-        @font-face {
-            font-family: 'omotypebold_std_two';
-            src: url('../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.woff2') format('woff2'),
-                url('../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.woff') format('woff'),
-                url('../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.ttf') format('ttf');
-            font-weight: normal;
-            font-style: normal;
+      @font-face {
+        font-family: "omotypebold_std_two";
+        src: url("../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.woff2")
+            format("woff2"),
+          url("../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.woff")
+            format("woff"),
+          url("../wp-content/themes/read/css/fonts/OmoType/omotype-boldstdtwo-webfont.ttf")
+            format("ttf");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "omotyperegular_std_two";
+        src: url("../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.woff2")
+            format("woff2"),
+          url("../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.woff")
+            format("woff"),
+          url("../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.ttf")
+            format("ttf");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      html,
+      button,
+      input,
+      select,
+      textarea,
+      .toggle h4 {
+        font-family: "omotyperegular_std_two", sans-serif !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .main-navigation ul li,
+      dt {
+        font-family: "omotypebold_std_two", sans-serif !important;
+      }
+
+      h1.site-title,
+      h1.site-title a {
+        font-family: "omotypebold_std_two", Georgia, serif;
+      }
+
+      /*MAIN TITLE*/
+
+      .entry-header,
+      .post .entry-title {
+        text-align: left;
+      }
+
+      h1 a {
+        color: #00bcd5;
+      }
+
+      /*POST META DATA*/
+
+      .entry-meta {
+        display: none;
+      }
+
+      /*TAGLINE SIZE*/
+
+      .site-description {
+        font-size: 1.8em;
+        font-weight: 400;
+      }
+
+      /*SITE BACKGROUND COLOR*/
+
+      body {
+        color: #ffffff;
+        background: #000000;
+      }
+
+      /*MENU COLOR*/
+
+      div.selector {
+        font-size: 0.9em;
+        padding: 0.4em;
+        width: 240px !important;
+        padding-left: 1em;
+        background: #ffffff;
+        border: 1px solid #ff9700;
+      }
+
+      /*LINK COLOR*/
+
+      a {
+        color: #ff9700;
+        text-decoration: none;
+      }
+
+      /*MAIN NAVIGATION SIZE*/
+
+      .main-navigation ul li a {
+        font-size: 1.3em;
+        color: #ffffff;
+        line-height: 1.6;
+      }
+
+      .main-navigation ul .current_page_item > a,
+      .main-navigation ul .current-menu-item > a {
+        font-size: 1.4em;
+      }
+
+      /*FONT SIZE GLOBAL*/
+
+      html {
+        font-size: 114%;
+      }
+
+      /*LOGO*/
+
+      h1.site-title a {
+        border-bottom: none;
+      }
+
+      /*PAGE TITLES*/
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #00bcd5;
+      }
+
+      /*SITE DESCRIPTION*/
+      h2.site-description {
+        margin: 0px 0px 25px;
+      }
+
+      /*MOUSE HOVER*/
+      a.imglink:hover {
+        background-color: #000000;
+        border-bottom: none;
+      }
+
+      .site-content h1 a:hover {
+        background: none;
+        color: #00bcd5;
+        /*opacity:0.8;*/
+      }
+
+      .widget-area a:hover {
+        background-color: #000000;
+        border-bottom: none;
+      }
+
+      /* Prvi post bijela boja*/
+      #post-1 h1 a {
+        color: #fff;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .site-header .site-title,
+        .site-header .site-description {
+          text-align: left;
+          max-width: 780px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (max-width: 953px) {
+        .main-navigation > ul {
+          display: none;
         }
 
-        @font-face {
-            font-family: 'omotyperegular_std_two';
-            src: url('../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.woff2') format('woff2'),
-                url('../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.woff') format('woff'),
-                url('../wp-content/themes/read/css/fonts/OmoType/omotype-regularstdtwo-webfont.ttf') format('ttf');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        html,
-        button,
-        input,
-        select,
-        textarea,
-        .toggle h4 {
-            font-family: "omotyperegular_std_two", sans-serif !important;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .main-navigation ul li,
-        dt {
-            font-family: "omotypebold_std_two", sans-serif !important;
-        }
-
-        h1.site-title,
-        h1.site-title a {
-            font-family: "omotypebold_std_two", Georgia, serif;
-        }
-
-        /*MAIN TITLE*/
-
-        .entry-header,
-        .post .entry-title {
-            text-align: left;
-        }
-
-        h1 a {
-            color: #00BCD5;
-        }
-
-        /*POST META DATA*/
-
-        .entry-meta {
-            display: none;
-        }
-
-        /*TAGLINE SIZE*/
-
-        .site-description {
-            font-size: 1.8em;
-            font-weight: 400;
-        }
-
-        /*SITE BACKGROUND COLOR*/
-
-        body {
-            color: #ffffff;
-            background: #000000;
-        }
-
-        /*MENU COLOR*/
-
-        div.selector {
-            font-size: .9em;
-            padding: .4em;
-            width: 240px !important;
-            padding-left: 1em;
-            background: #ffffff;
-            border: 1px solid #FF9700;
-        }
-
-        /*LINK COLOR*/
-
-        a {
-            color: #FF9700;
-            text-decoration: none;
-        }
-
-        /*MAIN NAVIGATION SIZE*/
-
-        .main-navigation ul li a {
-            font-size: 1.3em;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .main-navigation ul .current_page_item>a,
-        .main-navigation ul .current-menu-item>a {
-            font-size: 1.4em;
-        }
-
-        /*FONT SIZE GLOBAL*/
-
-        html {
-            font-size: 114%;
-        }
-
-        /*LOGO*/
-
-        h1.site-title a {
-            border-bottom: none;
-        }
-
-
-        /*PAGE TITLES*/
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #00BCD5;
-        }
-
-        /*SITE DESCRIPTION*/
-        h2.site-description {
-            margin: 0px 0px 25px;
-        }
-
-        /*MOUSE HOVER*/
-        a.imglink:hover {
-            background-color: #000000;
-            border-bottom: none;
-        }
-
-        .site-content h1 a:hover {
-            background: none;
-            color: #00BCD5;
-            /*opacity:0.8;*/
-        }
-
-        .widget-area a:hover {
-            background-color: #000000;
-            border-bottom: none;
-        }
-
-        /* Prvi post bijela boja*/
-        #post-1 h1 a {
-            color: #fff;
-        }
-
-        @media only screen and (max-width: 1200px) {
-
-            .site-header .site-title,
-            .site-header .site-description {
-                text-align: left;
-                max-width: 780px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        @media (max-width: 953px) {
-            .main-navigation>ul {
-                display: none;
-            }
-
-            .main-navigation div.selector {
-                display: block;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1052px) {
-            .main-navigation ul li {
-                margin: 0 .75em;
-            }
-        }
-
-        /* Menu mobile */
         .main-navigation div.selector {
-            background: #000;
+          display: block;
         }
+      }
 
-        div.selector:before {
-            color: #fff;
+      @media (min-width: 768px) and (max-width: 1052px) {
+        .main-navigation ul li {
+          margin: 0 0.75em;
         }
+      }
 
-        .main-navigation div.selector select {
-            color: #fff;
-            padding-left: 6px;
-        }
+      /* Menu mobile */
+      .main-navigation div.selector {
+        background: #000;
+      }
 
-        .main-navigation div.selector select option {
-            color: #333;
-        }
+      div.selector:before {
+        color: #fff;
+      }
 
-        .main-navigation div.selector select option[value="null"] {
-            color: #fff;
-        }
+      .main-navigation div.selector select {
+        color: #fff;
+        padding-left: 6px;
+      }
 
-        /*LIST STYLE*/
-        ul {
-            list-style: disc;
-        }
+      .main-navigation div.selector select option {
+        color: #333;
+      }
 
-        /*Students page*/
+      .main-navigation div.selector select option[value="null"] {
+        color: #fff;
+      }
 
-        #post-417 {
+      /*LIST STYLE*/
+      ul {
+        list-style: disc;
+      }
 
-            font-size: 120% !important;
-            line-height: 2 !important;
+      /*Students page*/
 
-        }
+      #post-417 {
+        font-size: 120% !important;
+        line-height: 2 !important;
+      }
 
-        /*SITE PRORED*/
+      /*SITE PRORED*/
 
-        body {
-            line-height: 1.9;
-        }
+      body {
+        line-height: 1.9;
+      }
     </style>
     <!-- Hotjar Tracking Code for www.omoguru.com -->
     <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 1578225, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+      (function(h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function() {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 1578225, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
     <script type="text/javascript">
-        var cli_flush_cache = 2;
+      var cli_flush_cache = 2;
     </script>
     <style type="text/css" media="screen">
-        body {
-            position: relative
-        }
+      body {
+        position: relative;
+      }
 
-        #dynamic-to-top {
-            display: none;
-            overflow: hidden;
-            width: auto;
-            z-index: 90;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            top: auto;
-            right: auto;
-            font-family: sans-serif;
-            font-size: 1em;
-            color: #fff;
-            text-decoration: none;
-            text-shadow: 0 1px 0 #333;
-            font-weight: bold;
-            padding: 17px 16px;
-            border: 1px solid #000;
-            background: #111;
-            -webkit-background-origin: border;
-            -moz-background-origin: border;
-            -icab-background-origin: border;
-            -khtml-background-origin: border;
-            -o-background-origin: border;
-            background-origin: border;
-            -webkit-background-clip: padding-box;
-            -moz-background-clip: padding-box;
-            -icab-background-clip: padding-box;
-            -khtml-background-clip: padding-box;
-            -o-background-clip: padding-box;
-            background-clip: padding-box;
-            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -icab-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 10px 10px rgba(255, 255, 255, .1);
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            -icab-border-radius: 30px;
-            -khtml-border-radius: 30px;
-            border-radius: 30px
-        }
+      #dynamic-to-top {
+        display: none;
+        overflow: hidden;
+        width: auto;
+        z-index: 90;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        top: auto;
+        right: auto;
+        font-family: sans-serif;
+        font-size: 1em;
+        color: #fff;
+        text-decoration: none;
+        text-shadow: 0 1px 0 #333;
+        font-weight: bold;
+        padding: 17px 16px;
+        border: 1px solid #000;
+        background: #111;
+        -webkit-background-origin: border;
+        -moz-background-origin: border;
+        -icab-background-origin: border;
+        -khtml-background-origin: border;
+        -o-background-origin: border;
+        background-origin: border;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding-box;
+        -icab-background-clip: padding-box;
+        -khtml-background-clip: padding-box;
+        -o-background-clip: padding-box;
+        background-clip: padding-box;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -khtml-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -icab-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -icab-border-radius: 30px;
+        -khtml-border-radius: 30px;
+        border-radius: 30px;
+      }
 
-        #dynamic-to-top:hover {
-            background: #4d5858;
-            background: #111 -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .2)), to(rgba(0, 0, 0, 0)));
-            background: #111 -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 -khtml-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 -moz-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 -o-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 -ms-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 -icab-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            background: #111 linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
-            cursor: pointer
-        }
+      #dynamic-to-top:hover {
+        background: #4d5858;
+        background: #111 -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.2)), to(rgba(0, 0, 0, 0)));
+        background: #111 -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111 -khtml-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111 -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111 -o-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111 -ms-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111 -icab-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        background: #111
+          linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+        cursor: pointer;
+      }
 
-        #dynamic-to-top:active {
-            background: #111;
-            background: #111 -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, .3)), to(rgba(0, 0, 0, 0)));
-            background: #111 -webkit-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 -moz-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 -khtml-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 -o-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 -ms-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 -icab-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
-            background: #111 linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0))
-        }
+      #dynamic-to-top:active {
+        background: #111;
+        background: #111 -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
+        background: #111 -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111 -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111 -khtml-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111 -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111 -ms-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111 -icab-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background: #111
+          linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      }
 
-        #dynamic-to-top,
-        #dynamic-to-top:active,
-        #dynamic-to-top:focus,
-        #dynamic-to-top:hover {
-            outline: none
-        }
+      #dynamic-to-top,
+      #dynamic-to-top:active,
+      #dynamic-to-top:focus,
+      #dynamic-to-top:hover {
+        outline: none;
+      }
 
-        #dynamic-to-top span {
-            display: block;
-            overflow: hidden;
-            width: 14px;
-            height: 12px;
-            background: url(https://www.omoguru.com/wp-content/plugins/dynamic-to-top/css/images/up.png )no-repeat center center
-        }
+      #dynamic-to-top span {
+        display: block;
+        overflow: hidden;
+        width: 14px;
+        height: 12px;
+        background: url(https://www.omoguru.com/wp-content/plugins/dynamic-to-top/css/images/up.png)
+          no-repeat center center;
+      }
     </style>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NDF29GW');</script>
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js"
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NDF29GW");
+    </script>
     <!-- End Google Tag Manager -->
+  </head>
 
-</head>
-
-<body class="home blog">
+  <body class="home blog">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDF29GW" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NDF29GW"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="page" class="hfeed site">
+      <div id="omo">
+        <script>
+          (function(w, d, s, o, f, js, fjs) {
+            w["Omo-Widget"] = o;
+            w[o] =
+              w[o] ||
+              function() {
+                (w[o].q = w[o].q || []).push(arguments);
+              };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+          })(
+            window,
+            document,
+            "script",
+            "mw",
+            "https://omo-lab.herokuapp.com/OmoWidget.js"
+          );
+          mw("init", {
+            config: "https://omo-lab.herokuapp.com/config/config_omo.json"
+          });
+          mw("message", "Hello from OmoWidget");
+        </script>
+        <div class="omo-widget-container"></div>
+      </div>
+      <header class="site-header wrapper" role="banner">
+        <div class="row">
+          <hgroup>
+            <h1 class="site-title">
+              <a rel="home" href="https://www.omoguru.com/">
+                <img
+                  alt="omoguru"
+                  src="https://www.omoguru.com/wp-content/uploads/2019/09/logo-png-bijeli-480.png"
+                />
+              </a>
+            </h1>
+            <!-- end .site-title -->
 
-        <div id="omo">
-            <script>
-                (function (w, d, s, o, f, js, fjs) {
-                    w['Omo-Widget'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-                    js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-                    js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-                }(window, document, 'script', 'mw', '/OmoWidget.js'));
-                mw('init', { config: "config/config_omo.json" });
-                mw('message', 'Hello from OmoWidget');
-            </script>
-            <div class="omo-widget-container"></div>
+            <h2 class="site-description">
+              Reading tools for dyslexics that improve reading skills in an
+              enjoyable way
+            </h2>
+            <!-- end .site-description -->
+          </hgroup>
+
+          <nav id="site-navigation" class="main-navigation" role="navigation">
+            <ul id="nav" class="menu-custom">
+              <li
+                id="menu-item-14"
+                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"
+              >
+                <a href="https://www.omoguru.com/" aria-current="page">HOME</a>
+              </li>
+              <li
+                id="menu-item-17"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"
+              >
+                <a href="https://www.omoguru.com/reader/">READER</a>
+              </li>
+              <li
+                id="menu-item-16"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"
+              >
+                <a href="https://www.omoguru.com/font-family/">FONT FAMILY</a>
+              </li>
+              <li
+                id="menu-item-15"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"
+              >
+                <a href="https://www.omoguru.com/dyslexia-lab/">DYSLEXIA LAB</a>
+              </li>
+              <li
+                id="menu-item-53"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"
+              >
+                <a href="https://www.omoguru.com/about-us/">ABOUT US</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- end #site-navigation -->
         </div>
-        <header class="site-header wrapper" role="banner">
-            <div class="row">
-                <hgroup>
-                    <h1 class="site-title">
-                        <a rel="home" href="https://www.omoguru.com/">
-                            <img alt="omoguru"
-                                src="https://www.omoguru.com/wp-content/uploads/2019/09/logo-png-bijeli-480.png">
-                        </a>
+        <!-- end .row -->
+      </header>
+      <!-- end .site-header -->
+
+      <section id="main" class="middle wrapper">
+        <div class="row row-fluid blog-with-sidebar">
+          <div id="primary" class="site-content">
+            <div id="content" role="main">
+              <div class="blog-posts readable-content ">
+                <article
+                  id="post-1"
+                  class="clearfix post-1 post type-post status-publish format-standard hentry category-dyslexia category-reader category-science"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a href="https://www.omoguru.com/reader/" rel="bookmark"
+                        >We offer comfortable reading experience and enable each
+                        user to adjust font and text to their specific needs.</a
+                      >
                     </h1>
-                    <!-- end .site-title -->
+                  </header>
 
-                    <h2 class="site-description">
-                        Reading tools for dyslexics that improve reading skills in an enjoyable way </h2>
-                    <!-- end .site-description -->
-                </hgroup>
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/reader/"
+                        rel="category tag"
+                        >Reader</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/science/"
+                        rel="category tag"
+                        >Science</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/reader/"
+                        title="2:19 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-30T14:19:04+00:00"
+                        >
+                          July 30, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                  </footer>
 
+                  <div class="entry-content clearfix">
+                    <p></p>
 
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <ul id="nav" class="menu-custom">
-                        <li id="menu-item-14"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14">
-                            <a href="https://www.omoguru.com/" aria-current="page">HOME</a></li>
-                        <li id="menu-item-17"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a
-                                href="https://www.omoguru.com/reader/">READER</a></li>
-                        <li id="menu-item-16"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a
-                                href="https://www.omoguru.com/font-family/">FONT FAMILY</a></li>
-                        <li id="menu-item-15"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a
-                                href="https://www.omoguru.com/dyslexia-lab/">DYSLEXIA LAB</a></li>
-                        <li id="menu-item-53"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a
-                                href="https://www.omoguru.com/about-us/">ABOUT US</a></li>
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                      <iframe
+                        src="https://player.vimeo.com/video/361048995?title=0&amp;byline=0&amp;portrait=0"
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                        data-hj-allow-iframe=""
+                        frameborder="0"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen=""
+                      ></iframe>
+                    </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                  </div>
+                </article>
+                <article
+                  id="post-115"
+                  class="clearfix post-115 post type-post status-publish format-standard hentry category-download"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        style="display: none;"
+                        href="https://www.omoguru.com/app-store-icons/"
+                        rel="bookmark"
+                        >AppStore Links</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/download/"
+                        rel="category tag"
+                        >Download</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/app-store-icons/"
+                        title="1:50 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-29T13:50:50+00:00"
+                        >
+                          July 29, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a href="https://www.omoguru.com/app-store-icons/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <p style="color:#ff9700" class="has-text-color">
+                      Works on all devices. Download Omoguru for
+                      <strong>FREE</strong>:
+                    </p>
+
+                    <div class="wp-block-columns has-2-columns">
+                      <div class="wp-block-column">
+                        <figure class="wp-block-image">
+                          <a
+                            href="https://apps.apple.com/us/app/omoreader/id1371441139?ls=1"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            ><img
+                              src="https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2.png"
+                              alt=""
+                              class="wp-image-162"
+                              srcset="
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2.png         700w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-300x102.png 300w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-500x170.png 500w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-150x51.png  150w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-400x136.png 400w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-200x68.png  200w
+                              "
+                              sizes="(max-width: 700px) 100vw, 700px"
+                          /></a>
+                        </figure>
+                      </div>
+
+                      <div class="wp-block-column">
+                        <figure class="wp-block-image">
+                          <a
+                            href="https://play.google.com/store/apps/details?id=com.locastic.omolab"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            ><img
+                              src="https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2.png"
+                              alt=""
+                              class="wp-image-163"
+                              srcset="
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2.png         691w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-300x103.png 300w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-500x172.png 500w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-150x52.png  150w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-400x138.png 400w,
+                                https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-200x69.png  200w
+                              "
+                              sizes="(max-width: 691px) 100vw, 691px"
+                          /></a>
+                        </figure>
+                      </div>
+                    </div>
+
+                    <p></p>
+                  </div>
+                </article>
+                <article
+                  id="post-111"
+                  class="clearfix post-111 post type-post status-publish format-standard hentry category-dyslexia category-science category-type"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/font-family/"
+                        rel="bookmark"
+                        >The Most Readable Font In The World</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/science/"
+                        rel="category tag"
+                        >Science</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/type/"
+                        rel="category tag"
+                        >Type</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/font-family/"
+                        title="1:26 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-29T13:26:36+00:00"
+                        >
+                          July 29, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a href="https://www.omoguru.com/font-family/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <h3>
+                      OmoType is adjusted for people with dyslexia. This
+                      visually comfortable font is dynamic and can be adapted to
+                      unique needs and preferences of every individual.
+                    </h3>
+
+                    <ul>
+                      <li>
+                        Our typographers, science and dyslexia experts designed
+                        the type guided by relevant<strong
+                          >&nbsp;scientific research about font
+                          readability</strong
+                        >&nbsp;and&nbsp;<strong>dyslexia</strong>
+                      </li>
+                      <li>
+                        <strong>240 different styles</strong>&nbsp;are designed
+                        to cater a broad segment of users and address the entire
+                        spectrum of dyslexia manifestations
+                      </li>
                     </ul>
+                  </div>
+                </article>
+                <article
+                  id="post-113"
+                  class="clearfix post-113 post type-post status-publish format-standard hentry category-reader category-web"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/read-online-with-dyslexia/"
+                        rel="bookmark"
+                        >Use Our Chrome Plugin For Free to Taste The Omoguru
+                        Reading Experience.</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/reader/"
+                        rel="category tag"
+                        >Reader</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/web/"
+                        rel="category tag"
+                        >Web</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/read-online-with-dyslexia/"
+                        title="1:49 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-28T13:49:43+00:00"
+                        >
+                          July 28, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a
+                        href="https://www.omoguru.com/read-online-with-dyslexia/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <p>
+                      Simply adjust any web page or application to your personal
+                      reading style. Add to browser on Chrome Web Store:
+                    </p>
+
+                    <figure class="wp-block-image">
+                      <a
+                        href="https://chrome.google.com/webstore/detail/omolab-demo-extension/ckinimcmjlcaclahdpbeklbgfjidaeml"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        ><img
+                          src="https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija.png"
+                          alt=""
+                          class="wp-image-165"
+                          srcset="
+                            https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija.png        500w,
+                            https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-300x48.png 300w,
+                            https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-150x24.png 150w,
+                            https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-400x64.png 400w,
+                            https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-200x32.png 200w
+                          "
+                          sizes="(max-width: 500px) 100vw, 500px"
+                      /></a>
+                    </figure>
+                  </div>
+                </article>
+                <article
+                  id="post-78"
+                  class="clearfix post-78 post type-post status-publish format-standard hentry category-dyslexia category-science category-type"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/"
+                        rel="bookmark"
+                        >OmoType and Other Dyslexia Friendly Fonts</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/science/"
+                        rel="category tag"
+                        >Science</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/type/"
+                        rel="category tag"
+                        >Type</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/"
+                        title="11:06 am"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-10T11:06:23+00:00"
+                        >
+                          July 10, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a
+                        href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <h4>
+                      The results obtained showed that children with reading
+                      disabilities are able to read with greater degree of
+                      accuracy when OmoType font is used, and that, based solely
+                      on its visual appeal, OmoType was awarded an average
+                      rating of 3.54 (on a scale of 1-4, 4 being the highest
+                      rating).
+                    </h4>
+
+                    <h3>Comparative Analysis</h3>
+
+                    <p>
+                      The motivation behind the efforts invested in developing
+                      OmoType font system is that not a single available font of
+                      that kind has truly proved effective, or friendly for that
+                      matter, in addressing the reading issues dyslexic
+                      individuals face.
+                    </p>
+
+                    <a
+                      href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/#more-78"
+                      class="more-link"
+                      >Continue reading <span class="meta-nav">&#8594;</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  id="post-75"
+                  class="clearfix post-75 post type-post status-publish format-standard hentry category-design category-dyslexia"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/what-is-omo/"
+                        rel="bookmark"
+                        >What Is Omo?</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/design/"
+                        rel="category tag"
+                        >Design</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/what-is-omo/"
+                        title="10:58 am"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-09T10:58:19+00:00"
+                        >
+                          July 9, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a href="https://www.omoguru.com/what-is-omo/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <h4>
+                      In the course of the whole creative process of graphic
+                      design and production, from the very beginning, Omo was
+                      there, the student and the teacher at the same time. It
+                      was precisely this unique relationship, in addition to
+                      difficulties my dyslexic family members had been
+                      experiencing, that directed my attention to development of
+                      communication tools specially designed for those endowed
+                      with peculiar cognitive circuitries.
+                    </h4>
+
+                    <p>
+                      The agenda behind Omo is going back to basics, and so the
+                      resulting concept stems from the need to eliminate any
+                      superfluous additions spawned by socially motivated
+                      deformations, or, to put it simply, to focus on that which
+                      truly carries meaning and substance amidst the white noise
+                      of everyday communication.
+                    </p>
+
+                    <p>
+                      At its inception, Omo is the very beginning of the line, a
+                      basic element, a line the eye is following along, or a
+                      smart line that communicates through elementary movement
+                      and application of primary colours.
+                    </p>
+
+                    <a
+                      href="https://www.omoguru.com/what-is-omo/#more-75"
+                      class="more-link"
+                      >Continue reading <span class="meta-nav">&#8594;</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  id="post-273"
+                  class="clearfix post-273 post type-post status-publish format-standard hentry category-design category-dyslexia"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        style="display: none;"
+                        href="https://www.omoguru.com/273-2/"
+                        rel="bookmark"
+                        >Superpower</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/design/"
+                        rel="category tag"
+                        >Design</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/273-2/"
+                        title="4:59 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-08T16:59:02+00:00"
+                        >
+                          July 8, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a href="https://www.omoguru.com/273-2/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <figure class="wp-block-image">
+                      <a href="https://www.omoguru.com/about-us/"
+                        ><img
+                          src="https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1024x576.png"
+                          alt=""
+                          class="wp-image-274"
+                          srcset="
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1024x576.png 1024w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-300x169.png   300w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-768x432.png   768w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-500x281.png   500w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-150x84.png    150w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1200x675.png 1200w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-400x225.png   400w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-800x450.png   800w,
+                            https://www.omoguru.com/wp-content/uploads/2019/10/superpower-200x113.png   200w
+                          "
+                          sizes="(max-width: 1024px) 100vw, 1024px"
+                      /></a>
+                    </figure>
+                  </div>
+                </article>
+                <article
+                  id="post-277"
+                  class="clearfix post-277 post type-post status-publish format-standard hentry category-dyslexia category-reader category-science"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/"
+                        rel="bookmark"
+                        >Research: Short Lines and E-Readers Are More Effective
+                        for Dyslexics</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/reader/"
+                        rel="category tag"
+                        >Reader</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/science/"
+                        rel="category tag"
+                        >Science</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/"
+                        title="5:04 pm"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-07T17:04:09+00:00"
+                        >
+                          July 7, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a
+                        href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <p>
+                      One of the key benefits of
+                      <a
+                        href="https://www.omoguru.com/reader/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label=" (opens in a new tab)"
+                        >Omoguru for dyslexics</a
+                      >
+                      is that it is a mobile app that provides just a few words
+                      per line. This is not just feedback we received from our
+                      users but also supported by 5-years old scientific
+                      research by Matthew H. Schneps,
+                      <a
+                        rel="noreferrer noopener"
+                        aria-label=" (opens in a new tab)"
+                        href="https://www.cfa.harvard.edu/dyslexia/LVL/"
+                        target="_blank"
+                        >director of Laboratory for Visual Learning</a
+                      >
+                      at the Harvard-Smithsonian CfA.
+                    </p>
+
+                    <a
+                      href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/#more-277"
+                      class="more-link"
+                      >Continue reading <span class="meta-nav">&#8594;</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  id="post-315"
+                  class="clearfix post-315 post type-post status-publish format-standard has-post-thumbnail hentry category-dyslexia category-type"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/"
+                        rel="bookmark"
+                        >A Picture Book From a Dyslexic Girl For All Children</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >,
+                      <a
+                        href="https://www.omoguru.com/category/type/"
+                        rel="category tag"
+                        >Type</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/"
+                        title="8:55 am"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-05T08:55:14+00:00"
+                        >
+                          July 5, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/tea-shain/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          Tea Sain
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a
+                        href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="featured-image">
+                    <a
+                      href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/"
+                    >
+                      <img
+                        width="500"
+                        height="180"
+                        src="https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-500x180.jpg"
+                        class="attachment-pixelwars__image_size_1 size-pixelwars__image_size_1 wp-post-image"
+                        alt=""
+                        srcset="
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-500x180.jpg   500w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-300x108.jpg   300w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-768x277.jpg   768w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-1024x369.jpg 1024w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-150x54.jpg    150w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-1200x432.jpg 1200w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-400x144.jpg   400w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-800x288.jpg   800w,
+                          https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-200x72.jpg    200w
+                        "
+                        sizes="(max-width: 500px) 100vw, 500px"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="entry-content clearfix">
+                    <p>
+                      To support and empower children to communicate their fears
+                      we’ve created the picture book called Tiny people. It is
+                      about fears who live inside everyone’s heads and grow
+                      bigger until we speak about them. Picture book is made
+                      with
+                      <a
+                        href="https://www.omoguru.com/font-family/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="OmoType font (opens in a new tab)"
+                        >OmoType font</a
+                      >
+                      and full of amazing dreamy illustrations. Text is adapted
+                      for children with dyslexia and other reading difficulties.
+                    </p>
+
+                    <a
+                      href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/#more-315"
+                      class="more-link"
+                      >Continue reading <span class="meta-nav">&#8594;</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  id="post-290"
+                  class="clearfix post-290 post type-post status-publish format-standard hentry category-dyslexia"
+                >
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a
+                        href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/"
+                        rel="bookmark"
+                        >The Importance of Balancing the Summer Time for
+                        Dyslexic Children</a
+                      >
+                    </h1>
+                  </header>
+
+                  <footer class="entry-meta">
+                    <span class="post-category">
+                      posted in
+                      <a
+                        href="https://www.omoguru.com/category/dyslexia/"
+                        rel="category tag"
+                        >Dyslexia</a
+                      >
+                    </span>
+                    <span class="post-date">
+                      on
+                      <a
+                        href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/"
+                        title="8:18 am"
+                        rel="bookmark"
+                      >
+                        <time
+                          class="entry-date"
+                          datetime="2019-07-04T08:18:53+00:00"
+                        >
+                          July 4, 2019
+                        </time>
+                      </a>
+                    </span>
+                    <span class="by-author">
+                      by
+                      <span class="author vcard">
+                        <a
+                          class="url fn n"
+                          href="https://www.omoguru.com/author/admin/"
+                          title="View all posts by "
+                          rel="author"
+                        >
+                          admin
+                        </a>
+                      </span>
+                    </span>
+                    <span class="comments-link">
+                      <a
+                        href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/#respond"
+                        >0 Comments</a
+                      >
+                    </span>
+                  </footer>
+
+                  <div class="entry-content clearfix">
+                    <h4>
+                      <a
+                        rel="noreferrer noopener"
+                        aria-label=" (opens in a new tab)"
+                        href="https://dyslexiaida.org/important-insights-for-reading-development/"
+                        target="_blank"
+                        >Successful adults with dyslexia</a
+                      >
+                      share one trait – the motivation to learn about
+                      high-interest topics. Fostering the areas of interest and
+                      supporting struggling readers via printed text can help
+                      them overcome some barriers. With those extra hours and
+                      the tools –
+                      <a
+                        rel="noreferrer noopener"
+                        aria-label="Reader (opens in a new tab)"
+                        href="https://www.omoguru.com/reader/"
+                        target="_blank"
+                        >Reader</a
+                      >
+                      and
+                      <a
+                        rel="noreferrer noopener"
+                        aria-label="Font (opens in a new tab)"
+                        href="https://www.omoguru.com/font-family/"
+                        target="_blank"
+                        >Font</a
+                      >
+                      – it can be a great help in practicing, reading or
+                      spelling while having fun, which summer is all about!
+                    </h4>
+
+                    <a
+                      href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/#more-290"
+                      class="more-link"
+                      >Continue reading <span class="meta-nav">&#8594;</span></a
+                    >
+                  </div>
+                </article>
+
+                <nav class="navigation" role="navigation">
+                  <div class="nav-previous"></div>
+
+                  <div class="nav-next"></div>
                 </nav>
-                <!-- end #site-navigation -->
+              </div>
             </div>
-            <!-- end .row -->
-        </header>
-        <!-- end .site-header -->
-
-
-        <section id="main" class="middle wrapper">
-            <div class="row row-fluid blog-with-sidebar">
-                <div id="primary" class="site-content">
-                    <div id="content" role="main">
-                        <div class="blog-posts readable-content ">
-
-                            <article id="post-1"
-                                class="clearfix post-1 post type-post status-publish format-standard hentry category-dyslexia category-reader category-science">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/reader/" rel="bookmark">We offer comfortable
-                                            reading experience and enable each user to adjust font and text to their
-                                            specific needs.</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a>, <a
-                                            href="https://www.omoguru.com/category/reader/"
-                                            rel="category tag">Reader</a>, <a
-                                            href="https://www.omoguru.com/category/science/"
-                                            rel="category tag">Science</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/reader/" title="2:19 pm" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-30T14:19:04+00:00">
-                                                July 30, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <p></p>
-
-
-
-                                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe
-                                            src="https://player.vimeo.com/video/361048995?title=0&amp;byline=0&amp;portrait=0"
-                                            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                                            data-hj-allow-iframe="" frameborder="0" allow="autoplay; fullscreen"
-                                            allowfullscreen=""></iframe></div>
-                                    <script src="https://player.vimeo.com/api/player.js"></script>
-
-                                </div>
-                            </article>
-                            <article id="post-115"
-                                class="clearfix post-115 post type-post status-publish format-standard hentry category-download">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a style="display: none;" href="https://www.omoguru.com/app-store-icons/"
-                                            rel="bookmark">AppStore Links</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/download/"
-                                            rel="category tag">Download</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/app-store-icons/" title="1:50 pm"
-                                            rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-29T13:50:50+00:00">
-                                                July 29, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a href="https://www.omoguru.com/app-store-icons/#respond">0 Comments</a>
-                                    </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <p style="color:#ff9700" class="has-text-color">Works on all devices. Download
-                                        Omoguru for <strong>FREE</strong>:</p>
-
-
-
-                                    <div class="wp-block-columns has-2-columns">
-                                        <div class="wp-block-column">
-                                            <figure class="wp-block-image"><a
-                                                    href="https://apps.apple.com/us/app/omoreader/id1371441139?ls=1"
-                                                    target="_blank" rel="noreferrer noopener"><img
-                                                        src="https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2.png"
-                                                        alt="" class="wp-image-162"
-                                                        srcset="https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2.png 700w, https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-300x102.png 300w, https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-500x170.png 500w, https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-150x51.png 150w, https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-400x136.png 400w, https://www.omoguru.com/wp-content/uploads/2019/09/apple-app-store-logo_2-200x68.png 200w"
-                                                        sizes="(max-width: 700px) 100vw, 700px" /></a></figure>
-                                        </div>
-
-
-
-                                        <div class="wp-block-column">
-                                            <figure class="wp-block-image"><a
-                                                    href="https://play.google.com/store/apps/details?id=com.locastic.omolab"
-                                                    target="_blank" rel="noreferrer noopener"><img
-                                                        src="https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2.png"
-                                                        alt="" class="wp-image-163"
-                                                        srcset="https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2.png 691w, https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-300x103.png 300w, https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-500x172.png 500w, https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-150x52.png 150w, https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-400x138.png 400w, https://www.omoguru.com/wp-content/uploads/2019/09/Google-Play-Store2-200x69.png 200w"
-                                                        sizes="(max-width: 691px) 100vw, 691px" /></a></figure>
-                                        </div>
-                                    </div>
-
-
-
-                                    <p></p>
-
-                                </div>
-                            </article>
-                            <article id="post-111"
-                                class="clearfix post-111 post type-post status-publish format-standard hentry category-dyslexia category-science category-type">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/font-family/" rel="bookmark">The Most Readable
-                                            Font In The World</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a>, <a
-                                            href="https://www.omoguru.com/category/science/"
-                                            rel="category tag">Science</a>, <a
-                                            href="https://www.omoguru.com/category/type/" rel="category tag">Type</a>
-                                    </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/font-family/" title="1:26 pm" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-29T13:26:36+00:00">
-                                                July 29, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a href="https://www.omoguru.com/font-family/#respond">0 Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <h3>OmoType is adjusted for people with dyslexia. This visually comfortable font is
-                                        dynamic and can be adapted to unique needs and preferences of every individual.
-                                    </h3>
-
-
-
-                                    <ul>
-                                        <li>Our typographers, science and dyslexia experts designed the type guided by
-                                            relevant<strong>&nbsp;scientific research about font
-                                                readability</strong>&nbsp;and&nbsp;<strong>dyslexia</strong></li>
-                                        <li><strong>240 different styles</strong>&nbsp;are designed to cater a broad
-                                            segment of users and address the entire spectrum of dyslexia manifestations
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </article>
-                            <article id="post-113"
-                                class="clearfix post-113 post type-post status-publish format-standard hentry category-reader category-web">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/read-online-with-dyslexia/" rel="bookmark">Use
-                                            Our Chrome Plugin For Free to Taste The Omoguru Reading Experience.</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/reader/"
-                                            rel="category tag">Reader</a>, <a
-                                            href="https://www.omoguru.com/category/web/" rel="category tag">Web</a>
-                                    </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/read-online-with-dyslexia/" title="1:49 pm"
-                                            rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-28T13:49:43+00:00">
-                                                July 28, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a href="https://www.omoguru.com/read-online-with-dyslexia/#respond">0
-                                            Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <p>Simply adjust any web page or application to your personal reading style. Add to
-                                        browser on Chrome Web Store:</p>
-
-
-
-                                    <figure class="wp-block-image"><a
-                                            href="https://chrome.google.com/webstore/detail/omolab-demo-extension/ckinimcmjlcaclahdpbeklbgfjidaeml"
-                                            target="_blank" rel="noreferrer noopener"><img
-                                                src="https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija.png"
-                                                alt="" class="wp-image-165"
-                                                srcset="https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija.png 500w, https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-300x48.png 300w, https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-150x24.png 150w, https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-400x64.png 400w, https://www.omoguru.com/wp-content/uploads/2019/09/chrome-linija-200x32.png 200w"
-                                                sizes="(max-width: 500px) 100vw, 500px" /></a></figure>
-
-                                </div>
-                            </article>
-                            <article id="post-78"
-                                class="clearfix post-78 post type-post status-publish format-standard hentry category-dyslexia category-science category-type">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/"
-                                            rel="bookmark">OmoType and Other Dyslexia Friendly Fonts</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a>, <a
-                                            href="https://www.omoguru.com/category/science/"
-                                            rel="category tag">Science</a>, <a
-                                            href="https://www.omoguru.com/category/type/" rel="category tag">Type</a>
-                                    </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/"
-                                            title="11:06 am" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-10T11:06:23+00:00">
-                                                July 10, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a
-                                            href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/#respond">0
-                                            Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <h4>The results obtained showed that children with reading disabilities are able to
-                                        read with greater degree of accuracy when OmoType font is used, and that, based
-                                        solely on its visual appeal, OmoType was awarded an average rating of 3.54 (on a
-                                        scale of 1-4, 4 being the highest rating). </h4>
-
-
-
-                                    <h3>Comparative Analysis</h3>
-
-
-
-                                    <p>The motivation behind the efforts invested in developing OmoType font system is
-                                        that not a single available font of that kind has truly proved effective, or
-                                        friendly for that matter, in addressing the reading issues dyslexic individuals
-                                        face.</p>
-
-
-
-                                    <a href="https://www.omoguru.com/omoguru-type-and-other-dyslexia-friendly-fonts/#more-78"
-                                        class="more-link">Continue reading <span class="meta-nav">&#8594;</span></a>
-                                </div>
-                            </article>
-                            <article id="post-75"
-                                class="clearfix post-75 post type-post status-publish format-standard hentry category-design category-dyslexia">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/what-is-omo/" rel="bookmark">What Is Omo?</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/design/"
-                                            rel="category tag">Design</a>, <a
-                                            href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/what-is-omo/" title="10:58 am" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-09T10:58:19+00:00">
-                                                July 9, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a href="https://www.omoguru.com/what-is-omo/#respond">0 Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <h4>In the course of the whole creative process of graphic
-                                        design and production, from the very beginning, Omo was there, the student and
-                                        the teacher at the same time. It was precisely this unique relationship, in
-                                        addition to difficulties my dyslexic family members had been experiencing, that
-                                        directed my attention to development of communication tools specially designed
-                                        for those endowed with peculiar cognitive circuitries.</h4>
-
-
-
-                                    <p>The agenda behind Omo is going back to basics, and so the resulting concept stems
-                                        from the need to eliminate any superfluous additions spawned by socially
-                                        motivated deformations, or, to put it simply, to focus on that which truly
-                                        carries meaning and substance amidst the white noise of everyday communication.
-                                    </p>
-
-
-
-                                    <p>At its inception, Omo is the very beginning of the line, a
-                                        basic element, a line the eye is following along, or a smart line that
-                                        communicates through elementary movement and application of primary colours.</p>
-
-
-
-                                    <a href="https://www.omoguru.com/what-is-omo/#more-75" class="more-link">Continue
-                                        reading <span class="meta-nav">&#8594;</span></a>
-                                </div>
-                            </article>
-                            <article id="post-273"
-                                class="clearfix post-273 post type-post status-publish format-standard hentry category-design category-dyslexia">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a style="display: none;" href="https://www.omoguru.com/273-2/"
-                                            rel="bookmark">Superpower</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/design/"
-                                            rel="category tag">Design</a>, <a
-                                            href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/273-2/" title="4:59 pm" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-08T16:59:02+00:00">
-                                                July 8, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a href="https://www.omoguru.com/273-2/#respond">0 Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <figure class="wp-block-image"><a href="https://www.omoguru.com/about-us/"><img
-                                                src="https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1024x576.png"
-                                                alt="" class="wp-image-274"
-                                                srcset="https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1024x576.png 1024w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-300x169.png 300w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-768x432.png 768w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-500x281.png 500w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-150x84.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-1200x675.png 1200w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-400x225.png 400w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-800x450.png 800w, https://www.omoguru.com/wp-content/uploads/2019/10/superpower-200x113.png 200w"
-                                                sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
-
-                                </div>
-                            </article>
-                            <article id="post-277"
-                                class="clearfix post-277 post type-post status-publish format-standard hentry category-dyslexia category-reader category-science">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/"
-                                            rel="bookmark">Research: Short Lines and E-Readers Are More Effective for
-                                            Dyslexics</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a>, <a
-                                            href="https://www.omoguru.com/category/reader/"
-                                            rel="category tag">Reader</a>, <a
-                                            href="https://www.omoguru.com/category/science/"
-                                            rel="category tag">Science</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/"
-                                            title="5:04 pm" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-07T17:04:09+00:00">
-                                                July 7, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a
-                                            href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/#respond">0
-                                            Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <p>One of the key benefits of <a href="https://www.omoguru.com/reader/"
-                                            target="_blank" rel="noreferrer noopener"
-                                            aria-label=" (opens in a new tab)">Omoguru for dyslexics</a> is that it is a
-                                        mobile app that provides just a few words per line. This is not just feedback we
-                                        received from our users but also supported by 5-years old scientific research by
-                                        Matthew H. Schneps, <a rel="noreferrer noopener"
-                                            aria-label=" (opens in a new tab)"
-                                            href="https://www.cfa.harvard.edu/dyslexia/LVL/" target="_blank">director of
-                                            Laboratory for Visual Learning</a> at the Harvard-Smithsonian CfA.</p>
-
-
-
-                                    <a href="https://www.omoguru.com/research-short-lines-and-e-readers-are-more-effective-for-dyslexics/#more-277"
-                                        class="more-link">Continue reading <span class="meta-nav">&#8594;</span></a>
-                                </div>
-                            </article>
-                            <article id="post-315"
-                                class="clearfix post-315 post type-post status-publish format-standard has-post-thumbnail hentry category-dyslexia category-type">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/"
-                                            rel="bookmark">A Picture Book From a Dyslexic Girl For All Children</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a>, <a
-                                            href="https://www.omoguru.com/category/type/" rel="category tag">Type</a>
-                                    </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/"
-                                            title="8:55 am" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-05T08:55:14+00:00">
-                                                July 5, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/tea-shain/"
-                                                title="View all posts by " rel="author">
-                                                Tea Sain </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a
-                                            href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/#respond">0
-                                            Comments</a> </span>
-                                </footer>
-
-                                <div class="featured-image">
-                                    <a
-                                        href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/">
-                                        <img width="500" height="180"
-                                            src="https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-500x180.jpg"
-                                            class="attachment-pixelwars__image_size_1 size-pixelwars__image_size_1 wp-post-image"
-                                            alt=""
-                                            srcset="https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-500x180.jpg 500w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-300x108.jpg 300w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-768x277.jpg 768w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-1024x369.jpg 1024w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-150x54.jpg 150w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-1200x432.jpg 1200w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-400x144.jpg 400w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-800x288.jpg 800w, https://www.omoguru.com/wp-content/uploads/2019/07/TinyPeople_gallery_2-200x72.jpg 200w"
-                                            sizes="(max-width: 500px) 100vw, 500px" /> </a>
-                                </div>
-
-                                <div class="entry-content clearfix">
-
-                                    <p>To support and empower children to communicate their fears we’ve created the
-                                        picture book called Tiny people. It is about fears who live inside everyone’s
-                                        heads and grow bigger until we speak about them. Picture book is made with <a
-                                            href="https://www.omoguru.com/font-family/" target="_blank"
-                                            rel="noreferrer noopener"
-                                            aria-label="OmoType font (opens in a new tab)">OmoType font</a> and full of
-                                        amazing dreamy illustrations. Text is adapted for children with dyslexia and
-                                        other reading difficulties.</p>
-
-
-
-                                    <a href="https://www.omoguru.com/a-picture-book-from-a-dyslexic-girl-for-all-children/#more-315"
-                                        class="more-link">Continue reading <span class="meta-nav">&#8594;</span></a>
-                                </div>
-                            </article>
-                            <article id="post-290"
-                                class="clearfix post-290 post type-post status-publish format-standard hentry category-dyslexia">
-                                <header class="entry-header">
-                                    <h1 class="entry-title">
-                                        <a href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/"
-                                            rel="bookmark">The Importance of Balancing the Summer Time for Dyslexic
-                                            Children</a>
-                                    </h1>
-                                </header>
-
-                                <footer class="entry-meta">
-                                    <span class="post-category">
-                                        posted in <a href="https://www.omoguru.com/category/dyslexia/"
-                                            rel="category tag">Dyslexia</a> </span>
-                                    <span class="post-date">
-                                        on
-                                        <a href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/"
-                                            title="8:18 am" rel="bookmark">
-                                            <time class="entry-date" datetime="2019-07-04T08:18:53+00:00">
-                                                July 4, 2019 </time>
-                                        </a>
-                                    </span>
-                                    <span class="by-author">
-                                        by
-                                        <span class="author vcard">
-                                            <a class="url fn n" href="https://www.omoguru.com/author/admin/"
-                                                title="View all posts by " rel="author">
-                                                admin </a>
-                                        </span>
-                                    </span>
-                                    <span class="comments-link">
-                                        <a
-                                            href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/#respond">0
-                                            Comments</a> </span>
-                                </footer>
-
-
-                                <div class="entry-content clearfix">
-
-                                    <h4><a rel="noreferrer noopener" aria-label=" (opens in a new tab)"
-                                            href="https://dyslexiaida.org/important-insights-for-reading-development/"
-                                            target="_blank">Successful adults with dyslexia</a> share one trait – the
-                                        motivation to learn about high-interest topics. Fostering the areas of interest
-                                        and supporting struggling readers via printed text can help them overcome some
-                                        barriers. With those extra hours and the tools – <a rel="noreferrer noopener"
-                                            aria-label="Reader (opens in a new tab)"
-                                            href="https://www.omoguru.com/reader/" target="_blank">Reader</a> and <a
-                                            rel="noreferrer noopener" aria-label="Font (opens in a new tab)"
-                                            href="https://www.omoguru.com/font-family/" target="_blank">Font</a> – it
-                                        can be a great help in practicing, reading or spelling while having fun, which
-                                        summer is all about! </h4>
-
-
-
-                                    <a href="https://www.omoguru.com/the-importance-of-balancing-the-summer-time-for-dyslexic-children/#more-290"
-                                        class="more-link">Continue reading <span class="meta-nav">&#8594;</span></a>
-                                </div>
-                            </article>
-
-                            <nav class="navigation" role="navigation">
-                                <div class="nav-previous">
-                                </div>
-
-                                <div class="nav-next">
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer wrapper" role="contentinfo">
+        <div class="row">
+          <div id="supplementary" class="row-fluid">
+            <div class="widget-area span3" role="complementary">
+              <aside id="media_image-7" class="widget widget_media_image">
+                <a
+                  href="http://www.erf.unizg.hr/en/"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="215"
+                    height="80"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin.png"
+                    class="image wp-image-200  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin.png        215w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin-150x56.png 150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin-200x74.png 200w
+                    "
+                    sizes="(max-width: 215px) 100vw, 215px"
+                /></a>
+              </aside>
+              <aside id="media_image-2" class="widget widget_media_image">
+                <a
+                  href="https://www.zicer.hr/eng"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="215"
+                    height="80"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/Zicer.png"
+                    class="image wp-image-198  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/Zicer.png        215w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/Zicer-150x56.png 150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/Zicer-200x74.png 200w
+                    "
+                    sizes="(max-width: 215px) 100vw, 215px"
+                /></a>
+              </aside>
+              <aside id="media_image-13" class="widget widget_media_image">
+                <img
+                  width="117"
+                  height="60"
+                  src="https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-150x77.png"
+                  class="image wp-image-312  attachment-117x60 size-117x60"
+                  alt=""
+                  style="max-width: 100%; height: auto;"
+                  srcset="
+                    https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-150x77.png  150w,
+                    https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-200x103.png 200w,
+                    https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer.png         234w
+                  "
+                  sizes="(max-width: 117px) 100vw, 117px"
+                />
+              </aside>
+              <aside id="text-2" class="widget widget_text">
+                <div class="textwidget">
+                  Follow us on:
+                  <ul class="sxc-follow-buttons">
+                    <li class="sxc-follow-button">
+                      <a
+                        href="https://www.facebook.com/omoguru/"
+                        title="Facebook"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/facebook.png"
+                          alt="Facebook"
+                        />
+                      </a>
+                    </li>
+                    <li class="sxc-follow-button">
+                      <a
+                        href="https://twitter.com/omoguru"
+                        title="Twitter"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/twitter.png"
+                          alt="Twitter"
+                        />
+                      </a>
+                    </li>
+                    <li class="sxc-follow-button">
+                      <a
+                        href="https://www.instagram.com/omoguru_/"
+                        title="Instagram"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/instagram.png"
+                          alt="Instagram"
+                        />
+                      </a>
+                    </li>
+                    <li class="sxc-follow-button">
+                      <a
+                        href="https://www.linkedin.com/company/omoguru/"
+                        title="LinkedIn"
+                        target="_blank"
+                      >
+                        <img
+                          src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/linkedin.png"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-
+              </aside>
             </div>
-        </section>
 
-
-        <footer class="site-footer wrapper" role="contentinfo">
-            <div class="row">
-                <div id="supplementary" class="row-fluid">
-                    <div class="widget-area span3" role="complementary">
-                        <aside id="media_image-7" class="widget widget_media_image"><a
-                                href="http://www.erf.unizg.hr/en/" class="imglink" target="_blank"
-                                rel="noopener noreferrer"><img width="215" height="80"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin.png"
-                                    class="image wp-image-200  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin.png 215w, https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin-150x56.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/ERF-Polin-200x74.png 200w"
-                                    sizes="(max-width: 215px) 100vw, 215px" /></a></aside>
-                        <aside id="media_image-2" class="widget widget_media_image"><a href="https://www.zicer.hr/eng"
-                                class="imglink" target="_blank" rel="noopener noreferrer"><img width="215" height="80"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/Zicer.png"
-                                    class="image wp-image-198  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/Zicer.png 215w, https://www.omoguru.com/wp-content/uploads/2019/10/Zicer-150x56.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/Zicer-200x74.png 200w"
-                                    sizes="(max-width: 215px) 100vw, 215px" /></a></aside>
-                        <aside id="media_image-13" class="widget widget_media_image"><img width="117" height="60"
-                                src="https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-150x77.png"
-                                class="image wp-image-312  attachment-117x60 size-117x60" alt=""
-                                style="max-width: 100%; height: auto;"
-                                srcset="https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-150x77.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer-200x103.png 200w, https://www.omoguru.com/wp-content/uploads/2019/10/Spacer_Image_Footer.png 234w"
-                                sizes="(max-width: 117px) 100vw, 117px" /></aside>
-                        <aside id="text-2" class="widget widget_text">
-                            <div class="textwidget">Follow us on:
-                                <ul class="sxc-follow-buttons">
-                                    <li class="sxc-follow-button">
-                                        <a href="https://www.facebook.com/omoguru/" title="Facebook" target="_blank">
-                                            <img src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/facebook.png"
-                                                alt="Facebook" />
-                                        </a>
-                                    </li>
-                                    <li class="sxc-follow-button">
-                                        <a href="https://twitter.com/omoguru" title="Twitter" target="_blank">
-                                            <img src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/twitter.png"
-                                                alt="Twitter" />
-                                        </a>
-                                    </li>
-                                    <li class="sxc-follow-button">
-                                        <a href="https://www.instagram.com/omoguru_/" title="Instagram" target="_blank">
-                                            <img src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/instagram.png"
-                                                alt="Instagram" />
-                                        </a>
-                                    </li>
-                                    <li class="sxc-follow-button">
-                                        <a href="https://www.linkedin.com/company/omoguru/" title="LinkedIn"
-                                            target="_blank">
-                                            <img src="https://www.omoguru.com/wp-content/plugins/social-media-buttons-toolbar/inc/img/social-media-icons/linkedin.png"
-                                                alt="LinkedIn" />
-                                        </a>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </aside>
-                    </div>
-
-
-                    <div class="widget-area span3" role="complementary">
-                        <aside id="media_image-5" class="widget widget_media_image"><a
-                                href="http://croatia.reachforchange.org/hr/" class="imglink" target="_blank"
-                                rel="noopener noreferrer"><img width="215" height="80"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/RfC.png"
-                                    class="image wp-image-195  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/RfC.png 215w, https://www.omoguru.com/wp-content/uploads/2019/10/RfC-150x56.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/RfC-200x74.png 200w"
-                                    sizes="(max-width: 215px) 100vw, 215px" /></a></aside>
-                        <aside id="media_image-6" class="widget widget_media_image"><a
-                                href="https://startupfactory.zicer.hr/index.en.html" class="imglink" target="_blank"
-                                rel="noopener noreferrer"><img width="215" height="80"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/SFZ.png"
-                                    class="image wp-image-196  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/SFZ.png 215w, https://www.omoguru.com/wp-content/uploads/2019/10/SFZ-150x56.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/SFZ-200x74.png 200w"
-                                    sizes="(max-width: 215px) 100vw, 215px" /></a></aside>
-                    </div>
-
-
-                    <div class="widget-area span3" role="complementary">
-                        <aside id="media_image-9" class="widget widget_media_image"><a href="https://locastic.com/"
-                                class="imglink" target="_blank" rel="noopener noreferrer"><img width="166" height="35"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/locastic.png"
-                                    class="image wp-image-202  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/locastic.png 166w, https://www.omoguru.com/wp-content/uploads/2019/10/locastic-150x32.png 150w"
-                                    sizes="(max-width: 166px) 100vw, 166px" /></a></aside>
-                        <aside id="media_image-8" class="widget widget_media_image"><a href="https://www.funderbeam.com"
-                                class="imglink" target="_blank" rel="noopener noreferrer"><img width="300" height="135"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-300x135.png"
-                                    class="image wp-image-201  attachment-medium size-medium" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-300x135.png 300w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-768x346.png 768w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-1024x461.png 1024w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-500x225.png 500w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-150x68.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-400x180.png 400w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-800x360.png 800w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-200x90.png 200w, https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb.png 1031w"
-                                    sizes="(max-width: 300px) 100vw, 300px" /></a></aside>
-                    </div>
-
-
-                    <div class="widget-area span3" role="complementary">
-                        <aside id="media_image-3" class="widget widget_media_image"><a href="http://act-grupa.hr/"
-                                class="imglink" target="_blank" rel="noopener noreferrer"><img width="215" height="80"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa.png"
-                                    class="image wp-image-199  attachment-full size-full" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa.png 215w, https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa-150x56.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa-200x74.png 200w"
-                                    sizes="(max-width: 215px) 100vw, 215px" /></a></aside>
-                        <aside id="media_image-14" class="widget widget_media_image"><a
-                                href="https://institute.eib.org/whatwedo/social-2-2/social-innovation-tournament-2/"
-                                class="imglink" target="_blank" rel="noopener noreferrer"><img width="300" height="128"
-                                    src="https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-300x128.png"
-                                    class="image wp-image-333  attachment-medium size-medium" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset="https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-300x128.png 300w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-768x328.png 768w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-1024x437.png 1024w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-500x213.png 500w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-150x64.png 150w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-1200x512.png 1200w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-400x171.png 400w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-800x341.png 800w, https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-200x85.png 200w"
-                                    sizes="(max-width: 300px) 100vw, 300px" /></a></aside>
-                    </div>
-                </div>
-
-                <div class="site-info">
-                    <a href="https://www.omoguru.com/privacy-policy/" target="_blank">Privacy Policy </a> -- <a
-                        href="https://www.omoguru.com/terms-and-conditions-of-use/" target="_blank">Terms of Use</a> //
-                    <a href="mailto:info@omoguru.com">info@omoguru.com</a> //
-                    Copyright 2019 - OmoLab komunikacije Ltd. </div>
+            <div class="widget-area span3" role="complementary">
+              <aside id="media_image-5" class="widget widget_media_image">
+                <a
+                  href="http://croatia.reachforchange.org/hr/"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="215"
+                    height="80"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/RfC.png"
+                    class="image wp-image-195  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/RfC.png        215w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/RfC-150x56.png 150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/RfC-200x74.png 200w
+                    "
+                    sizes="(max-width: 215px) 100vw, 215px"
+                /></a>
+              </aside>
+              <aside id="media_image-6" class="widget widget_media_image">
+                <a
+                  href="https://startupfactory.zicer.hr/index.en.html"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="215"
+                    height="80"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/SFZ.png"
+                    class="image wp-image-196  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SFZ.png        215w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SFZ-150x56.png 150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SFZ-200x74.png 200w
+                    "
+                    sizes="(max-width: 215px) 100vw, 215px"
+                /></a>
+              </aside>
             </div>
-        </footer>
+
+            <div class="widget-area span3" role="complementary">
+              <aside id="media_image-9" class="widget widget_media_image">
+                <a
+                  href="https://locastic.com/"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="166"
+                    height="35"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/locastic.png"
+                    class="image wp-image-202  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/locastic.png        166w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/locastic-150x32.png 150w
+                    "
+                    sizes="(max-width: 166px) 100vw, 166px"
+                /></a>
+              </aside>
+              <aside id="media_image-8" class="widget widget_media_image">
+                <a
+                  href="https://www.funderbeam.com"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="300"
+                    height="135"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-300x135.png"
+                    class="image wp-image-201  attachment-medium size-medium"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-300x135.png   300w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-768x346.png   768w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-1024x461.png 1024w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-500x225.png   500w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-150x68.png    150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-400x180.png   400w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-800x360.png   800w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb-200x90.png    200w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/funderbeam-logo-white-rgb.png          1031w
+                    "
+                    sizes="(max-width: 300px) 100vw, 300px"
+                /></a>
+              </aside>
+            </div>
+
+            <div class="widget-area span3" role="complementary">
+              <aside id="media_image-3" class="widget widget_media_image">
+                <a
+                  href="http://act-grupa.hr/"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="215"
+                    height="80"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa.png"
+                    class="image wp-image-199  attachment-full size-full"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa.png        215w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa-150x56.png 150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/ACTgrupa-200x74.png 200w
+                    "
+                    sizes="(max-width: 215px) 100vw, 215px"
+                /></a>
+              </aside>
+              <aside id="media_image-14" class="widget widget_media_image">
+                <a
+                  href="https://institute.eib.org/whatwedo/social-2-2/social-innovation-tournament-2/"
+                  class="imglink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    width="300"
+                    height="128"
+                    src="https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-300x128.png"
+                    class="image wp-image-333  attachment-medium size-medium"
+                    alt=""
+                    style="max-width: 100%; height: auto;"
+                    srcset="
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-300x128.png   300w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-768x328.png   768w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-1024x437.png 1024w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-500x213.png   500w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-150x64.png    150w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-1200x512.png 1200w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-400x171.png   400w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-800x341.png   800w,
+                      https://www.omoguru.com/wp-content/uploads/2019/10/SIT-ALUMNI_LOGO-200x85.png    200w
+                    "
+                    sizes="(max-width: 300px) 100vw, 300px"
+                /></a>
+              </aside>
+            </div>
+          </div>
+
+          <div class="site-info">
+            <a href="https://www.omoguru.com/privacy-policy/" target="_blank"
+              >Privacy Policy
+            </a>
+            --
+            <a
+              href="https://www.omoguru.com/terms-and-conditions-of-use/"
+              target="_blank"
+              >Terms of Use</a
+            >
+            // <a href="mailto:info@omoguru.com">info@omoguru.com</a> //
+            Copyright 2019 - OmoLab komunikacije Ltd.
+          </div>
+        </div>
+      </footer>
     </div>
 
-
-    <div id="cookie-law-info-bar"><span>This site uses cookies. By continuing to use this website, you agree to their
-            use. Read more about cookies in our <a href='https://www.omoguru.com/privacy-policy/' id="CONSTANT_OPEN_URL"
-                target="_blank" class="cli-plugin-main-link" style="display:inline-block;">Privacy Policy</a>. <a
-                data-cli_action="accept" id="cookie_action_close_header"
-                class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button"
-                style="display:inline-block;  margin:5px; ">CLOSE & ACCEPT</a></span></div>
-    <div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Cookies Policy</span></div>
-    <div class="cli-modal" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup"
-        aria-hidden="true">
-        <div class="cli-modal-dialog" role="document">
-            <div class="cli-modal-content cli-bar-popup">
-                <button type="button" class="cli-modal-close" id="cliModalClose">
-                    <svg class="" viewBox="0 0 24 24">
-                        <path
-                            d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z">
-                        </path>
-                        <path d="M0 0h24v24h-24z" fill="none"></path>
-                    </svg>
-                </button>
-                <div class="cli-modal-body">
-                    <div class="cli-container-fluid cli-tab-container">
-                        <div class="cli-row">
-                            <div class="cli-col-12 cli-align-items-stretch cli-px-0">
-                                <div class="cli-privacy-overview">
-                                    <h4>Privacy Overview</h4>
-                                    <div class="cli-privacy-content">
-                                        <div class="cli-privacy-content-text">This website uses cookies to improve your
-                                            experience while you navigate through the website. Out of these cookies, the
-                                            cookies that are categorized as necessary are stored on your browser as they
-                                            are essential for the working of basic functionalities of the website. We
-                                            also use third-party cookies that help us analyze and understand how you use
-                                            this website. These cookies will be stored in your browser only with your
-                                            consent. You also have the option to opt-out of these cookies. But opting
-                                            out of some of these cookies may have an effect on your browsing experience.
-                                        </div>
-                                    </div>
-                                    <a class="cli-privacy-readmore" data-readmore-text="Show more"
-                                        data-readless-text="Show less"></a>
-                                </div>
-                            </div>
-                            <div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
-                                <div class="cli-tab-section cli-privacy-tab">
-                                    <div class="cli-tab-header">
-                                        <a class="cli-nav-link cli-settings-mobile">
-                                            Privacy Overview </a>
-                                    </div>
-                                    <div class="cli-tab-content">
-                                        <div class="cli-tab-pane cli-fade">
-                                            <p>This website uses cookies to improve your experience while you navigate
-                                                through the website. Out of these cookies, the cookies that are
-                                                categorized as necessary are stored on your browser as they are
-                                                essential for the working of basic functionalities of the website. We
-                                                also use third-party cookies that help us analyze and understand how you
-                                                use this website. These cookies will be stored in your browser only with
-                                                your consent. You also have the option to opt-out of these cookies. But
-                                                opting out of some of these cookies may have an effect on your browsing
-                                                experience.</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="cli-tab-section">
-                                    <div class="cli-tab-header">
-                                        <a class="cli-nav-link cli-settings-mobile" data-target="necessary"
-                                            data-toggle="cli-toggle-tab">
-                                            Necessary
-                                        </a>
-
-                                        <span class="cli-necessary-caption">Always Enabled</span> </div>
-                                    <div class="cli-tab-content">
-                                        <div class="cli-tab-pane cli-fade" data-id="necessary">
-                                            <p>Necessary cookies are absolutely essential for the website to function
-                                                properly. This category only includes cookies that ensures basic
-                                                functionalities and security features of the website. These cookies do
-                                                not store any personal information.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="cli-tab-section">
-                                    <div class="cli-tab-header">
-                                        <a class="cli-nav-link cli-settings-mobile" data-target="non-necessary"
-                                            data-toggle="cli-toggle-tab">
-                                            Non-necessary
-                                        </a>
-                                        <div class="cli-switch">
-                                            <input type="checkbox" id="checkbox-non-necessary"
-                                                class="cli-user-preference-checkbox" data-id="checkbox-non-necessary"
-                                                checked />
-                                            <label for="checkbox-non-necessary" class="cli-slider"
-                                                data-cli-enable="Enabled"
-                                                data-cli-disable="Disabled">Non-necessary</label>
-                                        </div>
-                                    </div>
-                                    <div class="cli-tab-content">
-                                        <div class="cli-tab-pane cli-fade" data-id="non-necessary">
-                                            <p>Any cookies that may not be particularly necessary for the website to
-                                                function and is used specifically to collect user personal data via
-                                                analytics, ads, other embedded contents are termed as non-necessary
-                                                cookies. It is mandatory to procure user consent prior to running these
-                                                cookies on your website.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+    <div id="cookie-law-info-bar">
+      <span
+        >This site uses cookies. By continuing to use this website, you agree to
+        their use. Read more about cookies in our
+        <a
+          href="https://www.omoguru.com/privacy-policy/"
+          id="CONSTANT_OPEN_URL"
+          target="_blank"
+          class="cli-plugin-main-link"
+          style="display:inline-block;"
+          >Privacy Policy</a
+        >.
+        <a
+          data-cli_action="accept"
+          id="cookie_action_close_header"
+          class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button"
+          style="display:inline-block;  margin:5px; "
+          >CLOSE & ACCEPT</a
+        ></span
+      >
+    </div>
+    <div id="cookie-law-info-again" style="display:none;">
+      <span id="cookie_hdr_showagain">Cookies Policy</span>
+    </div>
+    <div
+      class="cli-modal"
+      id="cliSettingsPopup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="cliSettingsPopup"
+      aria-hidden="true"
+    >
+      <div class="cli-modal-dialog" role="document">
+        <div class="cli-modal-content cli-bar-popup">
+          <button type="button" class="cli-modal-close" id="cliModalClose">
+            <svg class="" viewBox="0 0 24 24">
+              <path
+                d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"
+              ></path>
+              <path d="M0 0h24v24h-24z" fill="none"></path>
+            </svg>
+          </button>
+          <div class="cli-modal-body">
+            <div class="cli-container-fluid cli-tab-container">
+              <div class="cli-row">
+                <div class="cli-col-12 cli-align-items-stretch cli-px-0">
+                  <div class="cli-privacy-overview">
+                    <h4>Privacy Overview</h4>
+                    <div class="cli-privacy-content">
+                      <div class="cli-privacy-content-text">
+                        This website uses cookies to improve your experience
+                        while you navigate through the website. Out of these
+                        cookies, the cookies that are categorized as necessary
+                        are stored on your browser as they are essential for the
+                        working of basic functionalities of the website. We also
+                        use third-party cookies that help us analyze and
+                        understand how you use this website. These cookies will
+                        be stored in your browser only with your consent. You
+                        also have the option to opt-out of these cookies. But
+                        opting out of some of these cookies may have an effect
+                        on your browsing experience.
+                      </div>
                     </div>
+                    <a
+                      class="cli-privacy-readmore"
+                      data-readmore-text="Show more"
+                      data-readless-text="Show less"
+                    ></a>
+                  </div>
                 </div>
+                <div
+                  class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container"
+                >
+                  <div class="cli-tab-section cli-privacy-tab">
+                    <div class="cli-tab-header">
+                      <a class="cli-nav-link cli-settings-mobile">
+                        Privacy Overview
+                      </a>
+                    </div>
+                    <div class="cli-tab-content">
+                      <div class="cli-tab-pane cli-fade">
+                        <p>
+                          This website uses cookies to improve your experience
+                          while you navigate through the website. Out of these
+                          cookies, the cookies that are categorized as necessary
+                          are stored on your browser as they are essential for
+                          the working of basic functionalities of the website.
+                          We also use third-party cookies that help us analyze
+                          and understand how you use this website. These cookies
+                          will be stored in your browser only with your consent.
+                          You also have the option to opt-out of these cookies.
+                          But opting out of some of these cookies may have an
+                          effect on your browsing experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cli-tab-section">
+                    <div class="cli-tab-header">
+                      <a
+                        class="cli-nav-link cli-settings-mobile"
+                        data-target="necessary"
+                        data-toggle="cli-toggle-tab"
+                      >
+                        Necessary
+                      </a>
+
+                      <span class="cli-necessary-caption">Always Enabled</span>
+                    </div>
+                    <div class="cli-tab-content">
+                      <div class="cli-tab-pane cli-fade" data-id="necessary">
+                        <p>
+                          Necessary cookies are absolutely essential for the
+                          website to function properly. This category only
+                          includes cookies that ensures basic functionalities
+                          and security features of the website. These cookies do
+                          not store any personal information.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cli-tab-section">
+                    <div class="cli-tab-header">
+                      <a
+                        class="cli-nav-link cli-settings-mobile"
+                        data-target="non-necessary"
+                        data-toggle="cli-toggle-tab"
+                      >
+                        Non-necessary
+                      </a>
+                      <div class="cli-switch">
+                        <input
+                          type="checkbox"
+                          id="checkbox-non-necessary"
+                          class="cli-user-preference-checkbox"
+                          data-id="checkbox-non-necessary"
+                          checked
+                        />
+                        <label
+                          for="checkbox-non-necessary"
+                          class="cli-slider"
+                          data-cli-enable="Enabled"
+                          data-cli-disable="Disabled"
+                          >Non-necessary</label
+                        >
+                      </div>
+                    </div>
+                    <div class="cli-tab-content">
+                      <div
+                        class="cli-tab-pane cli-fade"
+                        data-id="non-necessary"
+                      >
+                        <p>
+                          Any cookies that may not be particularly necessary for
+                          the website to function and is used specifically to
+                          collect user personal data via analytics, ads, other
+                          embedded contents are termed as non-necessary cookies.
+                          It is mandatory to procure user consent prior to
+                          running these cookies on your website.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
     <div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
     <script type="text/javascript">
-        /* <![CDATA[ */
-        cli_cookiebar_settings = '{"animate_speed_hide":"500","animate_speed_show":"500","background":"#FFF","border":"#b1a6a6c2","border_on":false,"button_1_button_colour":"#000000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":false,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#009cbb","button_4_as_button":false,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"left","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
-  /* ]]> */
-    </script><!-- Intercom -->
+      /* <![CDATA[ */
+      cli_cookiebar_settings =
+        '{"animate_speed_hide":"500","animate_speed_show":"500","background":"#FFF","border":"#b1a6a6c2","border_on":false,"button_1_button_colour":"#000000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":false,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#009cbb","button_4_as_button":false,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"left","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+      /* ]]> */
+    </script>
+    <!-- Intercom -->
     <script>
-
-        window.intercomSettings = {
-            app_id: "fl325l72"
-        };
+      window.intercomSettings = {
+        app_id: "fl325l72"
+      };
     </script>
 
-    <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/fl325l72'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();</script>
+    <script>
+      (function() {
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === "function") {
+          ic("reattach_activator");
+          ic("update", w.intercomSettings);
+        } else {
+          var d = document;
+          var i = function() {
+            i.c(arguments);
+          };
+          i.q = [];
+          i.c = function(args) {
+            i.q.push(args);
+          };
+          w.Intercom = i;
+          var l = function() {
+            var s = d.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://widget.intercom.io/widget/fl325l72";
+            var x = d.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+          };
+          if (w.attachEvent) {
+            w.attachEvent("onload", l);
+          } else {
+            w.addEventListener("load", l, false);
+          }
+        }
+      })();
+    </script>
 
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6500933.js"></script>
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js.hs-scripts.com/6500933.js"
+    ></script>
     <!-- End of HubSpot Embed Code -->
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/detectmobilebrowser.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/modernizr.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/jquery.fitvids.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/google-code-prettify/prettify.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.uniform.min.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.flexslider-min.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.isotope.min.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.fancybox-1.3.4.pack.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.masonry.min.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/jquery.history.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/js-url.min.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/jquerypp.custom.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/gamma.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/main.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/themes/read/js/jquery.validate.min.js'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-content/themes/read/js/send-mail.js'></script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/plugins/dynamic-to-top/js/libs/jquery.easing.js?ver=1.3'></script>
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var mv_dynamic_to_top = { "text": "To Top", "version": "0", "min": "300", "speed": "1100", "easing": "easeInExpo", "margin": "20" };
-/* ]]> */
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/detectmobilebrowser.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/modernizr.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.fitvids.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/google-code-prettify/prettify.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.uniform.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.flexslider-min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.isotope.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.fancybox-1.3.4.pack.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.masonry.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.history.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/js-url.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquerypp.custom.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/gamma.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/main.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/jquery.validate.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/themes/read/js/send-mail.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/plugins/dynamic-to-top/js/libs/jquery.easing.js?ver=1.3"
+    ></script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var mv_dynamic_to_top = {
+        text: "To Top",
+        version: "0",
+        min: "300",
+        speed: "1100",
+        easing: "easeInExpo",
+        margin: "20"
+      };
+      /* ]]> */
     </script>
-    <script type='text/javascript'
-        src='https://www.omoguru.com/wp-content/plugins/dynamic-to-top/js/dynamic.to.top.min.js?ver=3.5'></script>
-    <script type='text/javascript' src='https://www.omoguru.com/wp-includes/js/wp-embed.min.js?ver=5.2.2'></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-content/plugins/dynamic-to-top/js/dynamic.to.top.min.js?ver=3.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.omoguru.com/wp-includes/js/wp-embed.min.js?ver=5.2.2"
+    ></script>
+  </body>
 </html>
