@@ -1,11 +1,14 @@
-var path = require('path');
-var express = require('express');
+var path = require("path");
+var express = require("express");
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.set('port', process.env.PORT || 8080);
+app.use(express.static(path.join(__dirname, "dist")));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+});
+app.set("port", process.env.PORT || 8080);
 
-var server = app.listen(app.get('port'), function() {
-  console.log('listening on port ', server.address().port);
+var server = app.listen(app.get("port"), function() {
+  console.log("listening on port ", server.address().port);
 });
