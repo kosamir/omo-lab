@@ -1,23 +1,23 @@
 @font-face {
   font-family: OmoTypeA-;
-  src: url("/fonts/woff/OmoTypeA-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-RegularOne.woff");
 }
 
 @font-face {
   font-family: OmoTypeB-;
-  src: url("/fonts/woff/OmoTypeB-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-RegularOne.woff");
 }
 @font-face {
   font-family: OmoTypeC-;
-  src: url("/fonts/woff/OmoTypeC-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-RegularOne.woff");
 }
 @font-face {
   font-family: OmoTypeD-;
-  src: url("/fonts/woff/OmoTypeD-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-RegularOne.woff");
 }
 @font-face {
   font-family: OmoTypeE-;
-  src: url("/fonts/woff/OmoTypeE-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-RegularOne.woff");
 }
 @font-face {
   font-family: dBoldOne;
@@ -25,11 +25,11 @@
 }
 @font-face {
   font-family: dBlackOne;
-  src: url("/fonts/woff/OmoTypeD-BlackOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-BlackOne.woff");
 }
 @font-face {
   font-family: dBlackTwo;
-  src: url("/fonts/woff/OmoTypeD-BlackTwo.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-BlackTwo.woff");
 }
 
 .omo-widget {
