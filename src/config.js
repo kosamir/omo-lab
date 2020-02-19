@@ -48,15 +48,16 @@ const inverseFontFaceColor = bgColor => {
   if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_BLACK) {
     styleBlack = "color:white !important;";
   }
-  if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_WHITE) {
-    styleBlack = "color:black !important;";
-  }
+  // if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_WHITE) {
+  //   styleBlack = "color:black !important;";
+  // }
   return styleBlack;
 };
 
 const setHeaderStyle = (
   headerStyleElements,
   headerFontFamily,
+  headerFontWeight,
   headerFontSize,
   headerFontSpacing,
   headerLineHeight,
@@ -69,15 +70,14 @@ const setHeaderStyle = (
         ? addPixelsToNumber(headerFontSize)
         : addPixelsToNumber(this.HEADER_FONT_SIZE)
     } !important; 
+    font-weight:${headerFontWeight} !important;
     letter-spacing:${
       headerFontSpacing
         ? addPixelsToNumber(headerFontSpacing)
         : addPixelsToNumber(this.HEADER_FONT_SPACING)
     } !important; 
     line-height:${
-      headerLineHeight
-        ? addPixelsToNumber(headerLineHeight)
-        : addPixelsToNumber(this.HEADER_LINE_HEIGHT)
+      headerLineHeight ? headerLineHeight : this.HEADER_LINE_HEIGHT
     } !important;
     ${inverseFontFaceColor(bgColor)}}\n`;
   return headerStyle;
@@ -122,6 +122,23 @@ exports.TWEAK = TWEAK;
 /** SET BODY STYLE */
 var BODY_STYLE;
 exports.BODY_STYLE = BODY_STYLE;
+
+const getFontName = prop =>
+  `OmoType${CURRENT_CONFIG[prop].fontVersion}-${CURRENT_CONFIG[prop].fontWeight}${CURRENT_CONFIG[prop].letterSpacing}`; // eslint-disable-line no-unused-vars
+
+function applyFontFamily(fontName, elementProp) {
+  // eslint-disable-line no-unused-vars
+  const fontLoaded = document.fonts.check(`12px ${fontName}`);
+  if (!fontLoaded) {
+    let url = chrome.runtime.getURL(`fonts/woff/${fontName}.woff`);
+    let dMediumFour = new FontFace(fontName, `url(${url})`);
+    dMediumFour
+      .load()
+      .then(loadedFont => document.fonts.add(loadedFont))
+      .catch(() => {});
+  }
+  ELEMENTS[elementProp].fontName().style.fontFamily = fontName;
+}
 
 /** SET OMO STYLE ON SELECTED  BODY ELEMENTS */
 const setBodyTextStyle = (
@@ -188,6 +205,7 @@ const readConfigurationFromFile = conf => {
       })
       .then(text => {
         this.BODY_FONT_FAMILY = text.BODY_FONT_FAMILY || "Roboto";
+        this.HEADER_FONT_FAMILY = text.HEADER_FONT_FAMILY || "Roboto";
 
         this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS;
         this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS;

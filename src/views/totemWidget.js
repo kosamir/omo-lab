@@ -238,10 +238,10 @@ const setUserAppliedValues = data => {
 const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
 
 const FONT_WEIGHT = [
-  { id: 1, value: "bold" },
-  { id: 2, value: "bolder" },
-  { id: 3, value: "light" },
-  { id: 4, value: "lighter" }
+  { id: 1, value: "500" },
+  { id: 2, value: "600" },
+  { id: 3, value: "700" },
+  { id: 4, value: "800" }
 ];
 
 const setFontWeight = val => FONT_WEIGHT.filter(el => el.id === Number(val));
@@ -269,7 +269,7 @@ const setLineHeight = val => LINE_HEIGHT.filter(el => el.id === Number(val));
 const setLineHeightId = val => LINE_HEIGHT.filter(el => el.value === val);
 
 const OMO_TYPE = "OmoType";
-const FONT_CHOOSER = [
+const BODY_FONT_CHOOSER = [
   { id: 1, style: "OmoTypeA", value: `${OMO_TYPE}A-` },
   { id: 2, style: "OmoTypeB", value: `${OMO_TYPE}B-` },
   { id: 3, style: "OmoTypeC", value: `${OMO_TYPE}C-` },
@@ -277,8 +277,21 @@ const FONT_CHOOSER = [
   { id: 5, style: "OmoTypeE", value: `${OMO_TYPE}E-` }
 ];
 
-const setFontFamily = val => FONT_CHOOSER.filter(el => el.id === Number(val));
-const setFontFamilyId = val => FONT_CHOOSER.filter(el => el.value === val);
+const HEADER_FONT_CHOOSER = [
+  { id: 1, style: "OmoTypeA", value: `${OMO_TYPE}A-` },
+  { id: 2, style: "OmoTypeB", value: `${OMO_TYPE}B-` },
+  { id: 3, style: "OmoTypeC", value: `${OMO_TYPE}C-` },
+  { id: 4, style: "OmoTypeD", value: `${OMO_TYPE}D-` },
+  { id: 5, style: "OmoTypeE", value: `${OMO_TYPE}E-` }
+];
+const setHeaderFontFamily = val =>
+  HEADER_FONT_CHOOSER.filter(el => el.id === Number(val));
+const setHeaderFontFontFamilyId = val =>
+  HEADER_FONT_CHOOSER.filter(el => el.value === val);
+
+const setFontFamily = val =>
+  BODY_FONT_CHOOSER.filter(el => el.id === Number(val));
+const setFontFamilyId = val => BODY_FONT_CHOOSER.filter(el => el.value === val);
 
 const COLOR_MAP = [
   { id: 0, background: "#EFF3EE" },
@@ -299,9 +312,17 @@ const getUserAppliedValues = () => {
     Number(document.getElementById("totem_bsize").value) +
     Number(config.BODY_FONT_SIZE);
 
+  const hFontSize =
+    Number(document.getElementById("totem_bsize").value) +
+    Number(config.HEADER_FONT_SIZE);
+
   const bFontFamily = setFontFamily(
     document.getElementById("totem_body_ff").value
   );
+  const hFontFamily = setHeaderFontFamily(
+    document.getElementById("totem_body_ff").value
+  );
+
   const bFontWeigth = setFontWeight(
     document.getElementById("totem_font_weight").value
   );
@@ -318,7 +339,9 @@ const getUserAppliedValues = () => {
   const data = {
     checked: applied,
     bodyFontSize: bFontSize,
+    headerFontSize: hFontSize,
     bodyFontFamily: bFontFamily[0].value,
+    headerFontFamily: hFontFamily[0].value,
     bodyFontWeight: bFontWeigth[0].value,
     bodyFontSpacing: bFontSpacing[0].value,
     bodyLineHeight: bFontLineHeight[0].value,
@@ -344,16 +367,17 @@ function generateOmoStyle() {
   //   BACKGROUND_COLOR_ELEMENTS_IMPORTANT,
   //   bgCol
   // );
-  /* const headerStyle = config.setHeaderStyle(
+  const headerStyle = config.setHeaderStyle(
     config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(","),
     values.headerFontFamily,
+    values.bodyFontWeight,
     values.headerFontSize,
-    values.headerFontSpacing,
-    values.headerLineHeight,
+    values.bodyFontSpacing,
+    values.bodyLineHeight,
     values.bgColor
   );
   style += headerStyle;
-
+  /* 
   const customHeaderStyle = config.setHeaderStyle(
     config.transformHeaderStyles(config.CUSTOM_HEADER_STYLE_ELEMENTS).join(","),
     values.headerFontFamily,
@@ -515,7 +539,8 @@ export const showWidget = (text, configurations) => {
     .readConfigurationFromFile(configurations.config)
     .then(message => {
       // push default font from configuration
-      FONT_CHOOSER.push({ id: 0, value: config.BODY_FONT_FAMILY });
+      HEADER_FONT_CHOOSER.push({ id: 0, value: config.HEADER_FONT_FAMILY });
+      BODY_FONT_CHOOSER.push({ id: 0, value: config.BODY_FONT_FAMILY });
       LINE_HEIGHT.push({ id: 0, value: config.BODY_LINE_HEIGHT });
       FONT_WEIGHT.push({ id: 0, value: config.BODY_FONT_WEIGHT });
       LETTER_SPACING.push({ id: 0, value: config.BODY_FONT_SPACING });

@@ -27,6 +27,7 @@ module.exports = env => {
               // { from: "icons/", to: "img/" },
               { from: "config/", to: "config/" },
               { from: "fonts/woff", to: "fonts/woff" },
+              { from: "fonts/std", to: "fonts/std" },
               { from: "assets/", to: "assets/" }
             ])
           ]
