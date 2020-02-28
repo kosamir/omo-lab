@@ -1,0 +1,23 @@
+{
+  "DEFAULT_BACKGROUND": "transparent",
+  "HEADER_FONT_FAMILY": "sans-serif",
+  "BODY_FONT_FAMILY": "sans-serif",
+  "HEADER_LINE_HEIGHT": "1.5",
+  "HEADER_FONT_SPACING": "0",
+  "HEADER_FONT_SIZE": "40",
+  "BODY_LINE_HEIGHT": "1.5",
+  "BODY_FONT_SPACING": "0",
+  "BODY_FONT_SIZE": "16",
+  "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6"],
+  "CUSTOM_HEADER_STYLE_ELEMENTS": [],
+  "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
+  "ELEMENTS_TO_TWEAK_STYLE": [],
+  "BODY_STYLE": [
+    "div.markdown *",
+    "section",
+    "div.markdown column",
+    "div.subtitle *",
+    "div.navbar-menu has-content-centered"
+  ],
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "div.navbar-menu", "div.card-content"]
+}
