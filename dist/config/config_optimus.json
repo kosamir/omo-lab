@@ -13,7 +13,7 @@
   "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
   "ELEMENTS_TO_TWEAK_STYLE": [],
   "BODY_STYLE": [
-    "div.columns *",
+    "div.markdown *",
     "section",
     "div.markdown column",
     "div.subtitle *",
@@ -21,7 +21,8 @@
   ],
   "BACKGROUND_COLOR_ELEMENTS": [
     " ",
-    "div.navbar-menu has-content-centered",
-    "div.card"
+    "div.navbar-menu",
+    "div.card-content",
+    "div.modal"
   ]
 }

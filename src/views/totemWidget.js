@@ -416,7 +416,8 @@ function generateOmoStyle() {
 const saveCookie = text => {
   const name = `${config.OMO_WIDGET_COOKIE}_${text}`;
   const value = JSON.stringify(getUserAppliedValues());
-  document.cookie = `${name}=${value};`;
+  localStorage.setItem(`${name}`, value);
+  // document.cookie = `${name}=${value}; SameSite=None; Secure;`;
   console.log(`saved:${value}`);
 };
 
@@ -435,19 +436,20 @@ const saveConf = event => {
 
 /** READ VALUE FROM SAVED COOKIE */
 const readCookie = () => {
-  const cookie = document.cookie
-    .split(";")
-    .filter(el => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
-  if (cookie.length > 0) {
-    const data = cookie[0].split("=")[1];
-
-    setUserAppliedValues(JSON.parse(data));
-    if (!getUserAppliedValues().checked) {
-      const widget = document.querySelector("#omo-widget");
-      widget.classList["add"]("has-changes");
-      applyOverides();
-    }
+  // const cookie = document.cookie
+  //   .split(";")
+  //   .filter(el => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
+  // if (cookie.length > 0) {
+  //   const data = cookie[0].split("=")[1];
+  let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
+  console.log(JSON.parse(data));
+  setUserAppliedValues(JSON.parse(data));
+  if (!getUserAppliedValues().checked) {
+    const widget = document.querySelector("#omo-widget");
+    widget.classList["add"]("has-changes");
+    applyOverides();
   }
+  // }
 };
 
 function getLastAppliedStyleSheet() {
