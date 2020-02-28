@@ -24,8 +24,9 @@
     "div.navbar-menu",
     "div.card-content",
     "div.modal",
-    "nav.navbar *",
+    "div.container *",
     "div.dropdown",
-    "div.modal-background"
+    "div.modal-background",
+    "div.modal-card-body"
   ]
 }
