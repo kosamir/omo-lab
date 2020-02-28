@@ -28,6 +28,7 @@
     "a.navbar-burger",
     "div.dropdown",
     "div.modal-background",
-    "div.modal-card-body"
+    "div.modal-card-body",
+    "section.modal-card-body"
   ]
 }
