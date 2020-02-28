@@ -23,6 +23,9 @@
     " ",
     "div.navbar-menu",
     "div.card-content",
-    "div.modal"
+    "div.modal",
+    "nav.navbar *",
+    "div.dropdown",
+    "div.modal-background"
   ]
 }

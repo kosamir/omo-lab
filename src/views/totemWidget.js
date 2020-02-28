@@ -442,7 +442,10 @@ const readCookie = () => {
   // if (cookie.length > 0) {
   //   const data = cookie[0].split("=")[1];
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
-  console.log(JSON.parse(data));
+  console.log(data === null);
+  if (data === null) {
+    return;
+  }
   setUserAppliedValues(JSON.parse(data));
   if (!getUserAppliedValues().checked) {
     const widget = document.querySelector("#omo-widget");
