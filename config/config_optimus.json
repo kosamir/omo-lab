@@ -19,5 +19,10 @@
     "div.subtitle *",
     "div.navbar-menu has-content-centered"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "div.navbar-menu", "div.card-content"]
+  "BACKGROUND_COLOR_ELEMENTS": [
+    " ",
+    "div.navbar-menu",
+    "div.card-content",
+    "div.modal"
+  ]
 }
