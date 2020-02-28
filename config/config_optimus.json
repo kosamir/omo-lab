@@ -17,7 +17,8 @@
     "section",
     "div.markdown column",
     "div.subtitle *",
-    "div.navbar-menu has-content-centered"
+    "div.navbar-menu has-content-centered",
+    "div.card-content"
   ],
   "BACKGROUND_COLOR_ELEMENTS": [
     " ",
