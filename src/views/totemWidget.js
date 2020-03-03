@@ -238,9 +238,10 @@ const setUserAppliedValues = data => {
 const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
 
 const FONT_WEIGHT = [
-  { id: 1, value: "500" },
-  { id: 2, value: "600" },
-  { id: 3, value: "800" }
+  { id: 1, value: "600" }
+  // ,
+  // { id: 2, value: "600" },
+  // { id: 3, value: "800" }
   // ,
   // { id: 4, value: "lighter" }
 ];
