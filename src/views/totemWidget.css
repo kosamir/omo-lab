@@ -547,6 +547,7 @@
 }
 
 .omo-widget * {
+  all: unset;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -675,7 +676,7 @@
   display: block;
   width: var(--size);
   height: var(--size);
-  margin: var(--margin-size);
+  margin: var(--margin-size) !important;
   background: transparent;
   border: 2px solid white;
   border-radius: 50%;
@@ -821,20 +822,20 @@
   width: var(--sizeAdjusted);
   height: var(--sizeAdjusted);
   pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .omo-widget__toggle-options ~ form > * {
-  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
-  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  -webkit-transition: opacity var(--animationSpeed) ease;
+  transition: opacity var(--animationSpeed) ease;
   opacity: 0;
 }
 
 .omo-widget__toggle-options:checked ~ form {
   -webkit-transition: width var(--animationSpeed) ease;
   transition: width var(--animationSpeed) ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: calc(3 * var(--sizeAdjusted));
   pointer-events: all;
 }
@@ -1032,27 +1033,27 @@
   pointer-events: none;
 }
 
-.omo-widget [data-setting-name="background"][data-value="0"] {
+.omo-widget [data-setting-name="background"][data-value="0"]::after {
   background: var(--bgColor0);
 }
 
-.omo-widget [data-setting-name="background"][data-value="1"] {
+.omo-widget [data-setting-name="background"][data-value="1"]::after {
   background: var(--bgColor1);
 }
 
-.omo-widget [data-setting-name="background"][data-value="2"] {
+.omo-widget [data-setting-name="background"][data-value="2"]::after {
   background: var(--bgColor2);
 }
 
-.omo-widget [data-setting-name="background"][data-value="3"] {
+.omo-widget [data-setting-name="background"][data-value="3"]::after {
   background: var(--bgColor3);
 }
 
-.omo-widget [data-setting-name="background"][data-value="4"] {
+.omo-widget [data-setting-name="background"][data-value="4"]::after {
   background: var(--bgColor4);
 }
 
-.omo-widget [data-setting-name="background"][data-value="5"] {
+.omo-widget [data-setting-name="background"][data-value="5"]::after {
   background: var(--bgColor5);
 }
 
