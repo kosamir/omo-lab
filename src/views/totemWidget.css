@@ -547,7 +547,6 @@
 }
 
 .omo-widget * {
-  all: unset;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -676,7 +675,7 @@
   display: block;
   width: var(--size);
   height: var(--size);
-  margin: var(--margin-size) !important;
+  margin: var(--margin-size);
   background: transparent;
   border: 2px solid white;
   border-radius: 50%;
@@ -822,20 +821,20 @@
   width: var(--sizeAdjusted);
   height: var(--sizeAdjusted);
   pointer-events: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .omo-widget__toggle-options ~ form > * {
-  -webkit-transition: opacity var(--animationSpeed) ease;
-  transition: opacity var(--animationSpeed) ease;
+  -webkit-transition: opacity var(--animationSpeed) ease var(--animationSpeed);
+  transition: opacity var(--animationSpeed) ease var(--animationSpeed);
   opacity: 0;
 }
 
 .omo-widget__toggle-options:checked ~ form {
   -webkit-transition: width var(--animationSpeed) ease;
   transition: width var(--animationSpeed) ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: calc(3 * var(--sizeAdjusted));
   pointer-events: all;
 }
