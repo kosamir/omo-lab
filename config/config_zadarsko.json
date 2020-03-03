@@ -25,10 +25,5 @@
     "div.c-pane",
     "section.edn-feed"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [
-    " ",
-    "main.l-page-conent *",
-    "main.l-page-conent-main *",
-    "main.l-page-conent-main-link *"
-  ]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main"]
 }
