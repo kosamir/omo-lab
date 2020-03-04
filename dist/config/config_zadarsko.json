@@ -18,12 +18,14 @@
     "div.c-item__title *",
     "div.c-article-detail__main-col *",
     "div.footer-top",
-    "nav.c-nav-aside",
+    "nav.c-nav-aside *",
     "div.container",
-    "div.c-nav-card",
+    "div.c-nav-card *",
     "div.Normal",
     "div.c-pane",
-    "section.edn-feed"
+    "section.edn-feed",
+    "div.c-item__title",
+    "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" "]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main"]
 }

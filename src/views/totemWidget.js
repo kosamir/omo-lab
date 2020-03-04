@@ -53,6 +53,7 @@ var initOmoWidgetControls = function() {
 
   const updateFontFamilyPreview = function(value) {
     const letters = ["O", "A", "B", "C", "D", "E"];
+
     +fontTypePreview.setAttribute("data-selected", letters[value]);
   };
 
@@ -124,7 +125,10 @@ var initOmoWidgetControls = function() {
     }
   };
 
-  const handleResetClick = function() {
+  const handleResetClick = function(e) {
+    if (e.target.id === "totem_body_ff_reset") {
+      updateFontFamilyPreview(0);
+    }
     closeOptions();
     setTimeout(function() {
       handleValueChange(), 1;
@@ -200,6 +204,11 @@ var initOmoWidgetControls = function() {
   backgroundSettingsReset.addEventListener("click", function() {
     backgroundSettingsForm.parentElement.setAttribute("data-value", -1);
   });
+  return {
+    updateFont: function(value) {
+      updateFontFamilyPreview(value);
+    }
+  };
 };
 
 function addOmolabClassScopeToBody(doc) {
@@ -209,7 +218,7 @@ function addOmolabClassScopeToBody(doc) {
   }
 }
 
-const setUserAppliedValues = data => {
+const setUserAppliedValues = (data, fn) => {
   if (data.checked) {
     const widget = document.querySelector("#omo-widget");
     widget.classList["add"]("has-changes");
@@ -222,6 +231,9 @@ const setUserAppliedValues = data => {
   document.getElementById("totem_body_ff").value = setFontFamilyId(
     data.bodyFontFamily
   )[0].id;
+
+  fn.updateFont(document.getElementById("totem_body_ff").value);
+
   document.getElementById("totem_font_weight").value = setFontWeightId(
     data.bodyFontWeight
   )[0].id;
@@ -238,9 +250,9 @@ const setUserAppliedValues = data => {
 const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
 
 const FONT_WEIGHT = [
-  { id: 1, value: "500" },
-  { id: 2, value: "600" },
-  { id: 3, value: "800" }
+  { id: 1, value: "500", omoType: "BoldOne" },
+  { id: 2, value: "600", omoType: "BookOne" },
+  { id: 3, value: "800", omoType: "MediumOne" }
   // ,
   // { id: 4, value: "lighter" }
 ];
@@ -368,8 +380,20 @@ function generateOmoStyle() {
   //   BACKGROUND_COLOR_ELEMENTS_IMPORTANT,
   //   bgCol
   // );
+
+  const isOmoTypeTurnedOn = () => {
+    return (
+      document.getElementById("totem_font_weight").value !== "0" &&
+      document.getElementById("totem_body_ff").value !== "0"
+    );
+  };
+
   const headerStyle = config.setHeaderStyle(
     config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(","),
+    // isOmoTypeTurnedOn()
+    //   ? values.headerFontFamily +
+    //       setFontWeightId(values.bodyFontWeight)[0].omoType
+    //   : values.headerFontFamily,
     values.headerFontFamily,
     values.bodyFontWeight,
     values.headerFontSize,
@@ -392,6 +416,10 @@ function generateOmoStyle() {
 
   const bodyStyle = config.setBodyTextStyle(
     config.BODY_STYLE,
+    // isOmoTypeTurnedOn()
+    //   ? values.bodyFontFamily +
+    //       setFontWeightId(values.bodyFontWeight)[0].omoType
+    //   : values.bodyFontFamily,
     values.bodyFontFamily,
     values.bodyFontWeight,
     values.bodyFontSize,
@@ -436,7 +464,7 @@ const saveConf = event => {
 */
 
 /** READ VALUE FROM SAVED COOKIE */
-const readCookie = () => {
+const readCookie = fn => {
   // const cookie = document.cookie
   //   .split(";")
   //   .filter(el => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
@@ -447,7 +475,8 @@ const readCookie = () => {
   if (data === null) {
     return;
   }
-  setUserAppliedValues(JSON.parse(data));
+
+  setUserAppliedValues(JSON.parse(data), fn);
   if (!getUserAppliedValues().checked) {
     const widget = document.querySelector("#omo-widget");
     widget.classList["add"]("has-changes");
@@ -540,7 +569,8 @@ export const showWidget = (text, configurations) => {
     elements.push(tmp);
     body.appendChild(tmp);
   }
-  initOmoWidgetControls();
+  var handle = initOmoWidgetControls();
+
   config
     .readConfigurationFromFile(configurations.config)
     .then(message => {
@@ -554,7 +584,7 @@ export const showWidget = (text, configurations) => {
       var color = document.getElementById("selectedBackround");
       console.log(getColor(-1));
       color.setAttribute("data-value", getColor(-1)[0].id);
-      readCookie();
+      readCookie(handle);
     })
     .catch(err => {
       console.log(err);
