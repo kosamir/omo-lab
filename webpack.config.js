@@ -56,10 +56,10 @@ module.exports = env => {
                   [
                     "@babel/env",
                     {
-                      // 'targets': {
-                      //     'browsers': ['ie 6', 'safari 7','chrome 51', 'opera 39', 'firefox 48','Edge']
-                      // }
-                      targets: ">0.25%"
+                      targets: {
+                        browsers: ["IE>=10", ">0.25%", "not op_mini all"]
+                      }
+                      // targets:
                     }
                   ]
                 ]
