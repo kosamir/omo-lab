@@ -8,7 +8,7 @@
   "BODY_FONT_WEIGHT": "400",
   "BODY_LINE_HEIGHT": "1.5",
   "BODY_FONT_SPACING": "0",
-  "BODY_FONT_SIZE": "16",
+  "BODY_FONT_SIZE": "14",
   "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6"],
   "CUSTOM_HEADER_STYLE_ELEMENTS": [],
   "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
