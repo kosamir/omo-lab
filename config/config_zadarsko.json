@@ -9,7 +9,7 @@
   "BODY_LINE_HEIGHT": "1.5",
   "BODY_FONT_SPACING": "0",
   "BODY_FONT_SIZE": "14",
-  "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6"],
+  "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6", ".c-item__title"],
   "CUSTOM_HEADER_STYLE_ELEMENTS": [],
   "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
   "ELEMENTS_TO_TWEAK_STYLE": [],
@@ -27,5 +27,5 @@
     "div.c-item__title",
     "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "main"]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item"]
 }
