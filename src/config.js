@@ -193,8 +193,7 @@ exports.setBackGroundColor = setBackGroundColor;
 
 // eslint-disable-next-line vars-on-top
 // var fetch = require("node-fetch");
-var ES6Promise = require("es6-promise");
-ES6Promise.polyfill();
+
 var axios = require("axios");
 
 const readConfigurationFromFile = conf => {
@@ -239,7 +238,7 @@ const readConfigurationFromFile = conf => {
             this.BACKGROUND_COLOR_ELEMENTS,
             this.OMO_WIDGET_ELEMENTS,
             this.CUSTOM_HEADER_STYLE_ELEMENTS
-          ].includes(undefined)
+          ].indexOf(undefined) !== -1
         ) {
           throw Error(
             `HEADER_STYLE_ELEMENTS,CUSTOM_HEADER_STYLE_ELEMENTS, OMO_WIDGET_ELEMENTS,BODY_STYLE, BACKGROUND_COLOR_ELEMENTS are mandatory!!!`
