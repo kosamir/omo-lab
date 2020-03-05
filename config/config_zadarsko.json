@@ -15,7 +15,7 @@
   "ELEMENTS_TO_TWEAK_STYLE": [],
   "BODY_STYLE": [
     "div.c-item__summary *",
-    "div.c-item__title *",
+    ".c-item__title",
     "div.c-article-detail__main-col *",
     "div.footer-top",
     "nav.c-nav-aside *",
