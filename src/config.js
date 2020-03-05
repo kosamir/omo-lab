@@ -193,6 +193,8 @@ exports.setBackGroundColor = setBackGroundColor;
 
 // eslint-disable-next-line vars-on-top
 // var fetch = require("node-fetch");
+var ES6Promise = require("es6-promise");
+ES6Promise.polyfill();
 var axios = require("axios");
 
 const readConfigurationFromFile = conf => {
