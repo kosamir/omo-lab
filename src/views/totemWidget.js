@@ -78,7 +78,7 @@ var initOmoWidgetControls = function() {
 
   const handleValueChange = function() {
     let changesActive = 0;
-    Array.from(forms).forEach(function(form) {
+    [].slice.call(forms).forEach(function(form) {
       console.log(form.checkValidity());
       if (form.checkValidity()) {
         changesActive++;
@@ -175,21 +175,21 @@ var initOmoWidgetControls = function() {
 
   powerToggle.addEventListener("click", handlePowerToggle);
 
-  Array.from(optionDisplayToggles).forEach(function(radio) {
+  [].slice.call(optionDisplayToggles).forEach(function(radio) {
     radio.addEventListener("click", handleOptionDisplayToggle);
     radio.addEventListener("keydown", handleOptionDisplayToggle);
   });
 
-  Array.from(valueInputs).forEach(function(value) {
+  [].slice.call(valueInputs).forEach(function(value) {
     value.addEventListener("keydown", handleValueKeyboardEvents);
     value.addEventListener("change", handleValueChange);
   });
 
-  Array.from(incrementControlButtons).forEach(function(button) {
+  [].slice.call(incrementControlButtons).forEach(function(button) {
     button.addEventListener("click", handleButtonClick);
   });
 
-  Array.from(resetElements).forEach(function(reset) {
+  [].slice.call(resetElements).forEach(function(reset) {
     reset.addEventListener("click", handleResetClick);
   });
 
