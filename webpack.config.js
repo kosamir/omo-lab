@@ -29,7 +29,10 @@ module.exports = env => {
               { from: "fonts/woff", to: "fonts/woff" },
               { from: "fonts/std", to: "fonts/std" },
               { from: "assets/", to: "assets/" }
-            ])
+            ]),
+            new webpack.ProvidePlugin({
+              Promise: "es6-promise-promise"
+            })
           ]
         : [new webpack.optimize.UglifyJsPlugin()],
       module: {
