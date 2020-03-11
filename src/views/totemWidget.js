@@ -31,13 +31,18 @@ var initOmoWidgetControls = function() {
   const fontTypePreview = widget.querySelector(".omo-widget__type-preview");
   const powerToggle = widget.querySelector(".omo-widget__power-toggle");
 
+  const elementsWithActiveState = widget.querySelectorAll("label, button");
+
   // functions
 
   const closeOptions = function() {
-    optionDisplayToggles.forEach(function(optionDisplayToggle) {
+    [].slice.call(optionDisplayToggles).forEach(function(optionDisplayToggle) {
       optionDisplayToggle.checked = false;
       optionDisplayToggle.setAttribute("aria-selected", "false");
     });
+    // [].slice.call(valueInputs).forEach(function(value) {
+    //   alert(value.id + " " + value.value);
+    // });
   };
 
   const handlePowerToggle = function(event) {
@@ -47,7 +52,7 @@ var initOmoWidgetControls = function() {
     } else {
       applyOverides();
     }
-    saveCookie("");
+    saveCookie(0);
     closeOptions();
   };
 
@@ -62,6 +67,7 @@ var initOmoWidgetControls = function() {
     let curVal = parseInt(input.value);
     let isAdd = event.target.classList.contains("omo-widget__add");
 
+    console.log(input.id + " " + input.value);
     if (
       (isAdd && curVal == input.getAttribute("max")) ||
       (!isAdd && curVal == 0)
@@ -79,15 +85,24 @@ var initOmoWidgetControls = function() {
   const handleValueChange = function() {
     let changesActive = 0;
     [].slice.call(forms).forEach(function(form) {
-      console.log(form.checkValidity());
+      console.log("form.checkValidity:" + form.checkValidity());
       if (form.checkValidity()) {
+        form.classList.add("valid");
         changesActive++;
+      } else {
+        form.classList.remove("valid");
       }
     });
 
-    applyOverides();
-    saveCookie("");
+    changesActive > 0 && applyOverides();
+    // changesActive > 0
+    //   ? mainToggle.parentElement.classList.toggle("power-off")
+    //   : mainToggle.parentElement.classList.toggle("power-on");
+    console.log(changesActive);
+    saveCookie(changesActive);
+
     widget.classList[changesActive > 0 ? "add" : "remove"]("has-changes");
+    return changesActive;
   };
 
   const handleValueKeyboardEvents = function(event) {
@@ -125,10 +140,23 @@ var initOmoWidgetControls = function() {
     }
   };
 
-  const handleResetClick = function(e) {
+  const resetValuesToZero = e => {
     if (e.target.id === "totem_body_ff_reset") {
       updateFontFamilyPreview(0);
+      document.getElementById("totem_body_ff").value = 0;
+    } else if (e.target.id === "totem_bsize_reset") {
+      document.getElementById("totem_bsize").value = 0;
+    } else if (e.target.id === "totem_font_weight_reset") {
+      document.getElementById("totem_font_weight").value = 0;
+    } else if (e.target.id === "totem_bspacing_reset") {
+      document.getElementById("totem_bspacing").value = 0;
+    } else if (e.target.id === "totem_bheight_reset") {
+      document.getElementById("totem_bheight").value = 0;
     }
+  };
+
+  const handleResetClick = function(e) {
+    resetValuesToZero(e);
     closeOptions();
     setTimeout(function() {
       handleValueChange(), 1;
@@ -201,15 +229,28 @@ var initOmoWidgetControls = function() {
     handleValueChange();
   });
 
+  [].slice.call(elementsWithActiveState).forEach(function(element) {
+    element.addEventListener("mousedown", function(event) {
+      event.target.classList.add("active");
+    });
+    element.addEventListener("mouseup", function(event) {
+      event.target.classList.remove("active");
+    });
+  });
+
   backgroundSettingsReset.addEventListener("click", function() {
     backgroundSettingsForm.parentElement.setAttribute("data-value", -1);
   });
   return {
     updateFont: function(value) {
       updateFontFamilyPreview(value);
+    },
+    getValueChanges: function() {
+      return handleValueChange();
     }
   };
 };
+document.addEventListener("DOMContentLoaded", initOmoWidgetControls);
 
 function addOmolabClassScopeToBody(doc) {
   const document = doc.querySelector("body");
@@ -442,9 +483,12 @@ function generateOmoStyle() {
   return style;
 }
 
-const saveCookie = text => {
-  const name = `${config.OMO_WIDGET_COOKIE}_${text}`;
-  const value = JSON.stringify(getUserAppliedValues());
+const saveCookie = valueChanges => {
+  const name = `${config.OMO_WIDGET_COOKIE}_`;
+  let data = getUserAppliedValues();
+  data.checked = Number(valueChanges) > 0 ? false : true;
+  const value = JSON.stringify(data);
+
   localStorage.setItem(`${name}`, value);
   // document.cookie = `${name}=${value}; SameSite=None; Secure;`;
   console.log(`saved:${value}`);
@@ -477,9 +521,10 @@ const readCookie = fn => {
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
+  const widget = document.querySelector("#omo-widget");
   if (!getUserAppliedValues().checked) {
-    const widget = document.querySelector("#omo-widget");
-    widget.classList["add"]("has-changes");
+    // widget.classList["add"]("has-changes");
+    fn.getValueChanges();
     applyOverides();
   }
   // }

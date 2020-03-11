@@ -4,34 +4,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
   <title>Omo</title>
   <!-- <link rel="stylesheet" href="/totemWidget.css" /> -->
 </head>
 
 <body>
   <div id="omo-widget" class="omo-widget">
-    <input type="checkbox" id="main-toggle" name="main-toggle" class="omo-widget__main-toggle" title="Open options" />
-    <label for="main-toggle"></label>
+    <input type="checkbox" name="main-toggle" class="omo-widget__main-toggle" title="Open options" />
     <fieldset data-setting-name="font-size">
-      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" id="option-opened-1"
-        name="option-opened" value="1" title="Font Size" />
-      <label for="option-opened-1">Font size</label>
+      <legend>Font size</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="1"
+        title="Font Size" />
+      <!-- <svg width="32" height="27" xmlns="http://www.w3.org/2000/svg">
+          <g id="font-size" fill="var(--svgFill)" fill-rule="evenodd">
+            <path
+              d="M1.639 8.868h13.943c.197 0 .375.078.537.227a.74.74 0 01.24.55c0 .25-.081.454-.24.614a.74.74 0 01-.537.243H9.508v14.744a.906.906 0 01-.267.631.855.855 0 01-.643.28c-.284 0-.518-.092-.695-.28a.892.892 0 01-.27-.63V10.501H1.639a.764.764 0 01-.574-.229.773.773 0 01-.23-.574c0-.232.077-.43.23-.588a.75.75 0 01.574-.243"
+            />
+            <path
+              d="M9.661.224h20.914c.295 0 .562.113.802.342.242.227.363.501.363.822 0 .376-.12.683-.363.923-.24.242-.507.36-.802.36h-9.114v22.123c0 .347-.133.66-.4.94a1.277 1.277 0 01-.964.422c-.427 0-.777-.14-1.042-.422-.269-.28-.404-.593-.404-.94V2.67h-8.99c-.349 0-.638-.11-.864-.337a1.182 1.182 0 01-.34-.865c0-.347.114-.643.34-.882.226-.243.515-.362.864-.362"
+            />
+          </g>
+        </svg> -->
+
       <svg viewBox="0 0 32 27">
         <g id="font-size" fill="var(--svgFill)" fill-rule="evenodd">
-          <path class="color-in"
+          <path
             d="M1.639 8.868h13.943c.197 0 .375.078.537.227a.74.74 0 01.24.55c0 .25-.081.454-.24.614a.74.74 0 01-.537.243H9.508v14.744a.906.906 0 01-.267.631.855.855 0 01-.643.28c-.284 0-.518-.092-.695-.28a.892.892 0 01-.27-.63V10.501H1.639a.764.764 0 01-.574-.229.773.773 0 01-.23-.574c0-.232.077-.43.23-.588a.75.75 0 01.574-.243" />
-          <path class="color-in"
+          <path
             d="M9.661.224h20.914c.295 0 .562.113.802.342.242.227.363.501.363.822 0 .376-.12.683-.363.923-.24.242-.507.36-.802.36h-9.114v22.123c0 .347-.133.66-.4.94a1.277 1.277 0 01-.964.422c-.427 0-.777-.14-1.042-.422-.269-.28-.404-.593-.404-.94V2.67h-8.99c-.349 0-.638-.11-.864-.337a1.182 1.182 0 01-.34-.865c0-.347.114-.643.34-.882.226-.243.515-.362.864-.362" />
         </g>
       </svg>
       <form action="#">
-        <button type="reset" id="totem_bsize_reset" class="omo-widget__reset">
-
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+        <button type="reset" class="omo-widget__reset">
+          <!-- <svg width="23" height="25" xmlns="http://www.w3.org/2000/svg">
+              <path
+                id="reset"
+                fill="var(--svgFill)"
+                d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
+                fill-rule="nonzero"
+              />
+            </svg> -->
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
+              fill-rule="nonzero" />
           </svg>
         </button>
         <button type="button" tabindex="-1" class="omo-widget__add">+</button>
@@ -43,84 +60,146 @@
       </form>
     </fieldset>
     <fieldset data-setting-name="font-type">
-      <input type="radio" class="omo-widget__toggle-options" id="option-opened-2" aria-selected="false"
-        name="option-opened" value="2" title="Font Type" />
-      <label for="option-opened-2">Font type</label>
-      <svg viewBox="0 0 27 32" id="O" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
+      <legend>Font type</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="2"
+        title="Font Type" />
+      <svg viewBox="0 0 27 32">
         <g fill="none" fill-rule="evenodd">
-          <path class="color-in"
+          <path
             d="M23.981 15.832c0-5.713-3.03-10.984-9.912-10.984-6.85 0-10.04 5.43-10.04 10.984 0 5.842 3.663 11.02 10.104 11.02 6.218 0 9.848-5.178 9.848-11.02m2.937-.062c0 7.545-5.02 13.575-12.818 13.575-7.828 0-12.974-6.062-12.974-13.575 0-6.44 4.324-13.417 13.007-13.417 8.838 0 12.785 6.85 12.785 13.417"
-            fill-rule="nonzero" />
+            fill="var(--svgFill)" fill-rule="nonzero" />
           <path d="M0 0h27v32H0z" />
         </g>
       </svg>
-
+      <!-- <svg id="O" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M23.981 15.832c0-5.713-3.03-10.984-9.912-10.984-6.85 0-10.04 5.43-10.04 10.984 0 5.842 3.663 11.02 10.104 11.02 6.218 0 9.848-5.178 9.848-11.02m2.937-.062c0 7.545-5.02 13.575-12.818 13.575-7.828 0-12.974-6.062-12.974-13.575 0-6.44 4.324-13.417 13.007-13.417 8.838 0 12.785 6.85 12.785 13.417"
+              fill="var(--svgFill)"
+              fill-rule="nonzero"
+            />
+            <path d="M0 0h27v32H0z" />
+          </g>
+        </svg> -->
       <form action="#">
-        <button type="reset" id="totem_body_ff_reset" class="omo-widget__reset">
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+        <button type="reset" class="omo-widget__reset" id="totem_body_ff_reset">
+          <!-- <svg width="23" height="25" xmlns="http://www.w3.org/2000/svg">
+              <path
+                id="reset"
+                fill="var(--svgFill)"
+                d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
+                fill-rule="nonzero"
+              />
+            </svg> -->
+
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
+              fill-rule="nonzero" />
+          </svg>
         </button>
         <button type="button" tabindex="-1" class="omo-widget__add">+</button>
         <div class="omo-widget__type-preview">
-          <!-- O -->
-          <svg viewBox="0 0 27 32" id="O" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M23.981 15.832c0-5.713-3.03-10.984-9.912-10.984-6.85 0-10.04 5.43-10.04 10.984 0 5.842 3.663 11.02 10.104 11.02 6.218 0 9.848-5.178 9.848-11.02m2.937-.062c0 7.545-5.02 13.575-12.818 13.575-7.828 0-12.974-6.062-12.974-13.575 0-6.44 4.324-13.417 13.007-13.417 8.838 0 12.785 6.85 12.785 13.417"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
-          <!-- A-->
-          <svg viewBox="0 0 27 32" id="A" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+
+          <!-- <svg
+              id="O"
+              width="27"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M23.981 15.832c0-5.713-3.03-10.984-9.912-10.984-6.85 0-10.04 5.43-10.04 10.984 0 5.842 3.663 11.02 10.104 11.02 6.218 0 9.848-5.178 9.848-11.02m2.937-.062c0 7.545-5.02 13.575-12.818 13.575-7.828 0-12.974-6.062-12.974-13.575 0-6.44 4.324-13.417 13.007-13.417 8.838 0 12.785 6.85 12.785 13.417"
+                  fill="var(--svgFill)"
+                  fill-rule="nonzero"
+                />
+                <path d="M0 0h27v32H0z" />
+              </g>
+            </svg> -->
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M2.022 29.984c-.899-.323-1.224-1.08-.899-2.051 2.52-8.855 5.724-17.854 9.395-26.133C11.022.72 11.85 0 13.182 0s2.195.72 2.7 1.8c3.6 7.919 7.055 16.954 9.574 25.917.252 1.008.036 1.944-1.08 2.268-.828.217-1.69 0-2.088-1.188a217.784 217.784 0 00-1.943-6.407H6.162c-.647 2.088-1.26 4.14-1.87 6.228-.36 1.259-1.262 1.69-2.27 1.366zm5.04-10.33H19.41a226.489 226.489 0 00-6.228-16.378c-2.303 5.255-4.319 10.798-6.119 16.378z"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
 
-          <!--B-->
-          <svg viewBox="0 0 27 32" id="B" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+          <!-- <svg
+              id="A"
+              width="27"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M2.022 29.984c-.899-.323-1.224-1.08-.899-2.051 2.52-8.855 5.724-17.854 9.395-26.133C11.022.72 11.85 0 13.182 0s2.195.72 2.7 1.8c3.6 7.919 7.055 16.954 9.574 25.917.252 1.008.036 1.944-1.08 2.268-.828.217-1.69 0-2.088-1.188a217.784 217.784 0 00-1.943-6.407H6.162c-.647 2.088-1.26 4.14-1.87 6.228-.36 1.259-1.262 1.69-2.27 1.366zm5.04-10.33H19.41a226.489 226.489 0 00-6.228-16.378c-2.303 5.255-4.319 10.798-6.119 16.378z"
+                  fill="var(--svgFill)"
+                  fill-rule="nonzero"
+                />
+                <path d="M0 0h27v32H0z" />
+              </g>
+            </svg> -->
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M14.087 30.949H4.584C3.685 30.949 3 30.23 3 29.222V3.7C3 2.08 3.792 1 5.556 1h7.379c6.372 0 9.503 2.771 9.503 7.127 0 3.384-1.764 5.688-4.751 6.659 4.104.972 6.155 3.637 6.155 7.74 0 5.687-4.571 8.423-9.755 8.423zM6.24 13.851h6.946c3.168 0 6.012-1.476 6.012-5.436 0-3.06-2.34-4.607-6.587-4.607H6.24v10.043zm0 2.735v11.556h7.234c4.067 0 7.02-1.584 7.02-5.688 0-3.816-2.196-5.868-6.875-5.868H6.24z"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
-          <!--C-->
-          <svg viewBox="0 0 27 32" id="C" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+
+          <!-- <svg
+              id="B"
+              width="27"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M14.087 30.949H4.584C3.685 30.949 3 30.23 3 29.222V3.7C3 2.08 3.792 1 5.556 1h7.379c6.372 0 9.503 2.771 9.503 7.127 0 3.384-1.764 5.688-4.751 6.659 4.104.972 6.155 3.637 6.155 7.74 0 5.687-4.571 8.423-9.755 8.423zM6.24 13.851h6.946c3.168 0 6.012-1.476 6.012-5.436 0-3.06-2.34-4.607-6.587-4.607H6.24v10.043zm0 2.735v11.556h7.234c4.067 0 7.02-1.584 7.02-5.688 0-3.816-2.196-5.868-6.875-5.868H6.24z"
+                  fill="var(--svgFill)"
+                  fill-rule="nonzero"
+                />
+                <path d="M0 0h27v32H0z" />
+              </g>
+            </svg> -->
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M23.031 7.937c-1.691-3.168-4.318-4.463-8.136-4.463-7.415 0-10.942 5.507-10.942 12.67 0 7.307 3.959 12.382 10.655 12.382 4.933 0 7.235-1.8 8.495-4.104.504-.864 1.404-1.296 2.268-.899.865.396.973 1.439.576 2.159-1.619 3.456-5.363 5.688-11.376 5.688-8.53 0-13.929-6.048-13.929-15.298C.642 7.829 5.286.63 14.968.63c4.753 0 9.253 1.908 10.872 5.795.396.899.324 1.691-.469 2.195-.791.433-1.799.145-2.34-.683z"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
-          <!-- D -->
-          <svg viewBox="0 0 27 32" id="D" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+          <!-- C iznad -->
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M12.619 30.974H3.836c-1.296 0-2.268-.971-2.268-2.268V3.258c0-1.296.972-2.232 2.268-2.232h8.315c8.711 0 14.578 4.788 14.578 14.686 0 10.223-6.623 15.262-14.11 15.262zm-.864-27.141H4.809v24.333h7.343c6.983 0 11.23-4.393 11.23-12.383 0-8.062-3.995-11.95-11.627-11.95z"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
-          <!--E -->
+          <!--D IZNAD -->
 
-          <svg viewBox="0 0 27 32" id="E" width="27" height="32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="nonzero">
-              <path class="color-in"
+          <svg viewBox="0 0 27 32">
+            <g fill="none" fill-rule="evenodd">
+              <path
                 d="M22.407 31.584H5.525a2.127 2.127 0 01-2.124-2.123V3.724c0-1.152.972-2.088 2.124-2.088h16.917c.721 0 1.332.576 1.332 1.44 0 .72-.611 1.368-1.332 1.368H6.641v10.438h14.254c.756 0 1.367.576 1.367 1.404 0 .756-.611 1.404-1.367 1.404H6.641v11.087h15.766c.756 0 1.367.611 1.367 1.367 0 .829-.611 1.44-1.367 1.44z"
-                fill-rule="nonzero" />
+                fill="var(--svgFill)" fill-rule="nonzero" />
               <path d="M0 0h27v32H0z" />
             </g>
           </svg>
-
+          <!-- E iznad -->
         </div>
         <button type="button" tabindex="-1" class="omo-widget__substract">
           -
@@ -130,23 +209,23 @@
       </form>
     </fieldset>
     <fieldset data-setting-name="font-weight">
-
-      <input type="radio" id="option-opened-3" class="omo-widget__toggle-options" aria-selected="false"
-        name="option-opened" value="2" title="Font Weight" />
-      <label for="option-opened-3">Font weight</label>
-      <svg viewBox="0 0 35 24" width="35" height="24" xmlns="http://www.w3.org/2000/svg">
-        <g id="font-weight" fill-rule="evenodd">
-          <path class="color-in"
+      <legend>Font weight</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="2"
+        title="Font Weight" />
+      <svg viewBox="0 0 35 24">
+        <g id="font-weight" fill="var(--svgFill)" fill-rule="evenodd">
+          <path
             d="M2.069 12.225v9.878H7.95c3.437 0 6.073-1.361 6.073-4.94 0-3.245-1.855-4.938-5.826-4.938h-6.13zm0-1.522h5.908c2.635 0 4.965-1.251 4.965-4.553 0-2.552-1.97-3.854-5.547-3.854H2.069v8.407zm6.379 12.925H1.15a.832.832 0 01-.86-.86V2.517c0-1.055.503-1.746 1.61-1.746h5.852c4.662 0 6.992 2.106 6.992 5.379 0 2.554-1.471 4.329-3.631 5.105 3.162.72 4.713 2.747 4.713 5.908 0 4.384-3.467 6.465-7.38 6.465zM21.577 13.03v7.546h5.162c2.746 0 4.522-1.026 4.522-3.607 0-2.55-1.47-3.938-4.55-3.938h-5.134zm0-2.912h4.607c2.192 0 4.189-1 4.189-3.688 0-2.11-1.552-3.165-4.44-3.165h-4.356v6.853zm5.605 13.51H19.83c-.97 0-1.692-.831-1.692-1.968V2.795c0-1.553.75-2.58 2.442-2.58h5.465c5.215 0 7.795 2.19 7.795 5.66 0 2.663-1.193 4.437-3.69 5.215 3.162.805 4.719 2.857 4.719 6.02 0 4.409-3.553 6.519-7.688 6.519z" />
         </g>
       </svg>
 
       <form action="#">
-        <button type="reset" id="totem_font_weight_reset" class="omo-widget__reset">
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+        <button type="reset" class="omo-widget__reset">
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
+              fill-rule="nonzero" />
+          </svg>
         </button>
         <button type="button" tabindex="-1" class="omo-widget__add">+</button>
         <button type="button" tabindex="-1" class="omo-widget__substract">
@@ -157,22 +236,24 @@
       </form>
     </fieldset>
     <fieldset data-setting-name="letter-spacing">
-      <input type="radio" id="option-opened-4" class="omo-widget__toggle-options" aria-selected="false"
-        name="option-opened" value="2" title="Letter spacing" />
-      <label for="option-opened-4">Letter spacing</label>
-      <svg viewBox="0 0 32 27" width="32" height="27" xmlns="http://www.w3.org/2000/svg">
-        <g id="letter-spacing" fill-rule="evenodd">
-          <path class="color-in"
+      <legend>Letter spacing</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="2"
+        title="Letter spacing" />
+
+      <svg viewBox="0 0 32 27">
+        <g id="letter-spacing" fill="var(--svgFill)" fill-rule="evenodd">
+          <path
             d="M13.92 1.11c.266.07.451.21.56.427.103.21.131.433.076.665a96.993 96.993 0 01-2.443 7.826 106.542 106.542 0 01-2.869 7.164 2.435 2.435 0 01-.664.852 1.442 1.442 0 01-.93.344c-.373 0-.696-.113-.97-.344a2.484 2.484 0 01-.65-.852A103.151 103.151 0 013.08 9.92 98.362 98.362 0 01.662 2.305a1.1 1.1 0 01.026-.715c.09-.25.274-.41.558-.48a.975.975 0 01.72.067c.246.116.405.289.475.517.692 2.48 1.457 4.954 2.3 7.416a93.749 93.749 0 002.936 7.496 122.297 122.297 0 002.843-7.428 106.317 106.317 0 002.231-7.351c.07-.265.22-.47.45-.611a.864.864 0 01.718-.105M20.827 11.502h6.883a98.56 98.56 0 00-1.621-4.387 108.366 108.366 0 00-1.86-4.384 86.47 86.47 0 00-1.82 4.412 151.602 151.602 0 00-1.582 4.36m-3.24 6.778a.756.756 0 01-.438-.438.946.946 0 01-.013-.652 126.476 126.476 0 012.52-7.803c.94-2.615 1.96-5.132 3.06-7.562.123-.283.307-.516.557-.703.247-.186.557-.278.929-.278.37 0 .682.092.93.278.248.187.44.42.586.703a91.654 91.654 0 013.12 7.39 96.531 96.531 0 012.538 7.79c.07.246.07.494 0 .741-.07.25-.24.42-.506.505a1.047 1.047 0 01-.73-.05.804.804 0 01-.492-.586 72.045 72.045 0 00-.676-2.275c-.24-.75-.484-1.508-.733-2.27h-7.943c-.23.762-.46 1.52-.69 2.27-.23.758-.462 1.513-.691 2.275a.924.924 0 01-.532.598 1.19 1.19 0 01-.796.067M31.404 22.621c-.006-.03-.006-.06-.018-.088-.007-.02-.028-.039-.04-.059-.03-.057-.06-.117-.108-.166l-3.313-3.317a.68.68 0 10-.966.963l2.153 2.156H2.932l2.153-2.156a.684.684 0 000-.963.687.687 0 00-.965 0L.803 22.308c-.047.05-.078.11-.11.166-.01.02-.028.04-.038.06-.011.026-.01.057-.016.087a.669.669 0 00.164.65l3.315 3.32a.687.687 0 00.967 0 .686.686 0 00-.004-.968l-2.15-2.15H29.11l-2.15 2.15a.685.685 0 00-.001.967.686.686 0 00.966 0l3.313-3.319a.663.663 0 00.166-.65" />
         </g>
       </svg>
 
       <form action="#">
-        <button type="reset" id="totem_bspacing_reset" class="omo-widget__reset">
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+        <button type="reset" class="omo-widget__reset">
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
+              fill-rule="nonzero" />
+          </svg>
         </button>
         <button type="button" tabindex="-1" class="omo-widget__add">+</button>
         <button type="button" tabindex="-1" class="omo-widget__substract">
@@ -183,23 +264,38 @@
       </form>
     </fieldset>
     <fieldset data-setting-name="line-height">
-      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="5"
-        title="Line height" id="option-opened-5" />
-      <label for="option-opened-5">Line height</label>
-      <svg viewBox="0 0 32 28" width="32" height="28" xmlns="http://www.w3.org/2000/svg">
-        <g id="line-height" fill-rule="evenodd">
-          <path class="color-in"
+      <legend>Line height</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="3"
+        title="Line height" />
+      <svg viewBox="0 0 32 28">
+        <g id="line-height" fill="var(--svgFill)" fill-rule="evenodd">
+          <path
             d="M30.551.92H13.317a.82.82 0 000 1.639h17.234a.819.819 0 000-1.64M30.551 26.095H13.317a.818.818 0 100 1.634h17.234a.817.817 0 100-1.634M9.147 22.359l-2.585 2.586V3.707l2.585 2.587a.819.819 0 001.158-1.16L6.321 1.148c-.057-.056-.126-.091-.197-.13-.026-.014-.045-.037-.072-.048-.033-.013-.069-.01-.106-.02a.802.802 0 00-.779.198L1.184 5.132a.82.82 0 101.156 1.16l2.586-2.587v21.24L2.34 22.36a.814.814 0 00-1.156-.002.815.815 0 000 1.158l3.983 3.985a.8.8 0 00.779.199c.037-.01.073-.008.106-.02.027-.011.046-.036.072-.047.071-.04.14-.075.197-.132l3.984-3.986a.816.816 0 00-.001-1.157.817.817 0 00-1.157 0M30.551 10.989H13.317a.82.82 0 000 1.639h17.234a.82.82 0 000-1.64M30.551 16.024H13.317a.82.82 0 000 1.639h17.234a.819.819 0 000-1.64M30.551 5.954H13.317a.82.82 0 00-.819.82.82.82 0 00.82.817H30.55a.818.818 0 000-1.637M30.551 21.059H13.317a.82.82 0 000 1.638h17.234a.819.819 0 000-1.638" />
         </g>
       </svg>
 
+      <!-- <svg width="32" height="28" xmlns="http://www.w3.org/2000/svg">
+          <g id="line-height" fill="var(--svgFill)" fill-rule="evenodd">
+            <path
+              d="M30.551.92H13.317a.82.82 0 000 1.639h17.234a.819.819 0 000-1.64M30.551 26.095H13.317a.818.818 0 100 1.634h17.234a.817.817 0 100-1.634M9.147 22.359l-2.585 2.586V3.707l2.585 2.587a.819.819 0 001.158-1.16L6.321 1.148c-.057-.056-.126-.091-.197-.13-.026-.014-.045-.037-.072-.048-.033-.013-.069-.01-.106-.02a.802.802 0 00-.779.198L1.184 5.132a.82.82 0 101.156 1.16l2.586-2.587v21.24L2.34 22.36a.814.814 0 00-1.156-.002.815.815 0 000 1.158l3.983 3.985a.8.8 0 00.779.199c.037-.01.073-.008.106-.02.027-.011.046-.036.072-.047.071-.04.14-.075.197-.132l3.984-3.986a.816.816 0 00-.001-1.157.817.817 0 00-1.157 0M30.551 10.989H13.317a.82.82 0 000 1.639h17.234a.82.82 0 000-1.64M30.551 16.024H13.317a.82.82 0 000 1.639h17.234a.819.819 0 000-1.64M30.551 5.954H13.317a.82.82 0 00-.819.82.82.82 0 00.82.817H30.55a.818.818 0 000-1.637M30.551 21.059H13.317a.82.82 0 000 1.638h17.234a.819.819 0 000-1.638"
+            />
+          </g>
+        </svg> -->
       <form action="#" data-setting-name="line-height">
-        <button type="reset" id="totem_bheight_reset" class="omo-widget__reset">
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+        <button type="reset" class="omo-widget__reset">
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
-
+              fill-rule="nonzero" />
+          </svg>
+          <!-- <svg width="23" height="25" xmlns="http://www.w3.org/2000/svg">
+              <path
+                id="reset"
+                fill="var(--svgFill)"
+                d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
+                fill-rule="nonzero"
+              />
+            </svg> -->
         </button>
         <button type="button" tabindex="-1" class="omo-widget__add">+</button>
         <button type="button" tabindex="-1" class="omo-widget__substract">
@@ -210,52 +306,40 @@
       </form>
     </fieldset>
     <fieldset id="selectedBackround" data-setting-name="background">
-      <input type="radio" class="omo-widget__toggle-options" id="option-opened-6" aria-selected="false"
-        name="option-opened" value="4" title="Background" />
-      <label for="option-opened-6">Background</label>
+      <legend>Background</legend>
+      <input type="radio" class="omo-widget__toggle-options" aria-selected="false" name="option-opened" value="4"
+        title="Background" />
       <form action="#">
         <button type="reset" class="omo-widget__reset">
-          <svg viewBox="0 0 23 25" width="23" height="25" xmlns="http://www.w3.org/2000/svg">
-            <path id="reset" class="color-in"
+          <svg viewBox="0 0 25 25">
+            <path id="reset" fill="var(--svgFill)"
               d="M6 3C5.3 2.3 4.6 1.5 3.7.6c-.2 2.5-.4 4.9-.7 7.3 2.6.1 5 .2 7.7.2-.9-1-1.7-1.8-2.5-2.7 2.6-1.4 6.5-.7 8.9 1.6 2.7 2.5 3.4 6.5 1.9 9.7-1.6 3.2-5.2 5.1-8.7 4.6-3.1-.5-6.8-3.1-7.1-8.2h-3c-.3 3.5 2.1 8.2 6.4 10.2 4.6 2.2 10.3 1 13.6-2.8 3.4-4.1 3.7-9.7.6-14C18.3 2.8 12.5-.2 6 3z"
-              fill-rule="nonzero" /></svg>
+              fill-rule="nonzero" />
+          </svg>
         </button>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-0"
-          value="0">
-        <label for="background-0"></label>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-1"
-          value="1">
-        <label for="background-1"></label>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-2"
-          value="2">
-        <label for="background-2"></label>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-3"
-          value="3">
-        <label for="background-3"></label>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-4"
-          value="4">
-        <label for="background-4"></label>
-        <input class="omo-widget__background-choice" type="radio" name="background" required id="background-5"
-          value="5">
-        <label for="background-5"></label>
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="0" />
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="1" />
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="2" />
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="3" />
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="4" />
+        <input class="omo-widget__background-choice" type="radio" name="background" required value="5" />
       </form>
     </fieldset>
     <fieldset class="omo-widget__power-toggle-wrap" data-setting-name="widget-active">
       <input id="applyOverides" class="omo-widget__power-toggle" type="checkbox" title="Toggle options" />
-      <label for="applyOverides"></label>
-      <svg viewBox="0 0 26 29" width="26" height="29" xmlns="http://www.w3.org/2000/svg">
-        <g id="power" fill-rule="evenodd">
-          <path class="color-in"
+      <svg viewBox="0 0 24 29">
+        <g id="power" fill="var(--svgFill)" fill-rule="evenodd">
+          <path
             d="M20.397 7.824c6.246 6.773 1.866 17.455-7.376 17.809-9.519.363-13.263-11.426-7.376-17.81 1.09-1.181-.673-2.954-1.768-1.767-7.736 8.387-2.297 21.639 9.144 22.077 11.777.449 16.435-14.17 9.144-22.077-1.096-1.187-2.86.586-1.768 1.768" />
-          <path class="color-in" d="M11.77 1.718v10.445c0 1.612 2.5 1.612 2.5 0V1.718c0-1.613-2.5-1.613-2.5 0" />
+          <path d="M11.77 1.718v10.445c0 1.612 2.5 1.612 2.5 0V1.718c0-1.613-2.5-1.613-2.5 0" />
         </g>
       </svg>
     </fieldset>
     <div class="omo-widget__link-wrap">
       <a href="https://omolab.com/" target="_blank" data-setting-name="widget-info" title="Find out more">
-        <svg viewBox="0 0 10 31" width="10" height="31" xmlns="http://www.w3.org/2000/svg">
-          <g id="info" fill-rule="evenodd">
-            <path class="color-in"
+        <svg viewBox="0 0 10 31">
+          <g id="info" fill="var(--svgFill)" fill-rule="evenodd">
+            <path
               d="M9.535 17.468a4.442 4.442 0 00-4.443-4.44 4.443 4.443 0 00-4.445 4.44v8.89a4.443 4.443 0 004.445 4.44 4.442 4.442 0 004.443-4.44v-8.89zM9.535 5.242A4.443 4.443 0 11.648 5.24a4.443 4.443 0 018.887 0" />
           </g>
         </svg>
