@@ -275,7 +275,7 @@ const setUserAppliedValues = (data, fn) => {
   const widget = document.querySelector("#omo-widget");
   const mainToggle = widget.querySelector(".omo-widget__main-toggle");
   if (!data.checked) {
-    alert("widget is on");
+    console.log("widget is on");
     widget.classList["add"]("has-changes");
     // const mainToggle = widget.querySelector(".omo-widget__main-toggle");
     // mainToggle.parentElement.classList.toggle("power-off");
@@ -285,7 +285,7 @@ const setUserAppliedValues = (data, fn) => {
   document.getElementById("applyOverides").checked = data.checked;
 
   document.getElementById("totem_bsize").value = setFontSize(data.bodyFontSize);
-  alert(document.getElementById("totem_bsize").value);
+  // alert(document.getElementById("totem_bsize").value);
   document.getElementById("totem_body_ff").value = setFontFamilyId(
     data.bodyFontFamily
   )[0].id;
@@ -535,13 +535,15 @@ const readCookie = fn => {
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
   console.log(data === null);
   if (data === null) {
-    alert("can't fetch from local storage, please clear browser histroy!");
+    console.log(
+      "can't fetch from local storage, please clear browser histroy!"
+    );
     return;
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
-  alert("read cookie" + JSON.stringify(data));
-  alert(data);
+  console.log("read cookie" + JSON.stringify(data));
+  // alert(data);
   const widget = document.querySelector("#omo-widget");
   fn.getValueChanges();
   /** 
