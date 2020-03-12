@@ -16,7 +16,7 @@
   "BODY_STYLE": [
     "div.c-item__summary *",
     ".c-item__title",
-    ".c-contents__content",
+    ".c-contents__content p",
     "div.c-article-detail__main-col *",
     "div.footer-top",
     "nav.c-nav-aside *",
@@ -28,5 +28,5 @@
     "div.c-item__title",
     "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button"]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button",".slick-arrow"]
 }
