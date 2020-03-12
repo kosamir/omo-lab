@@ -28,5 +28,5 @@
     "div.c-item__title",
     "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", "c-nav-card__link--parent"]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button"]
 }
