@@ -15,6 +15,9 @@
   "ELEMENTS_TO_TWEAK_STYLE": [],
   "BODY_STYLE": [
     "div.c-item__summary *",
+    ".l-header__menu a",
+    ".js-language-nav span.text-uppercase",
+    "input.NormalTextBox",  
     ".c-item__title",
     ".c-contents__content p",
     "div.c-article-detail__main-col *",
@@ -28,5 +31,5 @@
     "div.c-item__title",
     "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button",".slick-arrow"]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button",".slick-arrow:before"]
 }
