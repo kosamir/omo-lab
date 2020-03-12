@@ -94,14 +94,24 @@ var initOmoWidgetControls = function() {
       }
     });
 
-    changesActive > 0 && applyOverides();
+    if (!document.getElementById("applyOverides").checked) {
+      // changesActive > 0 && applyOverides();
+      applyOverides();
+    }
+    if (changesActive === 0) {
+      removeOverides();
+    }
+
     // changesActive > 0
     //   ? mainToggle.parentElement.classList.toggle("power-off")
     //   : mainToggle.parentElement.classList.toggle("power-on");
-    console.log(changesActive);
-    saveCookie(changesActive);
+    // console.log(changesActive);
+    // saveCookie(changesActive);
 
     widget.classList[changesActive > 0 ? "add" : "remove"]("has-changes");
+    // widget.classList[changesActive > 0 ? "add" : "add"](
+    //   "has-changes power-off"
+    // );
     return changesActive;
   };
 
@@ -165,7 +175,7 @@ var initOmoWidgetControls = function() {
 
   const handleOptionDisplayToggle = function(event) {
     const optionDisplayToggle = event.target;
-    console.log(event.target);
+    // console.log(event.target);
 
     if (event.code) {
       const isTab = event.code == "Tab";
@@ -250,7 +260,7 @@ var initOmoWidgetControls = function() {
     }
   };
 };
-document.addEventListener("DOMContentLoaded", initOmoWidgetControls);
+// document.addEventListener("DOMContentLoaded", initOmoWidgetControls);
 
 function addOmolabClassScopeToBody(doc) {
   const document = doc.querySelector("body");
@@ -260,15 +270,22 @@ function addOmolabClassScopeToBody(doc) {
 }
 
 const setUserAppliedValues = (data, fn) => {
-  if (data.checked) {
-    const widget = document.querySelector("#omo-widget");
+  console.log("setUserAppliedValues:" + data.checked);
+  console.log(data.checked === false);
+  const widget = document.querySelector("#omo-widget");
+  const mainToggle = widget.querySelector(".omo-widget__main-toggle");
+  if (!data.checked) {
+    alert("widget is on");
     widget.classList["add"]("has-changes");
-    const mainToggle = widget.querySelector(".omo-widget__main-toggle");
+    // const mainToggle = widget.querySelector(".omo-widget__main-toggle");
+    // mainToggle.parentElement.classList.toggle("power-off");
+  } else {
     mainToggle.parentElement.classList.toggle("power-off");
   }
   document.getElementById("applyOverides").checked = data.checked;
-  // data.checked == true ? "on" : "off";
+
   document.getElementById("totem_bsize").value = setFontSize(data.bodyFontSize);
+  alert(document.getElementById("totem_bsize").value);
   document.getElementById("totem_body_ff").value = setFontFamilyId(
     data.bodyFontFamily
   )[0].id;
@@ -477,16 +494,17 @@ function generateOmoStyle() {
   style += widgetStyle;
 
   const tweaks = config.TWEAK();
-  console.log(tweaks);
+  // console.log(tweaks);
   style += tweaks;
-  console.log(style);
+  // console.log(style);
   return style;
 }
 
 const saveCookie = valueChanges => {
   const name = `${config.OMO_WIDGET_COOKIE}_`;
   let data = getUserAppliedValues();
-  data.checked = Number(valueChanges) > 0 ? false : true;
+  // data.checked = Number(valueChanges) > 0 ? false : true;
+  console.log("save cookie:" + JSON.stringify(data));
   const value = JSON.stringify(data);
 
   localStorage.setItem(`${name}`, value);
@@ -517,17 +535,25 @@ const readCookie = fn => {
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
   console.log(data === null);
   if (data === null) {
+    alert("can't fetch from local storage, please clear browser histroy!");
     return;
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
+  alert("read cookie" + JSON.stringify(data));
+  alert(data);
   const widget = document.querySelector("#omo-widget");
+  fn.getValueChanges();
+  /** 
   if (!getUserAppliedValues().checked) {
     // widget.classList["add"]("has-changes");
-    fn.getValueChanges();
-    applyOverides();
-  }
-  // }
+    let active = fn.getValueChanges();
+    // active > 0
+    //   ? mainToggle.parentElement.classList.toggle("power-off")
+    //   : mainToggle.parentElement.classList.toggle("power-on");
+    // applyOverides();
+  } else {
+  }*/
 };
 
 function getLastAppliedStyleSheet() {
@@ -558,7 +584,7 @@ const applyOverides = () => {
   let style = getLastAppliedStyleSheet();
   if (omoStyle) {
     style.innerHTML = generateOmoStyle();
-    forceRedraw(style);
+    // forceRedraw(style);
     return;
   }
   const css = document.createElement("style");
