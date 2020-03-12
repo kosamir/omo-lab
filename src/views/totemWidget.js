@@ -106,7 +106,7 @@ var initOmoWidgetControls = function() {
     //   ? mainToggle.parentElement.classList.toggle("power-off")
     //   : mainToggle.parentElement.classList.toggle("power-on");
     // console.log(changesActive);
-    // saveCookie(changesActive);
+    saveCookie(changesActive);
 
     widget.classList[changesActive > 0 ? "add" : "remove"]("has-changes");
     // widget.classList[changesActive > 0 ? "add" : "add"](
