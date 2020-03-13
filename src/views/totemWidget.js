@@ -5,7 +5,7 @@ import html from "./totemWidget.html";
 const IMAGE_OPEN = "/img/open.png";
 const IMAGE_CLOSE = "/img/close.png";
 const IMAGE_SAVE_ACTIVE = "/img/SAVE-ACTIVE-ICON.png";
-
+export const NO_BACKGROUND_COLOR = -1;
 const elements = [];
 let body;
 let toggler;
@@ -67,7 +67,7 @@ var initOmoWidgetControls = function() {
     let curVal = parseInt(input.value);
     let isAdd = event.target.classList.contains("omo-widget__add");
 
-    console.log(input.id + " " + input.value);
+    // console.log(input.id + " " + input.value);
     if (
       (isAdd && curVal == input.getAttribute("max")) ||
       (!isAdd && curVal == 0)
@@ -85,7 +85,6 @@ var initOmoWidgetControls = function() {
   const handleValueChange = function() {
     let changesActive = 0;
     [].slice.call(forms).forEach(function(form) {
-      console.log("form.checkValidity:" + form.checkValidity());
       if (form.checkValidity()) {
         form.classList.add("valid");
         changesActive++;
@@ -95,23 +94,25 @@ var initOmoWidgetControls = function() {
     });
 
     if (!document.getElementById("applyOverides").checked) {
-      // changesActive > 0 && applyOverides();
       applyOverides();
     }
-    if (changesActive === 0) {
+
+    const isBackgroundSelected = () => {
+      let background = document
+        .getElementById("selectedBackround")
+        .getAttribute("data-value");
+      return background !== String(NO_BACKGROUND_COLOR);
+    };
+    // IF no active changes and NO background selected!
+    if (changesActive === 0 && !isBackgroundSelected()) {
       removeOverides();
     }
-
-    // changesActive > 0
-    //   ? mainToggle.parentElement.classList.toggle("power-off")
-    //   : mainToggle.parentElement.classList.toggle("power-on");
-    // console.log(changesActive);
     saveCookie(changesActive);
 
-    widget.classList[changesActive > 0 ? "add" : "remove"]("has-changes");
-    // widget.classList[changesActive > 0 ? "add" : "add"](
-    //   "has-changes power-off"
-    // );
+    widget.classList[
+      changesActive > 0 || isBackgroundSelected() ? "add" : "remove"
+    ]("has-changes");
+
     return changesActive;
   };
 
@@ -249,7 +250,10 @@ var initOmoWidgetControls = function() {
   });
 
   backgroundSettingsReset.addEventListener("click", function() {
-    backgroundSettingsForm.parentElement.setAttribute("data-value", -1);
+    backgroundSettingsForm.parentElement.setAttribute(
+      "data-value",
+      NO_BACKGROUND_COLOR
+    );
   });
   return {
     updateFont: function(value) {
@@ -260,7 +264,6 @@ var initOmoWidgetControls = function() {
     }
   };
 };
-// document.addEventListener("DOMContentLoaded", initOmoWidgetControls);
 
 function addOmolabClassScopeToBody(doc) {
   const document = doc.querySelector("body");
@@ -270,22 +273,17 @@ function addOmolabClassScopeToBody(doc) {
 }
 
 const setUserAppliedValues = (data, fn) => {
-  console.log("setUserAppliedValues:" + data.checked);
-  console.log(data.checked === false);
   const widget = document.querySelector("#omo-widget");
   const mainToggle = widget.querySelector(".omo-widget__main-toggle");
   if (!data.checked) {
-    console.log("widget is on");
+    console.log("widget is on:" + JSON.stringify(data));
     widget.classList["add"]("has-changes");
-    // const mainToggle = widget.querySelector(".omo-widget__main-toggle");
-    // mainToggle.parentElement.classList.toggle("power-off");
   } else {
     mainToggle.parentElement.classList.toggle("power-off");
   }
   document.getElementById("applyOverides").checked = data.checked;
 
   document.getElementById("totem_bsize").value = setFontSize(data.bodyFontSize);
-  // alert(document.getElementById("totem_bsize").value);
   document.getElementById("totem_body_ff").value = setFontFamilyId(
     data.bodyFontFamily
   )[0].id;
@@ -496,36 +494,20 @@ function generateOmoStyle() {
   const tweaks = config.TWEAK();
   // console.log(tweaks);
   style += tweaks;
-  // console.log(style);
+  console.log(style);
   return style;
 }
 
 const saveCookie = valueChanges => {
   const name = `${config.OMO_WIDGET_COOKIE}_`;
   let data = getUserAppliedValues();
-  // data.checked = Number(valueChanges) > 0 ? false : true;
-  console.log("save cookie:" + JSON.stringify(data));
   const value = JSON.stringify(data);
 
   localStorage.setItem(`${name}`, value);
-  // document.cookie = `${name}=${value}; SameSite=None; Secure;`;
   console.log(`saved:${value}`);
 };
 
-/** SAVES CURRENT CONFIGURATION REFACTOR 
-const saveConf = event => {
-  const text = ""; // document.getElementById('omoConf').value;
-  if (
-    event.target.type === "button" ||
-    event.target.type === "image" ||
-    event.target.type === "checkbox"
-  ) {
-    saveCookie(text);
-  }
-};
-*/
-
-/** READ VALUE FROM SAVED COOKIE */
+/** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE */
 const readCookie = fn => {
   // const cookie = document.cookie
   //   .split(";")
@@ -533,7 +515,6 @@ const readCookie = fn => {
   // if (cookie.length > 0) {
   //   const data = cookie[0].split("=")[1];
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
-  console.log(data === null);
   if (data === null) {
     console.log(
       "can't fetch from local storage, please clear browser histroy!"
@@ -542,20 +523,10 @@ const readCookie = fn => {
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
-  console.log("read cookie" + JSON.stringify(data));
-  // alert(data);
+  console.log("read cookie:" + data);
   const widget = document.querySelector("#omo-widget");
+  /** power on */
   fn.getValueChanges();
-  /** 
-  if (!getUserAppliedValues().checked) {
-    // widget.classList["add"]("has-changes");
-    let active = fn.getValueChanges();
-    // active > 0
-    //   ? mainToggle.parentElement.classList.toggle("power-off")
-    //   : mainToggle.parentElement.classList.toggle("power-on");
-    // applyOverides();
-  } else {
-  }*/
 };
 
 function getLastAppliedStyleSheet() {
@@ -613,20 +584,7 @@ const removeOverides = () => {
     children.removeChild(style);
   }
 };
-/*
-function applyOmoStyles(event) {
-  const check = document.getElementById("applyOverides").checked;
-  check ? applyOverides() : removeOverides();
-  saveConf(event);
-}
 
-function applyOmoStylesTotem() {
-  alert("applyOmoStylesTotem");
-  const check = document.getElementById("applyOverides").checked;
-  check ? applyOverides() : removeOverides();
-  // saveConf(event);
-}
-*/
 export const showWidget = (text, configurations) => {
   // convert plain HTML string into DOM elementss
   const temporary = document.createElement("div");
@@ -647,16 +605,18 @@ export const showWidget = (text, configurations) => {
   config
     .readConfigurationFromFile(configurations.config)
     .then(message => {
-      // push default font from configuration
+      // push default configuration values from config_xxxx.json
       HEADER_FONT_CHOOSER.push({ id: 0, value: config.HEADER_FONT_FAMILY });
       BODY_FONT_CHOOSER.push({ id: 0, value: config.BODY_FONT_FAMILY });
       LINE_HEIGHT.push({ id: 0, value: config.BODY_LINE_HEIGHT });
       FONT_WEIGHT.push({ id: 0, value: config.BODY_FONT_WEIGHT });
       LETTER_SPACING.push({ id: 0, value: config.BODY_FONT_SPACING });
-      COLOR_MAP.push({ id: -1, value: config.DEFAULT_BACKGROUND });
+      COLOR_MAP.push({
+        id: -1,
+        value: config.DEFAULT_BACKGROUND
+      });
       var color = document.getElementById("selectedBackround");
-      console.log(getColor(-1));
-      color.setAttribute("data-value", getColor(-1)[0].id);
+      color.setAttribute("data-value", getColor(NO_BACKGROUND_COLOR)[0].id);
       readCookie(handle);
     })
     .catch(err => {
