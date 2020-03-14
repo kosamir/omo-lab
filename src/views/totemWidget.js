@@ -2,13 +2,9 @@ import config from "../config";
 import "./totemWidget.css";
 import html from "./totemWidget.html";
 
-const IMAGE_OPEN = "/img/open.png";
-const IMAGE_CLOSE = "/img/close.png";
-const IMAGE_SAVE_ACTIVE = "/img/SAVE-ACTIVE-ICON.png";
-export const NO_BACKGROUND_COLOR = -1;
+const NO_BACKGROUND_COLOR = -1;
 const elements = [];
 let body;
-let toggler;
 
 var initOmoWidgetControls = function() {
   // elements
@@ -40,13 +36,9 @@ var initOmoWidgetControls = function() {
       optionDisplayToggle.checked = false;
       optionDisplayToggle.setAttribute("aria-selected", "false");
     });
-    // [].slice.call(valueInputs).forEach(function(value) {
-    //   alert(value.id + " " + value.value);
-    // });
   };
 
   const handlePowerToggle = function(event) {
-    console.log(event.target);
     if (mainToggle.parentElement.classList.toggle("power-off")) {
       removeOverides();
     } else {
@@ -58,7 +50,6 @@ var initOmoWidgetControls = function() {
 
   const updateFontFamilyPreview = function(value) {
     const letters = ["O", "A", "B", "C", "D", "E"];
-
     +fontTypePreview.setAttribute("data-selected", letters[value]);
   };
 
@@ -82,6 +73,7 @@ var initOmoWidgetControls = function() {
     if (input.id === "totem_body_ff") updateFontFamilyPreview(input.value);
   };
 
+  /** the place where magic happens */
   const handleValueChange = function() {
     let changesActive = 0;
     [].slice.call(forms).forEach(function(form) {
@@ -93,9 +85,7 @@ var initOmoWidgetControls = function() {
       }
     });
 
-    if (!document.getElementById("applyOverides").checked) {
-      applyOverides();
-    }
+    !document.getElementById("applyOverides").checked && applyOverides();
 
     const isBackgroundSelected = () => {
       let background = document
@@ -103,10 +93,12 @@ var initOmoWidgetControls = function() {
         .getAttribute("data-value");
       return background !== String(NO_BACKGROUND_COLOR);
     };
-    // IF no active changes and NO background selected!
-    if (changesActive === 0 && !isBackgroundSelected()) {
-      removeOverides();
-    }
+
+    isBackgroundSelected() &&
+      document.getElementById("background_color").classList.add("valid");
+    // IF NO changes active and NO background selected - remove style!
+    changesActive === 0 && !isBackgroundSelected() && removeOverides();
+
     saveCookie(changesActive);
 
     widget.classList[
@@ -176,7 +168,6 @@ var initOmoWidgetControls = function() {
 
   const handleOptionDisplayToggle = function(event) {
     const optionDisplayToggle = event.target;
-    // console.log(event.target);
 
     if (event.code) {
       const isTab = event.code == "Tab";
@@ -299,8 +290,10 @@ const setUserAppliedValues = (data, fn) => {
   document.getElementById("totem_bheight").value = setLineHeightId(
     data.bodyLineHeight
   )[0].id;
-  var bg = document.getElementById("selectedBackround");
-  bg.setAttribute("data-value", getColorValue(data.bgColor)[0].id);
+
+  document
+    .getElementById("selectedBackround")
+    .setAttribute("data-value", getColorValue(data.bgColor)[0].id);
 };
 
 const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
@@ -498,6 +491,7 @@ function generateOmoStyle() {
   return style;
 }
 
+/** SAVE VALUE TO COOKIE/LOCAL STORAGE */
 const saveCookie = valueChanges => {
   const name = `${config.OMO_WIDGET_COOKIE}_`;
   let data = getUserAppliedValues();
@@ -525,7 +519,7 @@ const readCookie = fn => {
   setUserAppliedValues(JSON.parse(data), fn);
   console.log("read cookie:" + data);
   const widget = document.querySelector("#omo-widget");
-  /** power on */
+  /** power on widget */
   fn.getValueChanges();
 };
 
@@ -536,6 +530,7 @@ function getLastAppliedStyleSheet() {
   return style;
 }
 
+/** IE11 fuck up :/
 const forceRedraw = element => {
   if (!element) {
     return;
@@ -551,9 +546,10 @@ const forceRedraw = element => {
     n.parentNode.removeChild(n);
   }, 0);
 };
+*/
 
 const applyOverides = () => {
-  const omoStyle = document.getElementById("omolab_style_w");
+  const omoStyle = document.getElementById(config.OMOLAB_STYLE_ID);
   let style = getLastAppliedStyleSheet();
   if (omoStyle) {
     style.innerHTML = generateOmoStyle();
@@ -562,7 +558,7 @@ const applyOverides = () => {
   }
   const css = document.createElement("style");
   css.type = "text/css";
-  css.id = "omolab_style_w";
+  css.id = config.OMOLAB_STYLE_ID;
   style = generateOmoStyle();
   if (css.styleSheet) {
     css.styleSheet.cssText = style;
@@ -575,10 +571,9 @@ const applyOverides = () => {
 };
 
 const removeOverides = () => {
-  const appliedStyle = document.getElementById("omolab_style_w");
+  const appliedStyle = document.getElementById(config.OMOLAB_STYLE_ID);
   const children = document.getElementsByTagName("head")[0];
   const style = getLastAppliedStyleSheet();
-  console.log(appliedStyle === style);
   /**  if omolab_style_w stylesheet is applied remove it, otherwise ignore */
   if (appliedStyle === style) {
     children.removeChild(style);
@@ -589,7 +584,6 @@ export const showWidget = (text, configurations) => {
   // convert plain HTML string into DOM elementss
   const temporary = document.createElement("div");
   temporary.innerHTML = html;
-  console.log(text);
   console.log(configurations);
 
   addOmolabClassScopeToBody(document);

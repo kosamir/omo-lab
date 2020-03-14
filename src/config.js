@@ -12,6 +12,9 @@ const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(
 )}`;
 exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS;
 
+const OMOLAB_STYLE_ID = "omolab_style_w";
+exports.OMOLAB_STYLE_ID = OMOLAB_STYLE_ID;
+
 /** COOKIE NAME */
 const OMO_WIDGET_COOKIE = "omolab-w-cookie";
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;

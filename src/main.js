@@ -16,7 +16,7 @@ function apiHandler(api, params) {
   if (supportedAPI.indexOf(api) === -1)
     throw Error(`Method ${api} is not supported`);
 
-  console.log(`Handling API call ${api}`, params);
+  console.log(`Handling API call ${api}:`, params);
 
   switch (api) {
     // TODO: add API implementation
