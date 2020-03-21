@@ -1,35 +1,173 @@
+/* OmoTypeA */
 @font-face {
   font-family: OmoTypeA-;
-  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-RegularOne.woff");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-RegularOne.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeA-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-MediumOne.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeA-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-BoldOne.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeA-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-BlackOne.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeB */
+@font-face {
+  font-family: OmoTypeB-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-RegularOne.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: OmoTypeB-;
-  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-RegularOne.woff");
-}
-@font-face {
-  font-family: OmoTypeC-;
-  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-RegularOne.woff");
-}
-@font-face {
-  font-family: OmoTypeD-;
-  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-RegularOne.woff");
-}
-@font-face {
-  font-family: OmoTypeE-;
-  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-RegularOne.woff");
-}
-@font-face {
-  font-family: OmoType-RegularStdTwo;
-  src: url("https://omo-lab.herokuapp.com/fonts/std/OmoType-RegularStdTwo.ttf");
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-MediumOne.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: OmoTypeB-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-BoldOne.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeB-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-BlackOne.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeC */
+@font-face {
+  font-family: OmoTypeC-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-RegularOne.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeC-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-MediumOne.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeC-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-BoldOne.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeC-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-BlackOne.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeD */
+@font-face {
+  font-family: OmoTypeD-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-RegularOne.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-MediumOne.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-BoldOne.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-BlackOne.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeE */
+@font-face {
+  font-family: OmoTypeE-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-RegularOne.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeE-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-MediumOne.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeE-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-BoldOne.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeE-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-BlackOne.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
 :root {
   --primary: #eb8b2d;
   --secondary: #2093aa;
   --svgFill: white;
   --size: 46px;
-  --margin-size: 2px;
+  --margin-size: 3px;
   --sizeAdjusted: calc(var(--size) + 2 * var(--margin-size));
   --animationSpeed: 0.15s;
   --triangleSize: calc(var(--sizeAdjusted) / 3);
@@ -37,7 +175,7 @@
 @media (min-width: 768px) {
   :root {
     --size: 62px;
-    --margin-size: 3px;
+    --margin-size: 4px;
   }
 }
 .omo-widget {
@@ -49,7 +187,7 @@
   right: calc(var(--size) * 0.5);
   background-color: black;
   font-size: 0;
-  border-radius: 25px;
+  border-radius: 26px;
   border-radius: calc(var(--size) * 0.5 + var(--margin-size));
   display: flex;
   flex-direction: column-reverse;
@@ -72,7 +210,7 @@
 .omo-widget * label:active,
 .omo-widget * button:focus,
 .omo-widget * button:active {
-  box-shadow: 0 0 0px 2px #2093aa;
+  box-shadow: 0 0 0px 3px #2093aa;
   box-shadow: 0 0 0px var(--margin-size) var(--secondary);
 }
 .omo-widget__main-toggle {
@@ -83,17 +221,11 @@
   position: relative;
   border: none !important;
 }
-.omo-widget__main-toggle + label::before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
+.omo-widget__main-toggle + label svg {
+  min-width: 41.4px;
+  min-width: calc(var(--size) * 0.9);
+  min-height: 41.4px;
+  min-height: calc(var(--size) * 0.9);
 }
 .omo-widget__main-toggle + label ~ * {
   transition: height 0.15s ease 0.15s, transform 0.15s ease, opacity 0.15s ease;
@@ -111,14 +243,14 @@
   transition: height var(--animationSpeed) ease,
     transform var(--animationSpeed) ease var(--animationSpeed),
     opacity var(--animationSpeed) ease var(--animationSpeed);
-  height: 50px;
+  height: 52px;
   height: var(--sizeAdjusted);
   opacity: 1;
   transform: scale(1);
   pointer-events: all;
 }
 .omo-widget__main-toggle:checked + label ~ * .omo-widget__link-wrap {
-  height: 48px;
+  height: 49px;
   height: calc(var(--size) + var(--margin-size));
 }
 .omo-widget__main-toggle:checked + label ~ * .omo-widget__link-wrap a {
@@ -146,18 +278,9 @@
   > * {
   opacity: 1;
 }
-.omo-widget.has-changes
-  .omo-widget__main-toggle:checked
-  + label
-  ~ .omo-widget__power-toggle-wrap
-  .omo-widget__power-toggle
-  + label {
-  background: #eb8b2d;
-  background: var(--primary);
-}
-.omo-widget.has-changes .omo-widget__main-toggle {
-  background: #eb8b2d !important;
-  background: var(--primary) !important;
+.omo-widget.has-changes .omo-widget__main-toggle + label svg #active-status {
+  fill: #eb8b2d;
+  fill: var(--primary);
 }
 .omo-widget.power-off > .omo-widget__main-toggle {
   background: white !important;
@@ -187,7 +310,7 @@
   width: var(--size);
   height: 46px;
   height: var(--size);
-  margin: 2px !important;
+  margin: 3px !important;
   margin: var(--margin-size) !important;
   background: transparent;
   border: 2px solid white;
@@ -274,9 +397,9 @@
   background: #eb8b2d;
   background: var(--primary);
   position: absolute;
-  right: 2px;
+  right: 3px;
   right: var(--margin-size);
-  top: 2px;
+  top: 3px;
   top: var(--margin-size);
   z-index: 323;
   border-radius: 50%;
@@ -290,9 +413,9 @@
 .omo-widget__toggle-options + label ~ form {
   transition: width 0.15s ease 0.15s;
   transition: width var(--animationSpeed) ease var(--animationSpeed);
-  width: 50px;
+  width: 52px;
   width: var(--sizeAdjusted);
-  height: 50px;
+  height: 52px;
   height: var(--sizeAdjusted);
   pointer-events: none;
   display: flex;
@@ -305,7 +428,7 @@
 .omo-widget__toggle-options:checked + label ~ form {
   transition: width 0.15s ease;
   transition: width var(--animationSpeed) ease;
-  width: 150px;
+  width: 156px;
   width: calc(3 * var(--sizeAdjusted));
   pointer-events: all;
 }
@@ -320,9 +443,9 @@
   transition: width 0.15s ease, padding 0.15s ease;
   transition: width var(--animationSpeed) ease,
     padding var(--animationSpeed) ease;
-  width: 200px;
+  width: 208px;
   width: calc(4 * var(--sizeAdjusted));
-  padding-left: 50px;
+  padding-left: 52px;
   padding-left: var(--sizeAdjusted);
 }
 .omo-widget__toggle-options:checked + label ~ form.valid [type="reset"] {
@@ -349,9 +472,9 @@
   top: 0;
   right: 0;
   background: black;
-  border-radius: 25px;
+  border-radius: 26px;
   border-radius: calc(var(--sizeAdjusted) * 0.5);
-  padding-right: 50px;
+  padding-right: 52px;
   padding-right: var(--sizeAdjusted);
   z-index: -1;
 }
@@ -372,7 +495,7 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 16.66667px 16.66667px 16.66667px;
+  border-width: 0 17.33333px 17.33333px 17.33333px;
   border-width: 0 var(--triangleSize) var(--triangleSize) var(--triangleSize);
   border-color: transparent transparent white transparent;
 }
@@ -397,7 +520,7 @@ body {
 .omo-widget [data-setting-name="background"] form {
   transition: all 0.15s ease 0.15s;
   transition: all var(--animationSpeed) ease var(--animationSpeed);
-  height: 120px;
+  height: 124px;
   height: calc(var(--sizeAdjusted) * 2 + 20px);
   bottom: -10px;
   top: auto;
@@ -425,12 +548,12 @@ body {
   ~ form {
   transition: width 0.15s ease;
   transition: width var(--animationSpeed) ease;
-  width: 170px;
+  width: 176px;
   width: calc(var(--sizeAdjusted) * 3 + 20px);
   padding: 10px;
   border-top-right-radius: var(--sizeAdjusted/2);
   border-bottom-right-radius: 0px;
-  margin-right: 50px;
+  margin-right: 52px;
   margin-right: var(--sizeAdjusted);
 }
 .omo-widget
@@ -451,17 +574,17 @@ body {
   content: "";
   position: absolute;
   background: black;
-  width: 120px;
+  width: 124px;
   width: calc(2 * var(--sizeAdjusted) + 20px);
-  height: 70px;
+  height: 72px;
   height: calc(var(--sizeAdjusted) + 20px);
   z-index: -1;
   top: 0;
-  right: calc(100% - 70px);
+  right: calc(100% - 72px);
   right: calc(100% - var(--sizeAdjusted) - 20px);
-  border-top-left-radius: 60px;
+  border-top-left-radius: 62px;
   border-top-left-radius: calc(var(--sizeAdjusted) + 10px);
-  border-bottom-left-radius: 60px;
+  border-bottom-left-radius: 62px;
   border-bottom-left-radius: calc(var(--sizeAdjusted) + 10px);
 }
 .omo-widget
@@ -477,10 +600,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(100% - 8px);
+  width: calc(100% - 10px);
   width: calc(100% - 2 * (var(--margin-size) + 2px));
   height: 0;
-  padding-top: calc(50% - 4px);
+  padding-top: calc(50% - 6px);
   padding-top: calc(50% - 2 * var(--margin-size));
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -578,7 +701,7 @@ body {
   [data-setting-name="font-type"]
   .omo-widget__toggle-options:checked
   ~ form {
-  width: 200px;
+  width: 208px;
   width: calc(4 * var(--sizeAdjusted));
 }
 .omo-widget
@@ -588,9 +711,9 @@ body {
   transition: width 0.15s ease, padding 0.15s ease;
   transition: width var(--animationSpeed) ease,
     padding var(--animationSpeed) ease;
-  width: 250px;
+  width: 260px;
   width: calc(5 * var(--sizeAdjusted));
-  padding-left: 50px;
+  padding-left: 52px;
   padding-left: var(--sizeAdjusted);
 }
 .omo-widget

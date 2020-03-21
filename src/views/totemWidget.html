@@ -12,7 +12,19 @@
 <body>
   <div id="omo-widget" class="omo-widget">
     <input type="checkbox" id="main-toggle" name="main-toggle" class="omo-widget__main-toggle" title="Open options" />
-    <label for="main-toggle"></label>
+    <label for="main-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 66 66" width="66" height="66">
+        <switch>
+          <g>
+            <circle cx="33.001" cy="33" r="33" />
+            <circle fill="#FFF" cx="33.001" cy="15.225" r="9.077" />
+            <path fill="#FFF"
+              d="M58.362 24.793a2.221 2.221 0 00-2.723-1.573l-21.852 5.855h-1.571L10.363 23.22a2.223 2.223 0 10-1.151 4.295L28.45 32.67v2.771l-5.79 21.614a2.226 2.226 0 001.572 2.724 2.225 2.225 0 002.724-1.573l4.699-17.538h2.692l4.699 17.538a2.225 2.225 0 004.296-1.151l-5.791-21.613V32.67l19.238-5.155a2.22 2.22 0 001.573-2.722z" />
+            <circle id="active-status" cx="33.001" cy="15.225" r="4.191" />
+          </g>
+        </switch>
+      </svg>
+    </label>
     <fieldset data-setting-name="font-size">
       <input type="radio" class="omo-widget__toggle-options" aria-selected="false" id="option-opened-1"
         name="option-opened" value="1" title="Font Size" />

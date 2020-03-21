@@ -1,4 +1,29 @@
 @font-face {
+  font-family: OmoTypeA-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-RegularOne.woff");
+}
+
+@font-face {
+  font-family: OmoTypeB-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeB-RegularOne.woff");
+}
+@font-face {
+  font-family: OmoTypeC-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeC-RegularOne.woff");
+}
+@font-face {
+  font-family: OmoTypeD-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeD-RegularOne.woff");
+}
+@font-face {
+  font-family: OmoTypeE-;
+  src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeE-RegularOne.woff");
+}
+@font-face {
+  font-family: OmoType-RegularStdTwo;
+  src: url("https://omo-lab.herokuapp.com/fonts/std/OmoType-RegularStdTwo.ttf");
+}
+@font-face {
   font-family: OmoTypeA-BlackOne;
   src: url("https://omo-lab.herokuapp.com/fonts/woff/OmoTypeA-BlackOne.woff");
 }

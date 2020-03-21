@@ -299,9 +299,9 @@ const setUserAppliedValues = (data, fn) => {
 const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
 
 const FONT_WEIGHT = [
-  { id: 1, value: "500", omoType: "BoldOne" },
-  { id: 2, value: "600", omoType: "BookOne" },
-  { id: 3, value: "800", omoType: "MediumOne" }
+  { id: 1, value: "500", omoType: "MediumOne" },
+  { id: 2, value: "600", omoType: "BoldOne" },
+  { id: 3, value: "800", omoType: "BlackOne" }
   // ,
   // { id: 4, value: "lighter" }
 ];
@@ -430,12 +430,12 @@ function generateOmoStyle() {
   //   bgCol
   // );
 
-  const isOmoTypeTurnedOn = () => {
-    return (
-      document.getElementById("totem_font_weight").value !== "0" &&
-      document.getElementById("totem_body_ff").value !== "0"
-    );
-  };
+  // const isOmoTypeTurnedOn = () => {
+  //   return (
+  //     document.getElementById("totem_font_weight").value !== "0" &&
+  //     document.getElementById("totem_body_ff").value !== "0"
+  //   );
+  // };
 
   const headerStyle = config.setHeaderStyle(
     config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(","),
