@@ -174,7 +174,7 @@
 }
 @media (min-width: 768px) {
   :root {
-    --size: 62px;
+    --size: 52px;
     --margin-size: 4px;
   }
 }
@@ -582,9 +582,9 @@ body {
   top: 0;
   right: calc(100% - 72px);
   right: calc(100% - var(--sizeAdjusted) - 20px);
-  border-top-left-radius: 62px;
+  border-top-left-radius: 52px;
   border-top-left-radius: calc(var(--sizeAdjusted) + 10px);
-  border-bottom-left-radius: 62px;
+  border-bottom-left-radius: 52px;
   border-bottom-left-radius: calc(var(--sizeAdjusted) + 10px);
 }
 .omo-widget
