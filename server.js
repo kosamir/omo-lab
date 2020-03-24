@@ -4,6 +4,7 @@ var express = require("express");
 var app = express();
 
 app.use(
+  "/webwidget",
   express.static(path.join(__dirname, "dist"), {
     setHeaders: function(res, path) {
       res.set("Access-Control-Allow-Origin", "*");
