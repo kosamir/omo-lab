@@ -8,8 +8,8 @@ var app = express();
 /** whitelist origins */
 
 const allowedOrigins = [
-  "http://unizd.test.sistemi.hr",
-  "http://business.omoguru.com"
+  "http://unizd.test.sistemi.hr/",
+  "http://business.omoguru.com/"
 ];
 
 app.use((req, res, next) => {
