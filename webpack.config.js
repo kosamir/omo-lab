@@ -28,7 +28,8 @@ module.exports = env => {
               { from: "config/", to: "config/" },
               { from: "fonts/woff", to: "fonts/woff" },
               { from: "fonts/std", to: "fonts/std" },
-              { from: "assets/", to: "assets/" }
+              { from: "assets/", to: "assets/" },
+              { from: "css/", to: "css/" }
             ]),
             new webpack.ProvidePlugin({
               Promise: "es6-promise-promise"

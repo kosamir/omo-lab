@@ -45,15 +45,11 @@ const transformHeaderStyles = elements =>
  * @param {} bgColor
  */
 const inverseFontFaceColor = bgColor => {
-  console.log("inverseFontFaceColor:" + bgColor);
   let styleBlack = "";
 
   if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_BLACK) {
     styleBlack = "color:white !important;";
   }
-  // if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_WHITE) {
-  //   styleBlack = "color:black !important;";
-  // }
   return styleBlack;
 };
 

@@ -16,7 +16,8 @@ function apiHandler(api, params) {
   if (supportedAPI.indexOf(api) === -1)
     throw Error(`Method ${api} is not supported`);
 
-  console.log(`Handling API call ${api}:`, params);
+  // console.log(`Handling API call ${api}:`, params);
+  console.log("Omo-Widget started");
 
   switch (api) {
     // TODO: add API implementation
@@ -41,7 +42,7 @@ function extendObject(a, b) {
     The main entry of the application
     */
 function app(window) {
-  console.log("Omo-Widget starting");
+  console.log("Omo-Widget starting...");
   // all methods that were called till now and stored in queue
   // needs to be called now
 
@@ -51,7 +52,6 @@ function app(window) {
     for (let i = 0; i < queue.length; i++) {
       if (queue[i][0].toLowerCase() === "init") {
         configurations = extendObject(configurations, queue[i][1]);
-        // console.log('Omo-Widget started', configurations);
       } else {
         apiHandler(queue[i][0], queue[i][1]);
       }

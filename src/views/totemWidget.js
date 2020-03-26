@@ -267,7 +267,7 @@ const setUserAppliedValues = (data, fn) => {
   const widget = document.querySelector("#omo-widget");
   const mainToggle = widget.querySelector(".omo-widget__main-toggle");
   if (!data.checked) {
-    console.log("widget is on:" + JSON.stringify(data));
+    // console.log("widget is on:" + JSON.stringify(data));
     widget.classList["add"]("has-changes");
   } else {
     mainToggle.parentElement.classList.toggle("power-off");
@@ -414,7 +414,7 @@ const getUserAppliedValues = () => {
 
 function generateOmoStyle() {
   const values = getUserAppliedValues();
-  console.log(values);
+  // console.log(values);
   // ako je odabrao bez boje ili boja nije odabrana napravi bez boje
   let style =
     values.bgColor === "transparent"
@@ -487,7 +487,7 @@ function generateOmoStyle() {
   const tweaks = config.TWEAK();
   // console.log(tweaks);
   style += tweaks;
-  console.log(style);
+  // console.log(style);
   return style;
 }
 
@@ -496,9 +496,8 @@ const saveCookie = valueChanges => {
   const name = `${config.OMO_WIDGET_COOKIE}_`;
   let data = getUserAppliedValues();
   const value = JSON.stringify(data);
-
   localStorage.setItem(`${name}`, value);
-  console.log(`saved:${value}`);
+  // console.log(`saved:${value}`);
 };
 
 /** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE */
@@ -517,7 +516,7 @@ const readCookie = fn => {
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
-  console.log("read cookie:" + data);
+  // console.log("read cookie:" + data);
   const widget = document.querySelector("#omo-widget");
   /** power on widget */
   fn.getValueChanges();
@@ -584,7 +583,7 @@ export const showWidget = (text, configurations) => {
   // convert plain HTML string into DOM elementss
   const temporary = document.createElement("div");
   temporary.innerHTML = html;
-  console.log(configurations);
+  // console.log(configurations);
 
   addOmolabClassScopeToBody(document);
   // append elements to body

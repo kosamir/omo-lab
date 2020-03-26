@@ -49,19 +49,19 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-   
+
 
 </head>
 
 <body class="someclass">
   <div id="omo">
-    <!-- <link rel="stylesheet" href="assets/totemWidget.css" /> -->
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/webwidget/css/businesomo.css" />
     <script>
       (function (w, d, s, o, f, js, fjs) {
         w['Omo-Widget'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
         js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
         js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-      }(window, document, 'script', 'mw', '/OmoWidget.js'));
+      }(window, document, 'script', 'mw', '/webwidget/OmoWidget.js'));
       mw('init', { config: "config/config_index.json" });
       mw('message', 'Hello from OmoWidget');
     </script>
