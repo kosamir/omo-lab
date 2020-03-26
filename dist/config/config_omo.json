@@ -1,25 +1,25 @@
 {
   "DEFAULT_BACKGROUND": "transparent",
-  "HEADER_FONT_FAMILY": "OmoType-RegularStdTwo",
-  "BODY_FONT_FAMILY": "OmoType-RegularStdTwo",
-  "HEADER_LINE_HEIGHT": "1.5",
+  "HEADER_FONT_FAMILY": "omotypeserif_Ext_B_One",
+  "BODY_FONT_FAMILY": "omotyperegular_std_two",
+  "HEADER_LINE_HEIGHT": "1.2",
   "HEADER_FONT_SPACING": "0",
-  "HEADER_FONT_SIZE": "35",
-  "BODY_LINE_HEIGHT": "1.9",
+  "HEADER_FONT_SIZE": "48",
+  "BODY_LINE_HEIGHT": "1.5",
   "BODY_FONT_SPACING": "0",
-  "BODY_FONT_SIZE": "18",
+  "BODY_FONT_SIZE": "17",
   "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6"],
-  "CUSTOM_HEADER_STYLE_ELEMENTS": ["div#question-header *"],
+  "CUSTOM_HEADER_STYLE_ELEMENTS": [""],
   "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
   "ELEMENTS_TO_TWEAK_STYLE": [],
   "BODY_STYLE": [
-    "div.question *",
-    "div.post-text *",
-    "pre.default",
-    "div.show-votes *",
+    ".bt_bb_service_content",
+    ".bt_bb_headline_superheadline",
+    ".bt_bb_headline_subheadline",
+    ".bt_bb_text p",
+    ".bt_bb_button a",
     "p",
-    "ul",
-    "nav *"
+    "ul"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "select.menu"]
+  "BACKGROUND_COLOR_ELEMENTS": [" ", "select.menu", ".btLogoArea", ".bt_bb_row.bt_bb_column_gap_medium", "#features .bt_bb_port", "#portfolio .bt_bb_port", "#klijenti .bt_bb_port", "#partner .bt_bb_port", "#bt_bb_section5e7bb46dcd697 .bt_bb_port", "#bt_bb_section5e7bb629438bd .bt_bb_port"]
 }
