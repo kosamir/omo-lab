@@ -12,17 +12,17 @@ const allowedOrigins = [
   "http://business.omoguru.com/"
 ];
 
-// app.use((req, res, next) => {
-//   let referrer = req.get("Referrer");
-//   console.log("referrer:" + referrer);
-//   allowedOrigins.includes(referrer)
-//     ? next()
-//     : res
-//         .status(401)
-//         .json(
-//           "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
-//         );
-// });
+app.use((req, res, next) => {
+  let referrer = req.get("Referrer");
+  console.log("referrer:" + referrer);
+  allowedOrigins.includes(referrer)
+    ? next()
+    : res
+        .status(401)
+        .json(
+          "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
+        );
+});
 
 /** path for serving html pages only for heroku playground */
 app.use(
@@ -42,6 +42,7 @@ app.use(
   "/styles",
   express.static(path.join(__dirname, "dist"), {
     setHeaders: function(res, path) {
+      console.log("path");
       res.set("Access-Control-Allow-Origin", "*");
       res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
       res.set("Access-Control-Allow-Methods", "GET, OPTIONS");
