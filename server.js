@@ -15,6 +15,8 @@ const allowedOrigins = [
 
 app.use((req, res, next) => {
   let host = req.get("host");
+  console.log(host);
+
   allowedOrigins.includes(host)
     ? next()
     : res
