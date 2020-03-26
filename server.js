@@ -9,7 +9,8 @@ var app = express();
 const allowedOrigins = [
   "unizd.test.sistemi.hr",
   "business.omoguru.com",
-  "omo-lab.herokuapp.com"
+  "omo-lab.herokuapp.com",
+  "localhost:8080"
 ];
 
 app.use((req, res, next) => {

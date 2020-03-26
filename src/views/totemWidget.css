@@ -163,14 +163,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: OmoType-BlackStdOne;
-  src: url("https://api.omoguru.com/fonts/std/OmoType-BlackStdOne.ttf")
-    format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
 :root {
   --primary: #eb8b2d;
   --secondary: #2093aa;
