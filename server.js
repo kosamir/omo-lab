@@ -8,32 +8,20 @@ var app = express();
 /** whitelist origins */
 
 const allowedOrigins = [
-  "unizd.test.sistemi.hr",
-  "business.omoguru.com",
-  "omo-lab.herokuapp.com",
-  "localhost:8080",
-  "api.omoguru.com"
+  "http://unizd.test.sistemi.hr",
+  "http://business.omoguru.com"
 ];
 
 app.use((req, res, next) => {
-  let host = req.get("host");
-
-  let a = req.get("Referrer");
-  let referrer = req.headers.referrer || req.headers.referer;
-  console.log("request host:" + host);
-  console.log("request referre:" + referrer);
-  console.log("request referre:" + a);
-  console.log(req.headers);
-  console.log(req.path);
-  next();
-
-  // allowedOrigins.includes(referrer)
-  //   ? next()
-  //   : res
-  //       .status(401)
-  //       .json(
-  //         "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
-  //       );
+  let referrer = req.get("Referrer");
+  console.log("referrer:" + referrer);
+  allowedOrigins.includes(referrer)
+    ? next()
+    : res
+        .status(401)
+        .json(
+          "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
+        );
 });
 
 /** path for serving html pages only for heroku playground */
