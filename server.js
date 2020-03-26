@@ -5,17 +5,19 @@ const fs = require("fs");
 
 var app = express();
 
-/** whitelist origins */
+/** whitelist origins 
+
 const allowedOrigins = [
   "unizd.test.sistemi.hr",
   "business.omoguru.com",
   "omo-lab.herokuapp.com",
-  "localhost:8080"
+  "localhost:8080",
+  "api.omoguru.com"
 ];
 
 app.use((req, res, next) => {
   let host = req.get("host");
-  console.log(host);
+  console.log("request host:" + host);
 
   allowedOrigins.includes(host)
     ? next()
@@ -25,6 +27,7 @@ app.use((req, res, next) => {
           "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
         );
 });
+*/
 
 /** path for serving html pages only for heroku playground */
 app.use(
