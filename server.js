@@ -6,7 +6,11 @@ const fs = require("fs");
 var app = express();
 
 /** whitelist origins */
-const allowedOrigins = ["unizd.test.sistemi.hr", "business.omoguru.com"];
+const allowedOrigins = [
+  "unizd.test.sistemi.hr",
+  "business.omoguru.com",
+  "omo-lab.herokuapp.com"
+];
 
 app.use((req, res, next) => {
   let host = req.get("host");
