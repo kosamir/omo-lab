@@ -33,8 +33,20 @@ app.use(
       res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
       res.set("Access-Control-Allow-Methods", "GET");
       res.set("X-Powered-By", " 3.2.1");
-      res.type("application/json");
       res.type("text/html");
+    }
+  })
+);
+
+app.use(
+  "/styles",
+  express.static(path.join(__dirname, "dist"), {
+    setHeaders: function(res, path) {
+      res.set("Access-Control-Allow-Origin", "*");
+      res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
+      res.set("Access-Control-Allow-Methods", "GET");
+      res.set("X-Powered-By", " 3.2.1");
+      res.type("text/css");
     }
   })
 );
