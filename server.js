@@ -5,7 +5,7 @@ const fs = require("fs");
 
 var app = express();
 
-/** whitelist origins 
+/** whitelist origins */
 
 const allowedOrigins = [
   "unizd.test.sistemi.hr",
@@ -17,17 +17,24 @@ const allowedOrigins = [
 
 app.use((req, res, next) => {
   let host = req.get("host");
-  console.log("request host:" + host);
 
-  allowedOrigins.includes(host)
-    ? next()
-    : res
-        .status(401)
-        .json(
-          "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
-        );
+  let a = req.get("Referrer");
+  let referrer = req.headers.referrer || req.headers.referer;
+  console.log("request host:" + host);
+  console.log("request referre:" + referrer);
+  console.log("request referre:" + a);
+  console.log(req.headers);
+  console.log(req.path);
+  next();
+
+  // allowedOrigins.includes(referrer)
+  //   ? next()
+  //   : res
+  //       .status(401)
+  //       .json(
+  //         "401 - This domain is not listed as our partner. Please contact us at contact@omoguru.com"
+  //       );
 });
-*/
 
 /** path for serving html pages only for heroku playground */
 app.use(
