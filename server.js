@@ -12,10 +12,18 @@ const allowedOrigins = [
   "http://business.omoguru.com/"
 ];
 
+const startsWith = value => {
+  let ret = false;
+  allowedOrigins.forEach(el => {
+    if (value.startsWith(el)) ret = true;
+  });
+  return ret;
+};
+
 app.use((req, res, next) => {
   let referrer = req.get("Referrer");
   console.log("referrer:" + referrer);
-  allowedOrigins.includes(referrer)
+  startsWith(referrer)
     ? next()
     : res
         .status(401)
