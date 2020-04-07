@@ -9,13 +9,13 @@ var app = express();
 
 const allowedOrigins = [
   "http://unizd.test.sistemi.hr/",
-  "http://business.omoguru.com/"
+  "http://business.omoguru.com/",
 ];
-
-const domainNameStartsWith = refferer => {
+/**only for allowed domains */
+const domainNameStartsWith = (refferer) => {
   let ret = false;
-  allowedOrigins.forEach(el => {
-    if (refferer.startsWith(el)) ret = true;
+  allowedOrigins.forEach((el) => {
+    if (typeof refferer !== "undefined" && refferer.startsWith(el)) ret = true;
   });
   return ret;
 };
@@ -36,46 +36,45 @@ app.use((req, res, next) => {
 app.use(
   "/html",
   express.static(path.join(__dirname, "dist"), {
-    setHeaders: function(res, path) {
+    setHeaders: function (res, path) {
       res.set("Access-Control-Allow-Origin", "*");
       res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
       res.set("Access-Control-Allow-Methods", "GET, OPTIONS");
       res.set("X-Powered-By", " 3.2.1");
       res.type("text/html");
-    }
+    },
   })
 );
 
 app.use(
   "/styles",
   express.static(path.join(__dirname, "dist"), {
-    setHeaders: function(res, path) {
-      console.log("path");
+    setHeaders: function (res, path) {
       res.set("Access-Control-Allow-Origin", "*");
       res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
       res.set("Access-Control-Allow-Methods", "GET, OPTIONS");
       res.set("X-Powered-By", " 3.2.1");
       res.type("text/css");
-    }
+    },
   })
 );
 
 app.use(
   "/webwidget",
   express.static(path.join(__dirname, "dist"), {
-    setHeaders: function(res, path) {
+    setHeaders: function (res, path) {
       res.set("Access-Control-Allow-Origin", "*");
       res.set("Access-Control-Allow-Headers", "Content-Type,X-Requested-With");
       res.set("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
       res.set("X-Powered-By", " 3.2.1");
       res.type("application/json");
       res.type("json");
-    }
+    },
   })
 );
 
 app.set("port", process.env.PORT || 8080);
 
-var server = app.listen(app.get("port"), function() {
+var server = app.listen(app.get("port"), function () {
   console.log("listening on port ", server.address().port);
 });

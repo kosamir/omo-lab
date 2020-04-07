@@ -276,6 +276,14 @@
   .omo-widget__main-toggle:checked
   + label
   ~ .omo-widget__power-toggle-wrap
+  label {
+  background: #eb8b2d;
+  background: var(--primary);
+}
+.omo-widget.has-changes
+  .omo-widget__main-toggle:checked
+  + label
+  ~ .omo-widget__power-toggle-wrap
   > * {
   opacity: 1;
 }
@@ -370,7 +378,7 @@
   background: var(--secondary);
 }
 .omo-widget__option-value {
-  display: none !important;
+  display: none;
 }
 .omo-widget svg {
   display: block !important;
@@ -410,7 +418,7 @@
   display: flex;
 }
 .omo-widget__toggle-options {
-  display: none;
+  display: none !important;
 }
 .omo-widget__toggle-options + label ~ form {
   transition: width 0.15s ease 0.15s;
@@ -584,9 +592,9 @@ body {
   top: 0;
   right: calc(100% - 72px);
   right: calc(100% - var(--sizeAdjusted) - 20px);
-  border-top-left-radius: 52px;
+  border-top-left-radius: 62px;
   border-top-left-radius: calc(var(--sizeAdjusted) + 10px);
-  border-bottom-left-radius: 52px;
+  border-bottom-left-radius: 62px;
   border-bottom-left-radius: calc(var(--sizeAdjusted) + 10px);
 }
 .omo-widget
