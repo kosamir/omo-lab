@@ -378,7 +378,7 @@
   background: var(--secondary);
 }
 .omo-widget__option-value {
-  display: none;
+  display: none !important;
 }
 .omo-widget svg {
   display: block !important;
