@@ -10,6 +10,7 @@ var app = express();
 const allowedOrigins = [
   "http://unizd.test.sistemi.hr/",
   "http://business.omoguru.com/",
+  "https://suspicious-williams-793bcd.netlify.app/",
 ];
 /**only for allowed domains */
 const domainNameStartsWith = (refferer) => {
