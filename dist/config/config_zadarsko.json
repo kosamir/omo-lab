@@ -9,7 +9,21 @@
   "BODY_LINE_HEIGHT": "1.5",
   "BODY_FONT_SPACING": "0",
   "BODY_FONT_SIZE": "14",
-  "HEADER_STYLE_ELEMENTS": ["h1", "h2", "h3", "h4", "h5", "h6", ".c-item__title"],
+  "DESKTOP_HEADER_LINE_HEIGHT": "1.2",
+  "DESKTOP_HEADER_FONT_SPACING": "2",
+  "DESKTOP_HEADER_FONT_SIZE": "23",
+  "DESKTOP_BODY_LINE_HEIGHT": "1.8",
+  "DESKTOP_BODY_FONT_SPACING": "2.3",
+  "DESKTOP_BODY_FONT_SIZE": "18",
+  "HEADER_STYLE_ELEMENTS": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    ".c-item__title"
+  ],
   "CUSTOM_HEADER_STYLE_ELEMENTS": [],
   "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
   "ELEMENTS_TO_TWEAK_STYLE": [],
@@ -17,7 +31,7 @@
     "div.c-item__summary *",
     ".l-header__menu a",
     ".js-language-nav span.text-uppercase",
-    "input.NormalTextBox",  
+    "input.NormalTextBox",
     ".c-item__title",
     ".c-contents__content p",
     "div.c-article-detail__main-col *",
@@ -31,5 +45,12 @@
     "div.c-item__title",
     "li.c-nav-card__item *"
   ],
-  "BACKGROUND_COLOR_ELEMENTS": [" ", "main", ".c-nav--iconified .c-item", ".c-nav-card__link--parent", ".l-item__button",".slick-arrow:before"]
+  "BACKGROUND_COLOR_ELEMENTS": [
+    " ",
+    "main",
+    ".c-nav--iconified .c-item",
+    ".c-nav-card__link--parent",
+    ".l-item__button",
+    ".slick-arrow:before"
+  ]
 }
