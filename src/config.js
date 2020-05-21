@@ -8,19 +8,19 @@ exports.IMPORTANT_ELEMENTS_SELECTOR = IMPORTANT_ELEMENTS_SELECTOR;
 
 /** GENERATED OMO CLASS BODY */
 const OMOLAB_BODY_CLASS = `omolab-w-body-${Date.now()}-${Math.ceil(
-  Math.random() * 1000
+  Math.random() * 1000,
 )}`;
 exports.OMOLAB_BODY_CLASS = OMOLAB_BODY_CLASS;
 
-const OMOLAB_STYLE_ID = "omolab_style_w";
+const OMOLAB_STYLE_ID = 'omolab_style_w';
 exports.OMOLAB_STYLE_ID = OMOLAB_STYLE_ID;
 
 /** COOKIE NAME */
-const OMO_WIDGET_COOKIE = "omolab-w-cookie";
+const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
-const COLOR_BLACK = "#231F20";
-const COLOR_WHITE = "#EFF3EE";
+const COLOR_BLACK = '#231F20';
+const COLOR_WHITE = '#EFF3EE';
 
 var BODY_FONT_FAMILY;
 exports.BODY_FONT_FAMILY;
@@ -37,7 +37,7 @@ const addPixelsToNumber = value => `${value}px`;
 const transformHeaderStyles = elements =>
   elements.map(
     element =>
-      `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `
+      `body.${OMOLAB_BODY_CLASS} ${element}, body.${OMOLAB_BODY_CLASS} ${element} * `,
   );
 
 /**
@@ -45,10 +45,10 @@ const transformHeaderStyles = elements =>
  * @param {} bgColor
  */
 const inverseFontFaceColor = bgColor => {
-  let styleBlack = "";
+  let styleBlack = '';
 
-  if (typeof bgColor !== "undefined" && bgColor.trim() === COLOR_BLACK) {
-    styleBlack = "color:white !important;";
+  if (typeof bgColor !== 'undefined' && bgColor.trim() === COLOR_BLACK) {
+    styleBlack = 'color:white !important;';
   }
   return styleBlack;
 };
@@ -60,7 +60,7 @@ const setHeaderStyle = (
   headerFontSize,
   headerFontSpacing,
   headerLineHeight,
-  bgColor
+  bgColor,
 ) => {
   const headerStyle = `${headerStyleElements}{ 
     font-family:${headerFontFamily} !important; 
@@ -92,12 +92,12 @@ exports.OMO_WIDGET_ELEMENTS = OMO_WIDGET_ELEMENTS;
 const appendBodyToCssSelector = elements =>
   elements.map(element => `body.${OMOLAB_BODY_CLASS} ${element}`);
 
-const omoWidgetStyle = "{ color:black }\n";
+const omoWidgetStyle = '{ color:black }\n';
 exports.omoWidgetStyle = omoWidgetStyle;
 
 /** SET WIDGET STYLE */
 const setOmoWidgetStyle = (omoWidgetElements, style) =>
-  `${appendBodyToCssSelector(omoWidgetElements).join(",")} ${style}`;
+  `${appendBodyToCssSelector(omoWidgetElements).join(',')} ${style}`;
 exports.setOmoWidgetStyle = setOmoWidgetStyle;
 
 /** CUSTOM ELEMENTS TO TWEAK CSS DEFINED HERE
@@ -114,8 +114,8 @@ const BODY_STYLE_TWEAKS = (body, elementsToTweak) => {
 
 const TWEAK = () =>
   BODY_STYLE_TWEAKS(OMOLAB_BODY_CLASS, this.ELEMENTS_TO_TWEAK_STYLE)
-    .join(",")
-    .replace(",", "\n");
+    .join(',')
+    .replace(',', '\n');
 exports.TWEAK = TWEAK;
 
 /** SET BODY STYLE */
@@ -147,10 +147,10 @@ const setBodyTextStyle = (
   bodyFontSize,
   bodyFontSpacing,
   bodyLineHeight,
-  bgColor
+  bgColor,
 ) => {
   const bodyTextStyle = bodyFontFamily
-    ? `${appendBodyToCssSelector(bodyElements).join(",")}{ 
+    ? `${appendBodyToCssSelector(bodyElements).join(',')}{ 
     font-family:${bodyFontFamily} !important; 
     font-size:${
       bodyFontSize
@@ -167,7 +167,7 @@ const setBodyTextStyle = (
       bodyLineHeight ? bodyLineHeight : this.BODY_LINE_HEIGHT
     } !important; 
     ${inverseFontFaceColor(bgColor)}}\n`
-    : "";
+    : '';
   return bodyTextStyle;
 };
 exports.setBodyTextStyle = setBodyTextStyle;
@@ -182,18 +182,18 @@ exports.BACKGROUND_COLOR_ELEMENTS = BACKGROUND_COLOR_ELEMENTS;
 const setBackGroundColor = (applyToElements, bgColor) => {
   return bgColor
     ? `${appendBodyToCssSelector(applyToElements).join(
-        ","
+        ',',
       )} { background-color: ${bgColor} !important; ${inverseFontFaceColor(
-        bgColor
+        bgColor,
       )}}\n`
-    : "";
+    : '';
 };
 exports.setBackGroundColor = setBackGroundColor;
 
 // eslint-disable-next-line vars-on-top
 // var fetch = require("node-fetch");
 
-var axios = require("axios");
+var axios = require('axios');
 
 const readConfigurationFromFile = conf => {
   return new Promise((resolve, reject) => {
@@ -205,8 +205,8 @@ const readConfigurationFromFile = conf => {
           throw Error(response.statusText);
         }
         let text = response.data;
-        this.BODY_FONT_FAMILY = text.BODY_FONT_FAMILY || "Roboto";
-        this.HEADER_FONT_FAMILY = text.HEADER_FONT_FAMILY || "Roboto";
+        this.BODY_FONT_FAMILY = text.BODY_FONT_FAMILY || 'Roboto';
+        this.HEADER_FONT_FAMILY = text.HEADER_FONT_FAMILY || 'Roboto';
 
         this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS;
         this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS;
@@ -223,8 +223,19 @@ const readConfigurationFromFile = conf => {
         this.BODY_FONT_SPACING = text.BODY_FONT_SPACING || 0;
         this.BODY_FONT_SIZE = text.BODY_FONT_SIZE || 13;
         this.BODY_FONT_SIZE_MAX = text.BODY_FONT_SIZE_MAX || 30;
-        this.BODY_FONT_WEIGHT = text.BODY_FONT_WEIGHT || "normal";
-        this.DEFAULT_BACKGROUND = text.DEFAULT_BACKGROUND || "transparent";
+        this.BODY_FONT_WEIGHT = text.BODY_FONT_WEIGHT || 'normal';
+        this.DEFAULT_BACKGROUND = text.DEFAULT_BACKGROUND || 'transparent';
+
+        /** added css for gusti */
+        this.DESKTOP_HEADER_LINE_HEIGHT = text.DESKTOP_HEADER_LINE_HEIGHT || 0;
+        this.DESKTOP_HEADER_FONT_SPACING =
+          text.DESKTOP_HEADER_FONT_SPACING || 20;
+        this.DESKTOP_HEADER_FONT_SIZE = text.DESKTOP_HEADER_FONT_SIZE || 20;
+
+        this.DESKTOP_BODY_LINE_HEIGHT = text.DESKTOP_BODY_LINE_HEIGHT || 0;
+        this.DESKTOP_BODY_FONT_SPACING = text.DESKTOP_BODY_FONT_SPACING || 0;
+        this.DESKTOP_BODY_FONT_SIZE = text.DESKTOP_BODY_FONT_SIZE || 13;
+
         /**must have elements for widget to work
          * default body and header SHOULD ALSO BE DEFINED IN CONF FILE, if not
          * some aproximaton values are given above i.e
@@ -236,14 +247,14 @@ const readConfigurationFromFile = conf => {
             this.BODY_STYLE,
             this.BACKGROUND_COLOR_ELEMENTS,
             this.OMO_WIDGET_ELEMENTS,
-            this.CUSTOM_HEADER_STYLE_ELEMENTS
+            this.CUSTOM_HEADER_STYLE_ELEMENTS,
           ].indexOf(undefined) !== -1
         ) {
           throw Error(
-            `HEADER_STYLE_ELEMENTS,CUSTOM_HEADER_STYLE_ELEMENTS, OMO_WIDGET_ELEMENTS,BODY_STYLE, BACKGROUND_COLOR_ELEMENTS are mandatory!!!`
+            `HEADER_STYLE_ELEMENTS,CUSTOM_HEADER_STYLE_ELEMENTS, OMO_WIDGET_ELEMENTS,BODY_STYLE, BACKGROUND_COLOR_ELEMENTS are mandatory!!!`,
           );
         }
-        resolve("FINISHED LOADING STYLESHEET");
+        resolve('FINISHED LOADING STYLESHEET');
       })
       .catch(err => {
         reject(`${err} in file ${conf}`);
