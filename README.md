@@ -1,13 +1,22 @@
-## Omo Widget
+# Omo Widget
 
 # How to buid/run:
 
--CHECK the totemWidget.html edit path in SVG LINKS ie {SERVER_HOST}/assets/...
--configure webpack.config.js if needed
--run build
-./node_modules/.bin/webpack --config webpack.config.js
--start localy
-./node_modules/.bin/webpack-dev-server --open
+- edit source code OPTIONALY
+- configure webpack.config.js if OPTIONALY
+- build widget:'./node_modules/.bin/webpack --config webpack.config.js'
+- start widget localy:'node server.js'
+
+open browser on : http://localhost:8080/html/index.html
+
+# How to play localy
+
+- start server: 'node server.js'
+- open browser: http://localhost:8080/html/index.html
+- play with widget.
+- change configuration in **dist/config/config_index.json**
+- clear browser local storge
+- refresh page at http://localhost:8080/html/index.html
 
 # widget controls:
 
@@ -50,8 +59,8 @@ background color- pick a background color to be applied on elements defined in "
 
 # configuratin options:
 
-file should be put in /config folder
-file SHOULD be i JSON format
+- file should be put in /config folder
+- file SHOULD be i JSON format
 
 # params:
 
@@ -118,13 +127,15 @@ default body font size
 ".c-item__title"
 ],
 
+# this is TEMPORARILY COMMENTED OUT FROM WIDGET!!!!!!
+
 ## custom header style elements example: div class header is header element wich dont have h1,h2....h6 style but shuld be aplied same style as for h1...h6 elements
 
-"CUSTOM_HEADER_STYLE_ELEMENTS": [],
+- "CUSTOM_HEADER_STYLE_ELEMENTS": [],
 
-## style for widget.. not in use i think
+## style for widget.. NOT IN USE I THINK :)
 
-"OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
+- "OMO_WIDGET_ELEMENTS": ["div.omo-widget-container *"],
 
 ## elements to tweak style example
 
@@ -142,9 +153,9 @@ default body font size
 
 ## on div class body apply max height of 100px and set overflow to auto, matrix is used to apply additional styling to some page element
 
-"ELEMENTS_TO_TWEAK_STYLE": [],
+- "ELEMENTS_TO_TWEAK_STYLE": [],
 
-## style that is applied to body elements,
+## style that is applied to body elements, example below
 
 "BODY_STYLE": [
 "div.c-item__summary *",
@@ -165,7 +176,7 @@ default body font size
 "li.c-nav-card__item *"
 ],
 
-## background collor of elements that are defined in bellow array
+## background collor of elements that are defined example below
 
 "BACKGROUND_COLOR_ELEMENTS": [
 " ",
