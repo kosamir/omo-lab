@@ -275,6 +275,7 @@ const setUserAppliedValues = (data, fn) => {
   document.getElementById('applyOverides').checked = data.checked;
 
   document.getElementById('totem_bsize').value = setFontSize(data.bodyFontSize);
+
   document.getElementById('totem_body_ff').value = setFontFamilyId(
     data.bodyFontFamily,
   )[0].id;
@@ -296,7 +297,15 @@ const setUserAppliedValues = (data, fn) => {
     .setAttribute('data-value', getColorValue(data.bgColor)[0].id);
 };
 
-const setFontSize = val => Number(val) - Number(config.BODY_FONT_SIZE);
+/** get font default values based on screen resolution */
+const setFontSize = val => {
+  return (
+    Number(val) -
+    (isDesktop()
+      ? Number(config.DESKTOP_BODY_FONT_SIZE)
+      : Number(config.BODY_FONT_SIZE))
+  );
+};
 
 const FONT_WEIGHT = [
   { id: 1, value: '500', omoType: 'MediumOne' },
@@ -364,7 +373,7 @@ const setHeaderLineHeightId = val =>
   HEADER_LINE_HEIGHT.filter(el => el.value === val);
 
 /** DO TUD */
-
+/*
 const LETTER_SPACING = [
   { id: 1, value: 1.25 },
   { id: 2, value: 1.5 },
@@ -385,7 +394,7 @@ const LINE_HEIGHT = [
 ];
 const setLineHeight = val => LINE_HEIGHT.filter(el => el.id === Number(val));
 const setLineHeightId = val => LINE_HEIGHT.filter(el => el.value === val);
-
+*/
 const OMO_TYPE = 'OmoType';
 const BODY_FONT_CHOOSER = [
   { id: 1, style: 'OmoTypeA', value: `${OMO_TYPE}A-` },
@@ -422,7 +431,7 @@ const COLOR_MAP = [
 const getColor = val => COLOR_MAP.filter(el => el.id === Number(val));
 const getColorValue = val => COLOR_MAP.filter(el => el.background === val);
 
-/** get APPLIED VALUES FROM WIDGET */
+/** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
   const applied = document.getElementById('applyOverides').checked;
   let bSize = isDesktop()
@@ -430,6 +439,7 @@ const getUserAppliedValues = () => {
     : config.BODY_FONT_SIZE;
   const bFontSize =
     Number(document.getElementById('totem_bsize').value) + Number(bSize); //Number(config.BODY_FONT_SIZE);
+
   const hSize = isDesktop()
     ? config.DESKTOP_HEADER_FONT_SIZE
     : config.HEADER_FONT_SIZE;
@@ -508,10 +518,6 @@ function generateOmoStyle() {
 
   const headerStyle = config.setHeaderStyle(
     config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(','),
-    // isOmoTypeTurnedOn()
-    //   ? values.headerFontFamily +
-    //       setFontWeightId(values.bodyFontWeight)[0].omoType
-    //   : values.headerFontFamily,
     values.headerFontFamily,
     values.bodyFontWeight,
     values.headerFontSize,
@@ -536,10 +542,6 @@ function generateOmoStyle() {
 
   const bodyStyle = config.setBodyTextStyle(
     config.BODY_STYLE,
-    // isOmoTypeTurnedOn()
-    //   ? values.bodyFontFamily +
-    //       setFontWeightId(values.bodyFontWeight)[0].omoType
-    //   : values.bodyFontFamily,
     values.bodyFontFamily,
     values.bodyFontWeight,
     values.bodyFontSize,
@@ -574,11 +576,6 @@ const saveCookie = valueChanges => {
 
 /** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE */
 const readCookie = fn => {
-  // const cookie = document.cookie
-  //   .split(";")
-  //   .filter(el => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
-  // if (cookie.length > 0) {
-  //   const data = cookie[0].split("=")[1];
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
   if (data === null) {
     console.log(
@@ -588,7 +585,6 @@ const readCookie = fn => {
   }
 
   setUserAppliedValues(JSON.parse(data), fn);
-  // console.log("read cookie:" + data);
   const widget = document.querySelector('#omo-widget');
   /** power on widget */
   fn.getValueChanges();
@@ -600,24 +596,6 @@ function getLastAppliedStyleSheet() {
   const style = children.getElementsByTagName('style')[len - 1];
   return style;
 }
-
-/** IE11 fuck up :/
-const forceRedraw = element => {
-  if (!element) {
-    return;
-  }
-
-  const n = document.createTextNode(" ");
-  const disp = element.style.display;
-  element.appendChild(n);
-  element.style.display = "none";
-
-  setTimeout(() => {
-    element.style.display = disp;
-    n.parentNode.removeChild(n);
-  }, 0);
-};
-*/
 
 const applyOverides = () => {
   const omoStyle = document.getElementById(config.OMOLAB_STYLE_ID);

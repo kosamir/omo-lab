@@ -259,50 +259,7 @@ const readConfigurationFromFile = conf => {
       .catch(err => {
         reject(`${err} in file ${conf}`);
       });
-    // .then(text => {
-    // this.BODY_FONT_FAMILY = text.BODY_FONT_FAMILY || "Roboto";
-    // this.HEADER_FONT_FAMILY = text.HEADER_FONT_FAMILY || "Roboto";
-
-    // this.HEADER_STYLE_ELEMENTS = text.HEADER_STYLE_ELEMENTS;
-    // this.CUSTOM_HEADER_STYLE_ELEMENTS = text.CUSTOM_HEADER_STYLE_ELEMENTS;
-    // this.OMO_WIDGET_ELEMENTS = text.OMO_WIDGET_ELEMENTS;
-    // this.ELEMENTS_TO_TWEAK_STYLE = text.ELEMENTS_TO_TWEAK_STYLE;
-    // this.BODY_STYLE = text.BODY_STYLE;
-    // this.BACKGROUND_COLOR_ELEMENTS = text.BACKGROUND_COLOR_ELEMENTS;
-
-    // this.HEADER_LINE_HEIGHT = text.HEADER_LINE_HEIGHT || 0;
-    // this.HEADER_FONT_SPACING = text.HEADER_FONT_SPACING || 20;
-    // this.HEADER_FONT_SIZE = text.HEADER_FONT_SIZE || 20;
-    // this.BODY_LINE_HEIGHT = text.BODY_LINE_HEIGHT || 0;
-    // this.BODY_LINE_HEIGHT_MAX = text.BODY_LINE_HEIGHT_MAX || 40;
-    // this.BODY_FONT_SPACING = text.BODY_FONT_SPACING || 0;
-    // this.BODY_FONT_SIZE = text.BODY_FONT_SIZE || 13;
-    // this.BODY_FONT_SIZE_MAX = text.BODY_FONT_SIZE_MAX || 30;
-    // this.BODY_FONT_WEIGHT = text.BODY_FONT_WEIGHT || "normal";
-    // this.DEFAULT_BACKGROUND = text.DEFAULT_BACKGROUND || "transparent";
-    // /**must have elements for widget to work
-    //  * default body and header SHOULD ALSO BE DEFINED IN CONF FILE, if not
-    //  * some aproximaton values are given above i.e
-    //  *
-    //  */
-    // if (
-    //   [
-    //     this.HEADER_STYLE_ELEMENTS,
-    //     this.BODY_STYLE,
-    //     this.BACKGROUND_COLOR_ELEMENTS,
-    //     this.OMO_WIDGET_ELEMENTS,
-    //     this.CUSTOM_HEADER_STYLE_ELEMENTS
-    //   ].includes(undefined)
-    // ) {
-    //   throw Error(
-    //     `HEADER_STYLE_ELEMENTS,CUSTOM_HEADER_STYLE_ELEMENTS, OMO_WIDGET_ELEMENTS,BODY_STYLE, BACKGROUND_COLOR_ELEMENTS are mandatory!!!`
-    //   );
-    // }
-    // resolve("FINISHED LOADING STYLESHEET");
-    // })
-    // .catch(err => {
-    //   reject(`${err} in file ${conf}`);
-    // });
+   
   });
 };
 exports.readConfigurationFromFile = readConfigurationFromFile;
