@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable arrow-parens */
-import config from '../config';
+import config from '../../config';
 import './omoWidget.css';
 import html from './omoWidget.html';
 
@@ -10,15 +10,18 @@ const IMAGE_OPEN = '/img/open.png';
 const IMAGE_CLOSE = '/img/close.png';
 const IMAGE_SAVE_ACTIVE = '/img/SAVE-ACTIVE-ICON.png';
 
-
 const elements = [];
 let body;
 let toggler;
 /** COLLOR PICKER REFACTOR */
 const COLOR_STACK = [];
 
-const getAppliedCollor = () => (COLOR_STACK.length > 0 ? COLOR_STACK[COLOR_STACK.length - 1].color : 'transparent');
-const getAppliedCollorId = () => (COLOR_STACK.length > 0 ? COLOR_STACK[COLOR_STACK.length - 1].id : 'null');
+const getAppliedCollor = () =>
+  COLOR_STACK.length > 0
+    ? COLOR_STACK[COLOR_STACK.length - 1].color
+    : 'transparent';
+const getAppliedCollorId = () =>
+  COLOR_STACK.length > 0 ? COLOR_STACK[COLOR_STACK.length - 1].id : 'null';
 
 const toogleWidget = () => {
   let open = true;
@@ -40,7 +43,7 @@ const toogleWidget = () => {
   };
 };
 
-const setUserAppliedValues = (data) => {
+const setUserAppliedValues = data => {
   document.getElementById('applyOverides').checked = data.checked;
 
   document.getElementById('hsize').value = data.headerFontSize;
@@ -100,7 +103,6 @@ const getUserAppliedValues = () => {
   return data;
 };
 
-
 function addOmolabClassScopeToBody(doc) {
   const document = doc.querySelector('body');
   if (document && !document.classList.contains(config.OMOLAB_BODY_CLASS)) {
@@ -108,7 +110,7 @@ function addOmolabClassScopeToBody(doc) {
   }
 }
 
-const saveCookie = (text) => {
+const saveCookie = text => {
   const name = `${config.OMO_WIDGET_COOKIE}_${text}`;
   const value = JSON.stringify(getUserAppliedValues());
   document.cookie = `${name}=${value};`;
@@ -116,16 +118,22 @@ const saveCookie = (text) => {
 };
 
 /** SAVES CURRENT CONFIGURATION REFACTOR */
-const saveConf = (event) => {
-  const text = '';// document.getElementById('omoConf').value;
-  if ((event.target.type === 'button' || event.target.type === 'image' || event.target.type === 'checkbox')) {
+const saveConf = event => {
+  const text = ''; // document.getElementById('omoConf').value;
+  if (
+    event.target.type === 'button' ||
+    event.target.type === 'image' ||
+    event.target.type === 'checkbox'
+  ) {
     saveCookie(text);
   }
 };
 
 /** applys event handler to given element */
 const addEventHandler = (element, event, selector, handler) => {
-  const omoElements = Array.from(body.getElementsByClassName(element)[0].children);
+  const omoElements = Array.from(
+    body.getElementsByClassName(element)[0].children,
+  );
   omoElements.forEach(el => {
     if (selector.includes(el.nodeName)) {
       el.addEventListener(event, handler);
@@ -134,24 +142,53 @@ const addEventHandler = (element, event, selector, handler) => {
   });
 };
 
-
 function generateOmoStyle() {
   const values = getUserAppliedValues();
   // ako je odabrao bez boje ili boja nije odabrana napravi bez boje
-  let style = values.bgColor === 'transparent' ? '' : config.setBackGroundColor(config.BACKGROUND_COLOR_ELEMENTS, values.bgColor);
+  let style =
+    values.bgColor === 'transparent'
+      ? ''
+      : config.setBackGroundColor(
+          config.BACKGROUND_COLOR_ELEMENTS,
+          values.bgColor,
+        );
 
   style += config.IMPORTANT_ELEMENTS_SELECTOR;
   // style += setBackGroundColorImportant(BACKGROUND_COLOR_ELEMENTS_IMPORTANT,bgCol)
-  const headerStyle = config.setHeaderStyle(config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight, values.bgColor);
+  const headerStyle = config.setHeaderStyle(
+    config.transformHeaderStyles(config.HEADER_STYLE_ELEMENTS).join(','),
+    values.headerFontFamily,
+    values.headerFontSize,
+    values.headerFontSpacing,
+    values.headerLineHeight,
+    values.bgColor,
+  );
   style += headerStyle;
 
-  const customHeaderStyle = config.setHeaderStyle(config.transformHeaderStyles(config.CUSTOM_HEADER_STYLE_ELEMENTS).join(','), values.headerFontFamily, values.headerFontSize, values.headerFontSpacing, values.headerLineHeight, values.bgColor);
+  const customHeaderStyle = config.setHeaderStyle(
+    config.transformHeaderStyles(config.CUSTOM_HEADER_STYLE_ELEMENTS).join(','),
+    values.headerFontFamily,
+    values.headerFontSize,
+    values.headerFontSpacing,
+    values.headerLineHeight,
+    values.bgColor,
+  );
   style += customHeaderStyle;
 
-  const bodyStyle = config.setBodyTextStyle(config.BODY_STYLE, values.bodyFontFamily, values.bodyFontSize, values.bodyFontSpacing, values.bodyLineHeight, values.bgColor);
+  const bodyStyle = config.setBodyTextStyle(
+    config.BODY_STYLE,
+    values.bodyFontFamily,
+    values.bodyFontSize,
+    values.bodyFontSpacing,
+    values.bodyLineHeight,
+    values.bgColor,
+  );
   style += bodyStyle;
 
-  const widgetStyle = config.setOmoWidgetStyle(config.OMO_WIDGET_ELEMENTS, config.omoWidgetStyle);
+  const widgetStyle = config.setOmoWidgetStyle(
+    config.OMO_WIDGET_ELEMENTS,
+    config.omoWidgetStyle,
+  );
   style += widgetStyle;
 
   const tweaks = config.TWEAK();
@@ -163,22 +200,22 @@ function generateOmoStyle() {
 
 /** READ VALUE FROM SAVED COOKIE */
 const readCookie = () => {
-  const cookie = document.cookie.split(';').filter((el) => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
+  const cookie = document.cookie
+    .split(';')
+    .filter(el => el.startsWith(` ${config.OMO_WIDGET_COOKIE}`));
   if (cookie.length > 0) {
     const data = cookie[0].split('=')[1];
 
     setUserAppliedValues(JSON.parse(data));
     if (getUserAppliedValues().checked) {
-      applyOverides()
+      applyOverides();
     }
-
   }
 };
 
-
 /** COLLOR PICKER REFACTOR */
 
-const colorToogler = (event) => {
+const colorToogler = event => {
   if (COLOR_STACK.length > 0) {
     const obj = COLOR_STACK.pop();
     obj.element.style.cssText = obj.style;
@@ -197,10 +234,11 @@ const colorToogler = (event) => {
   applyOmoStyles(event);
 };
 
-
 /** hack TODO!! */
-const forceRedraw = (element) => {
-  if (!element) { return; }
+const forceRedraw = element => {
+  if (!element) {
+    return;
+  }
 
   const n = document.createTextNode(' ');
   const disp = element.style.display;
@@ -219,7 +257,6 @@ function getLastAppliedStyleSheet() {
   const style = children.getElementsByTagName('style')[len - 1];
   return style;
 }
-
 
 const applyOverides = () => {
   const omoStyle = document.getElementById('omolab_style_w');
@@ -241,9 +278,7 @@ const applyOverides = () => {
 
   /* Append style to the tag name */
   document.getElementsByTagName('head')[0].appendChild(css);
-
 };
-
 
 const removeOverides = () => {
   const appliedStyle = document.getElementById('omolab_style_w');
@@ -263,13 +298,11 @@ function applyOmoStyles(event) {
 }
 
 function applyOmoStylesTotem() {
-  alert('applyOmoStylesTotem')
+  alert('applyOmoStylesTotem');
   const check = document.getElementById('applyOverides').checked;
   check ? applyOverides() : removeOverides();
   // saveConf(event);
 }
-
-
 
 const show = (text, configurations) => {
   // convert plain HTML string into DOM elementss
@@ -289,15 +322,21 @@ const show = (text, configurations) => {
   }
   toggler = toogleWidget();
   toggler.toogle();
-  addEventHandler('headerOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
+  addEventHandler(
+    'headerOptions',
+    'change',
+    ['INPUT', 'SELECT'],
+    applyOmoStyles,
+  );
   addEventHandler('bodyOptions', 'change', ['INPUT', 'SELECT'], applyOmoStyles);
   addEventHandler('switch', 'click', ['INPUT'], applyOmoStyles);
   addEventHandler('omoClose', 'click', ['IMG'], toggler.toogle);
   addEventHandler('bgColor', 'click', ['DIV'], colorToogler);
   addEventHandler('omoSave', 'click', ['INPUT'], saveConf);
 
-  config.readConfigurationFromFile(configurations.config)
-    .then((message) => {
+  config
+    .readConfigurationFromFile(configurations.config)
+    .then(message => {
       console.log(message);
       document.getElementById('hsize').value = config.HEADER_FONT_SIZE;
       document.getElementById('hspacing').value = config.HEADER_FONT_SPACING;
@@ -307,11 +346,12 @@ const show = (text, configurations) => {
       document.getElementById('bspacing').value = config.BODY_FONT_SPACING;
       document.getElementById('bheight').value = config.BODY_LINE_HEIGHT;
       readCookie();
-    }).catch((err) => {
+    })
+    .catch(err => {
       console.log(err);
       alert(err);
     });
-}
+};
 
 function getSelectedText() {
   if (window.getSelection) {
