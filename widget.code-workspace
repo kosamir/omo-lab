@@ -1,10 +1,16 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "/home/amirkos/git-js/omo-widget/release"
-	}
-]
+    {
+      "path": "."
+    },
+    {
+      "path": "/home/amirkos/git-js/omo-widget/release"
+    },
+    {
+      "path": "/home/amirkos/git-js/omo-widget-design"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "omo-widget-design"
+  }
 }
