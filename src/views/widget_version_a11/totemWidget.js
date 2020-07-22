@@ -15,14 +15,15 @@ class OmoWidget {
     this.transitionEndEvent = getAnimatableEndEvent('transition');
     this.sectionValues = [];
     this.letters = ['O', 'A', 'B', 'C', 'D', 'E'];
-    this.cookie = params.readCookie(this.letters);
-
     this.cacheElements();
-
+    /** first init actions */
+    this.initActions();
+    /** read cookie and ignite bg color that is why we first set event handlers in init actions */
+    this.cookie = params.readCookie(this.letters);
     this.openCloseWidget();
     this.openCloseSection();
     this.collectSectionValues();
-    this.initActions();
+
     this.handlePower();
   }
 
@@ -493,9 +494,19 @@ const setUserAppliedValues = (data, letters) => {
     data.bodyLineHeight,
   )[0].id;
 
+  let colorId = getColorValue(data.bgColor)[0].id;
   document
     .getElementById('selectedBackround')
-    .setAttribute('data-value', getColorValue(data.bgColor)[0].id);
+    .setAttribute('data-value', colorId);
+
+  let widgetBackgrounds = [].slice.call(
+    document.querySelectorAll('.OmoWidget-action--set'),
+  );
+  // find element && fake click on selected backgroud, i.e. show reset button!!
+  let element = widgetBackgrounds.filter(
+    element => Number(element.getAttribute('data-value')) === Number(colorId),
+  );
+  element[0] && element[0].click();
 };
 
 /** get font default values based on screen resolution */

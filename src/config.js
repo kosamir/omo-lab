@@ -19,7 +19,8 @@ exports.OMOLAB_STYLE_ID = OMOLAB_STYLE_ID;
 const OMO_WIDGET_COOKIE = 'omolab-w-cookie';
 exports.OMO_WIDGET_COOKIE = OMO_WIDGET_COOKIE;
 
-const COLOR_BLACK = '#231F20';
+/** BLACK COLOR FOR INVERTING FONT FACE see COLOR_MAP in totemWidget.js */
+const COLOR_BLACK = '#000';
 const COLOR_WHITE = '#EFF3EE';
 
 var BODY_FONT_FAMILY;
@@ -259,7 +260,6 @@ const readConfigurationFromFile = conf => {
       .catch(err => {
         reject(`${err} in file ${conf}`);
       });
-   
   });
 };
 exports.readConfigurationFromFile = readConfigurationFromFile;

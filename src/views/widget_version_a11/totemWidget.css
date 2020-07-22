@@ -934,6 +934,15 @@
   border-right: var(--triangleSize) solid rgba(0, 0, 0, 0);
   border-top: 0 solid rgba(0, 0, 0, 0);
 }
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-action--add:after,
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-action--substract:after {
+    border-left: 17px solid rgba(0, 0, 0, 0);
+    border-bottom: 17px solid #fff;
+    border-right: 17px solid rgba(0, 0, 0, 0);
+  }
+}
 :not(#\9):not(#\9):not(#\9) .OmoWidget-action--add:after {
   -ms-transform: translate(-50%, -100%);
   transform: translate(-50%, -100%);
