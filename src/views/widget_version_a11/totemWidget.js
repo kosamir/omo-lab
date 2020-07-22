@@ -284,6 +284,7 @@ class OmoWidget {
           on('click', action, e => {
             const curVal = parseInt(input.value);
             const classes = e.currentTarget.classList;
+            // alert(e.currentTarget.id);
 
             const isAdd = classes.contains('OmoWidget-action--add');
             const isSubstract = classes.contains('OmoWidget-action--substract');
@@ -313,7 +314,9 @@ class OmoWidget {
             } else {
               e.preventDefault();
               input.value = 0;
-              this.triggerBackground.setAttribute('data-value', -1);
+              /** reset backGroundColor ONLY if clicked on reset color button  */
+              e.currentTarget.id === 'backgroundReset' &&
+                this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
             }
 
@@ -464,7 +467,6 @@ const setUserAppliedValues = (data, letters) => {
   // if widget was ON set it on!!
   if (data.checked) {
     widget.classList['add']('has-changes');
-    // widget.classList['add']('power-off');
   } else {
     widget.classList['add']('power-off');
   }
