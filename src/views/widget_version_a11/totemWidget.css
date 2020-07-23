@@ -132,9 +132,9 @@
 
 /* OT CARTA S mono  OTCartaSmono bivsi OmoTypeE*/
 @font-face {
-  font-family: OOTCartaSmono;
+  font-family: OTCartaSmono;
   src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSmono-RegularOne.woff2')
-    format('woff');
+    format('woff2');
   font-weight: 400;
   font-style: normal;
 }
@@ -142,23 +142,23 @@
 @font-face {
   font-family: OTCartaSmono;
   src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSmono-MediumOne.woff2')
-    format('woff');
+    format('woff2');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: OTCartaSmono;
-  src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSmono-BlackOne.woff2')
-    format('woff');
+  src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSmono-BoldOne.woff2')
+    format('woff2');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: OTCartaSmono;
-  src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OmoTypeE-BlackOne.woff')
-    format('woff');
+  src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSmono-BlackOne.woff2')
+    format('woff2');
   font-weight: 800;
   font-style: normal;
 }

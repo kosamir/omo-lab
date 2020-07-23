@@ -284,8 +284,6 @@ class OmoWidget {
           on('click', action, e => {
             const curVal = parseInt(input.value);
             const classes = e.currentTarget.classList;
-            // alert(e.currentTarget.id);
-
             const isAdd = classes.contains('OmoWidget-action--add');
             const isSubstract = classes.contains('OmoWidget-action--substract');
             const isSet = classes.contains('OmoWidget-action--set');
@@ -294,16 +292,41 @@ class OmoWidget {
               '.OmoWidget-preview',
             );
 
+            let buttonUp =
+              input.parentElement.firstElementChild.children[0]
+                .firstElementChild;
+            let buttonDown =
+              input.parentElement.firstElementChild.children[1]
+                .firstElementChild;
             if (!isReset) {
-              if (
-                (isAdd && curVal === max) ||
-                (!isAdd && curVal === 0 && !isSet)
-              ) {
-                return;
+              if (isAdd) {
+                if (curVal === max) {
+                  buttonUp.disabled = true;
+                  return;
+                } else {
+                  buttonUp.disabled = false;
+                  buttonDown.disabled = false;
+                }
+              } else {
+                if (curVal === 0 && !isSet) {
+                  buttonDown.disabled = true;
+                  return;
+                } else {
+                  buttonDown.disabled = false;
+                  buttonUp.disabled = false;
+                }
               }
+
+              // if (
+              //   (isAdd && curVal === max) ||
+              //   (!isAdd && curVal === 0 && !isSet)
+              // ) {
+              //   return;
+              // }
 
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
+                input.setAttribute('value', parseInt(input.value));
               } else {
                 input.value = parseInt(action.getAttribute('data-value'));
                 this.triggerBackground.setAttribute(
@@ -314,6 +337,10 @@ class OmoWidget {
             } else {
               e.preventDefault();
               input.value = 0;
+              input.setAttribute('value', 0);
+
+              buttonDown.disabled = true;
+              buttonUp.disabled = false;
               /** reset backGroundColor ONLY if clicked on reset color button  */
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
@@ -472,29 +499,70 @@ const setUserAppliedValues = (data, letters) => {
   }
   document.getElementById('applyOverides').checked = data.checked;
 
-  document.getElementById('totem_bsize').value = setFontSize(data.bodyFontSize);
-
-  document.getElementById('totem_body_ff').value = setFontFamilyId(
-    data.bodyFontFamily,
-  )[0].id;
+  let fontSize = setFontSize(data.bodyFontSize);
+  // document.getElementById('totem_bsize').value = setFontSize(data.bodyFontSize);
+  document.getElementById('totem_bsize').setAttribute('value', fontSize);
+  let maxFontSize = Number(document.getElementById('totem_bsize').max);
+  if (maxFontSize === fontSize) {
+    document.getElementById('font-size-up').disabled = true;
+    // document.getElementById('font-size-down').disabled = false;
+  } else if (0 === fontSize) {
+    document.getElementById('font-size-down').disabled = true;
+    // document.getElementById('font-size-up').disabled = true;
+  }
+  let fontFamily = setFontFamilyId(data.bodyFontFamily)[0].id;
+  // document.getElementById('totem_body_ff').value = fontFamily;
+  document.getElementById('totem_body_ff').setAttribute('value', fontFamily);
 
   const updateFont = value => {
     const isPreview = document.querySelector('.OmoWidget-preview');
     if (isPreview) {
       isPreview.setAttribute('data-selected', letters[value]);
+      if (Number(value) === 0) {
+        document.getElementById('font-type-down').disabled = true;
+      }
+      if (Number(value) === letters.length - 1) {
+        document.getElementById('font-type-up').disabled = true;
+      }
     }
   };
   updateFont(document.getElementById('totem_body_ff').value);
 
-  document.getElementById('totem_font_weight').value = setFontWeightId(
-    data.bodyFontWeight,
-  )[0].id;
-  document.getElementById('totem_bspacing').value = setBodyLetterSpacingId(
-    data.bodyFontSpacing,
-  )[0].id;
-  document.getElementById('totem_bheight').value = setBodyLineHeightId(
-    data.bodyLineHeight,
-  )[0].id;
+  let fontWeight = setFontWeightId(data.bodyFontWeight)[0].id;
+  // document.getElementById('totem_font_weight').value = fontWeight;
+  document
+    .getElementById('totem_font_weight')
+    .setAttribute('value', fontWeight);
+  let maxFontWeight = Number(document.getElementById('totem_font_weight').max);
+  if (0 === fontWeight) {
+    document.getElementById('font-weight-down').disabled = true;
+  } else if (maxFontWeight === fontWeight) {
+    document.getElementById('font-weight-up').disabled = true;
+  }
+
+  let letterSpacing = setBodyLetterSpacingId(data.bodyFontSpacing)[0].id;
+  // document.getElementById('totem_bspacing').value = letterSpacing;
+  document
+    .getElementById('totem_bspacing')
+    .setAttribute('value', letterSpacing);
+  let maxLetterSpacing = Number(document.getElementById('totem_bspacing').max);
+
+  if (0 === letterSpacing) {
+    document.getElementById('letter-spacing-down').disabled = true;
+  }
+  if (maxLetterSpacing === letterSpacing) {
+    document.getElementById('letter-spacing-up').disabled = true;
+  }
+  let lineHeight = setBodyLineHeightId(data.bodyLineHeight)[0].id;
+  document.getElementById('totem_bheight').value = lineHeight;
+  document.getElementById('totem_bheight').setAttribute('value', lineHeight);
+  let maxLineHeight = Number(document.getElementById('totem_bheight').max);
+  if (0 === lineHeight) {
+    document.getElementById('line-height-down').disabled = true;
+  }
+  if (maxLineHeight === lineHeight) {
+    document.getElementById('line-height-up').disabled = true;
+  }
 
   let colorId = getColorValue(data.bgColor)[0].id;
   document
@@ -533,7 +601,7 @@ const setFontWeightId = val => FONT_WEIGHT.filter(el => el.value === val);
 let BODY_LETTER_SPACING = [];
 const generateBodyLetterSpacing = val => {
   let value = parseFloat(val);
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.25);
     BODY_LETTER_SPACING.push({ id: i, value: value.toFixed(2) });
   }
@@ -546,7 +614,7 @@ const setBodyLetterSpacingId = val =>
 let HEADER_LETTER_SPACING = [];
 const generateHeaderLetterSpacing = val => {
   let value = parseFloat(val);
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.25);
     HEADER_LETTER_SPACING.push({ id: i, value: value.toFixed(2) });
   }
@@ -559,7 +627,7 @@ const setHeaderLetterSpacingId = val =>
 let BODY_LINE_HEIGHT = [];
 const generateBodyLineHeight = val => {
   let value = parseFloat(val);
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.2);
     BODY_LINE_HEIGHT.push({ id: i, value: value.toFixed(1) });
   }
@@ -568,7 +636,7 @@ const generateBodyLineHeight = val => {
 let HEADER_LINE_HEIGHT = [];
 const generateHeaderLineHeight = val => {
   let value = parseFloat(val);
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.2);
     HEADER_LINE_HEIGHT.push({ id: i, value: value.toFixed(1) });
   }
@@ -624,7 +692,6 @@ const getColorValue = val => COLOR_MAP.filter(el => el.background === val);
 
 /** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
-  console.log(document.getElementById('applyOverides'));
   const applied = document
     .getElementById('OmoWidget')
     .classList.contains('power-off')
@@ -690,9 +757,7 @@ const getUserAppliedValues = () => {
 
 function generateOmoStyle() {
   const values = getUserAppliedValues();
-  console.log('height:' + window.screen.availHeight);
 
-  console.log('width:' + window.screen.availWidth);
   // ako je odabrao bez boje ili boja nije odabrana napravi bez boje
   let style =
     values.bgColor === 'transparent'
@@ -744,10 +809,8 @@ function generateOmoStyle() {
   style += widgetStyle;
 */
   const tweaks = config.TWEAK();
-  // console.log(tweaks);
   style += tweaks;
   console.log(style);
-
   return style;
 }
 
@@ -766,6 +829,11 @@ const readCookie = letters => {
     console.log(
       "can't fetch from local storage, please clear browser histroy!",
     );
+    document.getElementById('font-size-down').disabled = true;
+    document.getElementById('font-type-down').disabled = true;
+    document.getElementById('font-weight-down').disabled = true;
+    document.getElementById('letter-spacing-down').disabled = true;
+    document.getElementById('line-height-down').disabled = true;
     return;
   }
 
@@ -819,7 +887,6 @@ export const showWidget = (text, configurations) => {
   // convert plain HTML string into DOM elementss
   const temporary = document.createElement('div');
   temporary.innerHTML = html;
-  // console.log(configurations);
 
   addOmolabClassScopeToBody(document);
   // append elements to body
