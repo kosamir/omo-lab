@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../../config';
 import './totemWidget.css';
 import html from './totemWidget.html';
 
