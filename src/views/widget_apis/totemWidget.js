@@ -588,7 +588,7 @@ const setFontSize = val => {
       : Number(config.BODY_FONT_SIZE))
   );
 };
-
+const OMO_FONT_WEIGHT_STYLE = 'omo-FontWeight';
 const FONT_WEIGHT = [
   {
     id: 1,
@@ -613,6 +613,7 @@ const FONT_WEIGHT = [
 const setFontWeight = val => FONT_WEIGHT.filter(el => el.id === Number(val));
 const setFontWeightId = val => FONT_WEIGHT.filter(el => el.value === val);
 /**OD TUD  */
+const OMO_BODY_LETTER_SPACING_STYLE = 'omo-BodyFontSpacing';
 let BODY_LETTER_SPACING = [];
 const generateBodyLetterSpacing = val => {
   let value = parseFloat(val);
@@ -631,6 +632,7 @@ const setBodyLetterSpacingId = val =>
   BODY_LETTER_SPACING.filter(el => el.value === val);
 
 let HEADER_LETTER_SPACING = [];
+const OMO_HEADER_LETTER_SPACING_STYLE = 'omo-HeaderFontSpacing';
 const generateHeaderLetterSpacing = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
@@ -648,6 +650,8 @@ const setHeaderLetterSpacingId = val =>
   HEADER_LETTER_SPACING.filter(el => el.value === val);
 
 let BODY_LINE_HEIGHT = [];
+
+const OMO_BODY_LINE_HEIGHT_STYLE = 'omo-BodyLineHeight';
 const generateBodyLineHeight = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
@@ -661,6 +665,7 @@ const generateBodyLineHeight = val => {
 };
 
 let HEADER_LINE_HEIGHT = [];
+const OMO_HEADER_LINE_HEIGHT_STYLE = 'omo-HeaderLineHeight';
 const generateHeaderLineHeight = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
@@ -686,69 +691,70 @@ const setHeaderLineHeightId = val =>
 /** DO TUD */
 
 const OMO_TYPE = 'OmoType';
+const OMO_BODY_FONT_STYLE = 'omo-BodyFontType';
 const BODY_FONT_CHOOSER = [
   {
     id: 1,
     style: 'OmoTypeB',
     value: `${OMO_TYPE}B-`,
-    fontValue: 'omo-FontType-1',
+    fontValue: 'omo-BodyFontType-1',
   },
   {
     id: 2,
     style: 'OmoTypeD',
     value: `${OMO_TYPE}D-`,
-    fontValue: 'omo-FontType-2',
+    fontValue: 'omo-BodyFontType-2',
   },
   {
     id: 3,
     style: 'OmoType_Serif_Std',
     value: `OmoType_Serif_Std`,
-    fontValue: 'omo-FontType-3',
+    fontValue: 'omo-BodyFontType-3',
   },
   {
     id: 4,
     style: 'OTCartaSExt',
     value: `OTCartaSExt`,
-    fontValue: 'omo-FontType-4',
+    fontValue: 'omo-BodyFontType-4',
   },
   {
     id: 5,
     style: 'OTCartaSmono',
     value: `OTCartaSmono`,
-    fontValue: 'omo-FontType-5',
+    fontValue: 'omo-BodyFontType-5',
   },
 ];
-
+const OMO_HEADER_FONT_STYLE = 'omo-HeaderFontType';
 const HEADER_FONT_CHOOSER = [
   {
     id: 1,
     style: 'OmoTypeB',
     value: `${OMO_TYPE}B-`,
-    fontValue: 'omo-FontType-1',
+    fontValue: 'omo-HeaderFontType-1',
   },
   {
     id: 2,
     style: 'OmoTypeD',
     value: `${OMO_TYPE}D-`,
-    fontValue: 'omo-FontType-2',
+    fontValue: 'omo-HeaderFontType-2',
   },
   {
     id: 3,
     style: 'OmoType_Serif_Std',
     value: `OmoType_Serif_Std`,
-    fontValue: 'omo-FontType-3',
+    fontValue: 'omo-HeaderFontType-3',
   },
   {
     id: 4,
     style: 'OTCartaSExt',
     value: `OTCartaSExt`,
-    fontValue: 'omo-FontType-4',
+    fontValue: 'omo-HeaderFontType-4',
   },
   {
     id: 5,
     style: 'OTCartaSmono',
     value: `OTCartaSmono`,
-    fontValue: 'omo-FontType-5',
+    fontValue: 'omo-HeaderFontType-5',
   },
 ];
 const setHeaderFontFamily = val =>
@@ -760,17 +766,34 @@ const setFontFamily = val =>
   BODY_FONT_CHOOSER.filter(el => el.id === Number(val));
 const setFontFamilyId = val => BODY_FONT_CHOOSER.filter(el => el.value === val);
 
+const OMO_BACKGROUND_STYLE = 'omo-BackGround';
+const OMO_BODY_FONT_SIZE_STYLE = 'omo-BodyFontSize';
+const OMO_HEADER_FONT_SIZE_STYLE = 'omo-HeaderFontSize';
 const COLOR_MAP = [
-  { id: 1, background: '#edd1b0', backgroundValue: 'omo-BackGround-1' },
-  { id: 2, background: '#eddd6e', backgroundValue: 'omo-BackGround-2' },
-  { id: 3, background: '#f8fd89', backgroundValue: 'omo-BackGround-3' },
-  { id: 4, background: '#eff4ef', backgroundValue: 'omo-BackGround-4' },
-  { id: 5, background: '#b0ded5', backgroundValue: 'omo-BackGround-5' },
-  { id: 6, background: '#000', backgroundValue: 'omo-BackGround-6' },
+  { id: 1, background: '#edd1b0', backgroundValue: 'omo-BackGroundColor-1' },
+  { id: 2, background: '#eddd6e', backgroundValue: 'omo-BackGroundColor-2' },
+  { id: 3, background: '#f8fd89', backgroundValue: 'omo-BackGroundColor-3' },
+  { id: 4, background: '#eff4ef', backgroundValue: 'omo-BackGroundColor-4' },
+  { id: 5, background: '#b0ded5', backgroundValue: 'omo-BackGroundColor-5' },
+  { id: 6, background: '#000', backgroundValue: 'omo-BackGroundColor-6' },
 ];
 const getColor = val => COLOR_MAP.filter(el => el.id === Number(val));
 const getColorValue = val => COLOR_MAP.filter(el => el.background === val);
 
+/**
+ * // amirkos 29.07.2020 --> 4APIS APPEND SELECTORS TO BODY
+ * @param {*} bFontSize
+ * @param {*} hFontSize
+ * @param {*} bFontFamily
+ * @param {*} hFontFamily
+ * @param {*} bFontWeigth
+ * @param {*} bFontSpacing
+ * @param {*} hFontSpacing
+ * @param {*} bFontLineHeight
+ * @param {*} hFontLineHeight
+ * @param {*} backgroundColor
+ * @param {*} applied
+ */
 const appendClassesToBody = (
   bFontSize,
   hFontSize,
@@ -778,25 +801,162 @@ const appendClassesToBody = (
   hFontFamily,
   bFontWeigth,
   bFontSpacing,
-  bFontLineHeight,
   hFontSpacing,
+  bFontLineHeight,
   hFontLineHeight,
   backgroundColor,
+  applied,
 ) => {
   let currentClassList = [].slice.call(document.body.classList);
-  currentClassList.forEach(el => {
-    if (el.startsWith('omo-FontType')) {
-      document.body.classList.replace(el, bFontFamily[0].fontValue);
-      // alert('replaced');
-    } else if (bFontFamily[0].fontValue) {
-      document.body.classList.add(bFontFamily[0].fontValue);
-    }
-    if (el.startsWith('omo-FontSize')) {
-      document.body.classList.replace(el, `omo-FontSize-${bFontSize}`);
-    } else if (bFontSize !== config.BODY_FONT_SIZE) {
-      document.body.classList.add(`omo-FontSize-${bFontSize}`);
-    }
-  });
+  let bodyStyleClassList = document.body.classList;
+  /** VALUES FROM CONFIGURATION */
+  const headerFontSizeConfig = isDesktop()
+    ? config.DESKTOP_HEADER_FONT_SIZE
+    : config.HEADER_FONT_SIZE;
+  const bodyFontSizeConfig = isDesktop()
+    ? config.DESKTOP_BODY_FONT_SIZE
+    : config.BODY_FONT_SIZE;
+  const headerLineHeightConfig = isDesktop()
+    ? config.DESKTOP_HEADER_LINE_HEIGHT
+    : config.HEADER_LINE_HEIGHT;
+  const bodyLineHeightConfig = isDesktop()
+    ? config.DESKTOP_BODY_LINE_HEIGHT
+    : config.BODY_LINE_HEIGHT;
+  const headerFontSpacingConfig = isDesktop()
+    ? config.DESKTOP_HEADER_FONT_SPACING
+    : config.HEADER_FONT_SPACING;
+  const bodyFontSpacingsConfig = isDesktop()
+    ? config.DESKTOP_BODY_FONT_SPACING
+    : config.BODY_FONT_SPACING;
+  //if power-on
+  if (applied) {
+    currentClassList.forEach(el => {
+      /** BODY FONT FAMILY */
+      if (el.startsWith(OMO_BODY_FONT_STYLE)) {
+        bFontFamily[0].fontValue
+          ? bodyStyleClassList.replace(el, bFontFamily[0].fontValue)
+          : bodyStyleClassList.remove(el);
+      } else if (bFontFamily[0].fontValue) {
+        bodyStyleClassList.add(bFontFamily[0].fontValue);
+      }
+      /**HEADER FONT FAMILY */
+      if (el.startsWith(OMO_HEADER_FONT_STYLE)) {
+        hFontFamily[0].fontValue
+          ? bodyStyleClassList.replace(el, hFontFamily[0].fontValue)
+          : bodyStyleClassList.remove(el);
+      } else if (hFontFamily[0].fontValue) {
+        bodyStyleClassList.add(hFontFamily[0].fontValue);
+      }
+      /**FONT SIZE */
+      let numBodyFontSize = bFontSize - Number(bodyFontSizeConfig);
+      if (el.startsWith(OMO_BODY_FONT_SIZE_STYLE)) {
+        Number(bodyFontSizeConfig) - bFontSize === 0
+          ? bodyStyleClassList.remove(el)
+          : bodyStyleClassList.replace(
+              el,
+              `${OMO_BODY_FONT_SIZE_STYLE}-${numBodyFontSize}`,
+            );
+      } else if (bFontSize.toString() !== bodyFontSizeConfig) {
+        bodyStyleClassList.add(
+          `${OMO_BODY_FONT_SIZE_STYLE}-${numBodyFontSize}`,
+        );
+      }
+      /**HEADER FONT SIZE */
+      let numHeaderFontSize = hFontSize - Number(headerFontSizeConfig);
+      if (el.startsWith(OMO_HEADER_FONT_SIZE_STYLE)) {
+        //RESET CASE
+        Number(headerFontSizeConfig) - hFontSize === 0
+          ? bodyStyleClassList.remove(el)
+          : bodyStyleClassList.replace(
+              el,
+              `${OMO_HEADER_FONT_SIZE_STYLE}-${numHeaderFontSize}`,
+            );
+      } else if (hFontSize.toString() !== headerFontSizeConfig) {
+        bodyStyleClassList.add(
+          `${OMO_HEADER_FONT_SIZE_STYLE}-${numHeaderFontSize}`,
+        );
+      }
+      /**BODY FONT WEIGHT */
+      if (el.startsWith(OMO_FONT_WEIGHT_STYLE)) {
+        bFontWeigth[0].fontWeightValue
+          ? bodyStyleClassList.replace(el, bFontWeigth[0].fontWeightValue)
+          : bodyStyleClassList.remove(el);
+      } else {
+        bFontWeigth[0].fontWeightValue &&
+          bodyStyleClassList.add(bFontWeigth[0].fontWeightValue);
+      }
+
+      /*BODY LINE HEIGHT */
+      if (el.startsWith(OMO_BODY_LINE_HEIGHT_STYLE)) {
+        //RESET CASE
+        if (bFontLineHeight[0].bLineHeightValue) {
+          bodyStyleClassList.replace(el, bFontLineHeight[0].bLineHeightValue);
+        } else {
+          bodyStyleClassList.remove(el);
+        }
+      } else if (bFontLineHeight[0].value !== bodyLineHeightConfig) {
+        bodyStyleClassList.add(bFontLineHeight[0].bLineHeightValue);
+      }
+      /* HEADER LINE HEIGHT*/
+      if (el.startsWith(OMO_HEADER_LINE_HEIGHT_STYLE)) {
+        //RESET CASE
+        hFontLineHeight[0].hLineHeightValue
+          ? bodyStyleClassList.replace(el, hFontLineHeight[0].hLineHeightValue)
+          : bodyStyleClassList.remove(el);
+      } else if (hFontLineHeight[0].value !== headerLineHeightConfig) {
+        bodyStyleClassList.add(hFontLineHeight[0].hLineHeightValue);
+      }
+      /*BODY FONT SPACING */
+      if (el.startsWith(OMO_BODY_LETTER_SPACING_STYLE)) {
+        bFontSpacing[0].bFontSpacingValue
+          ? bodyStyleClassList.replace(el, bFontSpacing[0].bFontSpacingValue)
+          : bodyStyleClassList.remove(el);
+      } else if (bodyFontSpacingsConfig !== bFontSpacing[0].value) {
+        // alert('body font spacing:' + bFontSpacing[0].bFontSpacingValue);
+        bodyStyleClassList.add(bFontSpacing[0].bFontSpacingValue);
+      }
+
+      /*HEADER FONT SPACING*/
+      if (el.startsWith(OMO_HEADER_LETTER_SPACING_STYLE)) {
+        hFontSpacing[0].hFontSpacingValue
+          ? bodyStyleClassList.replace(el, hFontSpacing[0].hFontSpacingValue)
+          : bodyStyleClassList.remove(el);
+      } else if (headerFontSpacingConfig !== hFontSpacing[0].value) {
+        // alert('header font spacing:' + bFontSpacing[0].bFontSpacingValue);
+        bodyStyleClassList.add(hFontSpacing[0].hFontSpacingValue);
+      }
+      /*BACKGROUND COLOR */
+      if (el.startsWith(OMO_BACKGROUND_STYLE)) {
+        backgroundColor[0].backgroundValue
+          ? bodyStyleClassList.replace(el, backgroundColor[0].backgroundValue)
+          : bodyStyleClassList.remove(el);
+      } else if (
+        backgroundColor[0].backgroundValue !== config.DEFAULT_BACKGROUND
+      ) {
+        // alert('background:' + backgroundColor[0].backgroundValue);
+        backgroundColor[0].backgroundValue &&
+          bodyStyleClassList.add(backgroundColor[0].backgroundValue);
+      }
+    });
+  } else {
+    currentClassList.forEach(el => {
+      el.startsWith(OMO_BODY_FONT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_FONT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_FONT_SIZE_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_FONT_SIZE_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_FONT_WEIGHT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_LINE_HEIGHT_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_LINE_HEIGHT_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_LETTER_SPACING_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_LETTER_SPACING_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BACKGROUND_STYLE) && bodyStyleClassList.remove(el);
+    });
+  }
 };
 
 /** get APPLIED VALUES FROM WIDGET to generate style */
@@ -848,7 +1008,20 @@ const getUserAppliedValues = () => {
   var fileldSetColor = document.getElementById('selectedBackround');
   let color = fileldSetColor.getAttribute('data-value');
   const backgroundColor = getColor(color);
-  // APIS APPEND TO BODY
+
+  appendClassesToBody(
+    bFontSize,
+    hFontSize,
+    bFontFamily,
+    hFontFamily,
+    bFontWeigth,
+    bFontSpacing,
+    hFontSpacing,
+    bFontLineHeight,
+    hFontLineHeight,
+    backgroundColor,
+    applied,
+  );
 
   const data = {
     checked: applied,
