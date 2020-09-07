@@ -500,18 +500,14 @@ const setUserAppliedValues = (data, letters) => {
   document.getElementById('applyOverides').checked = data.checked;
 
   let fontSize = setFontSize(data.bodyFontSize);
-  // document.getElementById('totem_bsize').value = setFontSize(data.bodyFontSize);
   document.getElementById('totem_bsize').setAttribute('value', fontSize);
   let maxFontSize = Number(document.getElementById('totem_bsize').max);
   if (maxFontSize === fontSize) {
     document.getElementById('font-size-up').disabled = true;
-    // document.getElementById('font-size-down').disabled = false;
   } else if (0 === fontSize) {
     document.getElementById('font-size-down').disabled = true;
-    // document.getElementById('font-size-up').disabled = true;
   }
   let fontFamily = setFontFamilyId(data.bodyFontFamily)[0].id;
-  // document.getElementById('totem_body_ff').value = fontFamily;
   document.getElementById('totem_body_ff').setAttribute('value', fontFamily);
 
   const updateFont = value => {
@@ -529,7 +525,6 @@ const setUserAppliedValues = (data, letters) => {
   updateFont(document.getElementById('totem_body_ff').value);
 
   let fontWeight = setFontWeightId(data.bodyFontWeight)[0].id;
-  // document.getElementById('totem_font_weight').value = fontWeight;
   document
     .getElementById('totem_font_weight')
     .setAttribute('value', fontWeight);
@@ -541,7 +536,6 @@ const setUserAppliedValues = (data, letters) => {
   }
 
   let letterSpacing = setBodyLetterSpacingId(data.bodyFontSpacing)[0].id;
-  // document.getElementById('totem_bspacing').value = letterSpacing;
   document
     .getElementById('totem_bspacing')
     .setAttribute('value', letterSpacing);
