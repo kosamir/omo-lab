@@ -52,7 +52,7 @@ class OmoWidget {
     on('click', this.toggle, e => {
       let target = e.currentTarget;
       let expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      target.setAttribute('aria-expanded', !expanded);
+      // target.setAttribute('aria-expanded', !expanded);
 
       if (!expanded) {
         this.menu.parentElement.hidden = !this.menu.parentElement.hidden;
@@ -161,7 +161,7 @@ class OmoWidget {
             let target = e.currentTarget;
             let expanded =
               target.getAttribute('aria-expanded') === 'true' || false;
-            target.setAttribute('aria-expanded', !expanded);
+            // target.setAttribute('aria-expanded', !expanded);
 
             if (!expanded) {
               this.closeOpenSections();
