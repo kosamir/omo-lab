@@ -19,10 +19,11 @@ class OmoWidget {
     /** first init actions */
     this.initActions();
     /** read cookie and ignite bg color that is why we first set event handlers in init actions */
+    this.cookie = params.readCookie(this.letters);
 
     this.openCloseWidget();
     this.openCloseSection();
-    this.cookie = params.readCookie(this.letters);
+
     this.collectSectionValues();
 
     this.handlePower();
@@ -52,7 +53,7 @@ class OmoWidget {
     on('click', this.toggle, e => {
       let target = e.currentTarget;
       let expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      // target.setAttribute('aria-expanded', !expanded);
+      target.setAttribute('aria-expanded', !expanded);
 
       if (!expanded) {
         this.menu.parentElement.hidden = !this.menu.parentElement.hidden;
@@ -115,6 +116,27 @@ class OmoWidget {
       ) {
         this.menu.parentElement.hidden = !this.menu.parentElement.hidden;
       }
+      /**
+       *  amirkos 7.9.2020
+       *  on some pages when all controls are enabled last controll causes page to refresh.
+       *  i belive this is because i have tryied to use programaticaly click event before control is shown!!
+       *  this is the solution i belive:
+       *  set background color if exist, can't do it sooner case widget is initaly hidden!!
+          see comment in <see>@setUserAppliedValues</see>
+       */
+      if (e.target.id === 'selectedBackround') {
+        console.log('selectedBackround');
+        let colorId = document.getElementById('selectedBackround');
+
+        if (colorId !== '-1') {
+          document
+            .getElementById('backgroundReset')
+            .removeAttribute('disabled');
+          document
+            .getElementById('selectedBackround')
+            .classList['add']('has-value');
+        }
+      }
     });
 
     // Close the menu when pressing ESC
@@ -161,7 +183,7 @@ class OmoWidget {
             let target = e.currentTarget;
             let expanded =
               target.getAttribute('aria-expanded') === 'true' || false;
-            // target.setAttribute('aria-expanded', !expanded);
+            target.setAttribute('aria-expanded', !expanded);
 
             if (!expanded) {
               this.closeOpenSections();
@@ -488,7 +510,11 @@ function addOmolabClassScopeToBody(doc) {
     document.classList.add(config.OMOLAB_BODY_CLASS);
   }
 }
-
+/**
+ *
+ * @param {data from local storage} data
+ * @param {letters array for displaying font face in widget font family control} letters
+ */
 const setUserAppliedValues = (data, letters) => {
   const widget = document.querySelector('#OmoWidget');
   const powerButton = document.getElementById('applyOverides');
@@ -558,11 +584,16 @@ const setUserAppliedValues = (data, letters) => {
   if (maxLineHeight === lineHeight) {
     document.getElementById('line-height-up').disabled = true;
   }
-
   let colorId = getColorValue(data.bgColor)[0].id;
   document
     .getElementById('selectedBackround')
     .setAttribute('data-value', colorId);
+
+  /*HACK 
+  THIS sometimes used TO reload page whole page where widget is implemented
+  .. i belive it has something to do with document loading causing 
+  on click to be fired before element is shown!!!
+  -see fix in <see> OmoWidget class --> openCloseWidget()--> on(transitionEndEvent) 
 
   let widgetBackgrounds = [].slice.call(
     document.querySelectorAll('.OmoWidget-action--set'),
@@ -571,10 +602,8 @@ const setUserAppliedValues = (data, letters) => {
   let element = widgetBackgrounds.filter(
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
-  setTimeout(() => {
     element[0] && element[0].click();
-  }, 100);
-  //
+  */
 };
 
 /** get font default values based on screen resolution */
@@ -1238,8 +1267,8 @@ export const showWidget = (text, configurations) => {
         id: -1,
         value: config.DEFAULT_BACKGROUND,
       });
-      var color = document.getElementById('selectedBackround');
-      color.setAttribute('data-value', getColor(NO_BACKGROUND_COLOR)[0].id);
+      // var color = document.getElementById('selectedBackround');
+      // color.setAttribute('data-value', getColor(NO_BACKGROUND_COLOR)[0].id);
       var handle = new OmoWidget({
         el: '#OmoWidget',
         readCookie: readCookie,
@@ -1250,18 +1279,3 @@ export const showWidget = (text, configurations) => {
       alert(err);
     });
 };
-
-// ready(function () {
-//   new OmoWidget({
-//     el: '#OmoWidget',
-
-//     values: {
-//       'font-size': '1',
-//       'font-type': '1',
-//       'font-weight': '0',
-//       'letter-spacing': '0',
-//       'line-height': '0',
-//       background: '2',
-//     },
-//   });
-// });
