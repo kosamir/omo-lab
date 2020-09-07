@@ -22,7 +22,8 @@ class OmoWidget {
 
     this.openCloseWidget();
     this.openCloseSection();
-    this.cookie = params.readCookie(this.letters);
+    //this.cookie =
+    params.readCookie(this.letters);
     this.collectSectionValues();
 
     this.handlePower();
