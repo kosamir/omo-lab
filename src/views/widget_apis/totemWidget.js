@@ -19,10 +19,10 @@ class OmoWidget {
     /** first init actions */
     this.initActions();
     /** read cookie and ignite bg color that is why we first set event handlers in init actions */
-    this.cookie = params.readCookie(this.letters);
+
     this.openCloseWidget();
     this.openCloseSection();
-
+    this.cookie = params.readCookie(this.letters);
     this.collectSectionValues();
 
     this.handlePower();
