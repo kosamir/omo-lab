@@ -573,7 +573,7 @@ const setUserAppliedValues = (data, letters) => {
   );
   setTimeout(() => {
     element[0] && element[0].click();
-  }, 0);
+  }, 100);
   //
 };
 
