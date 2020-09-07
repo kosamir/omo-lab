@@ -22,7 +22,8 @@ class OmoWidget {
 
     this.openCloseWidget();
     this.openCloseSection();
-    this.cookie = params.readCookie(this.letters);
+    //this.cookie =
+    params.readCookie(this.letters);
     this.collectSectionValues();
 
     this.handlePower();
@@ -52,7 +53,7 @@ class OmoWidget {
     on('click', this.toggle, e => {
       let target = e.currentTarget;
       let expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      target.setAttribute('aria-expanded', !expanded);
+      // target.setAttribute('aria-expanded', !expanded);
 
       if (!expanded) {
         this.menu.parentElement.hidden = !this.menu.parentElement.hidden;
@@ -571,7 +572,7 @@ const setUserAppliedValues = (data, letters) => {
   let element = widgetBackgrounds.filter(
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
-  element[0] && element[0].click();
+  // element[0] && element[0].click();
 };
 
 /** get font default values based on screen resolution */
