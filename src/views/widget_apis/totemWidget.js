@@ -571,7 +571,10 @@ const setUserAppliedValues = (data, letters) => {
   let element = widgetBackgrounds.filter(
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
-  // element[0] && element[0].click();
+  setTimeout(() => {
+    element[0] && element[0].click();
+  }, 0);
+  //
 };
 
 /** get font default values based on screen resolution */
