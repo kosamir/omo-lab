@@ -124,19 +124,19 @@ class OmoWidget {
        *  set background color if exist, can't do it sooner case widget is initaly hidden!!
           see comment in <see>@setUserAppliedValues</see>
        */
-      // alert(e.target.id);
-      if (e.target.id === 'selectedBackround') {
-        let colorId = document.getElementById('selectedBackround');
 
-        if (colorId !== '-1') {
-          document
-            .getElementById('backgroundReset')
-            .removeAttribute('disabled');
-          document
-            .getElementById('selectedBackround')
-            .classList['add']('has-value');
-        }
-      }
+      // if (e.target.id === 'selectedBackround') {
+      //   let colorId = document.getElementById('selectedBackround');
+
+      //   if (colorId !== '-1') {
+      //     document
+      //       .getElementById('backgroundReset')
+      //       .removeAttribute('disabled');
+      //     document
+      //       .getElementById('selectedBackround')
+      //       .classList['add']('has-value');
+      //   }
+      // }
     });
 
     // Close the menu when pressing ESC
@@ -196,38 +196,41 @@ class OmoWidget {
               }
             }
 
-            // setTimeout(() => {
-            if (expanded) {
-              section.classList.remove('is-section-visible');
-              // remove tooltip hidden to all uncliked menu items
-              this.menuItems.forEach(el => {
-                if (target.parentElement !== el) {
-                  el.classList.remove('is-tooltip-hidden');
+            setTimeout(() => {
+              if (expanded) {
+                section.classList.remove('is-section-visible');
+                // remove tooltip hidden to all uncliked menu items
+                this.menuItems.forEach(el => {
+                  if (target.parentElement !== el) {
+                    el.classList.remove('is-tooltip-hidden');
+                  }
+                });
+              } else {
+                if (sectionWidth) {
+                  leftPart.style.transform =
+                    'translateX(-' +
+                    parseInt(sectionWidth - 30 - 1) +
+                    'px' +
+                    ')';
                 }
-              });
-            } else {
-              if (sectionWidth) {
-                leftPart.style.transform =
-                  'translateX(-' + parseInt(sectionWidth - 30 - 1) + 'px' + ')';
+                sectionHolder.classList.add('is-section-open');
+                tooltip.style.transform =
+                  'translateY(-' + parseInt(sectionHeight) + 'px' + ')';
+                item.classList.add('is-tooltip-visible');
+                // add tooltip hidden to all unclicked menu items
+                this.menuItems.forEach(el => {
+                  if (target.parentElement !== el) {
+                    el.classList.add('is-tooltip-hidden');
+                  }
+                });
+                this.handleSectionKeyboard({
+                  add,
+                  substract,
+                  hasValue,
+                  lastItem,
+                });
               }
-              sectionHolder.classList.add('is-section-open');
-              tooltip.style.transform =
-                'translateY(-' + parseInt(sectionHeight) + 'px' + ')';
-              item.classList.add('is-tooltip-visible');
-              // add tooltip hidden to all unclicked menu items
-              this.menuItems.forEach(el => {
-                if (target.parentElement !== el) {
-                  el.classList.add('is-tooltip-hidden');
-                }
-              });
-              this.handleSectionKeyboard({
-                add,
-                substract,
-                hasValue,
-                lastItem,
-              });
-            }
-            // }, 0);
+            }, 100);
           });
 
           on(this.transitionEndEvent, section, e => {
