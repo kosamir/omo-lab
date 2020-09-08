@@ -230,7 +230,7 @@ class OmoWidget {
                   lastItem,
                 });
               }
-            }, 100);
+            }, 0);
           });
 
           on(this.transitionEndEvent, section, e => {
@@ -1063,7 +1063,6 @@ const getUserAppliedValues = () => {
     bodyLineHeight: bFontLineHeight[0].value,
     bgColor: backgroundColor[0].background,
   };
-  console.log(data);
   return data;
 };
 
