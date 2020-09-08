@@ -196,41 +196,38 @@ class OmoWidget {
               }
             }
 
-            setTimeout(() => {
-              if (expanded) {
-                section.classList.remove('is-section-visible');
-                // remove tooltip hidden to all uncliked menu items
-                this.menuItems.forEach(el => {
-                  if (target.parentElement !== el) {
-                    el.classList.remove('is-tooltip-hidden');
-                  }
-                });
-              } else {
-                if (sectionWidth) {
-                  leftPart.style.transform =
-                    'translateX(-' +
-                    parseInt(sectionWidth - 30 - 1) +
-                    'px' +
-                    ')';
+            // setTimeout(() => {
+            if (expanded) {
+              section.classList.remove('is-section-visible');
+              // remove tooltip hidden to all uncliked menu items
+              this.menuItems.forEach(el => {
+                if (target.parentElement !== el) {
+                  el.classList.remove('is-tooltip-hidden');
                 }
-                sectionHolder.classList.add('is-section-open');
-                tooltip.style.transform =
-                  'translateY(-' + parseInt(sectionHeight) + 'px' + ')';
-                item.classList.add('is-tooltip-visible');
-                // add tooltip hidden to all unclicked menu items
-                this.menuItems.forEach(el => {
-                  if (target.parentElement !== el) {
-                    el.classList.add('is-tooltip-hidden');
-                  }
-                });
-                this.handleSectionKeyboard({
-                  add,
-                  substract,
-                  hasValue,
-                  lastItem,
-                });
+              });
+            } else {
+              if (sectionWidth) {
+                leftPart.style.transform =
+                  'translateX(-' + parseInt(sectionWidth - 30 - 1) + 'px' + ')';
               }
-            }, 0);
+              sectionHolder.classList.add('is-section-open');
+              tooltip.style.transform =
+                'translateY(-' + parseInt(sectionHeight) + 'px' + ')';
+              item.classList.add('is-tooltip-visible');
+              // add tooltip hidden to all unclicked menu items
+              this.menuItems.forEach(el => {
+                if (target.parentElement !== el) {
+                  el.classList.add('is-tooltip-hidden');
+                }
+              });
+              this.handleSectionKeyboard({
+                add,
+                substract,
+                hasValue,
+                lastItem,
+              });
+            }
+            // }, 0);
           });
 
           on(this.transitionEndEvent, section, e => {
