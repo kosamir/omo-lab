@@ -19,7 +19,7 @@ class OmoWidget {
     /** first init actions */
     this.initActions();
     /** read cookie and ignite bg color that is why we first set event handlers in init actions */
-    this.cookie = params.readCookie(this.letters);
+    params.readCookie(this.letters);
 
     this.openCloseWidget();
     this.openCloseSection();
@@ -118,25 +118,25 @@ class OmoWidget {
       }
       /**
        *  amirkos 7.9.2020
-       *  on some pages when all controls are enabled last controll causes page to refresh.
-       *  i belive this is because i have tryied to use programaticaly click event before control is shown!!
+       *  on some pages when all controls are enabled last control causes page to refresh?(not on ALL sites!!!!)
+       *  i belive this is because i have tried to use programaticaly click event before control is shown!!
        *  this is the solution i belive:
        *  set background color if exist, can't do it sooner case widget is initaly hidden!!
           see comment in <see>@setUserAppliedValues</see>
        */
 
-      // if (e.target.id === 'selectedBackround') {
-      //   let colorId = document.getElementById('selectedBackround');
+      if (e.target.id === 'selectedBackround') {
+        let colorId = document.getElementById('selectedBackround');
 
-      //   if (colorId !== '-1') {
-      //     document
-      //       .getElementById('backgroundReset')
-      //       .removeAttribute('disabled');
-      //     document
-      //       .getElementById('selectedBackround')
-      //       .classList['add']('has-value');
-      //   }
-      // }
+        if (colorId !== '-1') {
+          document
+            .getElementById('backgroundReset')
+            .removeAttribute('disabled');
+          document
+            .getElementById('selectedBackround')
+            .classList['add']('has-value');
+        }
+      }
     });
 
     // Close the menu when pressing ESC
