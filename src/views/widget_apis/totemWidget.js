@@ -124,8 +124,8 @@ class OmoWidget {
        *  set background color if exist, can't do it sooner case widget is initaly hidden!!
           see comment in <see>@setUserAppliedValues</see>
        */
+      // alert(e.target.id);
       if (e.target.id === 'selectedBackround') {
-        console.log('selectedBackround');
         let colorId = document.getElementById('selectedBackround');
 
         if (colorId !== '-1') {
@@ -352,6 +352,7 @@ class OmoWidget {
                 input.setAttribute('value', parseInt(input.value));
               } else {
                 input.value = parseInt(action.getAttribute('data-value'));
+
                 this.triggerBackground.setAttribute(
                   'data-value',
                   parseInt(action.getAttribute('data-value')),
@@ -939,7 +940,6 @@ const appendClassesToBody = (
           ? bodyStyleClassList.replace(el, bFontSpacing[0].bFontSpacingValue)
           : bodyStyleClassList.remove(el);
       } else if (bodyFontSpacingsConfig !== bFontSpacing[0].value) {
-        // alert('body font spacing:' + bFontSpacing[0].bFontSpacingValue);
         bodyStyleClassList.add(bFontSpacing[0].bFontSpacingValue);
       }
 
@@ -949,18 +949,18 @@ const appendClassesToBody = (
           ? bodyStyleClassList.replace(el, hFontSpacing[0].hFontSpacingValue)
           : bodyStyleClassList.remove(el);
       } else if (headerFontSpacingConfig !== hFontSpacing[0].value) {
-        // alert('header font spacing:' + bFontSpacing[0].bFontSpacingValue);
         bodyStyleClassList.add(hFontSpacing[0].hFontSpacingValue);
       }
       /*BACKGROUND COLOR */
+
       if (el.startsWith(OMO_BACKGROUND_STYLE)) {
         backgroundColor[0].backgroundValue
           ? bodyStyleClassList.replace(el, backgroundColor[0].backgroundValue)
           : bodyStyleClassList.remove(el);
       } else if (
+        backgroundColor[0] &&
         backgroundColor[0].backgroundValue !== config.DEFAULT_BACKGROUND
       ) {
-        // alert('background:' + backgroundColor[0].backgroundValue);
         backgroundColor[0].backgroundValue &&
           bodyStyleClassList.add(backgroundColor[0].backgroundValue);
       }
@@ -1063,6 +1063,7 @@ const getUserAppliedValues = () => {
     bodyLineHeight: bFontLineHeight[0].value,
     bgColor: backgroundColor[0].background,
   };
+  console.log(data);
   return data;
 };
 
@@ -1133,7 +1134,7 @@ const saveCookie = valueChanges => {
   localStorage.setItem(`${name}`, value);
 };
 
-/** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE */
+/** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE IF EXISTS*/
 const readCookie = letters => {
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
   if (data === null) {
@@ -1145,9 +1146,8 @@ const readCookie = letters => {
     document.getElementById('font-weight-down').disabled = true;
     document.getElementById('letter-spacing-down').disabled = true;
     document.getElementById('line-height-down').disabled = true;
-    return;
+    return false;
   }
-
   setUserAppliedValues(JSON.parse(data), letters);
 };
 
@@ -1264,11 +1264,12 @@ export const showWidget = (text, configurations) => {
       console.log(BODY_LETTER_SPACING);
       console.log(HEADER_LETTER_SPACING);
       COLOR_MAP.push({
-        id: -1,
+        id: NO_BACKGROUND_COLOR,
         value: config.DEFAULT_BACKGROUND,
       });
-      // var color = document.getElementById('selectedBackround');
-      // color.setAttribute('data-value', getColor(NO_BACKGROUND_COLOR)[0].id);
+      // set it to no color first on load i.e in readCookie load color from local storage if exist!
+      var color = document.getElementById('selectedBackround');
+      color.setAttribute('data-value', getColor(NO_BACKGROUND_COLOR)[0].id);
       var handle = new OmoWidget({
         el: '#OmoWidget',
         readCookie: readCookie,
