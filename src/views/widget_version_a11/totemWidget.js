@@ -810,7 +810,7 @@ function generateOmoStyle() {
 */
   const tweaks = config.TWEAK();
   style += tweaks;
-  console.log(style);
+  // console.log(style);
   return style;
 }
 
