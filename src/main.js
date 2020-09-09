@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // import showWidget from './views/omoTotemWidget';
-import { showWidget } from './views/widget_apis/totemWidget';
+import { showWidget } from './views/widget_version_a11/totemWidget';
 //'./views/omoWidget';
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
