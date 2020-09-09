@@ -924,8 +924,8 @@ export const showWidget = (text, configurations) => {
           ? config.DESKTOP_HEADER_LINE_HEIGHT
           : config.HEADER_LINE_HEIGHT,
       });
-      console.log(BODY_LINE_HEIGHT);
-      console.log(HEADER_LINE_HEIGHT);
+      // console.log(BODY_LINE_HEIGHT);
+      // console.log(HEADER_LINE_HEIGHT);
       FONT_WEIGHT.push({ id: 0, value: config.BODY_FONT_WEIGHT });
       generateBodyLetterSpacing(
         isDesktop()
@@ -950,8 +950,8 @@ export const showWidget = (text, configurations) => {
           ? config.DESKTOP_HEADER_FONT_SPACING
           : config.HEADER_FONT_SPACING,
       });
-      console.log(BODY_LETTER_SPACING);
-      console.log(HEADER_LETTER_SPACING);
+      // console.log(BODY_LETTER_SPACING);
+      // console.log(HEADER_LETTER_SPACING);
       COLOR_MAP.push({
         id: -1,
         value: config.DEFAULT_BACKGROUND,
@@ -968,18 +968,3 @@ export const showWidget = (text, configurations) => {
       alert(err);
     });
 };
-
-// ready(function () {
-//   new OmoWidget({
-//     el: '#OmoWidget',
-
-//     values: {
-//       'font-size': '1',
-//       'font-type': '1',
-//       'font-weight': '0',
-//       'letter-spacing': '0',
-//       'line-height': '0',
-//       background: '2',
-//     },
-//   });
-// });
