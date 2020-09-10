@@ -116,27 +116,6 @@ class OmoWidget {
       ) {
         this.menu.parentElement.hidden = !this.menu.parentElement.hidden;
       }
-      /**
-       *  amirkos 7.9.2020
-       *  on some pages when all controls are enabled last control causes page to refresh?(not on ALL sites!!!!)
-       *  i belive this is because i have tried to use programaticaly click event before control is shown!!
-       *  this is the solution i belive:
-       *  set background color if exist, can't do it sooner case widget is initaly hidden!!
-          see comment in <see>@setUserAppliedValues</see>
-       */
-
-      if (e.target.id === 'selectedBackround') {
-        let colorId = document.getElementById('selectedBackround');
-
-        if (colorId !== '-1') {
-          document
-            .getElementById('backgroundReset')
-            .removeAttribute('disabled');
-          document
-            .getElementById('selectedBackround')
-            .classList['add']('has-value');
-        }
-      }
     });
 
     // Close the menu when pressing ESC
@@ -590,12 +569,6 @@ const setUserAppliedValues = (data, letters) => {
     .getElementById('selectedBackround')
     .setAttribute('data-value', colorId);
 
-  /*HACK 
-  THIS sometimes used TO reload page whole page where widget is implemented
-  .. i belive it has something to do with document loading causing 
-  on click to be fired before element is shown!!!
-  -see fix in <see> OmoWidget class --> openCloseWidget()--> on(transitionEndEvent) 
-
   let widgetBackgrounds = [].slice.call(
     document.querySelectorAll('.OmoWidget-action--set'),
   );
@@ -603,8 +576,7 @@ const setUserAppliedValues = (data, letters) => {
   let element = widgetBackgrounds.filter(
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
-    element[0] && element[0].click();
-  */
+  element[0] && element[0].click();
 };
 
 /** get font default values based on screen resolution */
