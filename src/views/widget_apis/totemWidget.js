@@ -452,6 +452,8 @@ class OmoWidget {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
       this.powerButton.classList.remove('has-value');
+      removeOverides();
+      removeCookie();
     }
   }
 
