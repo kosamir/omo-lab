@@ -19,7 +19,7 @@ class OmoWidget {
     /** first init actions */
     this.initActions();
     /** read cookie and ignite bg color that is why we first set event handlers in init actions */
-    params.readCookie(this.letters);
+    this.cookie = params.readCookie(this.letters);
 
     this.openCloseWidget();
     this.openCloseSection();
@@ -27,6 +27,8 @@ class OmoWidget {
     this.collectSectionValues();
 
     this.handlePower();
+    // ako nema cookiea u localstorage-u ili ako je widget iskljucen makni stilove!!
+    !this.cookie && removeOverides();
   }
 
   cacheElements() {
@@ -325,7 +327,7 @@ class OmoWidget {
               // ) {
               //   return;
               // }
-
+              this.widget.classList.remove('reset');
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
                 input.setAttribute('value', parseInt(input.value));
@@ -348,6 +350,24 @@ class OmoWidget {
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
+
+              let applied = [].slice.call(
+                this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
+              );
+              let cnt = 0;
+              applied.forEach(el => {
+                if (
+                  !(
+                    el.classList.contains('OmoWidget-trigger--power') &&
+                    el.classList.contains('has-value')
+                  )
+                ) {
+                  cnt++;
+                }
+              });
+              if (cnt === 1) {
+                this.widget.classList.add('reset');
+              }
             }
 
             if (isPreview) {
@@ -410,10 +430,18 @@ class OmoWidget {
       }
     });
 
-    this.widget.classList.contains('power-off')
-      ? removeOverides()
-      : applyOverides();
-    saveCookie();
+    if (
+      !this.widget.classList.contains('power-off') &&
+      !this.widget.classList.contains('reset')
+    ) {
+      applyOverides();
+      saveCookie();
+    } else {
+      removeOverides();
+      removeCookie();
+    }
+    // saveCookie();
+
     const max = Math.max.apply(Math, this.sectionValues);
 
     if (max > 0) {
@@ -456,7 +484,8 @@ class OmoWidget {
       this.widget.classList.toggle('power-off');
       this.powerButton.classList.toggle('has-value');
       this.widget.classList.contains('power-off')
-        ? removeOverides()
+        ? // !this.powerButton.classList.contains('has-value')
+          removeOverides()
         : applyOverides();
       saveCookie();
     });
@@ -577,6 +606,7 @@ const setUserAppliedValues = (data, letters) => {
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
   element[0] && element[0].click();
+  return data.checked;
 };
 
 /** get font default values based on screen resolution */
@@ -960,11 +990,11 @@ const appendClassesToBody = (
 
 /** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
-  const applied = document
-    .getElementById('OmoWidget')
-    .classList.contains('power-off')
-    ? false
-    : true;
+  const applied =
+    !document.getElementById('OmoWidget').classList.contains('power-off') &&
+    !document.getElementById('OmoWidget').classList.contains('reset')
+      ? true
+      : false;
 
   // for desktop and mobile different configuration values.
   let bSize = isDesktop()
@@ -1105,6 +1135,10 @@ const saveCookie = valueChanges => {
   localStorage.setItem(`${name}`, value);
 };
 
+const removeCookie = () => {
+  const name = `${config.OMO_WIDGET_COOKIE}_`;
+  localStorage.removeItem(`${name}`);
+};
 /** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE IF EXISTS*/
 const readCookie = letters => {
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
@@ -1119,7 +1153,7 @@ const readCookie = letters => {
     document.getElementById('line-height-down').disabled = true;
     return false;
   }
-  setUserAppliedValues(JSON.parse(data), letters);
+  return setUserAppliedValues(JSON.parse(data), letters);
 };
 
 function getLastAppliedStyleSheet() {
