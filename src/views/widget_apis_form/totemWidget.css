@@ -1,0 +1,1007 @@
+/** SERIF STD OmoType_Serif_Std bivsi OmoTypeA*/
+@font-face {
+  font-family: OmoType_Serif_Std;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoType_Serif_Std-Regular_One_web.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoType_Serif_Std;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoType_Serif_Std-Medium_One_web.woff')
+    format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoType_Serif_Std;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoType_Serif_Std-Bold_One_web.woff')
+    format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoType_Serif_Std;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoType_Serif_Std-Black_One_web.woff')
+    format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeB */
+@font-face {
+  font-family: OmoTypeB-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeB-RegularOne.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeB-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeB-MediumOne.woff')
+    format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeB-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeB-BoldOne.woff')
+    format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeB-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeB-BlackOne.woff')
+    format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OT CARTA S EXT OTCartaSExt bivsi OmoTypeC-*/
+@font-face {
+  font-family: OTCartaSExt;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSExt-RegularOne.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSExt;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSExt-MediumOne.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSExt;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSExt-BoldOne.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSExt;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSExt-BlackOne.woff2')
+    format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OmoTypeD */
+@font-face {
+  font-family: OmoTypeD-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeD-RegularOne.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeD-MediumOne.woff')
+    format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeD-BoldOne.woff')
+    format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OmoTypeD-;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OmoTypeD-BlackOne.woff')
+    format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* OT CARTA S mono  OTCartaSmono bivsi OmoTypeE*/
+@font-face {
+  font-family: OTCartaSmono;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSmono-RegularOne.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSmono;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSmono-MediumOne.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSmono;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSmono-BoldOne.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OTCartaSmono;
+  src: url('https://api.omoguru.com/webwidget/fonts/woff/OTCartaSmono-BlackOne.woff2')
+    format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+:root:not(#\9):not(#\9):not(#\9) {
+  --primary: #ef6c33;
+  --secondary: #0b4160;
+  --svgFill: #fff;
+  --white: #fff;
+  --size: 46px;
+  --margin-size: 3px;
+  --sizeAdjusted: calc(var(--size) + 2 * var(--margin-size));
+  --animationSpeed: 0.15s;
+  --triangleSize: calc(var(--sizeAdjusted) / 3);
+  --bgColor0: #edd1b0;
+  --bgColor1: #eddd6e;
+  --bgColor2: #f8fd89;
+  --bgColor3: #eff4ef;
+  --bgColor4: #b0ded5;
+  --bgColor5: #000;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :root:not(#\9):not(#\9):not(#\9) {
+    --size: 52px;
+    --margin-size: 4px;
+  }
+}
+:not(#\9):not(#\9):not(#\9) body {
+  background: #fff;
+}
+@font-face {
+  font-family: omotyperegular_std_one;
+  src: url(../../../fonts/omotype-regularstdone-webfont.eot);
+  src: url(../../../fonts/omotype-regularstdone-webfont.eot?#iefix)
+      format('embedded-opentype'),
+    url(../../../fonts/omotype-regularstdone-webfont.woff2) format('woff2'),
+    url(../../../fonts/omotype-regularstdone-webfont.woff) format('woff'),
+    url(../../../fonts/omotype-regularstdone-webfont.ttf) format('truetype');
+  font-family: omotypeBmedium_std_two;
+  src: url(../../../fonts/OmoTypeB-MediumTwo.woff2) format('woff2'),
+    url(../../../fonts/OmoTypeB-MediumTwo.woff) format('woff'),
+    url(../../../fonts/OmoTypeB-MediumTwo.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget {
+  position: fixed;
+  z-index: 2;
+  bottom: 23px;
+  bottom: calc(var(--size) * 0.5);
+  right: 23px;
+  right: calc(var(--size) * 0.5);
+  border-top-right-radius: 26px;
+  border-top-right-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-top-left-radius: 26px;
+  border-top-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget {
+    top: 23px;
+    top: calc(var(--size) * 0.5);
+    bottom: auto;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget li[data-setting-name='font-type'] svg {
+  max-width: 96%;
+  max-height: 96%;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget li[data-setting-name='font-type'] svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget svg {
+  display: block;
+  max-width: 68%;
+  max-height: 68%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-menuItem--link a,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button {
+  color: #fff;
+  position: relative;
+  background-color: #0b172a;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 46px;
+  width: var(--size);
+  height: 46px;
+  height: var(--size);
+  margin: 3px;
+  margin: var(--margin-size);
+  border: 2px solid #627c85;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:not(:disabled):focus,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:not(:disabled):hover,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview:not(:disabled):focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview:not(:disabled):hover,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:not(:disabled):focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:not(:disabled):hover {
+  background-color: #ef6c33;
+  background-color: var(--primary);
+  border-color: #ef6c33;
+  border-color: var(--primary);
+  color: #fff;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:not(:disabled):focus:after,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:not(:disabled):hover:after,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview:not(:disabled):focus:after,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview:not(:disabled):hover:after,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:not(:disabled):focus:after,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:not(:disabled):hover:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #fff;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:focus
+  + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a:hover
+  + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview:focus
+  + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview:hover
+  + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:focus + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9) .OmoWidget button:hover + [role='tooltip'] {
+  opacity: 1;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview.OmoWidget-toggle,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle {
+  z-index: 2;
+  margin: 0;
+  width: 52px;
+  height: 52px;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle
+  svg,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview.OmoWidget-toggle svg,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle svg {
+  width: 42px;
+  height: 42px;
+  max-width: 100%;
+  max-height: 100%;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9)
+    .OmoWidget
+    .OmoWidget-menuItem--link
+    a.OmoWidget-toggle,
+  :not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-preview.OmoWidget-toggle,
+  :not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle {
+    width: 60px;
+    height: 60px;
+  }
+  :not(#\9):not(#\9):not(#\9)
+    .OmoWidget
+    .OmoWidget-menuItem--link
+    a.OmoWidget-toggle
+    svg,
+  :not(#\9):not(#\9):not(#\9)
+    .OmoWidget
+    .OmoWidget-preview.OmoWidget-toggle
+    svg,
+  :not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle svg {
+    width: 47px;
+    height: 47px;
+  }
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle:focus,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle:hover,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-toggle:focus,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-toggle:hover,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-toggle:hover {
+  background-color: #0b172a;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle:focus
+  #active-status,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-toggle:hover
+  #active-status,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-toggle:focus
+  #active-status,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-toggle:hover
+  #active-status,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  button.OmoWidget-toggle:focus
+  #active-status,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  button.OmoWidget-toggle:hover
+  #active-status {
+  fill: #ef6c33 !important;
+  fill: var(--primary) !important;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-trigger--background,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-trigger--background,
+:not(#\9):not(#\9):not(#\9) .OmoWidget button.OmoWidget-trigger--background {
+  background-color: #fff;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-menuItem--link
+  a.OmoWidget-trigger--background:after,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .OmoWidget-preview.OmoWidget-trigger--background:after,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  button.OmoWidget-trigger--background:after {
+  border: 0;
+  border-top: 23px solid #fff !important;
+  border-top: calc(var(--size) / 2) solid #fff !important;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .is-tooltip-hidden
+  button:focus
+  + [role='tooltip'],
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .is-tooltip-hidden
+  button:hover
+  + [role='tooltip'] {
+  opacity: 0;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .is-tooltip-visible [role='tooltip'] {
+  opacity: 1;
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  border-top-right-radius: 46px;
+  border-top-right-radius: var(--size);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget
+  .is-tooltip-visible
+  button:hover
+  + [role='tooltip'] {
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget.has-changes #active-status {
+  fill: #ef6c33 !important;
+  fill: var(--primary) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-menuItem--link svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-menuItem--link a {
+  margin: 3px auto !important;
+  margin: var(--margin-size) auto !important;
+  background-color: #0b4160;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  transition: opacity var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: none;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-menuItem--link a:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget .OmoWidget-menuItem--link a:hover {
+  background-color: #fff;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget ul {
+  list-style-type: none;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-menuHolder {
+  position: relative;
+  bottom: -30px;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-menuHolder {
+    bottom: auto;
+    top: -30px;
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-menu {
+  background-color: #0b172a;
+  padding-bottom: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  transition: transform 0.15s ease;
+  transition: transform var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top-right-radius: 26px;
+  border-top-right-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-top-left-radius: 26px;
+  border-top-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  width: 100%;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-menu {
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 0;
+    padding-top: 30px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 26px;
+    border-bottom-right-radius: calc(var(--size) * 0.5 + var(--margin-size));
+    border-bottom-left-radius: 26px;
+    border-bottom-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  }
+}
+:not(#\9):not(#\9):not(#\9) .is-open .OmoWidget-menu {
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-menu.is-visible
+  .OmoWidget-menuItem--link
+  a {
+  opacity: 1;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  -ms-transform: translate(-50%) rotate(180deg);
+  transform: translate(-50%) rotate(180deg);
+  height: 30px;
+  background-color: #0b172a;
+  z-index: -1;
+  border-bottom-right-radius: 26px;
+  border-bottom-right-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-bottom-left-radius: 26px;
+  border-bottom-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  transition: transform 0.15s ease;
+  transition: transform var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-bottom {
+    bottom: auto;
+    top: 0;
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-menuItem {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+:not(#\9):not(#\9):not(#\9) .power-off .OmoWidget-menuItem {
+  opacity: 0.4;
+  pointer-events: none;
+}
+:not(#\9):not(#\9):not(#\9)
+  .power-off
+  .OmoWidget-menuItem.OmoWidget-menuItem--link,
+:not(#\9):not(#\9):not(#\9)
+  .power-off
+  .OmoWidget-menuItem[data-setting-name='widget-active'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-value {
+  display: none;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-trigger {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  transition: opacity var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin: 3px auto !important;
+  margin: var(--margin-size) auto !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-trigger[disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+:not(#\9):not(#\9):not(#\9) .is-visible .OmoWidget-trigger {
+  opacity: 1;
+}
+:not(#\9):not(#\9):not(#\9) .is-visible .OmoWidget-trigger[disabled] {
+  opacity: 0.4;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-trigger.has-value {
+  background-color: #ef6c33;
+  background-color: var(--primary);
+  color: #fff !important;
+  border-color: #ef6c33;
+  border-color: var(--primary);
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-trigger--background:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 0;
+  padding-top: calc(50% - 2px);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-top: 23px solid #fff;
+  border-top: calc(var(--size) / 2) solid #fff;
+  background-color: #000;
+  pointer-events: none;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='1']:after {
+  background-color: #edd1b0;
+  background-color: var(--bgColor0);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='2']:after {
+  background-color: #eddd6e;
+  background-color: var(--bgColor1);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='3']:after {
+  background-color: #f8fd89;
+  background-color: var(--bgColor2);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='4']:after {
+  background-color: #eff4ef;
+  background-color: var(--bgColor3);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='5']:after {
+  background-color: #b0ded5;
+  background-color: var(--bgColor4);
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-trigger--background[data-value='6']:after {
+  background-color: #000;
+  background-color: var(--bgColor5);
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-preview {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  transition: opacity var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+:not(#\9):not(#\9):not(#\9) .is-section-visible .OmoWidget-action,
+:not(#\9):not(#\9):not(#\9) .is-section-visible .OmoWidget-preview {
+  opacity: 1;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action[disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+:not(#\9):not(#\9):not(#\9) .is-section-visible .OmoWidget-action[disabled] {
+  opacity: 0.4;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-0 {
+  background-color: #b0ded5 !important;
+  background-color: var(--bgColor4) !important;
+  border-color: #b0ded5 !important;
+  border-color: var(--bgColor4) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-0:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-0:hover {
+  border-color: #ef6c33 !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-1 {
+  background-color: #000 !important;
+  background-color: var(--bgColor5) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-2 {
+  background-color: #edd1b0 !important;
+  background-color: var(--bgColor0) !important;
+  border-color: #edd1b0 !important;
+  border-color: var(--bgColor0) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-2:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-2:hover {
+  border-color: #ef6c33 !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-3 {
+  background-color: #eddd6e !important;
+  background-color: var(--bgColor1) !important;
+  border-color: #eddd6e !important;
+  border-color: var(--bgColor1) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-3:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-3:hover {
+  border-color: #ef6c33 !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-4 {
+  background-color: #eff4ef !important;
+  background-color: var(--bgColor3) !important;
+  border-color: #eff4ef !important;
+  border-color: var(--bgColor3) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-4:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-4:hover {
+  border-color: #ef6c33 !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-5 {
+  background-color: #f8fd89 !important;
+  background-color: var(--bgColor2) !important;
+  border-color: #f8fd89 !important;
+  border-color: var(--bgColor2) !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-5:focus,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action#background-5:hover {
+  border-color: #ef6c33 !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-sectionHolder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-left {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30px;
+  background-color: #000;
+  z-index: -1;
+  border-bottom-left-radius: 26px;
+  border-bottom-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-top-left-radius: 26px;
+  border-top-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  transition: transform 0.15s ease;
+  transition: transform var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+:not(#\9):not(#\9):not(#\9) [data-setting-name='background'] .OmoWidget-left {
+  top: auto;
+  bottom: 0;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-section {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  top: 0;
+  right: 50%;
+  padding-right: 60px;
+  background-color: #0b172a;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  transition: transform 0.15s ease;
+  transition: transform var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top-left-radius: 26px;
+  border-top-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-bottom-left-radius: 26px;
+  border-bottom-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  z-index: 1;
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+:not(#\9):not(#\9):not(#\9) .is-section-open .OmoWidget-section {
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+:not(#\9):not(#\9):not(#\9)
+  [data-setting-name='background']
+  .OmoWidget-section {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  width: 216px;
+  width: calc(var(--sizeAdjusted) * 3 + 60px);
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-section li:nth-child(3) {
+  -ms-flex-order: 1;
+  order: 1;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-section li:first-child {
+  -ms-flex-order: 2;
+  order: 2;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-section li:nth-child(2) {
+  -ms-flex-order: 3;
+  order: 3;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-section li.OmoWidget-preview {
+  -ms-flex-order: 2;
+  order: 2;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-resetBg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  transition: opacity var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #0b172a;
+  border-top-left-radius: 26px;
+  border-top-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+  border-bottom-left-radius: 26px;
+  border-bottom-left-radius: calc(var(--size) * 0.5 + var(--margin-size));
+}
+:not(#\9):not(#\9):not(#\9) .is-section-visible .OmoWidget-resetBg {
+  opacity: 1;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-preview {
+  position: relative;
+  pointer-events: none;
+  color: #fff;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-preview svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 55%;
+  max-height: 55%;
+  display: none !important;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview:not([data-selected])
+  svg:first-child,
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='O']
+  svg:first-child {
+  display: block !important;
+}
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='A']
+  svg:nth-child(2),
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='B']
+  svg:nth-child(3),
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='C']
+  svg:nth-child(4),
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='D']
+  svg:nth-child(5),
+:not(#\9):not(#\9):not(#\9)
+  .OmoWidget-preview[data-selected='E']
+  svg:nth-child(6) {
+  display: block !important;
+  max-width: 105%;
+  max-height: 105%;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action--add,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action--substract {
+  position: relative;
+  text-indent: -9999px;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action--add:after,
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action--substract:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%) rotate(180deg);
+  transform: translate(-50%) rotate(180deg);
+  width: 0;
+  height: 0;
+  border-width: 0 17.33333px 17.33333px;
+  border-left: var(--triangleSize) solid rgba(0, 0, 0, 0);
+  border-bottom: var(--triangleSize) solid #fff;
+  border-right: var(--triangleSize) solid rgba(0, 0, 0, 0);
+  border-top: 0 solid rgba(0, 0, 0, 0);
+}
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-action--add:after,
+  :not(#\9):not(#\9):not(#\9) .OmoWidget-action--substract:after {
+    border-left: 17px solid rgba(0, 0, 0, 0);
+    border-bottom: 17px solid #fff;
+    border-right: 17px solid rgba(0, 0, 0, 0);
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget-action--add:after {
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+:not(#\9):not(#\9):not(#\9) #background .OmoWidget-action--add:after {
+  display: none !important;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget .u-isVisuallyHidden {
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget [hidden] {
+  display: none;
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget [role='tooltip'] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  border-radius: 46px;
+  border-radius: var(--size);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #0b4160;
+  font-size: 16px;
+  word-wrap: none;
+  white-space: nowrap;
+  color: #fff;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity var(--animationSpeed) ease,
+    transform var(--animationSpeed) ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 0 10px 0 20px;
+  font-family: omotypeBmedium_std_two;
+  z-index: 5;
+}
+@media (min-height: 600px) and (min-width: 768px) {
+  :not(#\9):not(#\9):not(#\9) .OmoWidget [role='tooltip'] {
+    font-size: 20px;
+  }
+}
+:not(#\9):not(#\9):not(#\9) .OmoWidget [role='tooltip'] span {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}

@@ -27,7 +27,7 @@ class OmoWidget {
     this.collectSectionValues();
 
     this.handlePower();
-    // ako nema cookiea u localstorage-u ili ako je widget iskljucen makni stilove!!
+    // if no cookie in local storage or if widget is in power off state remove css style from page
     !this.cookie && removeOverides();
   }
 
@@ -327,7 +327,10 @@ class OmoWidget {
               // ) {
               //   return;
               // }
+
+              // remove reset if present
               this.widget.classList.remove('reset');
+
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
                 input.setAttribute('value', parseInt(input.value));
@@ -351,6 +354,7 @@ class OmoWidget {
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
 
+              // last reset button clicke set reset class
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
               );
@@ -429,7 +433,7 @@ class OmoWidget {
         }
       }
     });
-
+    // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
       !this.widget.classList.contains('reset')
@@ -439,6 +443,20 @@ class OmoWidget {
     } else {
       removeOverides();
       removeCookie();
+      //remove classes from body when widget is deactivated (power-off or reset)
+      appendClassesToBody(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        false,
+      );
     }
     // saveCookie();
 
@@ -452,8 +470,24 @@ class OmoWidget {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
       this.powerButton.classList.remove('has-value');
+      // remove overides if widget is put to reset state with up/down buttons on some controll
+      // last controll puts widget in power-off state
       removeOverides();
       removeCookie();
+      //remove classes from body when widget is deactivated (power-off or reset)
+      appendClassesToBody(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        false,
+      );
     }
   }
 

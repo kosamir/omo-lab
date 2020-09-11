@@ -20,8 +20,10 @@ class OmoWidget {
     this.initActions();
     /** read cookie and ignite bg color that is why we first set event handlers in init actions */
     this.cookie = params.readCookie(this.letters);
+
     this.openCloseWidget();
     this.openCloseSection();
+
     this.collectSectionValues();
 
     this.handlePower();
@@ -325,15 +327,13 @@ class OmoWidget {
               // ) {
               //   return;
               // }
-
-              // remove reset if present in class list of widget!!! see collectSectionValues method!!!
               this.widget.classList.remove('reset');
-
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
                 input.setAttribute('value', parseInt(input.value));
               } else {
                 input.value = parseInt(action.getAttribute('data-value'));
+
                 this.triggerBackground.setAttribute(
                   'data-value',
                   parseInt(action.getAttribute('data-value')),
@@ -350,7 +350,8 @@ class OmoWidget {
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
-              // last reset button clicked set reset class on widget!!! see collectSectionValues method!!!
+
+              // last reset button clicke set reset class
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
               );
@@ -429,7 +430,6 @@ class OmoWidget {
         }
       }
     });
-
     // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
@@ -440,8 +440,23 @@ class OmoWidget {
     } else {
       removeOverides();
       removeCookie();
+      //remove classes from body when widget is deactivated (power-off or reset)
+      appendClassesToBody(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        false,
+      );
     }
     // saveCookie();
+
     const max = Math.max.apply(Math, this.sectionValues);
 
     if (max > 0) {
@@ -456,6 +471,20 @@ class OmoWidget {
       // last controll puts widget in power-off state
       removeOverides();
       removeCookie();
+      //remove classes from body when widget is deactivated with up/down buttons
+      appendClassesToBody(
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        false,
+      );
     }
   }
 
@@ -488,7 +517,8 @@ class OmoWidget {
       this.widget.classList.toggle('power-off');
       this.powerButton.classList.toggle('has-value');
       this.widget.classList.contains('power-off')
-        ? removeOverides()
+        ? // !this.powerButton.classList.contains('has-value')
+          removeOverides()
         : applyOverides();
       saveCookie();
     });
@@ -522,7 +552,11 @@ function addOmolabClassScopeToBody(doc) {
     document.classList.add(config.OMOLAB_BODY_CLASS);
   }
 }
-
+/**
+ *
+ * @param {data from local storage} data
+ * @param {letters array for displaying font face in widget font family control} letters
+ */
 const setUserAppliedValues = (data, letters) => {
   const widget = document.querySelector('#OmoWidget');
   const powerButton = document.getElementById('applyOverides');
@@ -535,18 +569,14 @@ const setUserAppliedValues = (data, letters) => {
   document.getElementById('applyOverides').checked = data.checked;
 
   let fontSize = setFontSize(data.bodyFontSize);
-  // document.getElementById('totem_bsize').value = setFontSize(data.bodyFontSize);
   document.getElementById('totem_bsize').setAttribute('value', fontSize);
   let maxFontSize = Number(document.getElementById('totem_bsize').max);
   if (maxFontSize === fontSize) {
     document.getElementById('font-size-up').disabled = true;
-    // document.getElementById('font-size-down').disabled = false;
   } else if (0 === fontSize) {
     document.getElementById('font-size-down').disabled = true;
-    // document.getElementById('font-size-up').disabled = true;
   }
   let fontFamily = setFontFamilyId(data.bodyFontFamily)[0].id;
-  // document.getElementById('totem_body_ff').value = fontFamily;
   document.getElementById('totem_body_ff').setAttribute('value', fontFamily);
 
   const updateFont = value => {
@@ -564,7 +594,6 @@ const setUserAppliedValues = (data, letters) => {
   updateFont(document.getElementById('totem_body_ff').value);
 
   let fontWeight = setFontWeightId(data.bodyFontWeight)[0].id;
-  // document.getElementById('totem_font_weight').value = fontWeight;
   document
     .getElementById('totem_font_weight')
     .setAttribute('value', fontWeight);
@@ -576,7 +605,6 @@ const setUserAppliedValues = (data, letters) => {
   }
 
   let letterSpacing = setBodyLetterSpacingId(data.bodyFontSpacing)[0].id;
-  // document.getElementById('totem_bspacing').value = letterSpacing;
   document
     .getElementById('totem_bspacing')
     .setAttribute('value', letterSpacing);
@@ -598,7 +626,6 @@ const setUserAppliedValues = (data, letters) => {
   if (maxLineHeight === lineHeight) {
     document.getElementById('line-height-up').disabled = true;
   }
-
   let colorId = getColorValue(data.bgColor)[0].id;
   document
     .getElementById('selectedBackround')
@@ -612,7 +639,6 @@ const setUserAppliedValues = (data, letters) => {
     element => Number(element.getAttribute('data-value')) === Number(colorId),
   );
   element[0] && element[0].click();
-
   return data.checked;
 };
 
@@ -625,22 +651,42 @@ const setFontSize = val => {
       : Number(config.BODY_FONT_SIZE))
   );
 };
-
+const OMO_FONT_WEIGHT_STYLE = 'omo-FontWeight';
 const FONT_WEIGHT = [
-  { id: 1, value: '500', omoType: 'MediumOne' },
-  { id: 2, value: '600', omoType: 'BoldOne' },
-  { id: 3, value: '800', omoType: 'BlackOne' },
+  {
+    id: 1,
+    value: '500',
+    omoType: 'MediumOne',
+    fontWeightValue: 'omo-FontWeight-1',
+  },
+  {
+    id: 2,
+    value: '600',
+    omoType: 'BoldOne',
+    fontWeightValue: 'omo-FontWeight-2',
+  },
+  {
+    id: 3,
+    value: '800',
+    omoType: 'BlackOne',
+    fontWeightValue: 'omo-FontWeight-3',
+  },
 ];
 
 const setFontWeight = val => FONT_WEIGHT.filter(el => el.id === Number(val));
 const setFontWeightId = val => FONT_WEIGHT.filter(el => el.value === val);
 /**OD TUD  */
+const OMO_BODY_LETTER_SPACING_STYLE = 'omo-BodyFontSpacing';
 let BODY_LETTER_SPACING = [];
 const generateBodyLetterSpacing = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.25);
-    BODY_LETTER_SPACING.push({ id: i, value: value.toFixed(2) });
+    BODY_LETTER_SPACING.push({
+      id: i,
+      value: value.toFixed(2),
+      bFontSpacingValue: `omo-BodyFontSpacing-${i}`,
+    });
   }
 };
 const setBodyLetterSpacing = val =>
@@ -649,11 +695,16 @@ const setBodyLetterSpacingId = val =>
   BODY_LETTER_SPACING.filter(el => el.value === val);
 
 let HEADER_LETTER_SPACING = [];
+const OMO_HEADER_LETTER_SPACING_STYLE = 'omo-HeaderFontSpacing';
 const generateHeaderLetterSpacing = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.25);
-    HEADER_LETTER_SPACING.push({ id: i, value: value.toFixed(2) });
+    HEADER_LETTER_SPACING.push({
+      id: i,
+      value: value.toFixed(2),
+      hFontSpacingValue: `omo-HeaderFontSpacing-${i}`,
+    });
   }
 };
 const setHeaderLetterSpacing = val =>
@@ -662,20 +713,31 @@ const setHeaderLetterSpacingId = val =>
   HEADER_LETTER_SPACING.filter(el => el.value === val);
 
 let BODY_LINE_HEIGHT = [];
+
+const OMO_BODY_LINE_HEIGHT_STYLE = 'omo-BodyLineHeight';
 const generateBodyLineHeight = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.2);
-    BODY_LINE_HEIGHT.push({ id: i, value: value.toFixed(1) });
+    BODY_LINE_HEIGHT.push({
+      id: i,
+      value: value.toFixed(1),
+      bLineHeightValue: `omo-BodyLineHeight-${i}`,
+    });
   }
 };
 
 let HEADER_LINE_HEIGHT = [];
+const OMO_HEADER_LINE_HEIGHT_STYLE = 'omo-HeaderLineHeight';
 const generateHeaderLineHeight = val => {
   let value = parseFloat(val);
   for (let i = 1; i <= 5; i++) {
     value += parseFloat(0.2);
-    HEADER_LINE_HEIGHT.push({ id: i, value: value.toFixed(1) });
+    HEADER_LINE_HEIGHT.push({
+      id: i,
+      value: value.toFixed(1),
+      hLineHeightValue: `omo-HeaderLineHeight-${i}`,
+    });
   }
 };
 
@@ -692,20 +754,71 @@ const setHeaderLineHeightId = val =>
 /** DO TUD */
 
 const OMO_TYPE = 'OmoType';
+const OMO_BODY_FONT_STYLE = 'omo-BodyFontType';
 const BODY_FONT_CHOOSER = [
-  { id: 1, style: 'OmoTypeB', value: `${OMO_TYPE}B-` },
-  { id: 2, style: 'OmoTypeD', value: `${OMO_TYPE}D-` },
-  { id: 3, style: 'OmoType_Serif_Std', value: `OmoType_Serif_Std` },
-  { id: 4, style: 'OTCartaSExt', value: `OTCartaSExt` },
-  { id: 5, style: 'OTCartaSmono', value: `OTCartaSmono` },
+  {
+    id: 1,
+    style: 'OmoTypeB',
+    value: `${OMO_TYPE}B-`,
+    fontValue: 'omo-BodyFontType-1',
+  },
+  {
+    id: 2,
+    style: 'OmoTypeD',
+    value: `${OMO_TYPE}D-`,
+    fontValue: 'omo-BodyFontType-2',
+  },
+  {
+    id: 3,
+    style: 'OmoType_Serif_Std',
+    value: `OmoType_Serif_Std`,
+    fontValue: 'omo-BodyFontType-3',
+  },
+  {
+    id: 4,
+    style: 'OTCartaSExt',
+    value: `OTCartaSExt`,
+    fontValue: 'omo-BodyFontType-4',
+  },
+  {
+    id: 5,
+    style: 'OTCartaSmono',
+    value: `OTCartaSmono`,
+    fontValue: 'omo-BodyFontType-5',
+  },
 ];
-
+const OMO_HEADER_FONT_STYLE = 'omo-HeaderFontType';
 const HEADER_FONT_CHOOSER = [
-  { id: 1, style: 'OmoTypeB', value: `${OMO_TYPE}B-` },
-  { id: 2, style: 'OmoTypeD', value: `${OMO_TYPE}D-` },
-  { id: 3, style: 'OmoType_Serif_Std', value: `OmoType_Serif_Std` },
-  { id: 4, style: 'OTCartaSExt', value: `OTCartaSExt` },
-  { id: 5, style: 'OTCartaSmono', value: `OTCartaSmono` },
+  {
+    id: 1,
+    style: 'OmoTypeB',
+    value: `${OMO_TYPE}B-`,
+    fontValue: 'omo-HeaderFontType-1',
+  },
+  {
+    id: 2,
+    style: 'OmoTypeD',
+    value: `${OMO_TYPE}D-`,
+    fontValue: 'omo-HeaderFontType-2',
+  },
+  {
+    id: 3,
+    style: 'OmoType_Serif_Std',
+    value: `OmoType_Serif_Std`,
+    fontValue: 'omo-HeaderFontType-3',
+  },
+  {
+    id: 4,
+    style: 'OTCartaSExt',
+    value: `OTCartaSExt`,
+    fontValue: 'omo-HeaderFontType-4',
+  },
+  {
+    id: 5,
+    style: 'OTCartaSmono',
+    value: `OTCartaSmono`,
+    fontValue: 'omo-HeaderFontType-5',
+  },
 ];
 const setHeaderFontFamily = val =>
   HEADER_FONT_CHOOSER.filter(el => el.id === Number(val));
@@ -716,24 +829,205 @@ const setFontFamily = val =>
   BODY_FONT_CHOOSER.filter(el => el.id === Number(val));
 const setFontFamilyId = val => BODY_FONT_CHOOSER.filter(el => el.value === val);
 
+const OMO_BACKGROUND_STYLE = 'omo-BackGround';
+const OMO_BODY_FONT_SIZE_STYLE = 'omo-BodyFontSize';
+const OMO_HEADER_FONT_SIZE_STYLE = 'omo-HeaderFontSize';
 const COLOR_MAP = [
-  { id: 1, background: '#edd1b0' },
-  { id: 2, background: '#eddd6e' },
-  { id: 3, background: '#f8fd89' },
-  { id: 4, background: '#eff4ef' },
-  { id: 5, background: '#b0ded5' },
-  { id: 6, background: '#000' },
+  { id: 1, background: '#edd1b0', backgroundValue: 'omo-BackGroundColor-1' },
+  { id: 2, background: '#eddd6e', backgroundValue: 'omo-BackGroundColor-2' },
+  { id: 3, background: '#f8fd89', backgroundValue: 'omo-BackGroundColor-3' },
+  { id: 4, background: '#eff4ef', backgroundValue: 'omo-BackGroundColor-4' },
+  { id: 5, background: '#b0ded5', backgroundValue: 'omo-BackGroundColor-5' },
+  { id: 6, background: '#000', backgroundValue: 'omo-BackGroundColor-6' },
 ];
 const getColor = val => COLOR_MAP.filter(el => el.id === Number(val));
 const getColorValue = val => COLOR_MAP.filter(el => el.background === val);
 
+/**
+ * // amirkos 29.07.2020 --> 4APIS APPEND SELECTORS TO BODY
+ * @param {*} bFontSize
+ * @param {*} hFontSize
+ * @param {*} bFontFamily
+ * @param {*} hFontFamily
+ * @param {*} bFontWeigth
+ * @param {*} bFontSpacing
+ * @param {*} hFontSpacing
+ * @param {*} bFontLineHeight
+ * @param {*} hFontLineHeight
+ * @param {*} backgroundColor
+ * @param {*} applied
+ */
+const appendClassesToBody = (
+  bFontSize,
+  hFontSize,
+  bFontFamily,
+  hFontFamily,
+  bFontWeigth,
+  bFontSpacing,
+  hFontSpacing,
+  bFontLineHeight,
+  hFontLineHeight,
+  backgroundColor,
+  applied,
+) => {
+  let currentClassList = [].slice.call(document.body.classList);
+  let bodyStyleClassList = document.body.classList;
+  /** VALUES FROM CONFIGURATION */
+  const headerFontSizeConfig = isDesktop()
+    ? config.DESKTOP_HEADER_FONT_SIZE
+    : config.HEADER_FONT_SIZE;
+  const bodyFontSizeConfig = isDesktop()
+    ? config.DESKTOP_BODY_FONT_SIZE
+    : config.BODY_FONT_SIZE;
+  const headerLineHeightConfig = isDesktop()
+    ? config.DESKTOP_HEADER_LINE_HEIGHT
+    : config.HEADER_LINE_HEIGHT;
+  const bodyLineHeightConfig = isDesktop()
+    ? config.DESKTOP_BODY_LINE_HEIGHT
+    : config.BODY_LINE_HEIGHT;
+  const headerFontSpacingConfig = isDesktop()
+    ? config.DESKTOP_HEADER_FONT_SPACING
+    : config.HEADER_FONT_SPACING;
+  const bodyFontSpacingsConfig = isDesktop()
+    ? config.DESKTOP_BODY_FONT_SPACING
+    : config.BODY_FONT_SPACING;
+  //if power-on
+  if (applied) {
+    currentClassList.forEach(el => {
+      /** BODY FONT FAMILY */
+      if (el.startsWith(OMO_BODY_FONT_STYLE)) {
+        bFontFamily[0].fontValue
+          ? bodyStyleClassList.replace(el, bFontFamily[0].fontValue)
+          : bodyStyleClassList.remove(el);
+      } else if (bFontFamily[0].fontValue) {
+        bodyStyleClassList.add(bFontFamily[0].fontValue);
+      }
+      /**HEADER FONT FAMILY */
+      if (el.startsWith(OMO_HEADER_FONT_STYLE)) {
+        hFontFamily[0].fontValue
+          ? bodyStyleClassList.replace(el, hFontFamily[0].fontValue)
+          : bodyStyleClassList.remove(el);
+      } else if (hFontFamily[0].fontValue) {
+        bodyStyleClassList.add(hFontFamily[0].fontValue);
+      }
+      /**FONT SIZE */
+      let numBodyFontSize = bFontSize - Number(bodyFontSizeConfig);
+      if (el.startsWith(OMO_BODY_FONT_SIZE_STYLE)) {
+        Number(bodyFontSizeConfig) - bFontSize === 0
+          ? bodyStyleClassList.remove(el)
+          : bodyStyleClassList.replace(
+              el,
+              `${OMO_BODY_FONT_SIZE_STYLE}-${numBodyFontSize}`,
+            );
+      } else if (bFontSize.toString() !== bodyFontSizeConfig) {
+        bodyStyleClassList.add(
+          `${OMO_BODY_FONT_SIZE_STYLE}-${numBodyFontSize}`,
+        );
+      }
+      /**HEADER FONT SIZE */
+      let numHeaderFontSize = hFontSize - Number(headerFontSizeConfig);
+      if (el.startsWith(OMO_HEADER_FONT_SIZE_STYLE)) {
+        //RESET CASE
+        Number(headerFontSizeConfig) - hFontSize === 0
+          ? bodyStyleClassList.remove(el)
+          : bodyStyleClassList.replace(
+              el,
+              `${OMO_HEADER_FONT_SIZE_STYLE}-${numHeaderFontSize}`,
+            );
+      } else if (hFontSize.toString() !== headerFontSizeConfig) {
+        bodyStyleClassList.add(
+          `${OMO_HEADER_FONT_SIZE_STYLE}-${numHeaderFontSize}`,
+        );
+      }
+      /**BODY FONT WEIGHT */
+      if (el.startsWith(OMO_FONT_WEIGHT_STYLE)) {
+        bFontWeigth[0].fontWeightValue
+          ? bodyStyleClassList.replace(el, bFontWeigth[0].fontWeightValue)
+          : bodyStyleClassList.remove(el);
+      } else {
+        bFontWeigth[0].fontWeightValue &&
+          bodyStyleClassList.add(bFontWeigth[0].fontWeightValue);
+      }
+
+      /*BODY LINE HEIGHT */
+      if (el.startsWith(OMO_BODY_LINE_HEIGHT_STYLE)) {
+        //RESET CASE
+        if (bFontLineHeight[0].bLineHeightValue) {
+          bodyStyleClassList.replace(el, bFontLineHeight[0].bLineHeightValue);
+        } else {
+          bodyStyleClassList.remove(el);
+        }
+      } else if (bFontLineHeight[0].value !== bodyLineHeightConfig) {
+        bodyStyleClassList.add(bFontLineHeight[0].bLineHeightValue);
+      }
+      /* HEADER LINE HEIGHT*/
+      if (el.startsWith(OMO_HEADER_LINE_HEIGHT_STYLE)) {
+        //RESET CASE
+        hFontLineHeight[0].hLineHeightValue
+          ? bodyStyleClassList.replace(el, hFontLineHeight[0].hLineHeightValue)
+          : bodyStyleClassList.remove(el);
+      } else if (hFontLineHeight[0].value !== headerLineHeightConfig) {
+        bodyStyleClassList.add(hFontLineHeight[0].hLineHeightValue);
+      }
+      /*BODY FONT SPACING */
+      if (el.startsWith(OMO_BODY_LETTER_SPACING_STYLE)) {
+        bFontSpacing[0].bFontSpacingValue
+          ? bodyStyleClassList.replace(el, bFontSpacing[0].bFontSpacingValue)
+          : bodyStyleClassList.remove(el);
+      } else if (bodyFontSpacingsConfig !== bFontSpacing[0].value) {
+        bodyStyleClassList.add(bFontSpacing[0].bFontSpacingValue);
+      }
+
+      /*HEADER FONT SPACING*/
+      if (el.startsWith(OMO_HEADER_LETTER_SPACING_STYLE)) {
+        hFontSpacing[0].hFontSpacingValue
+          ? bodyStyleClassList.replace(el, hFontSpacing[0].hFontSpacingValue)
+          : bodyStyleClassList.remove(el);
+      } else if (headerFontSpacingConfig !== hFontSpacing[0].value) {
+        bodyStyleClassList.add(hFontSpacing[0].hFontSpacingValue);
+      }
+      /*BACKGROUND COLOR */
+
+      if (el.startsWith(OMO_BACKGROUND_STYLE)) {
+        backgroundColor[0].backgroundValue
+          ? bodyStyleClassList.replace(el, backgroundColor[0].backgroundValue)
+          : bodyStyleClassList.remove(el);
+      } else if (
+        backgroundColor[0] &&
+        backgroundColor[0].backgroundValue !== config.DEFAULT_BACKGROUND
+      ) {
+        backgroundColor[0].backgroundValue &&
+          bodyStyleClassList.add(backgroundColor[0].backgroundValue);
+      }
+    });
+  } else {
+    currentClassList.forEach(el => {
+      el.startsWith(OMO_BODY_FONT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_FONT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_FONT_SIZE_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_FONT_SIZE_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_FONT_WEIGHT_STYLE) && bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_LINE_HEIGHT_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_LINE_HEIGHT_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BODY_LETTER_SPACING_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_HEADER_LETTER_SPACING_STYLE) &&
+        bodyStyleClassList.remove(el);
+      el.startsWith(OMO_BACKGROUND_STYLE) && bodyStyleClassList.remove(el);
+    });
+  }
+};
+
 /** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
-  const applied = document
-    .getElementById('OmoWidget')
-    .classList.contains('power-off')
-    ? false
-    : true;
+  const applied =
+    !document.getElementById('OmoWidget').classList.contains('power-off') &&
+    !document.getElementById('OmoWidget').classList.contains('reset')
+      ? true
+      : false;
 
   // for desktop and mobile different configuration values.
   let bSize = isDesktop()
@@ -742,7 +1036,7 @@ const getUserAppliedValues = () => {
   const bFontSize =
     Number(document.getElementById('totem_bsize').value) + Number(bSize); //Number(config.BODY_FONT_SIZE);
 
-  // hack no header font size control.. value of body size is added to predefined configuration value
+  // THERE IS NO  header font size control HACK .. value of body size is added to predefined configuration value
   const hSize = isDesktop()
     ? config.DESKTOP_HEADER_FONT_SIZE
     : config.HEADER_FONT_SIZE;
@@ -752,6 +1046,7 @@ const getUserAppliedValues = () => {
   const bFontFamily = setFontFamily(
     document.getElementById('totem_body_ff').value,
   );
+
   const hFontFamily = setHeaderFontFamily(
     document.getElementById('totem_body_ff').value,
   );
@@ -775,6 +1070,20 @@ const getUserAppliedValues = () => {
   var fileldSetColor = document.getElementById('selectedBackround');
   let color = fileldSetColor.getAttribute('data-value');
   const backgroundColor = getColor(color);
+
+  appendClassesToBody(
+    bFontSize,
+    hFontSize,
+    bFontFamily,
+    hFontFamily,
+    bFontWeigth,
+    bFontSpacing,
+    hFontSpacing,
+    bFontLineHeight,
+    hFontLineHeight,
+    backgroundColor,
+    applied,
+  );
 
   const data = {
     checked: applied,
@@ -858,12 +1167,12 @@ const saveCookie = valueChanges => {
   const value = JSON.stringify(data);
   localStorage.setItem(`${name}`, value);
 };
+
 const removeCookie = () => {
   const name = `${config.OMO_WIDGET_COOKIE}_`;
   localStorage.removeItem(`${name}`);
 };
-
-/** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE */
+/** READ VALUE FROM SAVED COOKIE/LOCAL_STORAGE IF EXISTS*/
 const readCookie = letters => {
   let data = localStorage.getItem(`${config.OMO_WIDGET_COOKIE}_`);
   if (data === null) {
@@ -877,7 +1186,6 @@ const readCookie = letters => {
     document.getElementById('line-height-down').disabled = true;
     return false;
   }
-
   return setUserAppliedValues(JSON.parse(data), letters);
 };
 
@@ -994,9 +1302,10 @@ export const showWidget = (text, configurations) => {
       // console.log(BODY_LETTER_SPACING);
       // console.log(HEADER_LETTER_SPACING);
       COLOR_MAP.push({
-        id: -1,
+        id: NO_BACKGROUND_COLOR,
         value: config.DEFAULT_BACKGROUND,
       });
+      // set it to no color first on load i.e in readCookie load color from local storage if exist!
       var color = document.getElementById('selectedBackround');
       color.setAttribute('data-value', getColor(NO_BACKGROUND_COLOR)[0].id);
       var handle = new OmoWidget({
