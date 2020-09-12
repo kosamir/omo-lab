@@ -28,6 +28,7 @@ class OmoWidget {
 
     this.handlePower();
     // if no cookie in local storage OR if widget is in power off state remove css style from page
+    /*HACK ADDED refactor power_of reset functionality*/
     !this.cookie && (removeOverides(), removeCookie());
   }
 
@@ -327,6 +328,7 @@ class OmoWidget {
               // ) {
               //   return;
               // }
+              /*HACK REMOVED refactor power_of reset functionality*/
               // this.widget.classList.remove('reset');
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
@@ -350,7 +352,7 @@ class OmoWidget {
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
-              /*
+              /* HACK REMOVED refactor power_of reset functionality
               // last reset button clicke set reset class
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
@@ -431,7 +433,7 @@ class OmoWidget {
         }
       }
     });
-    /*
+    /* HACK REMOVED refactor power_of reset functionality
     // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
@@ -465,12 +467,14 @@ class OmoWidget {
       this.widget.classList.add('has-changes');
       this.powerButton.removeAttribute('disabled');
       this.powerButton.classList.add('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
       applyOverides();
       saveCookie();
     } else {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
       this.powerButton.classList.remove('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
       // remove overides if widget is put to reset state with up/down buttons on some controll
       // last controll puts widget in power-off state
       removeOverides();
