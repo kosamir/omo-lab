@@ -27,8 +27,8 @@ class OmoWidget {
     this.collectSectionValues();
 
     this.handlePower();
-    // if no cookie in local storage or if widget is in power off state remove css style from page
-    !this.cookie && removeOverides();
+    // if no cookie in local storage OR if widget is in power off state remove css style from page
+    !this.cookie && (removeOverides(), removeCookie());
   }
 
   cacheElements() {
@@ -327,7 +327,7 @@ class OmoWidget {
               // ) {
               //   return;
               // }
-              this.widget.classList.remove('reset');
+              // this.widget.classList.remove('reset');
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
                 input.setAttribute('value', parseInt(input.value));
@@ -350,7 +350,7 @@ class OmoWidget {
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
-
+              /*
               // last reset button clicke set reset class
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
@@ -367,8 +367,9 @@ class OmoWidget {
                 }
               });
               if (cnt === 1) {
-                this.widget.classList.add('reset');
-              }
+                // this.widget.classList.add('reset');
+                this.widget.classList.remove('has-changes');
+              }*/
             }
 
             if (isPreview) {
@@ -430,10 +431,11 @@ class OmoWidget {
         }
       }
     });
+    /*
     // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
-      !this.widget.classList.contains('reset')
+      this.widget.classList.contains('has-changes')
     ) {
       applyOverides();
       saveCookie();
@@ -455,7 +457,7 @@ class OmoWidget {
         false,
       );
     }
-    // saveCookie();
+    // saveCookie();*/
 
     const max = Math.max.apply(Math, this.sectionValues);
 
@@ -463,6 +465,8 @@ class OmoWidget {
       this.widget.classList.add('has-changes');
       this.powerButton.removeAttribute('disabled');
       this.powerButton.classList.add('has-value');
+      applyOverides();
+      saveCookie();
     } else {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
@@ -1023,11 +1027,13 @@ const appendClassesToBody = (
 
 /** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
-  const applied =
-    !document.getElementById('OmoWidget').classList.contains('power-off') &&
-    !document.getElementById('OmoWidget').classList.contains('reset')
-      ? true
-      : false;
+  const applied = !document
+    .getElementById('OmoWidget')
+    .classList.contains('power-off')
+    ? // &&
+      // !document.getElementById('OmoWidget').classList.contains('reset')
+      true
+    : false;
 
   // for desktop and mobile different configuration values.
   let bSize = isDesktop()
