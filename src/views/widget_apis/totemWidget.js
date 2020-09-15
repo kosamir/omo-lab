@@ -347,9 +347,10 @@ class OmoWidget {
               e.preventDefault();
               input.value = 0;
               input.setAttribute('value', 0);
+              // enable button UP all controlls except background collor wich it has NONE!!
+              e.currentTarget.id !== 'backgroundReset' &&
+                ((buttonDown.disabled = true), (buttonUp.disabled = false));
 
-              buttonDown.disabled = true;
-              buttonUp.disabled = false;
               /** reset backGroundColor ONLY if clicked on reset color button  */
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
