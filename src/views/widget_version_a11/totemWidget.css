@@ -68,7 +68,7 @@
 @font-face {
   font-family: OTCartaSExt;
   src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSExt-RegularOne.woff2')
-    format('woff');
+    format('woff2');
   font-weight: 400;
   font-style: normal;
 }
@@ -76,7 +76,7 @@
 @font-face {
   font-family: OTCartaSExt;
   src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSExt-MediumOne.woff2')
-    format('woff');
+    format('woff2');
   font-weight: 500;
   font-style: normal;
 }
@@ -84,7 +84,7 @@
 @font-face {
   font-family: OTCartaSExt;
   src: url('https://omo-lab.herokuapp.com/webwidget/fonts/woff/OTCartaSExt-BoldOne.woff2')
-    format('woff');
+    format('woff2');
   font-weight: 600;
   font-style: normal;
 }
