@@ -29,7 +29,7 @@ class OmoWidget {
     this.handlePower();
     // if no cookie in local storage OR if widget is in power off state remove css style from page
     /*HACK ADDED refactor power_of reset functionality*/
-    !this.cookie && (removeOverides(), removeCookie());
+    !this.cookie && removeOverides();
   }
 
   cacheElements() {
