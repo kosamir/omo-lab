@@ -25,7 +25,8 @@ class OmoWidget {
     this.collectSectionValues();
 
     this.handlePower();
-    // if no cookie in local storage or if widget is in power off state remove css style from page
+    // if no cookie in local storage OR if widget is in power off state remove css style from page
+    /*HACK ADDED refactor power_of reset functionality*/
     !this.cookie && removeOverides();
   }
 
@@ -326,8 +327,8 @@ class OmoWidget {
               //   return;
               // }
 
-              // remove reset if present in class list of widget!!! see collectSectionValues method!!!
-              this.widget.classList.remove('reset');
+              /*HACK REMOVED refactor power_of reset functionality*/
+              // this.widget.classList.remove('reset');
 
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
@@ -344,12 +345,15 @@ class OmoWidget {
               input.value = 0;
               input.setAttribute('value', 0);
 
-              buttonDown.disabled = true;
-              buttonUp.disabled = false;
+              // enable button UP all controlls except background collor wich it has NONE!!
+              e.currentTarget.id !== 'backgroundReset' &&
+                ((buttonDown.disabled = true), (buttonUp.disabled = false));
+
               /** reset backGroundColor ONLY if clicked on reset color button  */
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
+              /* HACK REMOVED refactor power_of reset functionality
               // last reset button clicked set reset class on widget!!! see collectSectionValues method!!!
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
@@ -367,7 +371,7 @@ class OmoWidget {
               });
               if (cnt === 1) {
                 this.widget.classList.add('reset');
-              }
+              }*/
             }
 
             if (isPreview) {
@@ -429,7 +433,7 @@ class OmoWidget {
         }
       }
     });
-
+    /* HACK REMOVED refactor power_of reset functionality
     // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
@@ -441,17 +445,21 @@ class OmoWidget {
       removeOverides();
       removeCookie();
     }
-    // saveCookie();
+    // saveCookie();*/
     const max = Math.max.apply(Math, this.sectionValues);
 
     if (max > 0) {
       this.widget.classList.add('has-changes');
       this.powerButton.removeAttribute('disabled');
       this.powerButton.classList.add('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
+      applyOverides();
+      saveCookie();
     } else {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
       this.powerButton.classList.remove('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
       // remove overides if widget is put to reset state with up/down buttons on some controll
       // last controll puts widget in power-off state
       removeOverides();

@@ -27,7 +27,8 @@ class OmoWidget {
     this.collectSectionValues();
 
     this.handlePower();
-    // if no cookie in local storage or if widget is in power off state remove css style from page
+    // if no cookie in local storage OR if widget is in power off state remove css style from page
+    /*HACK ADDED refactor power_of reset functionality*/
     !this.cookie && removeOverides();
   }
 
@@ -327,7 +328,8 @@ class OmoWidget {
               // ) {
               //   return;
               // }
-              this.widget.classList.remove('reset');
+              /*HACK REMOVED refactor power_of reset functionality*/
+              // this.widget.classList.remove('reset');
               if (!isSet) {
                 input.value = isAdd ? curVal + 1 : curVal - 1;
                 input.setAttribute('value', parseInt(input.value));
@@ -343,14 +345,16 @@ class OmoWidget {
               e.preventDefault();
               input.value = 0;
               input.setAttribute('value', 0);
+              // enable button UP all controlls except background collor wich it has NONE!!
+              e.currentTarget.id !== 'backgroundReset' &&
+                ((buttonDown.disabled = true), (buttonUp.disabled = false));
 
-              buttonDown.disabled = true;
-              buttonUp.disabled = false;
               /** reset backGroundColor ONLY if clicked on reset color button  */
+
               e.currentTarget.id === 'backgroundReset' &&
                 this.triggerBackground.setAttribute('data-value', -1);
               this.closeOpenSections();
-
+              /* HACK REMOVED refactor power_of reset functionality
               // last reset button clicke set reset class
               let applied = [].slice.call(
                 this.widget.querySelectorAll('.OmoWidget-trigger.has-value'),
@@ -367,8 +371,9 @@ class OmoWidget {
                 }
               });
               if (cnt === 1) {
-                this.widget.classList.add('reset');
-              }
+                // this.widget.classList.add('reset');
+                this.widget.classList.remove('has-changes');
+              }*/
             }
 
             if (isPreview) {
@@ -430,10 +435,11 @@ class OmoWidget {
         }
       }
     });
+    /* HACK REMOVED refactor power_of reset functionality
     // remove overides a.k.a css if widget is power-of or in reset state
     if (
       !this.widget.classList.contains('power-off') &&
-      !this.widget.classList.contains('reset')
+      this.widget.classList.contains('has-changes')
     ) {
       applyOverides();
       saveCookie();
@@ -455,7 +461,7 @@ class OmoWidget {
         false,
       );
     }
-    // saveCookie();
+    // saveCookie();*/
 
     const max = Math.max.apply(Math, this.sectionValues);
 
@@ -463,10 +469,14 @@ class OmoWidget {
       this.widget.classList.add('has-changes');
       this.powerButton.removeAttribute('disabled');
       this.powerButton.classList.add('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
+      applyOverides();
+      saveCookie();
     } else {
       this.widget.classList.remove('has-changes');
       this.powerButton.setAttribute('disabled', 'disabled');
       this.powerButton.classList.remove('has-value');
+      /*HACK ADDED refactor power_of reset functionality*/
       // remove overides if widget is put to reset state with up/down buttons on some controll
       // last controll puts widget in power-off state
       removeOverides();
@@ -1023,11 +1033,13 @@ const appendClassesToBody = (
 
 /** get APPLIED VALUES FROM WIDGET to generate style */
 const getUserAppliedValues = () => {
-  const applied =
-    !document.getElementById('OmoWidget').classList.contains('power-off') &&
-    !document.getElementById('OmoWidget').classList.contains('reset')
-      ? true
-      : false;
+  const applied = !document
+    .getElementById('OmoWidget')
+    .classList.contains('power-off')
+    ? // &&
+      // !document.getElementById('OmoWidget').classList.contains('reset')
+      true
+    : false;
 
   // for desktop and mobile different configuration values.
   let bSize = isDesktop()
