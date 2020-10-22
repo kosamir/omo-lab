@@ -1,3 +1,11 @@
-.omo-widget {
-  right: 300px !important;
+/*
+this is custom css file that can be imported in widget, set aditional styling
+
+*/
+.omoWidget {
+  /*
+  
+  put additional styling here if necessary
+  */
+  right: 1000px !important;
 }

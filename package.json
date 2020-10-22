@@ -1,5 +1,7 @@
 {
-  "name": "js-widget",
+  "name": "omo-widget",
+  "author": "amir kos",
+  "version": "1.0.0",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.config.js",
     "build-release": "./node_modules/.bin/webpack --config webpack.config.js --env.prod",
@@ -29,6 +31,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "es6-promise-promise": "^1.0.0"
+    "es6-promise-promise": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

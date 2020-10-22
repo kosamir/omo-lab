@@ -1,14 +1,9 @@
 /* eslint-disable no-console */
-// import showWidget from './views/omoTotemWidget';
-import { showWidget } from './views/widget_apis_form/totemWidget';
-//'./views/omoWidget';
+import { showWidget } from './views/omo_widget/totemWidget';
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
-
 let configurations = {};
-/**
-    Method that handles all API calls
-    */
+
 function apiHandler(api, params) {
   if (!api) throw Error('API method required');
   api = api.toLowerCase();
@@ -16,7 +11,6 @@ function apiHandler(api, params) {
   if (supportedAPI.indexOf(api) === -1)
     throw Error(`Method ${api} is not supported`);
 
-  // console.log(`Handling API call ${api}:`, params);
   console.log('Omo-Widget started');
 
   switch (api) {
@@ -40,7 +34,7 @@ function extendObject(a, b) {
 
 /**
     The main entry of the application
-    */
+ */
 function app(window) {
   console.log('Omo-Widget starting...');
   // all methods that were called till now and stored in queue
@@ -57,7 +51,6 @@ function app(window) {
       }
     }
   }
-
   // override temporary (until the app loaded) handler
   // for widget's API calls
   globalObject = apiHandler;

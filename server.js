@@ -12,7 +12,9 @@ const allowedOrigins = [
   'http://business.omoguru.com/',
   'https://suspicious-williams-793bcd.netlify.app/',
 ];
-/**only for allowed domains */
+/**only for allowed domains
+ * commented for NOW!
+ */
 const domainNameStartsWith = refferer => {
   let ret = false;
   allowedOrigins.forEach(el => {

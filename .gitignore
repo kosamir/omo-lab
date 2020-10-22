@@ -1,7 +1,5 @@
 node_modules
 node_modules
 widget.code-workspace
-# dist/**
+dist/**
 .vscode/launch.json
-omo-type-fonts-css.txt
-httpServer.js

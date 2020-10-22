@@ -122,7 +122,7 @@ exports.TWEAK = TWEAK;
 /** SET BODY STYLE */
 var BODY_STYLE;
 exports.BODY_STYLE = BODY_STYLE;
-
+/*
 const getFontName = prop =>
   `OmoType${CURRENT_CONFIG[prop].fontVersion}-${CURRENT_CONFIG[prop].fontWeight}${CURRENT_CONFIG[prop].letterSpacing}`; // eslint-disable-line no-unused-vars
 
@@ -139,7 +139,7 @@ function applyFontFamily(fontName, elementProp) {
   }
   ELEMENTS[elementProp].fontName().style.fontFamily = fontName;
 }
-
+*/
 /** SET OMO STYLE ON SELECTED  BODY ELEMENTS */
 const setBodyTextStyle = (
   bodyElements,
@@ -192,7 +192,6 @@ const setBackGroundColor = (applyToElements, bgColor) => {
 exports.setBackGroundColor = setBackGroundColor;
 
 // eslint-disable-next-line vars-on-top
-// var fetch = require("node-fetch");
 
 var axios = require('axios');
 
