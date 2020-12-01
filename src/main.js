@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { showWidget } from './views/omo_widget/totemWidget';
+import { showWidgetClass } from './views/omo_widget_body_class/totemWidget';
 
 const supportedAPI = ['init', 'message']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 let configurations = {};
@@ -12,11 +13,14 @@ function apiHandler(api, params) {
     throw Error(`Method ${api} is not supported`);
 
   console.log('Omo-Widget started');
-
+  let startWidget =
+    configurations.type && configurations.type === 'body'
+      ? showWidgetClass
+      : showWidget;
   switch (api) {
     // TODO: add API implementation
     case 'message':
-      showWidget(params, configurations);
+      startWidget(params, configurations);
       break;
     default:
       console.warn(`No handler defined for ${api}`);

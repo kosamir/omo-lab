@@ -2,7 +2,8 @@
 import './polyfills';
 import { $, on, getAnimatableEndEvent } from './utilities.js';
 import whatInput from 'what-input';
-import html from './totemWidget_en.html';
+import html from './totemWidget.html';
+import html_en from './totemWidget_en.html';
 import config from '../../config';
 import './totemWidget.css';
 const NO_BACKGROUND_COLOR = -1;
@@ -935,7 +936,16 @@ const isDesktop = () => {
 export const showWidget = (text, configurations) => {
   // convert plain HTML string into DOM elementss
   const temporary = document.createElement('div');
-  temporary.innerHTML = html;
+  switch (configurations.lang) {
+    case 'en':
+      temporary.innerHTML = html_en;
+      break;
+    case 'hr':
+      temporary.innerHTML = html;
+      break;
+    default:
+      temporary.innerHTML = html;
+  }
 
   addOmolabClassScopeToBody(document);
   // append elements to body

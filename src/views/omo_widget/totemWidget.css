@@ -185,9 +185,10 @@
     --margin-size: 4px;
   }
 }
-:not(#\9):not(#\9):not(#\9) body {
+
+/* :not(#\9):not(#\9):not(#\9) body {
   background: #fff;
-}
+} */
 @font-face {
   font-family: omotyperegular_std_one;
   src: url(../../../fonts/omotype-regularstdone-webfont.eot);
