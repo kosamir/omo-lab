@@ -122,24 +122,7 @@ exports.TWEAK = TWEAK;
 /** SET BODY STYLE */
 var BODY_STYLE;
 exports.BODY_STYLE = BODY_STYLE;
-/*
-const getFontName = prop =>
-  `OmoType${CURRENT_CONFIG[prop].fontVersion}-${CURRENT_CONFIG[prop].fontWeight}${CURRENT_CONFIG[prop].letterSpacing}`; // eslint-disable-line no-unused-vars
 
-function applyFontFamily(fontName, elementProp) {
-  // eslint-disable-line no-unused-vars
-  const fontLoaded = document.fonts.check(`12px ${fontName}`);
-  if (!fontLoaded) {
-    let url = chrome.runtime.getURL(`fonts/woff/${fontName}.woff`);
-    let dMediumFour = new FontFace(fontName, `url(${url})`);
-    dMediumFour
-      .load()
-      .then(loadedFont => document.fonts.add(loadedFont))
-      .catch(() => {});
-  }
-  ELEMENTS[elementProp].fontName().style.fontFamily = fontName;
-}
-*/
 /** SET OMO STYLE ON SELECTED  BODY ELEMENTS */
 const setBodyTextStyle = (
   bodyElements,
@@ -174,8 +157,7 @@ const setBodyTextStyle = (
 exports.setBodyTextStyle = setBodyTextStyle;
 
 /** SET BACKGROUND COLOR
- *
- * DEFINE ELEMENTS FOR BACKGROUND CHANGE COLLOR HERE
+ * DEFINE ELEMENTS FOR BACKGROUND CHANGE COLOR HERE
  */
 var BACKGROUND_COLOR_ELEMENTS;
 exports.BACKGROUND_COLOR_ELEMENTS = BACKGROUND_COLOR_ELEMENTS;
@@ -184,7 +166,7 @@ const setBackGroundColor = (applyToElements, bgColor) => {
   return bgColor
     ? `${appendBodyToCssSelector(applyToElements).join(
         ',',
-      )} { background-color: ${bgColor} !important; ${inverseFontFaceColor(
+      )} { background: ${bgColor} !important; ${inverseFontFaceColor(
         bgColor,
       )}}\n`
     : '';
